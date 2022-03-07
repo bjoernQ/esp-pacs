@@ -1,0 +1,56 @@
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+name: Update the with_source branch
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  update_branch:
+    name: Update with_source branch
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - run: git config --global user.email "actions@github.com"
+      - run: git config --global user.name "GitHub Actions"
+      - run: git checkout with_source
+      - run: git merge origin/main
+      - uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          target: riscv32imc-unknown-none-elf
+          toolchain: nightly
+          default: true
+      - uses: esp-rs/xtensa-toolchain@v1
+        with:
+          default: true
+          ldproxy: false
+      - uses: Swatinem/rust-cache@v1
+      - uses: actions-rs/cargo@v1
+        with:
+          command: xtask
+          args: esp32c3
+      - uses: actions-rs/cargo@v1
+        with:
+          command: xtask
+          args: esp32
+      - uses: actions-rs/cargo@v1
+        with:
+          command: xtask
+          args: esp32s2
+      - uses: actions-rs/cargo@v1
+        with:
+          command: xtask
+          args: esp32s3
+      - run: git add -f esp32c3\src
+      - run: git add -f esp32\src
+      - run: git add -f esp32s2\src
+      - run: git add -f esp32s3\src
+      - run: git commit
+      - run: git push
