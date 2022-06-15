@@ -20,22 +20,13 @@ impl From<crate::W<CORE_1_WORLD_CANCEL_SPEC>> for W {
     }
 }
 #[doc = "Field `CORE_1_WORLD_CANCEL` writer - This field is used to cancel switch world configuration,if the trigger address and update configuration complete,can use this register to cancel world switch. can write any value, the hardware only checks the write operation of this register and does not case about its value"]
-pub struct CORE_1_WORLD_CANCEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CORE_1_WORLD_CANCEL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
-    }
-}
+pub type CORE_1_WORLD_CANCEL_W<'a> =
+    crate::FieldWriter<'a, u32, CORE_1_WORLD_CANCEL_SPEC, u32, u32, 32, 0>;
 impl W {
     #[doc = "Bits 0:31 - This field is used to cancel switch world configuration,if the trigger address and update configuration complete,can use this register to cancel world switch. can write any value, the hardware only checks the write operation of this register and does not case about its value"]
     #[inline(always)]
     pub fn core_1_world_cancel(&mut self) -> CORE_1_WORLD_CANCEL_W {
-        CORE_1_WORLD_CANCEL_W { w: self }
+        CORE_1_WORLD_CANCEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -44,18 +35,12 @@ impl W {
         self
     }
 }
-#[doc = "Core_1 configuration cancel register\n\nThis register you can [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [core_1_world_cancel]
-(index.html) module"]
+#[doc = "Core_1 configuration cancel register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [core_1_world_cancel](index.html) module"]
 pub struct CORE_1_WORLD_CANCEL_SPEC;
 impl crate::RegisterSpec for CORE_1_WORLD_CANCEL_SPEC {
     type Ux = u32;
 }
-#[doc = "`write(|w| ..)` method takes [core_1_world_cancel::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [core_1_world_cancel::W](W) writer structure"]
 impl crate::Writable for CORE_1_WORLD_CANCEL_SPEC {
     type Writer = W;
 }

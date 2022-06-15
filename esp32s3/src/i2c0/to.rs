@@ -35,69 +35,13 @@ impl From<crate::W<TO_SPEC>> for W {
     }
 }
 #[doc = "Field `TIME_OUT_VALUE` reader - This register is used to configure the timeout for receiving a data bit in APB clock cycles."]
-pub struct TIME_OUT_VALUE_R(crate::FieldReader<u8, u8>);
-impl TIME_OUT_VALUE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        TIME_OUT_VALUE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TIME_OUT_VALUE_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TIME_OUT_VALUE_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `TIME_OUT_VALUE` writer - This register is used to configure the timeout for receiving a data bit in APB clock cycles."]
-pub struct TIME_OUT_VALUE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TIME_OUT_VALUE_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x1f) | (value as u32 & 0x1f);
-        self.w
-    }
-}
+pub type TIME_OUT_VALUE_W<'a> = crate::FieldWriter<'a, u32, TO_SPEC, u8, u8, 5, 0>;
 #[doc = "Field `TIME_OUT_EN` reader - This is the enable bit for time out control."]
-pub struct TIME_OUT_EN_R(crate::FieldReader<bool, bool>);
-impl TIME_OUT_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TIME_OUT_EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TIME_OUT_EN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TIME_OUT_EN_R = crate::BitReader<bool>;
 #[doc = "Field `TIME_OUT_EN` writer - This is the enable bit for time out control."]
-pub struct TIME_OUT_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TIME_OUT_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
+pub type TIME_OUT_EN_W<'a> = crate::BitWriter<'a, u32, TO_SPEC, bool, 5>;
 impl R {
     #[doc = "Bits 0:4 - This register is used to configure the timeout for receiving a data bit in APB clock cycles."]
     #[inline(always)]
@@ -107,19 +51,19 @@ impl R {
     #[doc = "Bit 5 - This is the enable bit for time out control."]
     #[inline(always)]
     pub fn time_out_en(&self) -> TIME_OUT_EN_R {
-        TIME_OUT_EN_R::new(((self.bits >> 5) & 0x01) != 0)
+        TIME_OUT_EN_R::new(((self.bits >> 5) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:4 - This register is used to configure the timeout for receiving a data bit in APB clock cycles."]
     #[inline(always)]
     pub fn time_out_value(&mut self) -> TIME_OUT_VALUE_W {
-        TIME_OUT_VALUE_W { w: self }
+        TIME_OUT_VALUE_W::new(self)
     }
     #[doc = "Bit 5 - This is the enable bit for time out control."]
     #[inline(always)]
     pub fn time_out_en(&mut self) -> TIME_OUT_EN_W {
-        TIME_OUT_EN_W { w: self }
+        TIME_OUT_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -128,25 +72,16 @@ impl W {
         self
     }
 }
-#[doc = "Setting time out control for receiving data.\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [to]
-(index.html) module"]
+#[doc = "Setting time out control for receiving data.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [to](index.html) module"]
 pub struct TO_SPEC;
 impl crate::RegisterSpec for TO_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [to::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [to::R](R) reader structure"]
 impl crate::Readable for TO_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [to::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [to::W](W) writer structure"]
 impl crate::Writable for TO_SPEC {
     type Writer = W;
 }

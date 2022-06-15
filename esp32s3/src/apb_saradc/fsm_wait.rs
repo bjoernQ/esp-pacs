@@ -35,86 +35,17 @@ impl From<crate::W<FSM_WAIT_SPEC>> for W {
     }
 }
 #[doc = "Field `SARADC_XPD_WAIT` reader - the cycle which saradc controller in xpd state"]
-pub struct SARADC_XPD_WAIT_R(crate::FieldReader<u8, u8>);
-impl SARADC_XPD_WAIT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        SARADC_XPD_WAIT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SARADC_XPD_WAIT_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SARADC_XPD_WAIT_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `SARADC_XPD_WAIT` writer - the cycle which saradc controller in xpd state"]
-pub struct SARADC_XPD_WAIT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SARADC_XPD_WAIT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type SARADC_XPD_WAIT_W<'a> = crate::FieldWriter<'a, u32, FSM_WAIT_SPEC, u8, u8, 8, 0>;
 #[doc = "Field `SARADC_RSTB_WAIT` reader - the cycle which saradc controller in rst state"]
-pub struct SARADC_RSTB_WAIT_R(crate::FieldReader<u8, u8>);
-impl SARADC_RSTB_WAIT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        SARADC_RSTB_WAIT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SARADC_RSTB_WAIT_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SARADC_RSTB_WAIT_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `SARADC_RSTB_WAIT` writer - the cycle which saradc controller in rst state"]
-pub struct SARADC_RSTB_WAIT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SARADC_RSTB_WAIT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 8)) | ((value as u32 & 0xff) << 8);
-        self.w
-    }
-}
+pub type SARADC_RSTB_WAIT_W<'a> = crate::FieldWriter<'a, u32, FSM_WAIT_SPEC, u8, u8, 8, 8>;
 #[doc = "Field `SARADC_STANDBY_WAIT` reader - the cycle which saradc controller in standby state"]
-pub struct SARADC_STANDBY_WAIT_R(crate::FieldReader<u8, u8>);
-impl SARADC_STANDBY_WAIT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        SARADC_STANDBY_WAIT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SARADC_STANDBY_WAIT_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SARADC_STANDBY_WAIT_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `SARADC_STANDBY_WAIT` writer - the cycle which saradc controller in standby state"]
-pub struct SARADC_STANDBY_WAIT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SARADC_STANDBY_WAIT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 16)) | ((value as u32 & 0xff) << 16);
-        self.w
-    }
-}
+pub type SARADC_STANDBY_WAIT_W<'a> = crate::FieldWriter<'a, u32, FSM_WAIT_SPEC, u8, u8, 8, 16>;
 impl R {
     #[doc = "Bits 0:7 - the cycle which saradc controller in xpd state"]
     #[inline(always)]
@@ -136,17 +67,17 @@ impl W {
     #[doc = "Bits 0:7 - the cycle which saradc controller in xpd state"]
     #[inline(always)]
     pub fn saradc_xpd_wait(&mut self) -> SARADC_XPD_WAIT_W {
-        SARADC_XPD_WAIT_W { w: self }
+        SARADC_XPD_WAIT_W::new(self)
     }
     #[doc = "Bits 8:15 - the cycle which saradc controller in rst state"]
     #[inline(always)]
     pub fn saradc_rstb_wait(&mut self) -> SARADC_RSTB_WAIT_W {
-        SARADC_RSTB_WAIT_W { w: self }
+        SARADC_RSTB_WAIT_W::new(self)
     }
     #[doc = "Bits 16:23 - the cycle which saradc controller in standby state"]
     #[inline(always)]
     pub fn saradc_standby_wait(&mut self) -> SARADC_STANDBY_WAIT_W {
-        SARADC_STANDBY_WAIT_W { w: self }
+        SARADC_STANDBY_WAIT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -155,25 +86,16 @@ impl W {
         self
     }
 }
-#[doc = "configure apb saradc fsm\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [fsm_wait]
-(index.html) module"]
+#[doc = "configure apb saradc fsm\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [fsm_wait](index.html) module"]
 pub struct FSM_WAIT_SPEC;
 impl crate::RegisterSpec for FSM_WAIT_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [fsm_wait::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [fsm_wait::R](R) reader structure"]
 impl crate::Readable for FSM_WAIT_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [fsm_wait::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [fsm_wait::W](W) writer structure"]
 impl crate::Writable for FSM_WAIT_SPEC {
     type Writer = W;
 }

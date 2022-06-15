@@ -14,20 +14,7 @@ impl From<crate::R<EXT_WAKEUP1_STATUS_SPEC>> for R {
     }
 }
 #[doc = "Field `EXT_WAKEUP1_STATUS` reader - Indicates the EXT1 wakeup status."]
-pub struct EXT_WAKEUP1_STATUS_R(crate::FieldReader<u32, u32>);
-impl EXT_WAKEUP1_STATUS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        EXT_WAKEUP1_STATUS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EXT_WAKEUP1_STATUS_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type EXT_WAKEUP1_STATUS_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:21 - Indicates the EXT1 wakeup status."]
     #[inline(always)]
@@ -35,16 +22,12 @@ impl R {
         EXT_WAKEUP1_STATUS_R::new((self.bits & 0x003f_ffff) as u32)
     }
 }
-#[doc = "EXT1 wakeup source register\n\nThis register you can [`read`]
-(crate::generic::Reg::read). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ext_wakeup1_status]
-(index.html) module"]
+#[doc = "EXT1 wakeup source register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ext_wakeup1_status](index.html) module"]
 pub struct EXT_WAKEUP1_STATUS_SPEC;
 impl crate::RegisterSpec for EXT_WAKEUP1_STATUS_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [ext_wakeup1_status::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [ext_wakeup1_status::R](R) reader structure"]
 impl crate::Readable for EXT_WAKEUP1_STATUS_SPEC {
     type Reader = R;
 }

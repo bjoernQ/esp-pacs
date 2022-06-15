@@ -14,20 +14,7 @@ impl From<crate::R<CPU_PERIPHERAL_STATUS_SPEC>> for R {
     }
 }
 #[doc = "Field `CPU_PERI_BYTE_ERROR_ADDR` reader - Record the illegitimate address of CPU peripheral."]
-pub struct CPU_PERI_BYTE_ERROR_ADDR_R(crate::FieldReader<u32, u32>);
-impl CPU_PERI_BYTE_ERROR_ADDR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        CPU_PERI_BYTE_ERROR_ADDR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CPU_PERI_BYTE_ERROR_ADDR_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CPU_PERI_BYTE_ERROR_ADDR_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Record the illegitimate address of CPU peripheral."]
     #[inline(always)]
@@ -35,16 +22,12 @@ impl R {
         CPU_PERI_BYTE_ERROR_ADDR_R::new(self.bits)
     }
 }
-#[doc = "PeribBus1 peripheral access status register.\n\nThis register you can [`read`]
-(crate::generic::Reg::read). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cpu_peripheral_status]
-(index.html) module"]
+#[doc = "PeribBus1 peripheral access status register.\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cpu_peripheral_status](index.html) module"]
 pub struct CPU_PERIPHERAL_STATUS_SPEC;
 impl crate::RegisterSpec for CPU_PERIPHERAL_STATUS_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [cpu_peripheral_status::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [cpu_peripheral_status::R](R) reader structure"]
 impl crate::Readable for CPU_PERIPHERAL_STATUS_SPEC {
     type Reader = R;
 }

@@ -34,53 +34,22 @@ impl From<crate::W<ADDR_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `USR_ADDR_VALUE` reader - 31:8\\]
-:address to slave, \\[7:0\\]
-:Reserved. Can be configured in CONF state."]
-pub struct USR_ADDR_VALUE_R(crate::FieldReader<u32, u32>);
-impl USR_ADDR_VALUE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        USR_ADDR_VALUE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for USR_ADDR_VALUE_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Field `USR_ADDR_VALUE` writer - 31:8\\]
-:address to slave, \\[7:0\\]
-:Reserved. Can be configured in CONF state."]
-pub struct USR_ADDR_VALUE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> USR_ADDR_VALUE_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
-    }
-}
+#[doc = "Field `USR_ADDR_VALUE` reader - 31:8\\]:address to slave, \\[7:0\\]:Reserved. Can be configured in CONF state."]
+pub type USR_ADDR_VALUE_R = crate::FieldReader<u32, u32>;
+#[doc = "Field `USR_ADDR_VALUE` writer - 31:8\\]:address to slave, \\[7:0\\]:Reserved. Can be configured in CONF state."]
+pub type USR_ADDR_VALUE_W<'a> = crate::FieldWriter<'a, u32, ADDR_SPEC, u32, u32, 32, 0>;
 impl R {
-    #[doc = "Bits 0:31 - 31:8\\]
-:address to slave, \\[7:0\\]
-:Reserved. Can be configured in CONF state."]
+    #[doc = "Bits 0:31 - 31:8\\]:address to slave, \\[7:0\\]:Reserved. Can be configured in CONF state."]
     #[inline(always)]
     pub fn usr_addr_value(&self) -> USR_ADDR_VALUE_R {
         USR_ADDR_VALUE_R::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - 31:8\\]
-:address to slave, \\[7:0\\]
-:Reserved. Can be configured in CONF state."]
+    #[doc = "Bits 0:31 - 31:8\\]:address to slave, \\[7:0\\]:Reserved. Can be configured in CONF state."]
     #[inline(always)]
     pub fn usr_addr_value(&mut self) -> USR_ADDR_VALUE_W {
-        USR_ADDR_VALUE_W { w: self }
+        USR_ADDR_VALUE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -89,25 +58,16 @@ impl W {
         self
     }
 }
-#[doc = "Address value\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [addr]
-(index.html) module"]
+#[doc = "Address value\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [addr](index.html) module"]
 pub struct ADDR_SPEC;
 impl crate::RegisterSpec for ADDR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [addr::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [addr::R](R) reader structure"]
 impl crate::Readable for ADDR_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [addr::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [addr::W](W) writer structure"]
 impl crate::Writable for ADDR_SPEC {
     type Writer = W;
 }

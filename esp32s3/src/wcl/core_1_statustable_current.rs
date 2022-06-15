@@ -35,32 +35,10 @@ impl From<crate::W<CORE_1_STATUSTABLE_CURRENT_SPEC>> for W {
     }
 }
 #[doc = "Field `CORE_1_STATUSTABLE_CURRENT` reader - This field is used to quickly read and rewrite the current field of all STATUSTABLE registers,for example,bit 1 represents the current field of STATUSTABLE1"]
-pub struct CORE_1_STATUSTABLE_CURRENT_R(crate::FieldReader<u16, u16>);
-impl CORE_1_STATUSTABLE_CURRENT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        CORE_1_STATUSTABLE_CURRENT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CORE_1_STATUSTABLE_CURRENT_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CORE_1_STATUSTABLE_CURRENT_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `CORE_1_STATUSTABLE_CURRENT` writer - This field is used to quickly read and rewrite the current field of all STATUSTABLE registers,for example,bit 1 represents the current field of STATUSTABLE1"]
-pub struct CORE_1_STATUSTABLE_CURRENT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CORE_1_STATUSTABLE_CURRENT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x1fff << 1)) | ((value as u32 & 0x1fff) << 1);
-        self.w
-    }
-}
+pub type CORE_1_STATUSTABLE_CURRENT_W<'a> =
+    crate::FieldWriter<'a, u32, CORE_1_STATUSTABLE_CURRENT_SPEC, u16, u16, 13, 1>;
 impl R {
     #[doc = "Bits 1:13 - This field is used to quickly read and rewrite the current field of all STATUSTABLE registers,for example,bit 1 represents the current field of STATUSTABLE1"]
     #[inline(always)]
@@ -72,7 +50,7 @@ impl W {
     #[doc = "Bits 1:13 - This field is used to quickly read and rewrite the current field of all STATUSTABLE registers,for example,bit 1 represents the current field of STATUSTABLE1"]
     #[inline(always)]
     pub fn core_1_statustable_current(&mut self) -> CORE_1_STATUSTABLE_CURRENT_W {
-        CORE_1_STATUSTABLE_CURRENT_W { w: self }
+        CORE_1_STATUSTABLE_CURRENT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -81,25 +59,16 @@ impl W {
         self
     }
 }
-#[doc = "Status register of statustable current\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [core_1_statustable_current]
-(index.html) module"]
+#[doc = "Status register of statustable current\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [core_1_statustable_current](index.html) module"]
 pub struct CORE_1_STATUSTABLE_CURRENT_SPEC;
 impl crate::RegisterSpec for CORE_1_STATUSTABLE_CURRENT_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [core_1_statustable_current::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [core_1_statustable_current::R](R) reader structure"]
 impl crate::Readable for CORE_1_STATUSTABLE_CURRENT_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [core_1_statustable_current::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [core_1_statustable_current::W](W) writer structure"]
 impl crate::Writable for CORE_1_STATUSTABLE_CURRENT_SPEC {
     type Writer = W;
 }

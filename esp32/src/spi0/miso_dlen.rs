@@ -35,32 +35,9 @@ impl From<crate::W<MISO_DLEN_SPEC>> for W {
     }
 }
 #[doc = "Field `USR_MISO_DBITLEN` reader - The length in bits of read-data. The register value shall be (bit_num-1)."]
-pub struct USR_MISO_DBITLEN_R(crate::FieldReader<u32, u32>);
-impl USR_MISO_DBITLEN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        USR_MISO_DBITLEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for USR_MISO_DBITLEN_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type USR_MISO_DBITLEN_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `USR_MISO_DBITLEN` writer - The length in bits of read-data. The register value shall be (bit_num-1)."]
-pub struct USR_MISO_DBITLEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> USR_MISO_DBITLEN_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x00ff_ffff) | (value as u32 & 0x00ff_ffff);
-        self.w
-    }
-}
+pub type USR_MISO_DBITLEN_W<'a> = crate::FieldWriter<'a, u32, MISO_DLEN_SPEC, u32, u32, 24, 0>;
 impl R {
     #[doc = "Bits 0:23 - The length in bits of read-data. The register value shall be (bit_num-1)."]
     #[inline(always)]
@@ -72,7 +49,7 @@ impl W {
     #[doc = "Bits 0:23 - The length in bits of read-data. The register value shall be (bit_num-1)."]
     #[inline(always)]
     pub fn usr_miso_dbitlen(&mut self) -> USR_MISO_DBITLEN_W {
-        USR_MISO_DBITLEN_W { w: self }
+        USR_MISO_DBITLEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -81,25 +58,16 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [miso_dlen]
-(index.html) module"]
+#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [miso_dlen](index.html) module"]
 pub struct MISO_DLEN_SPEC;
 impl crate::RegisterSpec for MISO_DLEN_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [miso_dlen::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [miso_dlen::R](R) reader structure"]
 impl crate::Readable for MISO_DLEN_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [miso_dlen::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [miso_dlen::W](W) writer structure"]
 impl crate::Writable for MISO_DLEN_SPEC {
     type Writer = W;
 }

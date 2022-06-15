@@ -14,50 +14,11 @@ impl From<crate::R<HOST_SLCHOST_INF_ST_SPEC>> for R {
     }
 }
 #[doc = "Field `HOST_SDIO20_MODE` reader - "]
-pub struct HOST_SDIO20_MODE_R(crate::FieldReader<u8, u8>);
-impl HOST_SDIO20_MODE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        HOST_SDIO20_MODE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for HOST_SDIO20_MODE_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type HOST_SDIO20_MODE_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `HOST_SDIO_NEG_SAMP` reader - "]
-pub struct HOST_SDIO_NEG_SAMP_R(crate::FieldReader<u8, u8>);
-impl HOST_SDIO_NEG_SAMP_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        HOST_SDIO_NEG_SAMP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for HOST_SDIO_NEG_SAMP_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type HOST_SDIO_NEG_SAMP_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `HOST_SDIO_QUICK_IN` reader - "]
-pub struct HOST_SDIO_QUICK_IN_R(crate::FieldReader<u8, u8>);
-impl HOST_SDIO_QUICK_IN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        HOST_SDIO_QUICK_IN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for HOST_SDIO_QUICK_IN_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type HOST_SDIO_QUICK_IN_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:4"]
     #[inline(always)]
@@ -75,16 +36,12 @@ impl R {
         HOST_SDIO_QUICK_IN_R::new(((self.bits >> 10) & 0x1f) as u8)
     }
 }
-#[doc = "\n\nThis register you can [`read`]
-(crate::generic::Reg::read). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [host_slchost_inf_st]
-(index.html) module"]
+#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [host_slchost_inf_st](index.html) module"]
 pub struct HOST_SLCHOST_INF_ST_SPEC;
 impl crate::RegisterSpec for HOST_SLCHOST_INF_ST_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [host_slchost_inf_st::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [host_slchost_inf_st::R](R) reader structure"]
 impl crate::Readable for HOST_SLCHOST_INF_ST_SPEC {
     type Reader = R;
 }

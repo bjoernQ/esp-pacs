@@ -35,32 +35,10 @@ impl From<crate::W<APP_SLC1_INTR_MAP_SPEC>> for W {
     }
 }
 #[doc = "Field `APP_SLC1_INTR_MAP` reader - "]
-pub struct APP_SLC1_INTR_MAP_R(crate::FieldReader<u8, u8>);
-impl APP_SLC1_INTR_MAP_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        APP_SLC1_INTR_MAP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for APP_SLC1_INTR_MAP_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type APP_SLC1_INTR_MAP_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `APP_SLC1_INTR_MAP` writer - "]
-pub struct APP_SLC1_INTR_MAP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> APP_SLC1_INTR_MAP_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x1f) | (value as u32 & 0x1f);
-        self.w
-    }
-}
+pub type APP_SLC1_INTR_MAP_W<'a> =
+    crate::FieldWriter<'a, u32, APP_SLC1_INTR_MAP_SPEC, u8, u8, 5, 0>;
 impl R {
     #[doc = "Bits 0:4"]
     #[inline(always)]
@@ -72,7 +50,7 @@ impl W {
     #[doc = "Bits 0:4"]
     #[inline(always)]
     pub fn app_slc1_intr_map(&mut self) -> APP_SLC1_INTR_MAP_W {
-        APP_SLC1_INTR_MAP_W { w: self }
+        APP_SLC1_INTR_MAP_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -81,25 +59,16 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [app_slc1_intr_map]
-(index.html) module"]
+#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [app_slc1_intr_map](index.html) module"]
 pub struct APP_SLC1_INTR_MAP_SPEC;
 impl crate::RegisterSpec for APP_SLC1_INTR_MAP_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [app_slc1_intr_map::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [app_slc1_intr_map::R](R) reader structure"]
 impl crate::Readable for APP_SLC1_INTR_MAP_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [app_slc1_intr_map::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [app_slc1_intr_map::W](W) writer structure"]
 impl crate::Writable for APP_SLC1_INTR_MAP_SPEC {
     type Writer = W;
 }

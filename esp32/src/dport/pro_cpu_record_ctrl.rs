@@ -35,148 +35,50 @@ impl From<crate::W<PRO_CPU_RECORD_CTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `PRO_CPU_RECORD_ENABLE` reader - "]
-pub struct PRO_CPU_RECORD_ENABLE_R(crate::FieldReader<bool, bool>);
-impl PRO_CPU_RECORD_ENABLE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        PRO_CPU_RECORD_ENABLE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PRO_CPU_RECORD_ENABLE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PRO_CPU_RECORD_ENABLE_R = crate::BitReader<bool>;
 #[doc = "Field `PRO_CPU_RECORD_ENABLE` writer - "]
-pub struct PRO_CPU_RECORD_ENABLE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PRO_CPU_RECORD_ENABLE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type PRO_CPU_RECORD_ENABLE_W<'a> = crate::BitWriter<'a, u32, PRO_CPU_RECORD_CTRL_SPEC, bool, 0>;
 #[doc = "Field `PRO_CPU_RECORD_DISABLE` reader - "]
-pub struct PRO_CPU_RECORD_DISABLE_R(crate::FieldReader<bool, bool>);
-impl PRO_CPU_RECORD_DISABLE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        PRO_CPU_RECORD_DISABLE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PRO_CPU_RECORD_DISABLE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PRO_CPU_RECORD_DISABLE_R = crate::BitReader<bool>;
 #[doc = "Field `PRO_CPU_RECORD_DISABLE` writer - "]
-pub struct PRO_CPU_RECORD_DISABLE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PRO_CPU_RECORD_DISABLE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type PRO_CPU_RECORD_DISABLE_W<'a> =
+    crate::BitWriter<'a, u32, PRO_CPU_RECORD_CTRL_SPEC, bool, 4>;
 #[doc = "Field `PRO_CPU_PDEBUG_ENABLE` reader - "]
-pub struct PRO_CPU_PDEBUG_ENABLE_R(crate::FieldReader<bool, bool>);
-impl PRO_CPU_PDEBUG_ENABLE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        PRO_CPU_PDEBUG_ENABLE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PRO_CPU_PDEBUG_ENABLE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PRO_CPU_PDEBUG_ENABLE_R = crate::BitReader<bool>;
 #[doc = "Field `PRO_CPU_PDEBUG_ENABLE` writer - "]
-pub struct PRO_CPU_PDEBUG_ENABLE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PRO_CPU_PDEBUG_ENABLE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
-}
+pub type PRO_CPU_PDEBUG_ENABLE_W<'a> = crate::BitWriter<'a, u32, PRO_CPU_RECORD_CTRL_SPEC, bool, 8>;
 impl R {
     #[doc = "Bit 0"]
     #[inline(always)]
     pub fn pro_cpu_record_enable(&self) -> PRO_CPU_RECORD_ENABLE_R {
-        PRO_CPU_RECORD_ENABLE_R::new((self.bits & 0x01) != 0)
+        PRO_CPU_RECORD_ENABLE_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 4"]
     #[inline(always)]
     pub fn pro_cpu_record_disable(&self) -> PRO_CPU_RECORD_DISABLE_R {
-        PRO_CPU_RECORD_DISABLE_R::new(((self.bits >> 4) & 0x01) != 0)
+        PRO_CPU_RECORD_DISABLE_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 8"]
     #[inline(always)]
     pub fn pro_cpu_pdebug_enable(&self) -> PRO_CPU_PDEBUG_ENABLE_R {
-        PRO_CPU_PDEBUG_ENABLE_R::new(((self.bits >> 8) & 0x01) != 0)
+        PRO_CPU_PDEBUG_ENABLE_R::new(((self.bits >> 8) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
     pub fn pro_cpu_record_enable(&mut self) -> PRO_CPU_RECORD_ENABLE_W {
-        PRO_CPU_RECORD_ENABLE_W { w: self }
+        PRO_CPU_RECORD_ENABLE_W::new(self)
     }
     #[doc = "Bit 4"]
     #[inline(always)]
     pub fn pro_cpu_record_disable(&mut self) -> PRO_CPU_RECORD_DISABLE_W {
-        PRO_CPU_RECORD_DISABLE_W { w: self }
+        PRO_CPU_RECORD_DISABLE_W::new(self)
     }
     #[doc = "Bit 8"]
     #[inline(always)]
     pub fn pro_cpu_pdebug_enable(&mut self) -> PRO_CPU_PDEBUG_ENABLE_W {
-        PRO_CPU_PDEBUG_ENABLE_W { w: self }
+        PRO_CPU_PDEBUG_ENABLE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -185,25 +87,16 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pro_cpu_record_ctrl]
-(index.html) module"]
+#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pro_cpu_record_ctrl](index.html) module"]
 pub struct PRO_CPU_RECORD_CTRL_SPEC;
 impl crate::RegisterSpec for PRO_CPU_RECORD_CTRL_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [pro_cpu_record_ctrl::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [pro_cpu_record_ctrl::R](R) reader structure"]
 impl crate::Readable for PRO_CPU_RECORD_CTRL_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [pro_cpu_record_ctrl::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [pro_cpu_record_ctrl::W](W) writer structure"]
 impl crate::Writable for PRO_CPU_RECORD_CTRL_SPEC {
     type Writer = W;
 }

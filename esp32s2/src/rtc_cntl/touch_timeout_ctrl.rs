@@ -35,69 +35,14 @@ impl From<crate::W<TOUCH_TIMEOUT_CTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `TOUCH_TIMEOUT_NUM` reader - Set touch timeout threshold."]
-pub struct TOUCH_TIMEOUT_NUM_R(crate::FieldReader<u32, u32>);
-impl TOUCH_TIMEOUT_NUM_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        TOUCH_TIMEOUT_NUM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TOUCH_TIMEOUT_NUM_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TOUCH_TIMEOUT_NUM_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `TOUCH_TIMEOUT_NUM` writer - Set touch timeout threshold."]
-pub struct TOUCH_TIMEOUT_NUM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TOUCH_TIMEOUT_NUM_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x003f_ffff) | (value as u32 & 0x003f_ffff);
-        self.w
-    }
-}
+pub type TOUCH_TIMEOUT_NUM_W<'a> =
+    crate::FieldWriter<'a, u32, TOUCH_TIMEOUT_CTRL_SPEC, u32, u32, 22, 0>;
 #[doc = "Field `TOUCH_TIMEOUT_EN` reader - Enable touch timeout."]
-pub struct TOUCH_TIMEOUT_EN_R(crate::FieldReader<bool, bool>);
-impl TOUCH_TIMEOUT_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TOUCH_TIMEOUT_EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TOUCH_TIMEOUT_EN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TOUCH_TIMEOUT_EN_R = crate::BitReader<bool>;
 #[doc = "Field `TOUCH_TIMEOUT_EN` writer - Enable touch timeout."]
-pub struct TOUCH_TIMEOUT_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TOUCH_TIMEOUT_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 22)) | ((value as u32 & 0x01) << 22);
-        self.w
-    }
-}
+pub type TOUCH_TIMEOUT_EN_W<'a> = crate::BitWriter<'a, u32, TOUCH_TIMEOUT_CTRL_SPEC, bool, 22>;
 impl R {
     #[doc = "Bits 0:21 - Set touch timeout threshold."]
     #[inline(always)]
@@ -107,19 +52,19 @@ impl R {
     #[doc = "Bit 22 - Enable touch timeout."]
     #[inline(always)]
     pub fn touch_timeout_en(&self) -> TOUCH_TIMEOUT_EN_R {
-        TOUCH_TIMEOUT_EN_R::new(((self.bits >> 22) & 0x01) != 0)
+        TOUCH_TIMEOUT_EN_R::new(((self.bits >> 22) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:21 - Set touch timeout threshold."]
     #[inline(always)]
     pub fn touch_timeout_num(&mut self) -> TOUCH_TIMEOUT_NUM_W {
-        TOUCH_TIMEOUT_NUM_W { w: self }
+        TOUCH_TIMEOUT_NUM_W::new(self)
     }
     #[doc = "Bit 22 - Enable touch timeout."]
     #[inline(always)]
     pub fn touch_timeout_en(&mut self) -> TOUCH_TIMEOUT_EN_W {
-        TOUCH_TIMEOUT_EN_W { w: self }
+        TOUCH_TIMEOUT_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -128,25 +73,16 @@ impl W {
         self
     }
 }
-#[doc = "Configure touch timeout settings\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [touch_timeout_ctrl]
-(index.html) module"]
+#[doc = "Configure touch timeout settings\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [touch_timeout_ctrl](index.html) module"]
 pub struct TOUCH_TIMEOUT_CTRL_SPEC;
 impl crate::RegisterSpec for TOUCH_TIMEOUT_CTRL_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [touch_timeout_ctrl::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [touch_timeout_ctrl::R](R) reader structure"]
 impl crate::Readable for TOUCH_TIMEOUT_CTRL_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [touch_timeout_ctrl::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [touch_timeout_ctrl::W](W) writer structure"]
 impl crate::Writable for TOUCH_TIMEOUT_CTRL_SPEC {
     type Writer = W;
 }

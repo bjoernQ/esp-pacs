@@ -35,54 +35,21 @@ impl From<crate::W<INC_SEL_SPEC>> for W {
     }
 }
 #[doc = "Field `INC_SEL` reader - This bit decides the standard incrementing function. 0: INC32. 1: INC128."]
-pub struct INC_SEL_R(crate::FieldReader<bool, bool>);
-impl INC_SEL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        INC_SEL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for INC_SEL_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type INC_SEL_R = crate::BitReader<bool>;
 #[doc = "Field `INC_SEL` writer - This bit decides the standard incrementing function. 0: INC32. 1: INC128."]
-pub struct INC_SEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> INC_SEL_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type INC_SEL_W<'a> = crate::BitWriter<'a, u32, INC_SEL_SPEC, bool, 0>;
 impl R {
     #[doc = "Bit 0 - This bit decides the standard incrementing function. 0: INC32. 1: INC128."]
     #[inline(always)]
     pub fn inc_sel(&self) -> INC_SEL_R {
-        INC_SEL_R::new((self.bits & 0x01) != 0)
+        INC_SEL_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - This bit decides the standard incrementing function. 0: INC32. 1: INC128."]
     #[inline(always)]
     pub fn inc_sel(&mut self) -> INC_SEL_W {
-        INC_SEL_W { w: self }
+        INC_SEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -91,25 +58,16 @@ impl W {
         self
     }
 }
-#[doc = "Standard incrementing function configure register\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [inc_sel]
-(index.html) module"]
+#[doc = "Standard incrementing function configure register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [inc_sel](index.html) module"]
 pub struct INC_SEL_SPEC;
 impl crate::RegisterSpec for INC_SEL_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [inc_sel::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [inc_sel::R](R) reader structure"]
 impl crate::Readable for INC_SEL_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [inc_sel::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [inc_sel::W](W) writer structure"]
 impl crate::Writable for INC_SEL_SPEC {
     type Writer = W;
 }

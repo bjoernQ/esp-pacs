@@ -14,20 +14,7 @@ impl From<crate::R<RXD_CNT_SPEC>> for R {
     }
 }
 #[doc = "Field `RXD_EDGE_CNT` reader - This register stores the count of rxd edge change. it is used in baudrate-detect process."]
-pub struct RXD_EDGE_CNT_R(crate::FieldReader<u16, u16>);
-impl RXD_EDGE_CNT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        RXD_EDGE_CNT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RXD_EDGE_CNT_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RXD_EDGE_CNT_R = crate::FieldReader<u16, u16>;
 impl R {
     #[doc = "Bits 0:9 - This register stores the count of rxd edge change. it is used in baudrate-detect process."]
     #[inline(always)]
@@ -35,16 +22,12 @@ impl R {
         RXD_EDGE_CNT_R::new((self.bits & 0x03ff) as u16)
     }
 }
-#[doc = "\n\nThis register you can [`read`]
-(crate::generic::Reg::read). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rxd_cnt]
-(index.html) module"]
+#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rxd_cnt](index.html) module"]
 pub struct RXD_CNT_SPEC;
 impl crate::RegisterSpec for RXD_CNT_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [rxd_cnt::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [rxd_cnt::R](R) reader structure"]
 impl crate::Readable for RXD_CNT_SPEC {
     type Reader = R;
 }

@@ -20,22 +20,12 @@ impl From<crate::W<WR_JTAG_SPEC>> for W {
     }
 }
 #[doc = "Field `WR_JTAG` writer - 32-bit of key to be compared."]
-pub struct WR_JTAG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WR_JTAG_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
-    }
-}
+pub type WR_JTAG_W<'a> = crate::FieldWriter<'a, u32, WR_JTAG_SPEC, u32, u32, 32, 0>;
 impl W {
     #[doc = "Bits 0:31 - 32-bit of key to be compared."]
     #[inline(always)]
     pub fn wr_jtag(&mut self) -> WR_JTAG_W {
-        WR_JTAG_W { w: self }
+        WR_JTAG_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -44,18 +34,12 @@ impl W {
         self
     }
 }
-#[doc = "Jtag register 1.\n\nThis register you can [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wr_jtag]
-(index.html) module"]
+#[doc = "Jtag register 1.\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wr_jtag](index.html) module"]
 pub struct WR_JTAG_SPEC;
 impl crate::RegisterSpec for WR_JTAG_SPEC {
     type Ux = u32;
 }
-#[doc = "`write(|w| ..)` method takes [wr_jtag::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [wr_jtag::W](W) writer structure"]
 impl crate::Writable for WR_JTAG_SPEC {
     type Writer = W;
 }

@@ -35,54 +35,21 @@ impl From<crate::W<SAR_MEAS1_MUX_SPEC>> for W {
     }
 }
 #[doc = "Field `SAR1_DIG_FORCE` reader - 1: SAR ADC1 controlled by DIG ADC1 CTRL"]
-pub struct SAR1_DIG_FORCE_R(crate::FieldReader<bool, bool>);
-impl SAR1_DIG_FORCE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        SAR1_DIG_FORCE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SAR1_DIG_FORCE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SAR1_DIG_FORCE_R = crate::BitReader<bool>;
 #[doc = "Field `SAR1_DIG_FORCE` writer - 1: SAR ADC1 controlled by DIG ADC1 CTRL"]
-pub struct SAR1_DIG_FORCE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SAR1_DIG_FORCE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
-        self.w
-    }
-}
+pub type SAR1_DIG_FORCE_W<'a> = crate::BitWriter<'a, u32, SAR_MEAS1_MUX_SPEC, bool, 31>;
 impl R {
     #[doc = "Bit 31 - 1: SAR ADC1 controlled by DIG ADC1 CTRL"]
     #[inline(always)]
     pub fn sar1_dig_force(&self) -> SAR1_DIG_FORCE_R {
-        SAR1_DIG_FORCE_R::new(((self.bits >> 31) & 0x01) != 0)
+        SAR1_DIG_FORCE_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 31 - 1: SAR ADC1 controlled by DIG ADC1 CTRL"]
     #[inline(always)]
     pub fn sar1_dig_force(&mut self) -> SAR1_DIG_FORCE_W {
-        SAR1_DIG_FORCE_W { w: self }
+        SAR1_DIG_FORCE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -91,25 +58,16 @@ impl W {
         self
     }
 }
-#[doc = "Select the controller for SAR ADC1\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sar_meas1_mux]
-(index.html) module"]
+#[doc = "Select the controller for SAR ADC1\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sar_meas1_mux](index.html) module"]
 pub struct SAR_MEAS1_MUX_SPEC;
 impl crate::RegisterSpec for SAR_MEAS1_MUX_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [sar_meas1_mux::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [sar_meas1_mux::R](R) reader structure"]
 impl crate::Readable for SAR_MEAS1_MUX_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [sar_meas1_mux::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [sar_meas1_mux::W](W) writer structure"]
 impl crate::Writable for SAR_MEAS1_MUX_SPEC {
     type Writer = W;
 }

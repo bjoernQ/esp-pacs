@@ -35,54 +35,21 @@ impl From<crate::W<COCPU_DISABLE_SPEC>> for W {
     }
 }
 #[doc = "Field `DISABLE_RTC_CPU` reader - configure ulp diable"]
-pub struct DISABLE_RTC_CPU_R(crate::FieldReader<bool, bool>);
-impl DISABLE_RTC_CPU_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DISABLE_RTC_CPU_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DISABLE_RTC_CPU_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DISABLE_RTC_CPU_R = crate::BitReader<bool>;
 #[doc = "Field `DISABLE_RTC_CPU` writer - configure ulp diable"]
-pub struct DISABLE_RTC_CPU_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DISABLE_RTC_CPU_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
-        self.w
-    }
-}
+pub type DISABLE_RTC_CPU_W<'a> = crate::BitWriter<'a, u32, COCPU_DISABLE_SPEC, bool, 31>;
 impl R {
     #[doc = "Bit 31 - configure ulp diable"]
     #[inline(always)]
     pub fn disable_rtc_cpu(&self) -> DISABLE_RTC_CPU_R {
-        DISABLE_RTC_CPU_R::new(((self.bits >> 31) & 0x01) != 0)
+        DISABLE_RTC_CPU_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 31 - configure ulp diable"]
     #[inline(always)]
     pub fn disable_rtc_cpu(&mut self) -> DISABLE_RTC_CPU_W {
-        DISABLE_RTC_CPU_W { w: self }
+        DISABLE_RTC_CPU_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -91,25 +58,16 @@ impl W {
         self
     }
 }
-#[doc = "configure ulp diable\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cocpu_disable]
-(index.html) module"]
+#[doc = "configure ulp diable\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cocpu_disable](index.html) module"]
 pub struct COCPU_DISABLE_SPEC;
 impl crate::RegisterSpec for COCPU_DISABLE_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [cocpu_disable::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [cocpu_disable::R](R) reader structure"]
 impl crate::Readable for COCPU_DISABLE_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [cocpu_disable::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [cocpu_disable::W](W) writer structure"]
 impl crate::Writable for COCPU_DISABLE_SPEC {
     type Writer = W;
 }

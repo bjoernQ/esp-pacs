@@ -14,20 +14,7 @@ impl From<crate::R<LSTIMER1_VALUE_SPEC>> for R {
     }
 }
 #[doc = "Field `LSTIMER1_CNT` reader - reg_lstimer1_cnt."]
-pub struct LSTIMER1_CNT_R(crate::FieldReader<u16, u16>);
-impl LSTIMER1_CNT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        LSTIMER1_CNT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LSTIMER1_CNT_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type LSTIMER1_CNT_R = crate::FieldReader<u16, u16>;
 impl R {
     #[doc = "Bits 0:13 - reg_lstimer1_cnt."]
     #[inline(always)]
@@ -35,16 +22,12 @@ impl R {
         LSTIMER1_CNT_R::new((self.bits & 0x3fff) as u16)
     }
 }
-#[doc = "LEDC_LSTIMER1_VALUE.\n\nThis register you can [`read`]
-(crate::generic::Reg::read). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [lstimer1_value]
-(index.html) module"]
+#[doc = "LEDC_LSTIMER1_VALUE.\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [lstimer1_value](index.html) module"]
 pub struct LSTIMER1_VALUE_SPEC;
 impl crate::RegisterSpec for LSTIMER1_VALUE_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [lstimer1_value::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [lstimer1_value::R](R) reader structure"]
 impl crate::Readable for LSTIMER1_VALUE_SPEC {
     type Reader = R;
 }

@@ -34,98 +34,36 @@ impl From<crate::W<CTYPE_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `CARD_WIDTH4` reader - One bit per card indicates if card is 1-bit or 4-bit mode. 0: 1-bit mode; 1: 4-bit mode. Bit\\[1:0\\]
- correspond to card\\[1:0\\]
- respectively."]
-pub struct CARD_WIDTH4_R(crate::FieldReader<u8, u8>);
-impl CARD_WIDTH4_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CARD_WIDTH4_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CARD_WIDTH4_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Field `CARD_WIDTH4` writer - One bit per card indicates if card is 1-bit or 4-bit mode. 0: 1-bit mode; 1: 4-bit mode. Bit\\[1:0\\]
- correspond to card\\[1:0\\]
- respectively."]
-pub struct CARD_WIDTH4_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CARD_WIDTH4_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
-        self.w
-    }
-}
-#[doc = "Field `CARD_WIDTH8` reader - One bit per card indicates if card is in 8-bit mode. 0: Non 8-bit mode; 1: 8-bit mode. Bit\\[17:16\\]
- correspond to card\\[1:0\\]
- respectively."]
-pub struct CARD_WIDTH8_R(crate::FieldReader<u8, u8>);
-impl CARD_WIDTH8_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CARD_WIDTH8_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CARD_WIDTH8_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Field `CARD_WIDTH8` writer - One bit per card indicates if card is in 8-bit mode. 0: Non 8-bit mode; 1: 8-bit mode. Bit\\[17:16\\]
- correspond to card\\[1:0\\]
- respectively."]
-pub struct CARD_WIDTH8_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CARD_WIDTH8_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 16)) | ((value as u32 & 0x03) << 16);
-        self.w
-    }
-}
+#[doc = "Field `CARD_WIDTH4` reader - One bit per card indicates if card is 1-bit or 4-bit mode. 0: 1-bit mode; 1: 4-bit mode. Bit\\[1:0\\] correspond to card\\[1:0\\] respectively."]
+pub type CARD_WIDTH4_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `CARD_WIDTH4` writer - One bit per card indicates if card is 1-bit or 4-bit mode. 0: 1-bit mode; 1: 4-bit mode. Bit\\[1:0\\] correspond to card\\[1:0\\] respectively."]
+pub type CARD_WIDTH4_W<'a> = crate::FieldWriter<'a, u32, CTYPE_SPEC, u8, u8, 2, 0>;
+#[doc = "Field `CARD_WIDTH8` reader - One bit per card indicates if card is in 8-bit mode. 0: Non 8-bit mode; 1: 8-bit mode. Bit\\[17:16\\] correspond to card\\[1:0\\] respectively."]
+pub type CARD_WIDTH8_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `CARD_WIDTH8` writer - One bit per card indicates if card is in 8-bit mode. 0: Non 8-bit mode; 1: 8-bit mode. Bit\\[17:16\\] correspond to card\\[1:0\\] respectively."]
+pub type CARD_WIDTH8_W<'a> = crate::FieldWriter<'a, u32, CTYPE_SPEC, u8, u8, 2, 16>;
 impl R {
-    #[doc = "Bits 0:1 - One bit per card indicates if card is 1-bit or 4-bit mode. 0: 1-bit mode; 1: 4-bit mode. Bit\\[1:0\\]
- correspond to card\\[1:0\\]
- respectively."]
+    #[doc = "Bits 0:1 - One bit per card indicates if card is 1-bit or 4-bit mode. 0: 1-bit mode; 1: 4-bit mode. Bit\\[1:0\\] correspond to card\\[1:0\\] respectively."]
     #[inline(always)]
     pub fn card_width4(&self) -> CARD_WIDTH4_R {
-        CARD_WIDTH4_R::new((self.bits & 0x03) as u8)
+        CARD_WIDTH4_R::new((self.bits & 3) as u8)
     }
-    #[doc = "Bits 16:17 - One bit per card indicates if card is in 8-bit mode. 0: Non 8-bit mode; 1: 8-bit mode. Bit\\[17:16\\]
- correspond to card\\[1:0\\]
- respectively."]
+    #[doc = "Bits 16:17 - One bit per card indicates if card is in 8-bit mode. 0: Non 8-bit mode; 1: 8-bit mode. Bit\\[17:16\\] correspond to card\\[1:0\\] respectively."]
     #[inline(always)]
     pub fn card_width8(&self) -> CARD_WIDTH8_R {
-        CARD_WIDTH8_R::new(((self.bits >> 16) & 0x03) as u8)
+        CARD_WIDTH8_R::new(((self.bits >> 16) & 3) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:1 - One bit per card indicates if card is 1-bit or 4-bit mode. 0: 1-bit mode; 1: 4-bit mode. Bit\\[1:0\\]
- correspond to card\\[1:0\\]
- respectively."]
+    #[doc = "Bits 0:1 - One bit per card indicates if card is 1-bit or 4-bit mode. 0: 1-bit mode; 1: 4-bit mode. Bit\\[1:0\\] correspond to card\\[1:0\\] respectively."]
     #[inline(always)]
     pub fn card_width4(&mut self) -> CARD_WIDTH4_W {
-        CARD_WIDTH4_W { w: self }
+        CARD_WIDTH4_W::new(self)
     }
-    #[doc = "Bits 16:17 - One bit per card indicates if card is in 8-bit mode. 0: Non 8-bit mode; 1: 8-bit mode. Bit\\[17:16\\]
- correspond to card\\[1:0\\]
- respectively."]
+    #[doc = "Bits 16:17 - One bit per card indicates if card is in 8-bit mode. 0: Non 8-bit mode; 1: 8-bit mode. Bit\\[17:16\\] correspond to card\\[1:0\\] respectively."]
     #[inline(always)]
     pub fn card_width8(&mut self) -> CARD_WIDTH8_W {
-        CARD_WIDTH8_W { w: self }
+        CARD_WIDTH8_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -134,25 +72,16 @@ impl W {
         self
     }
 }
-#[doc = "Card bus width configuration register\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ctype]
-(index.html) module"]
+#[doc = "Card bus width configuration register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ctype](index.html) module"]
 pub struct CTYPE_SPEC;
 impl crate::RegisterSpec for CTYPE_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [ctype::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [ctype::R](R) reader structure"]
 impl crate::Readable for CTYPE_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [ctype::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [ctype::W](W) writer structure"]
 impl crate::Writable for CTYPE_SPEC {
     type Writer = W;
 }

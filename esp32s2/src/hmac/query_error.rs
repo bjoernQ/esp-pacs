@@ -14,37 +14,20 @@ impl From<crate::R<QUERY_ERROR_SPEC>> for R {
     }
 }
 #[doc = "Field `QUREY_CHECK` reader - Hmac error status. 0: hmac key and purpose match. 1: error."]
-pub struct QUREY_CHECK_R(crate::FieldReader<bool, bool>);
-impl QUREY_CHECK_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        QUREY_CHECK_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for QUREY_CHECK_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type QUREY_CHECK_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 0 - Hmac error status. 0: hmac key and purpose match. 1: error."]
     #[inline(always)]
     pub fn qurey_check(&self) -> QUREY_CHECK_R {
-        QUREY_CHECK_R::new((self.bits & 0x01) != 0)
+        QUREY_CHECK_R::new((self.bits & 1) != 0)
     }
 }
-#[doc = "The matching result between key and purpose user configured\n\nThis register you can [`read`]
-(crate::generic::Reg::read). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [query_error]
-(index.html) module"]
+#[doc = "The matching result between key and purpose user configured\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [query_error](index.html) module"]
 pub struct QUERY_ERROR_SPEC;
 impl crate::RegisterSpec for QUERY_ERROR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [query_error::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [query_error::R](R) reader structure"]
 impl crate::Readable for QUERY_ERROR_SPEC {
     type Reader = R;
 }

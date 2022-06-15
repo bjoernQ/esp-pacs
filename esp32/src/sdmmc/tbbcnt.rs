@@ -14,20 +14,7 @@ impl From<crate::R<TBBCNT_SPEC>> for R {
     }
 }
 #[doc = "Field `TBBCNT` reader - Number of bytes transferred between Host/DMA memory and BIU FIFO."]
-pub struct TBBCNT_R(crate::FieldReader<u32, u32>);
-impl TBBCNT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        TBBCNT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TBBCNT_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TBBCNT_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Number of bytes transferred between Host/DMA memory and BIU FIFO."]
     #[inline(always)]
@@ -35,16 +22,12 @@ impl R {
         TBBCNT_R::new(self.bits)
     }
 }
-#[doc = "Transferred byte count register\n\nThis register you can [`read`]
-(crate::generic::Reg::read). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tbbcnt]
-(index.html) module"]
+#[doc = "Transferred byte count register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tbbcnt](index.html) module"]
 pub struct TBBCNT_SPEC;
 impl crate::RegisterSpec for TBBCNT_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [tbbcnt::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [tbbcnt::R](R) reader structure"]
 impl crate::Readable for TBBCNT_SPEC {
     type Reader = R;
 }

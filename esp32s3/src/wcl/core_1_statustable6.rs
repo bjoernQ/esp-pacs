@@ -35,111 +35,23 @@ impl From<crate::W<CORE_1_STATUSTABLE6_SPEC>> for W {
     }
 }
 #[doc = "Field `CORE_1_FROM_WORLD_6` reader - This bit is used to confirm world before enter entry 6"]
-pub struct CORE_1_FROM_WORLD_6_R(crate::FieldReader<bool, bool>);
-impl CORE_1_FROM_WORLD_6_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CORE_1_FROM_WORLD_6_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CORE_1_FROM_WORLD_6_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CORE_1_FROM_WORLD_6_R = crate::BitReader<bool>;
 #[doc = "Field `CORE_1_FROM_WORLD_6` writer - This bit is used to confirm world before enter entry 6"]
-pub struct CORE_1_FROM_WORLD_6_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CORE_1_FROM_WORLD_6_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type CORE_1_FROM_WORLD_6_W<'a> = crate::BitWriter<'a, u32, CORE_1_STATUSTABLE6_SPEC, bool, 0>;
 #[doc = "Field `CORE_1_FROM_ENTRY_6` reader - This filed is used to confirm in which entry before enter entry 6"]
-pub struct CORE_1_FROM_ENTRY_6_R(crate::FieldReader<u8, u8>);
-impl CORE_1_FROM_ENTRY_6_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CORE_1_FROM_ENTRY_6_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CORE_1_FROM_ENTRY_6_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CORE_1_FROM_ENTRY_6_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CORE_1_FROM_ENTRY_6` writer - This filed is used to confirm in which entry before enter entry 6"]
-pub struct CORE_1_FROM_ENTRY_6_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CORE_1_FROM_ENTRY_6_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 1)) | ((value as u32 & 0x0f) << 1);
-        self.w
-    }
-}
+pub type CORE_1_FROM_ENTRY_6_W<'a> =
+    crate::FieldWriter<'a, u32, CORE_1_STATUSTABLE6_SPEC, u8, u8, 4, 1>;
 #[doc = "Field `CORE_1_CURRENT_6` reader - This bit is used to confirm whether the current state is in entry 6"]
-pub struct CORE_1_CURRENT_6_R(crate::FieldReader<bool, bool>);
-impl CORE_1_CURRENT_6_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CORE_1_CURRENT_6_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CORE_1_CURRENT_6_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CORE_1_CURRENT_6_R = crate::BitReader<bool>;
 #[doc = "Field `CORE_1_CURRENT_6` writer - This bit is used to confirm whether the current state is in entry 6"]
-pub struct CORE_1_CURRENT_6_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CORE_1_CURRENT_6_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
+pub type CORE_1_CURRENT_6_W<'a> = crate::BitWriter<'a, u32, CORE_1_STATUSTABLE6_SPEC, bool, 5>;
 impl R {
     #[doc = "Bit 0 - This bit is used to confirm world before enter entry 6"]
     #[inline(always)]
     pub fn core_1_from_world_6(&self) -> CORE_1_FROM_WORLD_6_R {
-        CORE_1_FROM_WORLD_6_R::new((self.bits & 0x01) != 0)
+        CORE_1_FROM_WORLD_6_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bits 1:4 - This filed is used to confirm in which entry before enter entry 6"]
     #[inline(always)]
@@ -149,24 +61,24 @@ impl R {
     #[doc = "Bit 5 - This bit is used to confirm whether the current state is in entry 6"]
     #[inline(always)]
     pub fn core_1_current_6(&self) -> CORE_1_CURRENT_6_R {
-        CORE_1_CURRENT_6_R::new(((self.bits >> 5) & 0x01) != 0)
+        CORE_1_CURRENT_6_R::new(((self.bits >> 5) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - This bit is used to confirm world before enter entry 6"]
     #[inline(always)]
     pub fn core_1_from_world_6(&mut self) -> CORE_1_FROM_WORLD_6_W {
-        CORE_1_FROM_WORLD_6_W { w: self }
+        CORE_1_FROM_WORLD_6_W::new(self)
     }
     #[doc = "Bits 1:4 - This filed is used to confirm in which entry before enter entry 6"]
     #[inline(always)]
     pub fn core_1_from_entry_6(&mut self) -> CORE_1_FROM_ENTRY_6_W {
-        CORE_1_FROM_ENTRY_6_W { w: self }
+        CORE_1_FROM_ENTRY_6_W::new(self)
     }
     #[doc = "Bit 5 - This bit is used to confirm whether the current state is in entry 6"]
     #[inline(always)]
     pub fn core_1_current_6(&mut self) -> CORE_1_CURRENT_6_W {
-        CORE_1_CURRENT_6_W { w: self }
+        CORE_1_CURRENT_6_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -175,25 +87,16 @@ impl W {
         self
     }
 }
-#[doc = "Status register of world switch of entry 6\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [core_1_statustable6]
-(index.html) module"]
+#[doc = "Status register of world switch of entry 6\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [core_1_statustable6](index.html) module"]
 pub struct CORE_1_STATUSTABLE6_SPEC;
 impl crate::RegisterSpec for CORE_1_STATUSTABLE6_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [core_1_statustable6::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [core_1_statustable6::R](R) reader structure"]
 impl crate::Readable for CORE_1_STATUSTABLE6_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [core_1_statustable6::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [core_1_statustable6::W](W) writer structure"]
 impl crate::Writable for CORE_1_STATUSTABLE6_SPEC {
     type Writer = W;
 }

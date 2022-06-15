@@ -20,22 +20,12 @@ impl From<crate::W<T1LOAD_SPEC>> for W {
     }
 }
 #[doc = "Field `T1_LOAD` writer - Write any value will trigger timer 1 time-base counter reload"]
-pub struct T1_LOAD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> T1_LOAD_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
-    }
-}
+pub type T1_LOAD_W<'a> = crate::FieldWriter<'a, u32, T1LOAD_SPEC, u32, u32, 32, 0>;
 impl W {
     #[doc = "Bits 0:31 - Write any value will trigger timer 1 time-base counter reload"]
     #[inline(always)]
     pub fn t1_load(&mut self) -> T1_LOAD_W {
-        T1_LOAD_W { w: self }
+        T1_LOAD_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -44,18 +34,12 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [t1load]
-(index.html) module"]
+#[doc = "\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [t1load](index.html) module"]
 pub struct T1LOAD_SPEC;
 impl crate::RegisterSpec for T1LOAD_SPEC {
     type Ux = u32;
 }
-#[doc = "`write(|w| ..)` method takes [t1load::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [t1load::W](W) writer structure"]
 impl crate::Writable for T1LOAD_SPEC {
     type Writer = W;
 }

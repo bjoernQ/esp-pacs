@@ -14,20 +14,7 @@ impl From<crate::R<PRO_CPU_RECORD_PDEBUGLS0ADDR_SPEC>> for R {
     }
 }
 #[doc = "Field `RECORD_PRO_PDEBUGLS0ADDR` reader - "]
-pub struct RECORD_PRO_PDEBUGLS0ADDR_R(crate::FieldReader<u32, u32>);
-impl RECORD_PRO_PDEBUGLS0ADDR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        RECORD_PRO_PDEBUGLS0ADDR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RECORD_PRO_PDEBUGLS0ADDR_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RECORD_PRO_PDEBUGLS0ADDR_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31"]
     #[inline(always)]
@@ -35,16 +22,12 @@ impl R {
         RECORD_PRO_PDEBUGLS0ADDR_R::new(self.bits)
     }
 }
-#[doc = "\n\nThis register you can [`read`]
-(crate::generic::Reg::read). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pro_cpu_record_pdebugls0addr]
-(index.html) module"]
+#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pro_cpu_record_pdebugls0addr](index.html) module"]
 pub struct PRO_CPU_RECORD_PDEBUGLS0ADDR_SPEC;
 impl crate::RegisterSpec for PRO_CPU_RECORD_PDEBUGLS0ADDR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [pro_cpu_record_pdebugls0addr::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [pro_cpu_record_pdebugls0addr::R](R) reader structure"]
 impl crate::Readable for PRO_CPU_RECORD_PDEBUGLS0ADDR_SPEC {
     type Reader = R;
 }

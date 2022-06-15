@@ -14,20 +14,7 @@ impl From<crate::R<RND_DATA_SPEC>> for R {
     }
 }
 #[doc = "Field `RND_DATA` reader - reg_rnd_data"]
-pub struct RND_DATA_R(crate::FieldReader<u32, u32>);
-impl RND_DATA_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        RND_DATA_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RND_DATA_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RND_DATA_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31 - reg_rnd_data"]
     #[inline(always)]
@@ -35,16 +22,12 @@ impl R {
         RND_DATA_R::new(self.bits)
     }
 }
-#[doc = "APB_CTRL_RND_DATA_REG\n\nThis register you can [`read`]
-(crate::generic::Reg::read). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rnd_data]
-(index.html) module"]
+#[doc = "APB_CTRL_RND_DATA_REG\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rnd_data](index.html) module"]
 pub struct RND_DATA_SPEC;
 impl crate::RegisterSpec for RND_DATA_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [rnd_data::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [rnd_data::R](R) reader structure"]
 impl crate::Readable for RND_DATA_SPEC {
     type Reader = R;
 }

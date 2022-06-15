@@ -20,22 +20,12 @@ impl From<crate::W<OUT_DRT_SPEC>> for W {
     }
 }
 #[doc = "Field `VLAUE` writer - This register is used to configure directive output value of 8-channel dedicated GPIO."]
-pub struct VLAUE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> VLAUE_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type VLAUE_W<'a> = crate::FieldWriter<'a, u32, OUT_DRT_SPEC, u8, u8, 8, 0>;
 impl W {
     #[doc = "Bits 0:7 - This register is used to configure directive output value of 8-channel dedicated GPIO."]
     #[inline(always)]
     pub fn vlaue(&mut self) -> VLAUE_W {
-        VLAUE_W { w: self }
+        VLAUE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -44,18 +34,12 @@ impl W {
         self
     }
 }
-#[doc = "Dedicated GPIO directive output register\n\nThis register you can [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [out_drt]
-(index.html) module"]
+#[doc = "Dedicated GPIO directive output register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [out_drt](index.html) module"]
 pub struct OUT_DRT_SPEC;
 impl crate::RegisterSpec for OUT_DRT_SPEC {
     type Ux = u32;
 }
-#[doc = "`write(|w| ..)` method takes [out_drt::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [out_drt::W](W) writer structure"]
 impl crate::Writable for OUT_DRT_SPEC {
     type Writer = W;
 }

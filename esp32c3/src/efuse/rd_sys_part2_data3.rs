@@ -14,20 +14,7 @@ impl From<crate::R<RD_SYS_PART2_DATA3_SPEC>> for R {
     }
 }
 #[doc = "Field `SYS_DATA_PART2_3` reader - Stores the 3rd 32 bits of the 2nd part of system data."]
-pub struct SYS_DATA_PART2_3_R(crate::FieldReader<u32, u32>);
-impl SYS_DATA_PART2_3_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        SYS_DATA_PART2_3_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SYS_DATA_PART2_3_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SYS_DATA_PART2_3_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Stores the 3rd 32 bits of the 2nd part of system data."]
     #[inline(always)]
@@ -35,16 +22,12 @@ impl R {
         SYS_DATA_PART2_3_R::new(self.bits)
     }
 }
-#[doc = "Register 3 of BLOCK10 (system).\n\nThis register you can [`read`]
-(crate::generic::Reg::read). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rd_sys_part2_data3]
-(index.html) module"]
+#[doc = "Register 3 of BLOCK10 (system).\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rd_sys_part2_data3](index.html) module"]
 pub struct RD_SYS_PART2_DATA3_SPEC;
 impl crate::RegisterSpec for RD_SYS_PART2_DATA3_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [rd_sys_part2_data3::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [rd_sys_part2_data3::R](R) reader structure"]
 impl crate::Readable for RD_SYS_PART2_DATA3_SPEC {
     type Reader = R;
 }

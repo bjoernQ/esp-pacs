@@ -35,59 +35,13 @@ impl From<crate::W<USER1_SPEC>> for W {
     }
 }
 #[doc = "Field `USR_DUMMY_CYCLELEN` reader - The SPI_CLK cycle length minus 1 of DUMMY phase."]
-pub struct USR_DUMMY_CYCLELEN_R(crate::FieldReader<u8, u8>);
-impl USR_DUMMY_CYCLELEN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        USR_DUMMY_CYCLELEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for USR_DUMMY_CYCLELEN_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type USR_DUMMY_CYCLELEN_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `USR_DUMMY_CYCLELEN` writer - The SPI_CLK cycle length minus 1 of DUMMY phase."]
-pub struct USR_DUMMY_CYCLELEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> USR_DUMMY_CYCLELEN_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x3f) | (value as u32 & 0x3f);
-        self.w
-    }
-}
+pub type USR_DUMMY_CYCLELEN_W<'a> = crate::FieldWriter<'a, u32, USER1_SPEC, u8, u8, 6, 0>;
 #[doc = "Field `USR_ADDR_BITLEN` reader - The length in bits of ADDR phase. The register value shall be (bit_num-1)."]
-pub struct USR_ADDR_BITLEN_R(crate::FieldReader<u8, u8>);
-impl USR_ADDR_BITLEN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        USR_ADDR_BITLEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for USR_ADDR_BITLEN_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type USR_ADDR_BITLEN_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `USR_ADDR_BITLEN` writer - The length in bits of ADDR phase. The register value shall be (bit_num-1)."]
-pub struct USR_ADDR_BITLEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> USR_ADDR_BITLEN_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x3f << 26)) | ((value as u32 & 0x3f) << 26);
-        self.w
-    }
-}
+pub type USR_ADDR_BITLEN_W<'a> = crate::FieldWriter<'a, u32, USER1_SPEC, u8, u8, 6, 26>;
 impl R {
     #[doc = "Bits 0:5 - The SPI_CLK cycle length minus 1 of DUMMY phase."]
     #[inline(always)]
@@ -104,12 +58,12 @@ impl W {
     #[doc = "Bits 0:5 - The SPI_CLK cycle length minus 1 of DUMMY phase."]
     #[inline(always)]
     pub fn usr_dummy_cyclelen(&mut self) -> USR_DUMMY_CYCLELEN_W {
-        USR_DUMMY_CYCLELEN_W { w: self }
+        USR_DUMMY_CYCLELEN_W::new(self)
     }
     #[doc = "Bits 26:31 - The length in bits of ADDR phase. The register value shall be (bit_num-1)."]
     #[inline(always)]
     pub fn usr_addr_bitlen(&mut self) -> USR_ADDR_BITLEN_W {
-        USR_ADDR_BITLEN_W { w: self }
+        USR_ADDR_BITLEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -118,25 +72,16 @@ impl W {
         self
     }
 }
-#[doc = "SPI1 user1 register.\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [user1]
-(index.html) module"]
+#[doc = "SPI0 user1 register.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [user1](index.html) module"]
 pub struct USER1_SPEC;
 impl crate::RegisterSpec for USER1_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [user1::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [user1::R](R) reader structure"]
 impl crate::Readable for USER1_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [user1::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [user1::W](W) writer structure"]
 impl crate::Writable for USER1_SPEC {
     type Writer = W;
 }

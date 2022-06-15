@@ -35,121 +35,42 @@ impl From<crate::W<ICACHE_FREEZE_SPEC>> for W {
     }
 }
 #[doc = "Field `ENA` reader - The bit is used to enable icache freeze mode"]
-pub struct ENA_R(crate::FieldReader<bool, bool>);
-impl ENA_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ENA_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ENA_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ENA_R = crate::BitReader<bool>;
 #[doc = "Field `ENA` writer - The bit is used to enable icache freeze mode"]
-pub struct ENA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ENA_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type ENA_W<'a> = crate::BitWriter<'a, u32, ICACHE_FREEZE_SPEC, bool, 0>;
 #[doc = "Field `MODE` reader - The bit is used to configure freeze mode, 0: assert busy if CPU miss 1: assert hit if CPU miss"]
-pub struct MODE_R(crate::FieldReader<bool, bool>);
-impl MODE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        MODE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MODE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MODE_R = crate::BitReader<bool>;
 #[doc = "Field `MODE` writer - The bit is used to configure freeze mode, 0: assert busy if CPU miss 1: assert hit if CPU miss"]
-pub struct MODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MODE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type MODE_W<'a> = crate::BitWriter<'a, u32, ICACHE_FREEZE_SPEC, bool, 1>;
 #[doc = "Field `DONE` reader - The bit is used to indicate icache freeze success"]
-pub struct DONE_R(crate::FieldReader<bool, bool>);
-impl DONE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DONE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DONE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DONE_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 0 - The bit is used to enable icache freeze mode"]
     #[inline(always)]
     pub fn ena(&self) -> ENA_R {
-        ENA_R::new((self.bits & 0x01) != 0)
+        ENA_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - The bit is used to configure freeze mode, 0: assert busy if CPU miss 1: assert hit if CPU miss"]
     #[inline(always)]
     pub fn mode(&self) -> MODE_R {
-        MODE_R::new(((self.bits >> 1) & 0x01) != 0)
+        MODE_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - The bit is used to indicate icache freeze success"]
     #[inline(always)]
     pub fn done(&self) -> DONE_R {
-        DONE_R::new(((self.bits >> 2) & 0x01) != 0)
+        DONE_R::new(((self.bits >> 2) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - The bit is used to enable icache freeze mode"]
     #[inline(always)]
     pub fn ena(&mut self) -> ENA_W {
-        ENA_W { w: self }
+        ENA_W::new(self)
     }
     #[doc = "Bit 1 - The bit is used to configure freeze mode, 0: assert busy if CPU miss 1: assert hit if CPU miss"]
     #[inline(always)]
     pub fn mode(&mut self) -> MODE_W {
-        MODE_W { w: self }
+        MODE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -158,25 +79,16 @@ impl W {
         self
     }
 }
-#[doc = "******* Description ***********\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [icache_freeze]
-(index.html) module"]
+#[doc = "******* Description ***********\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [icache_freeze](index.html) module"]
 pub struct ICACHE_FREEZE_SPEC;
 impl crate::RegisterSpec for ICACHE_FREEZE_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [icache_freeze::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [icache_freeze::R](R) reader structure"]
 impl crate::Readable for ICACHE_FREEZE_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [icache_freeze::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [icache_freeze::W](W) writer structure"]
 impl crate::Writable for ICACHE_FREEZE_SPEC {
     type Writer = W;
 }

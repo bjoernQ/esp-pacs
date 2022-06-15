@@ -35,91 +35,37 @@ impl From<crate::W<INTERNAL_SRAM_USAGE_1_SPEC>> for W {
     }
 }
 #[doc = "Field `INTERNAL_SRAM_USAGE_CPU_CACHE` reader - internal_sram_usage_cpu_cache"]
-pub struct INTERNAL_SRAM_USAGE_CPU_CACHE_R(crate::FieldReader<bool, bool>);
-impl INTERNAL_SRAM_USAGE_CPU_CACHE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        INTERNAL_SRAM_USAGE_CPU_CACHE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for INTERNAL_SRAM_USAGE_CPU_CACHE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type INTERNAL_SRAM_USAGE_CPU_CACHE_R = crate::BitReader<bool>;
 #[doc = "Field `INTERNAL_SRAM_USAGE_CPU_CACHE` writer - internal_sram_usage_cpu_cache"]
-pub struct INTERNAL_SRAM_USAGE_CPU_CACHE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> INTERNAL_SRAM_USAGE_CPU_CACHE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type INTERNAL_SRAM_USAGE_CPU_CACHE_W<'a> =
+    crate::BitWriter<'a, u32, INTERNAL_SRAM_USAGE_1_SPEC, bool, 0>;
 #[doc = "Field `INTERNAL_SRAM_USAGE_CPU_SRAM` reader - internal_sram_usage_cpu_sram"]
-pub struct INTERNAL_SRAM_USAGE_CPU_SRAM_R(crate::FieldReader<u8, u8>);
-impl INTERNAL_SRAM_USAGE_CPU_SRAM_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        INTERNAL_SRAM_USAGE_CPU_SRAM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for INTERNAL_SRAM_USAGE_CPU_SRAM_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type INTERNAL_SRAM_USAGE_CPU_SRAM_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `INTERNAL_SRAM_USAGE_CPU_SRAM` writer - internal_sram_usage_cpu_sram"]
-pub struct INTERNAL_SRAM_USAGE_CPU_SRAM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> INTERNAL_SRAM_USAGE_CPU_SRAM_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 1)) | ((value as u32 & 0x07) << 1);
-        self.w
-    }
-}
+pub type INTERNAL_SRAM_USAGE_CPU_SRAM_W<'a> =
+    crate::FieldWriter<'a, u32, INTERNAL_SRAM_USAGE_1_SPEC, u8, u8, 3, 1>;
 impl R {
     #[doc = "Bit 0 - internal_sram_usage_cpu_cache"]
     #[inline(always)]
     pub fn internal_sram_usage_cpu_cache(&self) -> INTERNAL_SRAM_USAGE_CPU_CACHE_R {
-        INTERNAL_SRAM_USAGE_CPU_CACHE_R::new((self.bits & 0x01) != 0)
+        INTERNAL_SRAM_USAGE_CPU_CACHE_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bits 1:3 - internal_sram_usage_cpu_sram"]
     #[inline(always)]
     pub fn internal_sram_usage_cpu_sram(&self) -> INTERNAL_SRAM_USAGE_CPU_SRAM_R {
-        INTERNAL_SRAM_USAGE_CPU_SRAM_R::new(((self.bits >> 1) & 0x07) as u8)
+        INTERNAL_SRAM_USAGE_CPU_SRAM_R::new(((self.bits >> 1) & 7) as u8)
     }
 }
 impl W {
     #[doc = "Bit 0 - internal_sram_usage_cpu_cache"]
     #[inline(always)]
     pub fn internal_sram_usage_cpu_cache(&mut self) -> INTERNAL_SRAM_USAGE_CPU_CACHE_W {
-        INTERNAL_SRAM_USAGE_CPU_CACHE_W { w: self }
+        INTERNAL_SRAM_USAGE_CPU_CACHE_W::new(self)
     }
     #[doc = "Bits 1:3 - internal_sram_usage_cpu_sram"]
     #[inline(always)]
     pub fn internal_sram_usage_cpu_sram(&mut self) -> INTERNAL_SRAM_USAGE_CPU_SRAM_W {
-        INTERNAL_SRAM_USAGE_CPU_SRAM_W { w: self }
+        INTERNAL_SRAM_USAGE_CPU_SRAM_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -128,25 +74,16 @@ impl W {
         self
     }
 }
-#[doc = "SENSITIVE_INTERNAL_SRAM_USAGE_1_REG\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [internal_sram_usage_1]
-(index.html) module"]
+#[doc = "SENSITIVE_INTERNAL_SRAM_USAGE_1_REG\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [internal_sram_usage_1](index.html) module"]
 pub struct INTERNAL_SRAM_USAGE_1_SPEC;
 impl crate::RegisterSpec for INTERNAL_SRAM_USAGE_1_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [internal_sram_usage_1::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [internal_sram_usage_1::R](R) reader structure"]
 impl crate::Readable for INTERNAL_SRAM_USAGE_1_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [internal_sram_usage_1::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [internal_sram_usage_1::W](W) writer structure"]
 impl crate::Writable for INTERNAL_SRAM_USAGE_1_SPEC {
     type Writer = W;
 }

@@ -35,69 +35,13 @@ impl From<crate::W<RX_FILT_SPEC>> for W {
     }
 }
 #[doc = "Field `GLITCH_FILT` reader - when input pulse width is lower than this value, the pulse is ignored."]
-pub struct GLITCH_FILT_R(crate::FieldReader<u8, u8>);
-impl GLITCH_FILT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        GLITCH_FILT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for GLITCH_FILT_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type GLITCH_FILT_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `GLITCH_FILT` writer - when input pulse width is lower than this value, the pulse is ignored."]
-pub struct GLITCH_FILT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> GLITCH_FILT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type GLITCH_FILT_W<'a> = crate::FieldWriter<'a, u32, RX_FILT_SPEC, u8, u8, 8, 0>;
 #[doc = "Field `GLITCH_FILT_EN` reader - Set this bit to enable Rx signal filter."]
-pub struct GLITCH_FILT_EN_R(crate::FieldReader<bool, bool>);
-impl GLITCH_FILT_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        GLITCH_FILT_EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for GLITCH_FILT_EN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type GLITCH_FILT_EN_R = crate::BitReader<bool>;
 #[doc = "Field `GLITCH_FILT_EN` writer - Set this bit to enable Rx signal filter."]
-pub struct GLITCH_FILT_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> GLITCH_FILT_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
-}
+pub type GLITCH_FILT_EN_W<'a> = crate::BitWriter<'a, u32, RX_FILT_SPEC, bool, 8>;
 impl R {
     #[doc = "Bits 0:7 - when input pulse width is lower than this value, the pulse is ignored."]
     #[inline(always)]
@@ -107,19 +51,19 @@ impl R {
     #[doc = "Bit 8 - Set this bit to enable Rx signal filter."]
     #[inline(always)]
     pub fn glitch_filt_en(&self) -> GLITCH_FILT_EN_R {
-        GLITCH_FILT_EN_R::new(((self.bits >> 8) & 0x01) != 0)
+        GLITCH_FILT_EN_R::new(((self.bits >> 8) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:7 - when input pulse width is lower than this value, the pulse is ignored."]
     #[inline(always)]
     pub fn glitch_filt(&mut self) -> GLITCH_FILT_W {
-        GLITCH_FILT_W { w: self }
+        GLITCH_FILT_W::new(self)
     }
     #[doc = "Bit 8 - Set this bit to enable Rx signal filter."]
     #[inline(always)]
     pub fn glitch_filt_en(&mut self) -> GLITCH_FILT_EN_W {
-        GLITCH_FILT_EN_W { w: self }
+        GLITCH_FILT_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -128,25 +72,16 @@ impl W {
         self
     }
 }
-#[doc = "Rx Filter configuration\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rx_filt]
-(index.html) module"]
+#[doc = "Rx Filter configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rx_filt](index.html) module"]
 pub struct RX_FILT_SPEC;
 impl crate::RegisterSpec for RX_FILT_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [rx_filt::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [rx_filt::R](R) reader structure"]
 impl crate::Readable for RX_FILT_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [rx_filt::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [rx_filt::W](W) writer structure"]
 impl crate::Writable for RX_FILT_SPEC {
     type Writer = W;
 }

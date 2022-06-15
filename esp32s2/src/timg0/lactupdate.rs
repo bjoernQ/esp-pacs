@@ -20,22 +20,12 @@ impl From<crate::W<LACTUPDATE_SPEC>> for W {
     }
 }
 #[doc = "Field `LACT_UPDATE` writer - Reserved."]
-pub struct LACT_UPDATE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LACT_UPDATE_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
-    }
-}
+pub type LACT_UPDATE_W<'a> = crate::FieldWriter<'a, u32, LACTUPDATE_SPEC, u32, u32, 32, 0>;
 impl W {
     #[doc = "Bits 0:31 - Reserved."]
     #[inline(always)]
     pub fn lact_update(&mut self) -> LACT_UPDATE_W {
-        LACT_UPDATE_W { w: self }
+        LACT_UPDATE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -44,18 +34,12 @@ impl W {
         self
     }
 }
-#[doc = "LACT update register\n\nThis register you can [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [lactupdate]
-(index.html) module"]
+#[doc = "LACT update register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [lactupdate](index.html) module"]
 pub struct LACTUPDATE_SPEC;
 impl crate::RegisterSpec for LACTUPDATE_SPEC {
     type Ux = u32;
 }
-#[doc = "`write(|w| ..)` method takes [lactupdate::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [lactupdate::W](W) writer structure"]
 impl crate::Writable for LACTUPDATE_SPEC {
     type Writer = W;
 }

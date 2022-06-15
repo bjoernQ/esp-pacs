@@ -14,57 +14,27 @@ impl From<crate::R<DMA_OUT_STATUS_SPEC>> for R {
     }
 }
 #[doc = "Field `OUT_FULL` reader - 1:DMA out link descriptor's fifo is full."]
-pub struct OUT_FULL_R(crate::FieldReader<bool, bool>);
-impl OUT_FULL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        OUT_FULL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for OUT_FULL_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type OUT_FULL_R = crate::BitReader<bool>;
 #[doc = "Field `OUT_EMPTY` reader - 1:DMA in link descriptor's fifo is empty."]
-pub struct OUT_EMPTY_R(crate::FieldReader<bool, bool>);
-impl OUT_EMPTY_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        OUT_EMPTY_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for OUT_EMPTY_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type OUT_EMPTY_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 0 - 1:DMA out link descriptor's fifo is full."]
     #[inline(always)]
     pub fn out_full(&self) -> OUT_FULL_R {
-        OUT_FULL_R::new((self.bits & 0x01) != 0)
+        OUT_FULL_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - 1:DMA in link descriptor's fifo is empty."]
     #[inline(always)]
     pub fn out_empty(&self) -> OUT_EMPTY_R {
-        OUT_EMPTY_R::new(((self.bits >> 1) & 0x01) != 0)
+        OUT_EMPTY_R::new(((self.bits >> 1) & 1) != 0)
     }
 }
-#[doc = "\n\nThis register you can [`read`]
-(crate::generic::Reg::read). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dma_out_status]
-(index.html) module"]
+#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dma_out_status](index.html) module"]
 pub struct DMA_OUT_STATUS_SPEC;
 impl crate::RegisterSpec for DMA_OUT_STATUS_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [dma_out_status::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [dma_out_status::R](R) reader structure"]
 impl crate::Readable for DMA_OUT_STATUS_SPEC {
     type Reader = R;
 }

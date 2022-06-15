@@ -35,148 +35,49 @@ impl From<crate::W<REGCLK_SPEC>> for W {
     }
 }
 #[doc = "Field `WDT_CLK_IS_ACTIVE` reader - reg_wdt_clk_is_active."]
-pub struct WDT_CLK_IS_ACTIVE_R(crate::FieldReader<bool, bool>);
-impl WDT_CLK_IS_ACTIVE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        WDT_CLK_IS_ACTIVE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WDT_CLK_IS_ACTIVE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type WDT_CLK_IS_ACTIVE_R = crate::BitReader<bool>;
 #[doc = "Field `WDT_CLK_IS_ACTIVE` writer - reg_wdt_clk_is_active."]
-pub struct WDT_CLK_IS_ACTIVE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WDT_CLK_IS_ACTIVE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 29)) | ((value as u32 & 0x01) << 29);
-        self.w
-    }
-}
+pub type WDT_CLK_IS_ACTIVE_W<'a> = crate::BitWriter<'a, u32, REGCLK_SPEC, bool, 29>;
 #[doc = "Field `TIMER_CLK_IS_ACTIVE` reader - reg_timer_clk_is_active."]
-pub struct TIMER_CLK_IS_ACTIVE_R(crate::FieldReader<bool, bool>);
-impl TIMER_CLK_IS_ACTIVE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TIMER_CLK_IS_ACTIVE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TIMER_CLK_IS_ACTIVE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TIMER_CLK_IS_ACTIVE_R = crate::BitReader<bool>;
 #[doc = "Field `TIMER_CLK_IS_ACTIVE` writer - reg_timer_clk_is_active."]
-pub struct TIMER_CLK_IS_ACTIVE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TIMER_CLK_IS_ACTIVE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 30)) | ((value as u32 & 0x01) << 30);
-        self.w
-    }
-}
+pub type TIMER_CLK_IS_ACTIVE_W<'a> = crate::BitWriter<'a, u32, REGCLK_SPEC, bool, 30>;
 #[doc = "Field `CLK_EN` reader - reg_clk_en."]
-pub struct CLK_EN_R(crate::FieldReader<bool, bool>);
-impl CLK_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CLK_EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CLK_EN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CLK_EN_R = crate::BitReader<bool>;
 #[doc = "Field `CLK_EN` writer - reg_clk_en."]
-pub struct CLK_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CLK_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
-        self.w
-    }
-}
+pub type CLK_EN_W<'a> = crate::BitWriter<'a, u32, REGCLK_SPEC, bool, 31>;
 impl R {
     #[doc = "Bit 29 - reg_wdt_clk_is_active."]
     #[inline(always)]
     pub fn wdt_clk_is_active(&self) -> WDT_CLK_IS_ACTIVE_R {
-        WDT_CLK_IS_ACTIVE_R::new(((self.bits >> 29) & 0x01) != 0)
+        WDT_CLK_IS_ACTIVE_R::new(((self.bits >> 29) & 1) != 0)
     }
     #[doc = "Bit 30 - reg_timer_clk_is_active."]
     #[inline(always)]
     pub fn timer_clk_is_active(&self) -> TIMER_CLK_IS_ACTIVE_R {
-        TIMER_CLK_IS_ACTIVE_R::new(((self.bits >> 30) & 0x01) != 0)
+        TIMER_CLK_IS_ACTIVE_R::new(((self.bits >> 30) & 1) != 0)
     }
     #[doc = "Bit 31 - reg_clk_en."]
     #[inline(always)]
     pub fn clk_en(&self) -> CLK_EN_R {
-        CLK_EN_R::new(((self.bits >> 31) & 0x01) != 0)
+        CLK_EN_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 29 - reg_wdt_clk_is_active."]
     #[inline(always)]
     pub fn wdt_clk_is_active(&mut self) -> WDT_CLK_IS_ACTIVE_W {
-        WDT_CLK_IS_ACTIVE_W { w: self }
+        WDT_CLK_IS_ACTIVE_W::new(self)
     }
     #[doc = "Bit 30 - reg_timer_clk_is_active."]
     #[inline(always)]
     pub fn timer_clk_is_active(&mut self) -> TIMER_CLK_IS_ACTIVE_W {
-        TIMER_CLK_IS_ACTIVE_W { w: self }
+        TIMER_CLK_IS_ACTIVE_W::new(self)
     }
     #[doc = "Bit 31 - reg_clk_en."]
     #[inline(always)]
     pub fn clk_en(&mut self) -> CLK_EN_W {
-        CLK_EN_W { w: self }
+        CLK_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -185,25 +86,16 @@ impl W {
         self
     }
 }
-#[doc = "TIMG_REGCLK_REG.\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [regclk]
-(index.html) module"]
+#[doc = "TIMG_REGCLK_REG.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [regclk](index.html) module"]
 pub struct REGCLK_SPEC;
 impl crate::RegisterSpec for REGCLK_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [regclk::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [regclk::R](R) reader structure"]
 impl crate::Readable for REGCLK_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [regclk::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [regclk::W](W) writer structure"]
 impl crate::Writable for REGCLK_SPEC {
     type Writer = W;
 }

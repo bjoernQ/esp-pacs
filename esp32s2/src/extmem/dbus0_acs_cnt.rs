@@ -14,20 +14,7 @@ impl From<crate::R<DBUS0_ACS_CNT_SPEC>> for R {
     }
 }
 #[doc = "Field `DBUS0_ACS_CNT` reader - The bits are used to count the number of dbus0 access dcache."]
-pub struct DBUS0_ACS_CNT_R(crate::FieldReader<u32, u32>);
-impl DBUS0_ACS_CNT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        DBUS0_ACS_CNT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DBUS0_ACS_CNT_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DBUS0_ACS_CNT_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31 - The bits are used to count the number of dbus0 access dcache."]
     #[inline(always)]
@@ -35,16 +22,12 @@ impl R {
         DBUS0_ACS_CNT_R::new(self.bits)
     }
 }
-#[doc = "register description\n\nThis register you can [`read`]
-(crate::generic::Reg::read). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dbus0_acs_cnt]
-(index.html) module"]
+#[doc = "register description\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dbus0_acs_cnt](index.html) module"]
 pub struct DBUS0_ACS_CNT_SPEC;
 impl crate::RegisterSpec for DBUS0_ACS_CNT_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [dbus0_acs_cnt::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [dbus0_acs_cnt::R](R) reader structure"]
 impl crate::Readable for DBUS0_ACS_CNT_SPEC {
     type Reader = R;
 }

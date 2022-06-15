@@ -35,32 +35,9 @@ impl From<crate::W<DMA_BLOCK_NUM_SPEC>> for W {
     }
 }
 #[doc = "Field `DMA_BLOCK_NUM` reader - Dma-sha block number."]
-pub struct DMA_BLOCK_NUM_R(crate::FieldReader<u8, u8>);
-impl DMA_BLOCK_NUM_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        DMA_BLOCK_NUM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DMA_BLOCK_NUM_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DMA_BLOCK_NUM_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DMA_BLOCK_NUM` writer - Dma-sha block number."]
-pub struct DMA_BLOCK_NUM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DMA_BLOCK_NUM_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x3f) | (value as u32 & 0x3f);
-        self.w
-    }
-}
+pub type DMA_BLOCK_NUM_W<'a> = crate::FieldWriter<'a, u32, DMA_BLOCK_NUM_SPEC, u8, u8, 6, 0>;
 impl R {
     #[doc = "Bits 0:5 - Dma-sha block number."]
     #[inline(always)]
@@ -72,7 +49,7 @@ impl W {
     #[doc = "Bits 0:5 - Dma-sha block number."]
     #[inline(always)]
     pub fn dma_block_num(&mut self) -> DMA_BLOCK_NUM_W {
-        DMA_BLOCK_NUM_W { w: self }
+        DMA_BLOCK_NUM_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -81,25 +58,16 @@ impl W {
         self
     }
 }
-#[doc = "DMA configuration register 0.\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dma_block_num]
-(index.html) module"]
+#[doc = "DMA configuration register 0.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dma_block_num](index.html) module"]
 pub struct DMA_BLOCK_NUM_SPEC;
 impl crate::RegisterSpec for DMA_BLOCK_NUM_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [dma_block_num::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [dma_block_num::R](R) reader structure"]
 impl crate::Readable for DMA_BLOCK_NUM_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [dma_block_num::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [dma_block_num::W](W) writer structure"]
 impl crate::Writable for DMA_BLOCK_NUM_SPEC {
     type Writer = W;
 }

@@ -35,32 +35,9 @@ impl From<crate::W<TARGET2_HI_SPEC>> for W {
     }
 }
 #[doc = "Field `TIMER_TARGET2_HI` reader - timer taget2 high 32 bit"]
-pub struct TIMER_TARGET2_HI_R(crate::FieldReader<u32, u32>);
-impl TIMER_TARGET2_HI_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        TIMER_TARGET2_HI_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TIMER_TARGET2_HI_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TIMER_TARGET2_HI_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `TIMER_TARGET2_HI` writer - timer taget2 high 32 bit"]
-pub struct TIMER_TARGET2_HI_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TIMER_TARGET2_HI_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x000f_ffff) | (value as u32 & 0x000f_ffff);
-        self.w
-    }
-}
+pub type TIMER_TARGET2_HI_W<'a> = crate::FieldWriter<'a, u32, TARGET2_HI_SPEC, u32, u32, 20, 0>;
 impl R {
     #[doc = "Bits 0:19 - timer taget2 high 32 bit"]
     #[inline(always)]
@@ -72,7 +49,7 @@ impl W {
     #[doc = "Bits 0:19 - timer taget2 high 32 bit"]
     #[inline(always)]
     pub fn timer_target2_hi(&mut self) -> TIMER_TARGET2_HI_W {
-        TIMER_TARGET2_HI_W { w: self }
+        TIMER_TARGET2_HI_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -81,25 +58,16 @@ impl W {
         self
     }
 }
-#[doc = "SYSTIMER_TARGET2_HI.\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [target2_hi]
-(index.html) module"]
+#[doc = "SYSTIMER_TARGET2_HI.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [target2_hi](index.html) module"]
 pub struct TARGET2_HI_SPEC;
 impl crate::RegisterSpec for TARGET2_HI_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [target2_hi::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [target2_hi::R](R) reader structure"]
 impl crate::Readable for TARGET2_HI_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [target2_hi::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [target2_hi::W](W) writer structure"]
 impl crate::Writable for TARGET2_HI_SPEC {
     type Writer = W;
 }

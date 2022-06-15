@@ -14,20 +14,7 @@ impl From<crate::R<BUFADDR_SPEC>> for R {
     }
 }
 #[doc = "Field `BUFADDR` reader - Host Buffer Address Pointer, updated by IDMAC during operation and cleared on reset. This register points to the current Data Buffer Address being accessed by the IDMAC."]
-pub struct BUFADDR_R(crate::FieldReader<u32, u32>);
-impl BUFADDR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        BUFADDR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for BUFADDR_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type BUFADDR_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Host Buffer Address Pointer, updated by IDMAC during operation and cleared on reset. This register points to the current Data Buffer Address being accessed by the IDMAC."]
     #[inline(always)]
@@ -35,16 +22,12 @@ impl R {
         BUFADDR_R::new(self.bits)
     }
 }
-#[doc = "Host buffer address pointer register\n\nThis register you can [`read`]
-(crate::generic::Reg::read). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [bufaddr]
-(index.html) module"]
+#[doc = "Host buffer address pointer register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [bufaddr](index.html) module"]
 pub struct BUFADDR_SPEC;
 impl crate::RegisterSpec for BUFADDR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [bufaddr::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [bufaddr::R](R) reader structure"]
 impl crate::Readable for BUFADDR_SPEC {
     type Reader = R;
 }

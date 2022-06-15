@@ -14,20 +14,7 @@ impl From<crate::R<T0LO_SPEC>> for R {
     }
 }
 #[doc = "Field `T0_LO` reader - t0_lo"]
-pub struct T0_LO_R(crate::FieldReader<u32, u32>);
-impl T0_LO_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        T0_LO_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for T0_LO_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type T0_LO_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31 - t0_lo"]
     #[inline(always)]
@@ -35,16 +22,12 @@ impl R {
         T0_LO_R::new(self.bits)
     }
 }
-#[doc = "TIMG_T0LO_REG.\n\nThis register you can [`read`]
-(crate::generic::Reg::read). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [t0lo]
-(index.html) module"]
+#[doc = "TIMG_T0LO_REG.\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [t0lo](index.html) module"]
 pub struct T0LO_SPEC;
 impl crate::RegisterSpec for T0LO_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [t0lo::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [t0lo::R](R) reader structure"]
 impl crate::Readable for T0LO_SPEC {
     type Reader = R;
 }

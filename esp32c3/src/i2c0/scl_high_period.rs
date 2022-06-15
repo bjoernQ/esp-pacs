@@ -35,59 +35,14 @@ impl From<crate::W<SCL_HIGH_PERIOD_SPEC>> for W {
     }
 }
 #[doc = "Field `SCL_HIGH_PERIOD` reader - reg_scl_high_period"]
-pub struct SCL_HIGH_PERIOD_R(crate::FieldReader<u16, u16>);
-impl SCL_HIGH_PERIOD_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        SCL_HIGH_PERIOD_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SCL_HIGH_PERIOD_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SCL_HIGH_PERIOD_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `SCL_HIGH_PERIOD` writer - reg_scl_high_period"]
-pub struct SCL_HIGH_PERIOD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SCL_HIGH_PERIOD_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01ff) | (value as u32 & 0x01ff);
-        self.w
-    }
-}
+pub type SCL_HIGH_PERIOD_W<'a> = crate::FieldWriter<'a, u32, SCL_HIGH_PERIOD_SPEC, u16, u16, 9, 0>;
 #[doc = "Field `SCL_WAIT_HIGH_PERIOD` reader - reg_scl_wait_high_period"]
-pub struct SCL_WAIT_HIGH_PERIOD_R(crate::FieldReader<u8, u8>);
-impl SCL_WAIT_HIGH_PERIOD_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        SCL_WAIT_HIGH_PERIOD_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SCL_WAIT_HIGH_PERIOD_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SCL_WAIT_HIGH_PERIOD_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `SCL_WAIT_HIGH_PERIOD` writer - reg_scl_wait_high_period"]
-pub struct SCL_WAIT_HIGH_PERIOD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SCL_WAIT_HIGH_PERIOD_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x7f << 9)) | ((value as u32 & 0x7f) << 9);
-        self.w
-    }
-}
+pub type SCL_WAIT_HIGH_PERIOD_W<'a> =
+    crate::FieldWriter<'a, u32, SCL_HIGH_PERIOD_SPEC, u8, u8, 7, 9>;
 impl R {
     #[doc = "Bits 0:8 - reg_scl_high_period"]
     #[inline(always)]
@@ -104,12 +59,12 @@ impl W {
     #[doc = "Bits 0:8 - reg_scl_high_period"]
     #[inline(always)]
     pub fn scl_high_period(&mut self) -> SCL_HIGH_PERIOD_W {
-        SCL_HIGH_PERIOD_W { w: self }
+        SCL_HIGH_PERIOD_W::new(self)
     }
     #[doc = "Bits 9:15 - reg_scl_wait_high_period"]
     #[inline(always)]
     pub fn scl_wait_high_period(&mut self) -> SCL_WAIT_HIGH_PERIOD_W {
-        SCL_WAIT_HIGH_PERIOD_W { w: self }
+        SCL_WAIT_HIGH_PERIOD_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -118,25 +73,16 @@ impl W {
         self
     }
 }
-#[doc = "I2C_SCL_HIGH_PERIOD_REG\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [scl_high_period]
-(index.html) module"]
+#[doc = "I2C_SCL_HIGH_PERIOD_REG\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [scl_high_period](index.html) module"]
 pub struct SCL_HIGH_PERIOD_SPEC;
 impl crate::RegisterSpec for SCL_HIGH_PERIOD_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [scl_high_period::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [scl_high_period::R](R) reader structure"]
 impl crate::Readable for SCL_HIGH_PERIOD_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [scl_high_period::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [scl_high_period::W](W) writer structure"]
 impl crate::Writable for SCL_HIGH_PERIOD_SPEC {
     type Writer = W;
 }

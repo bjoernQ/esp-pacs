@@ -20,22 +20,12 @@ impl From<crate::W<OUT1_W1TS_SPEC>> for W {
     }
 }
 #[doc = "Field `OUT1_W1TS` writer - GPIO32 ~ 53 output value set register. If the value 1 is written to a bit here, the corresponding bit in GPIO_OUT1_REG will be set to 1. Recommended operation: use this register to set GPIO_OUT1_REG."]
-pub struct OUT1_W1TS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OUT1_W1TS_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x003f_ffff) | (value as u32 & 0x003f_ffff);
-        self.w
-    }
-}
+pub type OUT1_W1TS_W<'a> = crate::FieldWriter<'a, u32, OUT1_W1TS_SPEC, u32, u32, 22, 0>;
 impl W {
     #[doc = "Bits 0:21 - GPIO32 ~ 53 output value set register. If the value 1 is written to a bit here, the corresponding bit in GPIO_OUT1_REG will be set to 1. Recommended operation: use this register to set GPIO_OUT1_REG."]
     #[inline(always)]
     pub fn out1_w1ts(&mut self) -> OUT1_W1TS_W {
-        OUT1_W1TS_W { w: self }
+        OUT1_W1TS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -44,18 +34,12 @@ impl W {
         self
     }
 }
-#[doc = "GPIO32 ~ 53 output bit set register\n\nThis register you can [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [out1_w1ts]
-(index.html) module"]
+#[doc = "GPIO32 ~ 53 output bit set register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [out1_w1ts](index.html) module"]
 pub struct OUT1_W1TS_SPEC;
 impl crate::RegisterSpec for OUT1_W1TS_SPEC {
     type Ux = u32;
 }
-#[doc = "`write(|w| ..)` method takes [out1_w1ts::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [out1_w1ts::W](W) writer structure"]
 impl crate::Writable for OUT1_W1TS_SPEC {
     type Writer = W;
 }

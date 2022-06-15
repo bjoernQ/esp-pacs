@@ -35,86 +35,17 @@ impl From<crate::W<PIN_CTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `CLK_OUT1` reader - If you want to output clock for I2S to CLK_OUT_out1, set this register to 0x0. CLK_OUT_out1 can be found in peripheral output signals."]
-pub struct CLK_OUT1_R(crate::FieldReader<u8, u8>);
-impl CLK_OUT1_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CLK_OUT1_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CLK_OUT1_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CLK_OUT1_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CLK_OUT1` writer - If you want to output clock for I2S to CLK_OUT_out1, set this register to 0x0. CLK_OUT_out1 can be found in peripheral output signals."]
-pub struct CLK_OUT1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CLK_OUT1_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0f) | (value as u32 & 0x0f);
-        self.w
-    }
-}
+pub type CLK_OUT1_W<'a> = crate::FieldWriter<'a, u32, PIN_CTRL_SPEC, u8, u8, 4, 0>;
 #[doc = "Field `CLK_OUT2` reader - If you want to output clock for I2S to CLK_OUT_out2, set this register to 0x0. CLK_OUT_out2 can be found in peripheral output signals."]
-pub struct CLK_OUT2_R(crate::FieldReader<u8, u8>);
-impl CLK_OUT2_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CLK_OUT2_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CLK_OUT2_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CLK_OUT2_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CLK_OUT2` writer - If you want to output clock for I2S to CLK_OUT_out2, set this register to 0x0. CLK_OUT_out2 can be found in peripheral output signals."]
-pub struct CLK_OUT2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CLK_OUT2_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 4)) | ((value as u32 & 0x0f) << 4);
-        self.w
-    }
-}
+pub type CLK_OUT2_W<'a> = crate::FieldWriter<'a, u32, PIN_CTRL_SPEC, u8, u8, 4, 4>;
 #[doc = "Field `CLK_OUT3` reader - If you want to output clock for I2S to CLK_OUT_out3, set this register to 0x0. CLK_OUT_out3 can be found in peripheral output signals."]
-pub struct CLK_OUT3_R(crate::FieldReader<u8, u8>);
-impl CLK_OUT3_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CLK_OUT3_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CLK_OUT3_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CLK_OUT3_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CLK_OUT3` writer - If you want to output clock for I2S to CLK_OUT_out3, set this register to 0x0. CLK_OUT_out3 can be found in peripheral output signals."]
-pub struct CLK_OUT3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CLK_OUT3_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 8)) | ((value as u32 & 0x0f) << 8);
-        self.w
-    }
-}
+pub type CLK_OUT3_W<'a> = crate::FieldWriter<'a, u32, PIN_CTRL_SPEC, u8, u8, 4, 8>;
 impl R {
     #[doc = "Bits 0:3 - If you want to output clock for I2S to CLK_OUT_out1, set this register to 0x0. CLK_OUT_out1 can be found in peripheral output signals."]
     #[inline(always)]
@@ -136,17 +67,17 @@ impl W {
     #[doc = "Bits 0:3 - If you want to output clock for I2S to CLK_OUT_out1, set this register to 0x0. CLK_OUT_out1 can be found in peripheral output signals."]
     #[inline(always)]
     pub fn clk_out1(&mut self) -> CLK_OUT1_W {
-        CLK_OUT1_W { w: self }
+        CLK_OUT1_W::new(self)
     }
     #[doc = "Bits 4:7 - If you want to output clock for I2S to CLK_OUT_out2, set this register to 0x0. CLK_OUT_out2 can be found in peripheral output signals."]
     #[inline(always)]
     pub fn clk_out2(&mut self) -> CLK_OUT2_W {
-        CLK_OUT2_W { w: self }
+        CLK_OUT2_W::new(self)
     }
     #[doc = "Bits 8:11 - If you want to output clock for I2S to CLK_OUT_out3, set this register to 0x0. CLK_OUT_out3 can be found in peripheral output signals."]
     #[inline(always)]
     pub fn clk_out3(&mut self) -> CLK_OUT3_W {
-        CLK_OUT3_W { w: self }
+        CLK_OUT3_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -155,25 +86,16 @@ impl W {
         self
     }
 }
-#[doc = "Clock Output Configuration Register\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pin_ctrl]
-(index.html) module"]
+#[doc = "Clock Output Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pin_ctrl](index.html) module"]
 pub struct PIN_CTRL_SPEC;
 impl crate::RegisterSpec for PIN_CTRL_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [pin_ctrl::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [pin_ctrl::R](R) reader structure"]
 impl crate::Readable for PIN_CTRL_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [pin_ctrl::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [pin_ctrl::W](W) writer structure"]
 impl crate::Writable for PIN_CTRL_SPEC {
     type Writer = W;
 }

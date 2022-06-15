@@ -14,140 +14,23 @@ impl From<crate::R<RD_REPEAT_DATA2_SPEC>> for R {
     }
 }
 #[doc = "Field `KEY_PURPOSE_2` reader - Purpose of Key2."]
-pub struct KEY_PURPOSE_2_R(crate::FieldReader<u8, u8>);
-impl KEY_PURPOSE_2_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        KEY_PURPOSE_2_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for KEY_PURPOSE_2_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type KEY_PURPOSE_2_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `KEY_PURPOSE_3` reader - Purpose of Key3."]
-pub struct KEY_PURPOSE_3_R(crate::FieldReader<u8, u8>);
-impl KEY_PURPOSE_3_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        KEY_PURPOSE_3_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for KEY_PURPOSE_3_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type KEY_PURPOSE_3_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `KEY_PURPOSE_4` reader - Purpose of Key4."]
-pub struct KEY_PURPOSE_4_R(crate::FieldReader<u8, u8>);
-impl KEY_PURPOSE_4_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        KEY_PURPOSE_4_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for KEY_PURPOSE_4_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type KEY_PURPOSE_4_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `KEY_PURPOSE_5` reader - Purpose of Key5."]
-pub struct KEY_PURPOSE_5_R(crate::FieldReader<u8, u8>);
-impl KEY_PURPOSE_5_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        KEY_PURPOSE_5_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for KEY_PURPOSE_5_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type KEY_PURPOSE_5_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `RPT4_RESERVED3` reader - Reserved (used for four backups method)."]
-pub struct RPT4_RESERVED3_R(crate::FieldReader<u8, u8>);
-impl RPT4_RESERVED3_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        RPT4_RESERVED3_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RPT4_RESERVED3_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RPT4_RESERVED3_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `SECURE_BOOT_EN` reader - Set this bit to enable secure boot."]
-pub struct SECURE_BOOT_EN_R(crate::FieldReader<bool, bool>);
-impl SECURE_BOOT_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        SECURE_BOOT_EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SECURE_BOOT_EN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SECURE_BOOT_EN_R = crate::BitReader<bool>;
 #[doc = "Field `SECURE_BOOT_AGGRESSIVE_REVOKE` reader - Set this bit to enable revoking aggressive secure boot."]
-pub struct SECURE_BOOT_AGGRESSIVE_REVOKE_R(crate::FieldReader<bool, bool>);
-impl SECURE_BOOT_AGGRESSIVE_REVOKE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        SECURE_BOOT_AGGRESSIVE_REVOKE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SECURE_BOOT_AGGRESSIVE_REVOKE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SECURE_BOOT_AGGRESSIVE_REVOKE_R = crate::BitReader<bool>;
 #[doc = "Field `RPT4_RESERVED0` reader - Reserved (used for four backups method)."]
-pub struct RPT4_RESERVED0_R(crate::FieldReader<u8, u8>);
-impl RPT4_RESERVED0_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        RPT4_RESERVED0_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RPT4_RESERVED0_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RPT4_RESERVED0_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `FLASH_TPUW` reader - Configures flash waiting time after power-up, in unit of ms. If the value is less than 15, the waiting time is the configurable value; Otherwise, the waiting time is twice the configurable value."]
-pub struct FLASH_TPUW_R(crate::FieldReader<u8, u8>);
-impl FLASH_TPUW_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        FLASH_TPUW_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FLASH_TPUW_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FLASH_TPUW_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:3 - Purpose of Key2."]
     #[inline(always)]
@@ -177,12 +60,12 @@ impl R {
     #[doc = "Bit 20 - Set this bit to enable secure boot."]
     #[inline(always)]
     pub fn secure_boot_en(&self) -> SECURE_BOOT_EN_R {
-        SECURE_BOOT_EN_R::new(((self.bits >> 20) & 0x01) != 0)
+        SECURE_BOOT_EN_R::new(((self.bits >> 20) & 1) != 0)
     }
     #[doc = "Bit 21 - Set this bit to enable revoking aggressive secure boot."]
     #[inline(always)]
     pub fn secure_boot_aggressive_revoke(&self) -> SECURE_BOOT_AGGRESSIVE_REVOKE_R {
-        SECURE_BOOT_AGGRESSIVE_REVOKE_R::new(((self.bits >> 21) & 0x01) != 0)
+        SECURE_BOOT_AGGRESSIVE_REVOKE_R::new(((self.bits >> 21) & 1) != 0)
     }
     #[doc = "Bits 22:27 - Reserved (used for four backups method)."]
     #[inline(always)]
@@ -195,16 +78,12 @@ impl R {
         FLASH_TPUW_R::new(((self.bits >> 28) & 0x0f) as u8)
     }
 }
-#[doc = "BLOCK0 data register 3.\n\nThis register you can [`read`]
-(crate::generic::Reg::read). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rd_repeat_data2]
-(index.html) module"]
+#[doc = "BLOCK0 data register 3.\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rd_repeat_data2](index.html) module"]
 pub struct RD_REPEAT_DATA2_SPEC;
 impl crate::RegisterSpec for RD_REPEAT_DATA2_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [rd_repeat_data2::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [rd_repeat_data2::R](R) reader structure"]
 impl crate::Readable for RD_REPEAT_DATA2_SPEC {
     type Reader = R;
 }

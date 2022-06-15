@@ -35,32 +35,10 @@ impl From<crate::W<CACHE_DATAARRAY_CONNECT_1_SPEC>> for W {
     }
 }
 #[doc = "Field `CACHE_DATAARRAY_CONNECT_FLATTEN` reader - Cache data array connection configuration."]
-pub struct CACHE_DATAARRAY_CONNECT_FLATTEN_R(crate::FieldReader<u8, u8>);
-impl CACHE_DATAARRAY_CONNECT_FLATTEN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CACHE_DATAARRAY_CONNECT_FLATTEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CACHE_DATAARRAY_CONNECT_FLATTEN_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CACHE_DATAARRAY_CONNECT_FLATTEN_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CACHE_DATAARRAY_CONNECT_FLATTEN` writer - Cache data array connection configuration."]
-pub struct CACHE_DATAARRAY_CONNECT_FLATTEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CACHE_DATAARRAY_CONNECT_FLATTEN_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type CACHE_DATAARRAY_CONNECT_FLATTEN_W<'a> =
+    crate::FieldWriter<'a, u32, CACHE_DATAARRAY_CONNECT_1_SPEC, u8, u8, 8, 0>;
 impl R {
     #[doc = "Bits 0:7 - Cache data array connection configuration."]
     #[inline(always)]
@@ -72,7 +50,7 @@ impl W {
     #[doc = "Bits 0:7 - Cache data array connection configuration."]
     #[inline(always)]
     pub fn cache_dataarray_connect_flatten(&mut self) -> CACHE_DATAARRAY_CONNECT_FLATTEN_W {
-        CACHE_DATAARRAY_CONNECT_FLATTEN_W { w: self }
+        CACHE_DATAARRAY_CONNECT_FLATTEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -81,25 +59,16 @@ impl W {
         self
     }
 }
-#[doc = "Cache data array configuration register 1.\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cache_dataarray_connect_1]
-(index.html) module"]
+#[doc = "Cache data array configuration register 1.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cache_dataarray_connect_1](index.html) module"]
 pub struct CACHE_DATAARRAY_CONNECT_1_SPEC;
 impl crate::RegisterSpec for CACHE_DATAARRAY_CONNECT_1_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [cache_dataarray_connect_1::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [cache_dataarray_connect_1::R](R) reader structure"]
 impl crate::Readable for CACHE_DATAARRAY_CONNECT_1_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [cache_dataarray_connect_1::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [cache_dataarray_connect_1::W](W) writer structure"]
 impl crate::Writable for CACHE_DATAARRAY_CONNECT_1_SPEC {
     type Writer = W;
 }

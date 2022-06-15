@@ -35,32 +35,10 @@ impl From<crate::W<CORE_X_IRAM0_DRAM0_EXCEPTION_MONITOR_1_SPEC>> for W {
     }
 }
 #[doc = "Field `CORE_X_IRAM0_DRAM0_LIMIT_CYCLE_1` reader - non busy cycle,for example: when cycle=100 and cycle=10,it means that in 100 cycle, if busy access success time less than 10, it will trigger interrutpt"]
-pub struct CORE_X_IRAM0_DRAM0_LIMIT_CYCLE_1_R(crate::FieldReader<u32, u32>);
-impl CORE_X_IRAM0_DRAM0_LIMIT_CYCLE_1_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        CORE_X_IRAM0_DRAM0_LIMIT_CYCLE_1_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CORE_X_IRAM0_DRAM0_LIMIT_CYCLE_1_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CORE_X_IRAM0_DRAM0_LIMIT_CYCLE_1_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `CORE_X_IRAM0_DRAM0_LIMIT_CYCLE_1` writer - non busy cycle,for example: when cycle=100 and cycle=10,it means that in 100 cycle, if busy access success time less than 10, it will trigger interrutpt"]
-pub struct CORE_X_IRAM0_DRAM0_LIMIT_CYCLE_1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CORE_X_IRAM0_DRAM0_LIMIT_CYCLE_1_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x000f_ffff) | (value as u32 & 0x000f_ffff);
-        self.w
-    }
-}
+pub type CORE_X_IRAM0_DRAM0_LIMIT_CYCLE_1_W<'a> =
+    crate::FieldWriter<'a, u32, CORE_X_IRAM0_DRAM0_EXCEPTION_MONITOR_1_SPEC, u32, u32, 20, 0>;
 impl R {
     #[doc = "Bits 0:19 - non busy cycle,for example: when cycle=100 and cycle=10,it means that in 100 cycle, if busy access success time less than 10, it will trigger interrutpt"]
     #[inline(always)]
@@ -72,7 +50,7 @@ impl W {
     #[doc = "Bits 0:19 - non busy cycle,for example: when cycle=100 and cycle=10,it means that in 100 cycle, if busy access success time less than 10, it will trigger interrutpt"]
     #[inline(always)]
     pub fn core_x_iram0_dram0_limit_cycle_1(&mut self) -> CORE_X_IRAM0_DRAM0_LIMIT_CYCLE_1_W {
-        CORE_X_IRAM0_DRAM0_LIMIT_CYCLE_1_W { w: self }
+        CORE_X_IRAM0_DRAM0_LIMIT_CYCLE_1_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -81,25 +59,16 @@ impl W {
         self
     }
 }
-#[doc = "bus busy configuration register\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [core_x_iram0_dram0_exception_monitor_1]
-(index.html) module"]
+#[doc = "bus busy configuration register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [core_x_iram0_dram0_exception_monitor_1](index.html) module"]
 pub struct CORE_X_IRAM0_DRAM0_EXCEPTION_MONITOR_1_SPEC;
 impl crate::RegisterSpec for CORE_X_IRAM0_DRAM0_EXCEPTION_MONITOR_1_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [core_x_iram0_dram0_exception_monitor_1::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [core_x_iram0_dram0_exception_monitor_1::R](R) reader structure"]
 impl crate::Readable for CORE_X_IRAM0_DRAM0_EXCEPTION_MONITOR_1_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [core_x_iram0_dram0_exception_monitor_1::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [core_x_iram0_dram0_exception_monitor_1::W](W) writer structure"]
 impl crate::Writable for CORE_X_IRAM0_DRAM0_EXCEPTION_MONITOR_1_SPEC {
     type Writer = W;
 }

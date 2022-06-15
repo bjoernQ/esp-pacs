@@ -20,22 +20,12 @@ impl From<crate::W<DATA_5_SPEC>> for W {
     }
 }
 #[doc = "Field `TX_BYTE_5` writer - In reset mode, it is acceptance mask register 1 with R/W Permission. In operation mode, it stores the 5th byte information of the data to be transmitted under operating mode."]
-pub struct TX_BYTE_5_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TX_BYTE_5_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type TX_BYTE_5_W<'a> = crate::FieldWriter<'a, u32, DATA_5_SPEC, u8, u8, 8, 0>;
 impl W {
     #[doc = "Bits 0:7 - In reset mode, it is acceptance mask register 1 with R/W Permission. In operation mode, it stores the 5th byte information of the data to be transmitted under operating mode."]
     #[inline(always)]
     pub fn tx_byte_5(&mut self) -> TX_BYTE_5_W {
-        TX_BYTE_5_W { w: self }
+        TX_BYTE_5_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -44,18 +34,12 @@ impl W {
         self
     }
 }
-#[doc = "Data register 5\n\nThis register you can [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [data_5]
-(index.html) module"]
+#[doc = "Data register 5\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [data_5](index.html) module"]
 pub struct DATA_5_SPEC;
 impl crate::RegisterSpec for DATA_5_SPEC {
     type Ux = u32;
 }
-#[doc = "`write(|w| ..)` method takes [data_5::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [data_5::W](W) writer structure"]
 impl crate::Writable for DATA_5_SPEC {
     type Writer = W;
 }

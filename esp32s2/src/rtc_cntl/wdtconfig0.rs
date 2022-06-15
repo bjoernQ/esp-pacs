@@ -35,416 +35,57 @@ impl From<crate::W<WDTCONFIG0_SPEC>> for W {
     }
 }
 #[doc = "Field `WDT_CHIP_RESET_WIDTH` reader - chip reset siginal pulse width"]
-pub struct WDT_CHIP_RESET_WIDTH_R(crate::FieldReader<u8, u8>);
-impl WDT_CHIP_RESET_WIDTH_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        WDT_CHIP_RESET_WIDTH_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WDT_CHIP_RESET_WIDTH_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type WDT_CHIP_RESET_WIDTH_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `WDT_CHIP_RESET_WIDTH` writer - chip reset siginal pulse width"]
-pub struct WDT_CHIP_RESET_WIDTH_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WDT_CHIP_RESET_WIDTH_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type WDT_CHIP_RESET_WIDTH_W<'a> = crate::FieldWriter<'a, u32, WDTCONFIG0_SPEC, u8, u8, 8, 0>;
 #[doc = "Field `WDT_CHIP_RESET_EN` reader - wdt reset whole chip enable"]
-pub struct WDT_CHIP_RESET_EN_R(crate::FieldReader<bool, bool>);
-impl WDT_CHIP_RESET_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        WDT_CHIP_RESET_EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WDT_CHIP_RESET_EN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type WDT_CHIP_RESET_EN_R = crate::BitReader<bool>;
 #[doc = "Field `WDT_CHIP_RESET_EN` writer - wdt reset whole chip enable"]
-pub struct WDT_CHIP_RESET_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WDT_CHIP_RESET_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
-}
+pub type WDT_CHIP_RESET_EN_W<'a> = crate::BitWriter<'a, u32, WDTCONFIG0_SPEC, bool, 8>;
 #[doc = "Field `WDT_PAUSE_IN_SLP` reader - Set this bit to pause the watchdog in sleep."]
-pub struct WDT_PAUSE_IN_SLP_R(crate::FieldReader<bool, bool>);
-impl WDT_PAUSE_IN_SLP_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        WDT_PAUSE_IN_SLP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WDT_PAUSE_IN_SLP_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type WDT_PAUSE_IN_SLP_R = crate::BitReader<bool>;
 #[doc = "Field `WDT_PAUSE_IN_SLP` writer - Set this bit to pause the watchdog in sleep."]
-pub struct WDT_PAUSE_IN_SLP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WDT_PAUSE_IN_SLP_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
-    }
-}
+pub type WDT_PAUSE_IN_SLP_W<'a> = crate::BitWriter<'a, u32, WDTCONFIG0_SPEC, bool, 9>;
 #[doc = "Field `WDT_APPCPU_RESET_EN` reader - enable WDT reset APP CPU"]
-pub struct WDT_APPCPU_RESET_EN_R(crate::FieldReader<bool, bool>);
-impl WDT_APPCPU_RESET_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        WDT_APPCPU_RESET_EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WDT_APPCPU_RESET_EN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type WDT_APPCPU_RESET_EN_R = crate::BitReader<bool>;
 #[doc = "Field `WDT_APPCPU_RESET_EN` writer - enable WDT reset APP CPU"]
-pub struct WDT_APPCPU_RESET_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WDT_APPCPU_RESET_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
-        self.w
-    }
-}
+pub type WDT_APPCPU_RESET_EN_W<'a> = crate::BitWriter<'a, u32, WDTCONFIG0_SPEC, bool, 10>;
 #[doc = "Field `WDT_PROCPU_RESET_EN` reader - Set this bit to allow the watchdog to be able to reset CPU."]
-pub struct WDT_PROCPU_RESET_EN_R(crate::FieldReader<bool, bool>);
-impl WDT_PROCPU_RESET_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        WDT_PROCPU_RESET_EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WDT_PROCPU_RESET_EN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type WDT_PROCPU_RESET_EN_R = crate::BitReader<bool>;
 #[doc = "Field `WDT_PROCPU_RESET_EN` writer - Set this bit to allow the watchdog to be able to reset CPU."]
-pub struct WDT_PROCPU_RESET_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WDT_PROCPU_RESET_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
-        self.w
-    }
-}
+pub type WDT_PROCPU_RESET_EN_W<'a> = crate::BitWriter<'a, u32, WDTCONFIG0_SPEC, bool, 11>;
 #[doc = "Field `WDT_FLASHBOOT_MOD_EN` reader - Set this bit to enable watchdog when the chip boots from flash."]
-pub struct WDT_FLASHBOOT_MOD_EN_R(crate::FieldReader<bool, bool>);
-impl WDT_FLASHBOOT_MOD_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        WDT_FLASHBOOT_MOD_EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WDT_FLASHBOOT_MOD_EN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type WDT_FLASHBOOT_MOD_EN_R = crate::BitReader<bool>;
 #[doc = "Field `WDT_FLASHBOOT_MOD_EN` writer - Set this bit to enable watchdog when the chip boots from flash."]
-pub struct WDT_FLASHBOOT_MOD_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WDT_FLASHBOOT_MOD_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
-        self.w
-    }
-}
+pub type WDT_FLASHBOOT_MOD_EN_W<'a> = crate::BitWriter<'a, u32, WDTCONFIG0_SPEC, bool, 12>;
 #[doc = "Field `WDT_SYS_RESET_LENGTH` reader - Sets the length of the system reset counter."]
-pub struct WDT_SYS_RESET_LENGTH_R(crate::FieldReader<u8, u8>);
-impl WDT_SYS_RESET_LENGTH_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        WDT_SYS_RESET_LENGTH_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WDT_SYS_RESET_LENGTH_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type WDT_SYS_RESET_LENGTH_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `WDT_SYS_RESET_LENGTH` writer - Sets the length of the system reset counter."]
-pub struct WDT_SYS_RESET_LENGTH_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WDT_SYS_RESET_LENGTH_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 13)) | ((value as u32 & 0x07) << 13);
-        self.w
-    }
-}
+pub type WDT_SYS_RESET_LENGTH_W<'a> = crate::FieldWriter<'a, u32, WDTCONFIG0_SPEC, u8, u8, 3, 13>;
 #[doc = "Field `WDT_CPU_RESET_LENGTH` reader - Sets the length of the CPU reset counter."]
-pub struct WDT_CPU_RESET_LENGTH_R(crate::FieldReader<u8, u8>);
-impl WDT_CPU_RESET_LENGTH_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        WDT_CPU_RESET_LENGTH_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WDT_CPU_RESET_LENGTH_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type WDT_CPU_RESET_LENGTH_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `WDT_CPU_RESET_LENGTH` writer - Sets the length of the CPU reset counter."]
-pub struct WDT_CPU_RESET_LENGTH_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WDT_CPU_RESET_LENGTH_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 16)) | ((value as u32 & 0x07) << 16);
-        self.w
-    }
-}
-#[doc = "Field `WDT_STG3` reader - 1: enable at the interrupt stage, 2: enable at the CPU stage, 3: enable at the system stage, 4: enable at the system and RTC stage."]
-pub struct WDT_STG3_R(crate::FieldReader<u8, u8>);
-impl WDT_STG3_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        WDT_STG3_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WDT_STG3_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Field `WDT_STG3` writer - 1: enable at the interrupt stage, 2: enable at the CPU stage, 3: enable at the system stage, 4: enable at the system and RTC stage."]
-pub struct WDT_STG3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WDT_STG3_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 19)) | ((value as u32 & 0x07) << 19);
-        self.w
-    }
-}
-#[doc = "Field `WDT_STG2` reader - 1: enable at the interrupt stage, 2: enable at the CPU stage, 3: enable at the system stage, 4: enable at the system and RTC stage."]
-pub struct WDT_STG2_R(crate::FieldReader<u8, u8>);
-impl WDT_STG2_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        WDT_STG2_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WDT_STG2_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Field `WDT_STG2` writer - 1: enable at the interrupt stage, 2: enable at the CPU stage, 3: enable at the system stage, 4: enable at the system and RTC stage."]
-pub struct WDT_STG2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WDT_STG2_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 22)) | ((value as u32 & 0x07) << 22);
-        self.w
-    }
-}
-#[doc = "Field `WDT_STG1` reader - 1: enable at the interrupt stage, 2: enable at the CPU stage, 3: enable at the system stage, 4: enable at the system and RTC stage."]
-pub struct WDT_STG1_R(crate::FieldReader<u8, u8>);
-impl WDT_STG1_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        WDT_STG1_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WDT_STG1_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Field `WDT_STG1` writer - 1: enable at the interrupt stage, 2: enable at the CPU stage, 3: enable at the system stage, 4: enable at the system and RTC stage."]
-pub struct WDT_STG1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WDT_STG1_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 25)) | ((value as u32 & 0x07) << 25);
-        self.w
-    }
-}
-#[doc = "Field `WDT_STG0` reader - 1: enable at the interrupt stage, 2: enable at the CPU stage, 3: enable at the system stage, 4: enable at the system and RTC stage."]
-pub struct WDT_STG0_R(crate::FieldReader<u8, u8>);
-impl WDT_STG0_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        WDT_STG0_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WDT_STG0_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Field `WDT_STG0` writer - 1: enable at the interrupt stage, 2: enable at the CPU stage, 3: enable at the system stage, 4: enable at the system and RTC stage."]
-pub struct WDT_STG0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WDT_STG0_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 28)) | ((value as u32 & 0x07) << 28);
-        self.w
-    }
-}
+pub type WDT_CPU_RESET_LENGTH_W<'a> = crate::FieldWriter<'a, u32, WDTCONFIG0_SPEC, u8, u8, 3, 16>;
+#[doc = "Field `WDT_STG3` reader - 1: enable at the interrupt stage 2: enable at the CPU stage 3: enable at the system stage 4: enable at the system and RTC stage."]
+pub type WDT_STG3_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `WDT_STG3` writer - 1: enable at the interrupt stage 2: enable at the CPU stage 3: enable at the system stage 4: enable at the system and RTC stage."]
+pub type WDT_STG3_W<'a> = crate::FieldWriter<'a, u32, WDTCONFIG0_SPEC, u8, u8, 3, 19>;
+#[doc = "Field `WDT_STG2` reader - 1: enable at the interrupt stage 2: enable at the CPU stage 3: enable at the system stage 4: enable at the system and RTC stage."]
+pub type WDT_STG2_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `WDT_STG2` writer - 1: enable at the interrupt stage 2: enable at the CPU stage 3: enable at the system stage 4: enable at the system and RTC stage."]
+pub type WDT_STG2_W<'a> = crate::FieldWriter<'a, u32, WDTCONFIG0_SPEC, u8, u8, 3, 22>;
+#[doc = "Field `WDT_STG1` reader - 1: enable at the interrupt stage 2: enable at the CPU stage 3: enable at the system stage 4: enable at the system and RTC stage."]
+pub type WDT_STG1_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `WDT_STG1` writer - 1: enable at the interrupt stage 2: enable at the CPU stage 3: enable at the system stage 4: enable at the system and RTC stage."]
+pub type WDT_STG1_W<'a> = crate::FieldWriter<'a, u32, WDTCONFIG0_SPEC, u8, u8, 3, 25>;
+#[doc = "Field `WDT_STG0` reader - 1: enable at the interrupt stage 2: enable at the CPU stage 3: enable at the system stage 4: enable at the system and RTC stage."]
+pub type WDT_STG0_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `WDT_STG0` writer - 1: enable at the interrupt stage 2: enable at the CPU stage 3: enable at the system stage 4: enable at the system and RTC stage."]
+pub type WDT_STG0_W<'a> = crate::FieldWriter<'a, u32, WDTCONFIG0_SPEC, u8, u8, 3, 28>;
 #[doc = "Field `WDT_EN` reader - Set this bit to enable the RTC watchdog."]
-pub struct WDT_EN_R(crate::FieldReader<bool, bool>);
-impl WDT_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        WDT_EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WDT_EN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type WDT_EN_R = crate::BitReader<bool>;
 #[doc = "Field `WDT_EN` writer - Set this bit to enable the RTC watchdog."]
-pub struct WDT_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WDT_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
-        self.w
-    }
-}
+pub type WDT_EN_W<'a> = crate::BitWriter<'a, u32, WDTCONFIG0_SPEC, bool, 31>;
 impl R {
     #[doc = "Bits 0:7 - chip reset siginal pulse width"]
     #[inline(always)]
@@ -454,129 +95,129 @@ impl R {
     #[doc = "Bit 8 - wdt reset whole chip enable"]
     #[inline(always)]
     pub fn wdt_chip_reset_en(&self) -> WDT_CHIP_RESET_EN_R {
-        WDT_CHIP_RESET_EN_R::new(((self.bits >> 8) & 0x01) != 0)
+        WDT_CHIP_RESET_EN_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - Set this bit to pause the watchdog in sleep."]
     #[inline(always)]
     pub fn wdt_pause_in_slp(&self) -> WDT_PAUSE_IN_SLP_R {
-        WDT_PAUSE_IN_SLP_R::new(((self.bits >> 9) & 0x01) != 0)
+        WDT_PAUSE_IN_SLP_R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 10 - enable WDT reset APP CPU"]
     #[inline(always)]
     pub fn wdt_appcpu_reset_en(&self) -> WDT_APPCPU_RESET_EN_R {
-        WDT_APPCPU_RESET_EN_R::new(((self.bits >> 10) & 0x01) != 0)
+        WDT_APPCPU_RESET_EN_R::new(((self.bits >> 10) & 1) != 0)
     }
     #[doc = "Bit 11 - Set this bit to allow the watchdog to be able to reset CPU."]
     #[inline(always)]
     pub fn wdt_procpu_reset_en(&self) -> WDT_PROCPU_RESET_EN_R {
-        WDT_PROCPU_RESET_EN_R::new(((self.bits >> 11) & 0x01) != 0)
+        WDT_PROCPU_RESET_EN_R::new(((self.bits >> 11) & 1) != 0)
     }
     #[doc = "Bit 12 - Set this bit to enable watchdog when the chip boots from flash."]
     #[inline(always)]
     pub fn wdt_flashboot_mod_en(&self) -> WDT_FLASHBOOT_MOD_EN_R {
-        WDT_FLASHBOOT_MOD_EN_R::new(((self.bits >> 12) & 0x01) != 0)
+        WDT_FLASHBOOT_MOD_EN_R::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bits 13:15 - Sets the length of the system reset counter."]
     #[inline(always)]
     pub fn wdt_sys_reset_length(&self) -> WDT_SYS_RESET_LENGTH_R {
-        WDT_SYS_RESET_LENGTH_R::new(((self.bits >> 13) & 0x07) as u8)
+        WDT_SYS_RESET_LENGTH_R::new(((self.bits >> 13) & 7) as u8)
     }
     #[doc = "Bits 16:18 - Sets the length of the CPU reset counter."]
     #[inline(always)]
     pub fn wdt_cpu_reset_length(&self) -> WDT_CPU_RESET_LENGTH_R {
-        WDT_CPU_RESET_LENGTH_R::new(((self.bits >> 16) & 0x07) as u8)
+        WDT_CPU_RESET_LENGTH_R::new(((self.bits >> 16) & 7) as u8)
     }
-    #[doc = "Bits 19:21 - 1: enable at the interrupt stage, 2: enable at the CPU stage, 3: enable at the system stage, 4: enable at the system and RTC stage."]
+    #[doc = "Bits 19:21 - 1: enable at the interrupt stage 2: enable at the CPU stage 3: enable at the system stage 4: enable at the system and RTC stage."]
     #[inline(always)]
     pub fn wdt_stg3(&self) -> WDT_STG3_R {
-        WDT_STG3_R::new(((self.bits >> 19) & 0x07) as u8)
+        WDT_STG3_R::new(((self.bits >> 19) & 7) as u8)
     }
-    #[doc = "Bits 22:24 - 1: enable at the interrupt stage, 2: enable at the CPU stage, 3: enable at the system stage, 4: enable at the system and RTC stage."]
+    #[doc = "Bits 22:24 - 1: enable at the interrupt stage 2: enable at the CPU stage 3: enable at the system stage 4: enable at the system and RTC stage."]
     #[inline(always)]
     pub fn wdt_stg2(&self) -> WDT_STG2_R {
-        WDT_STG2_R::new(((self.bits >> 22) & 0x07) as u8)
+        WDT_STG2_R::new(((self.bits >> 22) & 7) as u8)
     }
-    #[doc = "Bits 25:27 - 1: enable at the interrupt stage, 2: enable at the CPU stage, 3: enable at the system stage, 4: enable at the system and RTC stage."]
+    #[doc = "Bits 25:27 - 1: enable at the interrupt stage 2: enable at the CPU stage 3: enable at the system stage 4: enable at the system and RTC stage."]
     #[inline(always)]
     pub fn wdt_stg1(&self) -> WDT_STG1_R {
-        WDT_STG1_R::new(((self.bits >> 25) & 0x07) as u8)
+        WDT_STG1_R::new(((self.bits >> 25) & 7) as u8)
     }
-    #[doc = "Bits 28:30 - 1: enable at the interrupt stage, 2: enable at the CPU stage, 3: enable at the system stage, 4: enable at the system and RTC stage."]
+    #[doc = "Bits 28:30 - 1: enable at the interrupt stage 2: enable at the CPU stage 3: enable at the system stage 4: enable at the system and RTC stage."]
     #[inline(always)]
     pub fn wdt_stg0(&self) -> WDT_STG0_R {
-        WDT_STG0_R::new(((self.bits >> 28) & 0x07) as u8)
+        WDT_STG0_R::new(((self.bits >> 28) & 7) as u8)
     }
     #[doc = "Bit 31 - Set this bit to enable the RTC watchdog."]
     #[inline(always)]
     pub fn wdt_en(&self) -> WDT_EN_R {
-        WDT_EN_R::new(((self.bits >> 31) & 0x01) != 0)
+        WDT_EN_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:7 - chip reset siginal pulse width"]
     #[inline(always)]
     pub fn wdt_chip_reset_width(&mut self) -> WDT_CHIP_RESET_WIDTH_W {
-        WDT_CHIP_RESET_WIDTH_W { w: self }
+        WDT_CHIP_RESET_WIDTH_W::new(self)
     }
     #[doc = "Bit 8 - wdt reset whole chip enable"]
     #[inline(always)]
     pub fn wdt_chip_reset_en(&mut self) -> WDT_CHIP_RESET_EN_W {
-        WDT_CHIP_RESET_EN_W { w: self }
+        WDT_CHIP_RESET_EN_W::new(self)
     }
     #[doc = "Bit 9 - Set this bit to pause the watchdog in sleep."]
     #[inline(always)]
     pub fn wdt_pause_in_slp(&mut self) -> WDT_PAUSE_IN_SLP_W {
-        WDT_PAUSE_IN_SLP_W { w: self }
+        WDT_PAUSE_IN_SLP_W::new(self)
     }
     #[doc = "Bit 10 - enable WDT reset APP CPU"]
     #[inline(always)]
     pub fn wdt_appcpu_reset_en(&mut self) -> WDT_APPCPU_RESET_EN_W {
-        WDT_APPCPU_RESET_EN_W { w: self }
+        WDT_APPCPU_RESET_EN_W::new(self)
     }
     #[doc = "Bit 11 - Set this bit to allow the watchdog to be able to reset CPU."]
     #[inline(always)]
     pub fn wdt_procpu_reset_en(&mut self) -> WDT_PROCPU_RESET_EN_W {
-        WDT_PROCPU_RESET_EN_W { w: self }
+        WDT_PROCPU_RESET_EN_W::new(self)
     }
     #[doc = "Bit 12 - Set this bit to enable watchdog when the chip boots from flash."]
     #[inline(always)]
     pub fn wdt_flashboot_mod_en(&mut self) -> WDT_FLASHBOOT_MOD_EN_W {
-        WDT_FLASHBOOT_MOD_EN_W { w: self }
+        WDT_FLASHBOOT_MOD_EN_W::new(self)
     }
     #[doc = "Bits 13:15 - Sets the length of the system reset counter."]
     #[inline(always)]
     pub fn wdt_sys_reset_length(&mut self) -> WDT_SYS_RESET_LENGTH_W {
-        WDT_SYS_RESET_LENGTH_W { w: self }
+        WDT_SYS_RESET_LENGTH_W::new(self)
     }
     #[doc = "Bits 16:18 - Sets the length of the CPU reset counter."]
     #[inline(always)]
     pub fn wdt_cpu_reset_length(&mut self) -> WDT_CPU_RESET_LENGTH_W {
-        WDT_CPU_RESET_LENGTH_W { w: self }
+        WDT_CPU_RESET_LENGTH_W::new(self)
     }
-    #[doc = "Bits 19:21 - 1: enable at the interrupt stage, 2: enable at the CPU stage, 3: enable at the system stage, 4: enable at the system and RTC stage."]
+    #[doc = "Bits 19:21 - 1: enable at the interrupt stage 2: enable at the CPU stage 3: enable at the system stage 4: enable at the system and RTC stage."]
     #[inline(always)]
     pub fn wdt_stg3(&mut self) -> WDT_STG3_W {
-        WDT_STG3_W { w: self }
+        WDT_STG3_W::new(self)
     }
-    #[doc = "Bits 22:24 - 1: enable at the interrupt stage, 2: enable at the CPU stage, 3: enable at the system stage, 4: enable at the system and RTC stage."]
+    #[doc = "Bits 22:24 - 1: enable at the interrupt stage 2: enable at the CPU stage 3: enable at the system stage 4: enable at the system and RTC stage."]
     #[inline(always)]
     pub fn wdt_stg2(&mut self) -> WDT_STG2_W {
-        WDT_STG2_W { w: self }
+        WDT_STG2_W::new(self)
     }
-    #[doc = "Bits 25:27 - 1: enable at the interrupt stage, 2: enable at the CPU stage, 3: enable at the system stage, 4: enable at the system and RTC stage."]
+    #[doc = "Bits 25:27 - 1: enable at the interrupt stage 2: enable at the CPU stage 3: enable at the system stage 4: enable at the system and RTC stage."]
     #[inline(always)]
     pub fn wdt_stg1(&mut self) -> WDT_STG1_W {
-        WDT_STG1_W { w: self }
+        WDT_STG1_W::new(self)
     }
-    #[doc = "Bits 28:30 - 1: enable at the interrupt stage, 2: enable at the CPU stage, 3: enable at the system stage, 4: enable at the system and RTC stage."]
+    #[doc = "Bits 28:30 - 1: enable at the interrupt stage 2: enable at the CPU stage 3: enable at the system stage 4: enable at the system and RTC stage."]
     #[inline(always)]
     pub fn wdt_stg0(&mut self) -> WDT_STG0_W {
-        WDT_STG0_W { w: self }
+        WDT_STG0_W::new(self)
     }
     #[doc = "Bit 31 - Set this bit to enable the RTC watchdog."]
     #[inline(always)]
     pub fn wdt_en(&mut self) -> WDT_EN_W {
-        WDT_EN_W { w: self }
+        WDT_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -585,25 +226,16 @@ impl W {
         self
     }
 }
-#[doc = "RTC watchdog configuration register\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wdtconfig0]
-(index.html) module"]
+#[doc = "RTC watchdog configuration register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wdtconfig0](index.html) module"]
 pub struct WDTCONFIG0_SPEC;
 impl crate::RegisterSpec for WDTCONFIG0_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [wdtconfig0::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [wdtconfig0::R](R) reader structure"]
 impl crate::Readable for WDTCONFIG0_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [wdtconfig0::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [wdtconfig0::W](W) writer structure"]
 impl crate::Writable for WDTCONFIG0_SPEC {
     type Writer = W;
 }

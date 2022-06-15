@@ -35,54 +35,21 @@ impl From<crate::W<CONSTANT_TIME_SPEC>> for W {
     }
 }
 #[doc = "Field `CONSTANT_TIME` reader - Controls the CONSTANT_TIME option. 0: acceleration. 1: no acceleration(by default)."]
-pub struct CONSTANT_TIME_R(crate::FieldReader<bool, bool>);
-impl CONSTANT_TIME_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CONSTANT_TIME_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CONSTANT_TIME_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CONSTANT_TIME_R = crate::BitReader<bool>;
 #[doc = "Field `CONSTANT_TIME` writer - Controls the CONSTANT_TIME option. 0: acceleration. 1: no acceleration(by default)."]
-pub struct CONSTANT_TIME_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CONSTANT_TIME_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type CONSTANT_TIME_W<'a> = crate::BitWriter<'a, u32, CONSTANT_TIME_SPEC, bool, 0>;
 impl R {
     #[doc = "Bit 0 - Controls the CONSTANT_TIME option. 0: acceleration. 1: no acceleration(by default)."]
     #[inline(always)]
     pub fn constant_time(&self) -> CONSTANT_TIME_R {
-        CONSTANT_TIME_R::new((self.bits & 0x01) != 0)
+        CONSTANT_TIME_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Controls the CONSTANT_TIME option. 0: acceleration. 1: no acceleration(by default)."]
     #[inline(always)]
     pub fn constant_time(&mut self) -> CONSTANT_TIME_W {
-        CONSTANT_TIME_W { w: self }
+        CONSTANT_TIME_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -91,25 +58,16 @@ impl W {
         self
     }
 }
-#[doc = "CONSTANT_TIME option control register\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [constant_time]
-(index.html) module"]
+#[doc = "CONSTANT_TIME option control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [constant_time](index.html) module"]
 pub struct CONSTANT_TIME_SPEC;
 impl crate::RegisterSpec for CONSTANT_TIME_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [constant_time::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [constant_time::R](R) reader structure"]
 impl crate::Readable for CONSTANT_TIME_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [constant_time::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [constant_time::W](W) writer structure"]
 impl crate::Writable for CONSTANT_TIME_SPEC {
     type Writer = W;
 }

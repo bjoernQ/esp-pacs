@@ -20,22 +20,12 @@ impl From<crate::W<WR_MESSAGE__SPEC>> for W {
     }
 }
 #[doc = "Field `WDATA` writer - Store the %sth 32-bit of message."]
-pub struct WDATA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WDATA_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
-    }
-}
+pub type WDATA_W<'a> = crate::FieldWriter<'a, u32, WR_MESSAGE__SPEC, u32, u32, 32, 0>;
 impl W {
     #[doc = "Bits 0:31 - Store the %sth 32-bit of message."]
     #[inline(always)]
     pub fn wdata(&mut self) -> WDATA_W {
-        WDATA_W { w: self }
+        WDATA_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -44,18 +34,12 @@ impl W {
         self
     }
 }
-#[doc = "Message register %s\n\nThis register you can [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wr_message_]
-(index.html) module"]
+#[doc = "Message register %s\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wr_message_](index.html) module"]
 pub struct WR_MESSAGE__SPEC;
 impl crate::RegisterSpec for WR_MESSAGE__SPEC {
     type Ux = u32;
 }
-#[doc = "`write(|w| ..)` method takes [wr_message_::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [wr_message_::W](W) writer structure"]
 impl crate::Writable for WR_MESSAGE__SPEC {
     type Writer = W;
 }

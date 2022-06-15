@@ -35,32 +35,9 @@ impl From<crate::W<STATUS1_SPEC>> for W {
     }
 }
 #[doc = "Field `INTERRUPT` reader - GPIO interrupt status register for GPIO32-53"]
-pub struct INTERRUPT_R(crate::FieldReader<u32, u32>);
-impl INTERRUPT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        INTERRUPT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for INTERRUPT_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type INTERRUPT_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `INTERRUPT` writer - GPIO interrupt status register for GPIO32-53"]
-pub struct INTERRUPT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> INTERRUPT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x003f_ffff) | (value as u32 & 0x003f_ffff);
-        self.w
-    }
-}
+pub type INTERRUPT_W<'a> = crate::FieldWriter<'a, u32, STATUS1_SPEC, u32, u32, 22, 0>;
 impl R {
     #[doc = "Bits 0:21 - GPIO interrupt status register for GPIO32-53"]
     #[inline(always)]
@@ -72,7 +49,7 @@ impl W {
     #[doc = "Bits 0:21 - GPIO interrupt status register for GPIO32-53"]
     #[inline(always)]
     pub fn interrupt(&mut self) -> INTERRUPT_W {
-        INTERRUPT_W { w: self }
+        INTERRUPT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -81,25 +58,16 @@ impl W {
         self
     }
 }
-#[doc = "GPIO interrupt status register for GPIO32-53\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [status1]
-(index.html) module"]
+#[doc = "GPIO interrupt status register for GPIO32-53\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [status1](index.html) module"]
 pub struct STATUS1_SPEC;
 impl crate::RegisterSpec for STATUS1_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [status1::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [status1::R](R) reader structure"]
 impl crate::Readable for STATUS1_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [status1::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [status1::W](W) writer structure"]
 impl crate::Writable for STATUS1_SPEC {
     type Writer = W;
 }

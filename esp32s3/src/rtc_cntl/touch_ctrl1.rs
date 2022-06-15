@@ -35,59 +35,13 @@ impl From<crate::W<TOUCH_CTRL1_SPEC>> for W {
     }
 }
 #[doc = "Field `TOUCH_SLEEP_CYCLES` reader - sleep cycles for timer"]
-pub struct TOUCH_SLEEP_CYCLES_R(crate::FieldReader<u16, u16>);
-impl TOUCH_SLEEP_CYCLES_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        TOUCH_SLEEP_CYCLES_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TOUCH_SLEEP_CYCLES_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TOUCH_SLEEP_CYCLES_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `TOUCH_SLEEP_CYCLES` writer - sleep cycles for timer"]
-pub struct TOUCH_SLEEP_CYCLES_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TOUCH_SLEEP_CYCLES_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
-        self.w
-    }
-}
+pub type TOUCH_SLEEP_CYCLES_W<'a> = crate::FieldWriter<'a, u32, TOUCH_CTRL1_SPEC, u16, u16, 16, 0>;
 #[doc = "Field `TOUCH_MEAS_NUM` reader - the meas length (in 8MHz)"]
-pub struct TOUCH_MEAS_NUM_R(crate::FieldReader<u16, u16>);
-impl TOUCH_MEAS_NUM_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        TOUCH_MEAS_NUM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TOUCH_MEAS_NUM_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TOUCH_MEAS_NUM_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `TOUCH_MEAS_NUM` writer - the meas length (in 8MHz)"]
-pub struct TOUCH_MEAS_NUM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TOUCH_MEAS_NUM_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xffff << 16)) | ((value as u32 & 0xffff) << 16);
-        self.w
-    }
-}
+pub type TOUCH_MEAS_NUM_W<'a> = crate::FieldWriter<'a, u32, TOUCH_CTRL1_SPEC, u16, u16, 16, 16>;
 impl R {
     #[doc = "Bits 0:15 - sleep cycles for timer"]
     #[inline(always)]
@@ -104,12 +58,12 @@ impl W {
     #[doc = "Bits 0:15 - sleep cycles for timer"]
     #[inline(always)]
     pub fn touch_sleep_cycles(&mut self) -> TOUCH_SLEEP_CYCLES_W {
-        TOUCH_SLEEP_CYCLES_W { w: self }
+        TOUCH_SLEEP_CYCLES_W::new(self)
     }
     #[doc = "Bits 16:31 - the meas length (in 8MHz)"]
     #[inline(always)]
     pub fn touch_meas_num(&mut self) -> TOUCH_MEAS_NUM_W {
-        TOUCH_MEAS_NUM_W { w: self }
+        TOUCH_MEAS_NUM_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -118,25 +72,16 @@ impl W {
         self
     }
 }
-#[doc = "configure touch controller\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [touch_ctrl1]
-(index.html) module"]
+#[doc = "configure touch controller\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [touch_ctrl1](index.html) module"]
 pub struct TOUCH_CTRL1_SPEC;
 impl crate::RegisterSpec for TOUCH_CTRL1_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [touch_ctrl1::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [touch_ctrl1::R](R) reader structure"]
 impl crate::Readable for TOUCH_CTRL1_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [touch_ctrl1::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [touch_ctrl1::W](W) writer structure"]
 impl crate::Writable for TOUCH_CTRL1_SPEC {
     type Writer = W;
 }

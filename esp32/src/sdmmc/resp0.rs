@@ -13,40 +13,21 @@ impl From<crate::R<RESP0_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Field `RESPONSE0` reader - Bit\\[31:0\\]
- of response."]
-pub struct RESPONSE0_R(crate::FieldReader<u32, u32>);
-impl RESPONSE0_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        RESPONSE0_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RESPONSE0_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `RESPONSE0` reader - Bit\\[31:0\\] of response."]
+pub type RESPONSE0_R = crate::FieldReader<u32, u32>;
 impl R {
-    #[doc = "Bits 0:31 - Bit\\[31:0\\]
- of response."]
+    #[doc = "Bits 0:31 - Bit\\[31:0\\] of response."]
     #[inline(always)]
     pub fn response0(&self) -> RESPONSE0_R {
         RESPONSE0_R::new(self.bits)
     }
 }
-#[doc = "Response data register\n\nThis register you can [`read`]
-(crate::generic::Reg::read). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [resp0]
-(index.html) module"]
+#[doc = "Response data register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [resp0](index.html) module"]
 pub struct RESP0_SPEC;
 impl crate::RegisterSpec for RESP0_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [resp0::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [resp0::R](R) reader structure"]
 impl crate::Readable for RESP0_SPEC {
     type Reader = R;
 }

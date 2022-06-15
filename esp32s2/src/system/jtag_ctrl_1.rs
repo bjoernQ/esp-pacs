@@ -20,24 +20,15 @@ impl From<crate::W<JTAG_CTRL_1_SPEC>> for W {
     }
 }
 #[doc = "Field `CANCEL_EFUSE_DISABLE_JTAG_TEMPORARY_1` writer - Stores the 32 to 63 bits of the 256 bits register used to cancel the temporary disable of eFuse to JTAG."]
-pub struct CANCEL_EFUSE_DISABLE_JTAG_TEMPORARY_1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CANCEL_EFUSE_DISABLE_JTAG_TEMPORARY_1_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
-    }
-}
+pub type CANCEL_EFUSE_DISABLE_JTAG_TEMPORARY_1_W<'a> =
+    crate::FieldWriter<'a, u32, JTAG_CTRL_1_SPEC, u32, u32, 32, 0>;
 impl W {
     #[doc = "Bits 0:31 - Stores the 32 to 63 bits of the 256 bits register used to cancel the temporary disable of eFuse to JTAG."]
     #[inline(always)]
     pub fn cancel_efuse_disable_jtag_temporary_1(
         &mut self,
     ) -> CANCEL_EFUSE_DISABLE_JTAG_TEMPORARY_1_W {
-        CANCEL_EFUSE_DISABLE_JTAG_TEMPORARY_1_W { w: self }
+        CANCEL_EFUSE_DISABLE_JTAG_TEMPORARY_1_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -46,18 +37,12 @@ impl W {
         self
     }
 }
-#[doc = "JTAG configuration register 1\n\nThis register you can [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [jtag_ctrl_1]
-(index.html) module"]
+#[doc = "JTAG configuration register 1\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [jtag_ctrl_1](index.html) module"]
 pub struct JTAG_CTRL_1_SPEC;
 impl crate::RegisterSpec for JTAG_CTRL_1_SPEC {
     type Ux = u32;
 }
-#[doc = "`write(|w| ..)` method takes [jtag_ctrl_1::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [jtag_ctrl_1::W](W) writer structure"]
 impl crate::Writable for JTAG_CTRL_1_SPEC {
     type Writer = W;
 }

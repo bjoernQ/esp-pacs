@@ -20,22 +20,12 @@ impl From<crate::W<STATUS_W1TC_SPEC>> for W {
     }
 }
 #[doc = "Field `STATUS_W1TC` writer - GPIO interrupt status clear register for GPIO0-25"]
-pub struct STATUS_W1TC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> STATUS_W1TC_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03ff_ffff) | (value as u32 & 0x03ff_ffff);
-        self.w
-    }
-}
+pub type STATUS_W1TC_W<'a> = crate::FieldWriter<'a, u32, STATUS_W1TC_SPEC, u32, u32, 26, 0>;
 impl W {
     #[doc = "Bits 0:25 - GPIO interrupt status clear register for GPIO0-25"]
     #[inline(always)]
     pub fn status_w1tc(&mut self) -> STATUS_W1TC_W {
-        STATUS_W1TC_W { w: self }
+        STATUS_W1TC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -44,18 +34,12 @@ impl W {
         self
     }
 }
-#[doc = "GPIO interrupt status clear register\n\nThis register you can [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [status_w1tc]
-(index.html) module"]
+#[doc = "GPIO interrupt status clear register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [status_w1tc](index.html) module"]
 pub struct STATUS_W1TC_SPEC;
 impl crate::RegisterSpec for STATUS_W1TC_SPEC {
     type Ux = u32;
 }
-#[doc = "`write(|w| ..)` method takes [status_w1tc::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [status_w1tc::W](W) writer structure"]
 impl crate::Writable for STATUS_W1TC_SPEC {
     type Writer = W;
 }

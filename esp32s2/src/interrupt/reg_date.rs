@@ -35,32 +35,9 @@ impl From<crate::W<REG_DATE_SPEC>> for W {
     }
 }
 #[doc = "Field `INTERRUPT_REG_DATE` reader - This is the version register."]
-pub struct INTERRUPT_REG_DATE_R(crate::FieldReader<u32, u32>);
-impl INTERRUPT_REG_DATE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        INTERRUPT_REG_DATE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for INTERRUPT_REG_DATE_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type INTERRUPT_REG_DATE_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `INTERRUPT_REG_DATE` writer - This is the version register."]
-pub struct INTERRUPT_REG_DATE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> INTERRUPT_REG_DATE_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0fff_ffff) | (value as u32 & 0x0fff_ffff);
-        self.w
-    }
-}
+pub type INTERRUPT_REG_DATE_W<'a> = crate::FieldWriter<'a, u32, REG_DATE_SPEC, u32, u32, 28, 0>;
 impl R {
     #[doc = "Bits 0:27 - This is the version register."]
     #[inline(always)]
@@ -72,7 +49,7 @@ impl W {
     #[doc = "Bits 0:27 - This is the version register."]
     #[inline(always)]
     pub fn interrupt_reg_date(&mut self) -> INTERRUPT_REG_DATE_W {
-        INTERRUPT_REG_DATE_W { w: self }
+        INTERRUPT_REG_DATE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -81,25 +58,16 @@ impl W {
         self
     }
 }
-#[doc = "Version control register\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [reg_date]
-(index.html) module"]
+#[doc = "Version control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [reg_date](index.html) module"]
 pub struct REG_DATE_SPEC;
 impl crate::RegisterSpec for REG_DATE_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [reg_date::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [reg_date::R](R) reader structure"]
 impl crate::Readable for REG_DATE_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [reg_date::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [reg_date::W](W) writer structure"]
 impl crate::Writable for REG_DATE_SPEC {
     type Writer = W;
 }

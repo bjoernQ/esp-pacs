@@ -20,22 +20,12 @@ impl From<crate::W<SET_PARA_KEY_SPEC>> for W {
     }
 }
 #[doc = "Field `KEY_SET` writer - Set hmac parameter key."]
-pub struct KEY_SET_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> KEY_SET_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07) | (value as u32 & 0x07);
-        self.w
-    }
-}
+pub type KEY_SET_W<'a> = crate::FieldWriter<'a, u32, SET_PARA_KEY_SPEC, u8, u8, 3, 0>;
 impl W {
     #[doc = "Bits 0:2 - Set hmac parameter key."]
     #[inline(always)]
     pub fn key_set(&mut self) -> KEY_SET_W {
-        KEY_SET_W { w: self }
+        KEY_SET_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -44,18 +34,12 @@ impl W {
         self
     }
 }
-#[doc = "Configure key.\n\nThis register you can [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [set_para_key]
-(index.html) module"]
+#[doc = "Configure key.\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [set_para_key](index.html) module"]
 pub struct SET_PARA_KEY_SPEC;
 impl crate::RegisterSpec for SET_PARA_KEY_SPEC {
     type Ux = u32;
 }
-#[doc = "`write(|w| ..)` method takes [set_para_key::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [set_para_key::W](W) writer structure"]
 impl crate::Writable for SET_PARA_KEY_SPEC {
     type Writer = W;
 }

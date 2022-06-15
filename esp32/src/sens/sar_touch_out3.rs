@@ -14,35 +14,9 @@ impl From<crate::R<SAR_TOUCH_OUT3_SPEC>> for R {
     }
 }
 #[doc = "Field `TOUCH_MEAS_OUT5` reader - the counter for touch pad 5"]
-pub struct TOUCH_MEAS_OUT5_R(crate::FieldReader<u16, u16>);
-impl TOUCH_MEAS_OUT5_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        TOUCH_MEAS_OUT5_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TOUCH_MEAS_OUT5_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TOUCH_MEAS_OUT5_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `TOUCH_MEAS_OUT4` reader - the counter for touch pad 4"]
-pub struct TOUCH_MEAS_OUT4_R(crate::FieldReader<u16, u16>);
-impl TOUCH_MEAS_OUT4_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        TOUCH_MEAS_OUT4_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TOUCH_MEAS_OUT4_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TOUCH_MEAS_OUT4_R = crate::FieldReader<u16, u16>;
 impl R {
     #[doc = "Bits 0:15 - the counter for touch pad 5"]
     #[inline(always)]
@@ -55,16 +29,12 @@ impl R {
         TOUCH_MEAS_OUT4_R::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
-#[doc = "\n\nThis register you can [`read`]
-(crate::generic::Reg::read). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sar_touch_out3]
-(index.html) module"]
+#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sar_touch_out3](index.html) module"]
 pub struct SAR_TOUCH_OUT3_SPEC;
 impl crate::RegisterSpec for SAR_TOUCH_OUT3_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [sar_touch_out3::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [sar_touch_out3::R](R) reader structure"]
 impl crate::Readable for SAR_TOUCH_OUT3_SPEC {
     type Reader = R;
 }

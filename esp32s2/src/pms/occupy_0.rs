@@ -35,54 +35,21 @@ impl From<crate::W<OCCUPY_0_SPEC>> for W {
     }
 }
 #[doc = "Field `OCCUPY_LOCK` reader - Lock register. Setting to 1 locks occupy permission control registers."]
-pub struct OCCUPY_LOCK_R(crate::FieldReader<bool, bool>);
-impl OCCUPY_LOCK_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        OCCUPY_LOCK_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for OCCUPY_LOCK_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type OCCUPY_LOCK_R = crate::BitReader<bool>;
 #[doc = "Field `OCCUPY_LOCK` writer - Lock register. Setting to 1 locks occupy permission control registers."]
-pub struct OCCUPY_LOCK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OCCUPY_LOCK_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type OCCUPY_LOCK_W<'a> = crate::BitWriter<'a, u32, OCCUPY_0_SPEC, bool, 0>;
 impl R {
     #[doc = "Bit 0 - Lock register. Setting to 1 locks occupy permission control registers."]
     #[inline(always)]
     pub fn occupy_lock(&self) -> OCCUPY_LOCK_R {
-        OCCUPY_LOCK_R::new((self.bits & 0x01) != 0)
+        OCCUPY_LOCK_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Lock register. Setting to 1 locks occupy permission control registers."]
     #[inline(always)]
     pub fn occupy_lock(&mut self) -> OCCUPY_LOCK_W {
-        OCCUPY_LOCK_W { w: self }
+        OCCUPY_LOCK_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -91,25 +58,16 @@ impl W {
         self
     }
 }
-#[doc = "Occupy permission control register 0.\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [occupy_0]
-(index.html) module"]
+#[doc = "Occupy permission control register 0.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [occupy_0](index.html) module"]
 pub struct OCCUPY_0_SPEC;
 impl crate::RegisterSpec for OCCUPY_0_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [occupy_0::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [occupy_0::R](R) reader structure"]
 impl crate::Readable for OCCUPY_0_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [occupy_0::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [occupy_0::W](W) writer structure"]
 impl crate::Writable for OCCUPY_0_SPEC {
     type Writer = W;
 }

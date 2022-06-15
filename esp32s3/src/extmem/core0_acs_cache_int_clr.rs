@@ -20,140 +20,45 @@ impl From<crate::W<CORE0_ACS_CACHE_INT_CLR_SPEC>> for W {
     }
 }
 #[doc = "Field `CORE0_IBUS_ACS_MSK_IC_INT_CLR` writer - The bit is used to clear interrupt by cpu access icache while the corresponding ibus is disabled or icache is disabled which include speculative access."]
-pub struct CORE0_IBUS_ACS_MSK_IC_INT_CLR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CORE0_IBUS_ACS_MSK_IC_INT_CLR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type CORE0_IBUS_ACS_MSK_IC_INT_CLR_W<'a> =
+    crate::BitWriter<'a, u32, CORE0_ACS_CACHE_INT_CLR_SPEC, bool, 0>;
 #[doc = "Field `CORE0_IBUS_WR_IC_INT_CLR` writer - The bit is used to clear interrupt by ibus trying to write icache"]
-pub struct CORE0_IBUS_WR_IC_INT_CLR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CORE0_IBUS_WR_IC_INT_CLR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type CORE0_IBUS_WR_IC_INT_CLR_W<'a> =
+    crate::BitWriter<'a, u32, CORE0_ACS_CACHE_INT_CLR_SPEC, bool, 1>;
 #[doc = "Field `CORE0_IBUS_REJECT_INT_CLR` writer - The bit is used to clear interrupt by authentication fail."]
-pub struct CORE0_IBUS_REJECT_INT_CLR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CORE0_IBUS_REJECT_INT_CLR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type CORE0_IBUS_REJECT_INT_CLR_W<'a> =
+    crate::BitWriter<'a, u32, CORE0_ACS_CACHE_INT_CLR_SPEC, bool, 2>;
 #[doc = "Field `CORE0_DBUS_ACS_MSK_DC_INT_CLR` writer - The bit is used to clear interrupt by cpu access dcache while the corresponding dbus is disabled or dcache is disabled which include speculative access."]
-pub struct CORE0_DBUS_ACS_MSK_DC_INT_CLR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CORE0_DBUS_ACS_MSK_DC_INT_CLR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type CORE0_DBUS_ACS_MSK_DC_INT_CLR_W<'a> =
+    crate::BitWriter<'a, u32, CORE0_ACS_CACHE_INT_CLR_SPEC, bool, 3>;
 #[doc = "Field `CORE0_DBUS_REJECT_INT_CLR` writer - The bit is used to clear interrupt by authentication fail."]
-pub struct CORE0_DBUS_REJECT_INT_CLR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CORE0_DBUS_REJECT_INT_CLR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type CORE0_DBUS_REJECT_INT_CLR_W<'a> =
+    crate::BitWriter<'a, u32, CORE0_ACS_CACHE_INT_CLR_SPEC, bool, 4>;
 impl W {
     #[doc = "Bit 0 - The bit is used to clear interrupt by cpu access icache while the corresponding ibus is disabled or icache is disabled which include speculative access."]
     #[inline(always)]
     pub fn core0_ibus_acs_msk_ic_int_clr(&mut self) -> CORE0_IBUS_ACS_MSK_IC_INT_CLR_W {
-        CORE0_IBUS_ACS_MSK_IC_INT_CLR_W { w: self }
+        CORE0_IBUS_ACS_MSK_IC_INT_CLR_W::new(self)
     }
     #[doc = "Bit 1 - The bit is used to clear interrupt by ibus trying to write icache"]
     #[inline(always)]
     pub fn core0_ibus_wr_ic_int_clr(&mut self) -> CORE0_IBUS_WR_IC_INT_CLR_W {
-        CORE0_IBUS_WR_IC_INT_CLR_W { w: self }
+        CORE0_IBUS_WR_IC_INT_CLR_W::new(self)
     }
     #[doc = "Bit 2 - The bit is used to clear interrupt by authentication fail."]
     #[inline(always)]
     pub fn core0_ibus_reject_int_clr(&mut self) -> CORE0_IBUS_REJECT_INT_CLR_W {
-        CORE0_IBUS_REJECT_INT_CLR_W { w: self }
+        CORE0_IBUS_REJECT_INT_CLR_W::new(self)
     }
     #[doc = "Bit 3 - The bit is used to clear interrupt by cpu access dcache while the corresponding dbus is disabled or dcache is disabled which include speculative access."]
     #[inline(always)]
     pub fn core0_dbus_acs_msk_dc_int_clr(&mut self) -> CORE0_DBUS_ACS_MSK_DC_INT_CLR_W {
-        CORE0_DBUS_ACS_MSK_DC_INT_CLR_W { w: self }
+        CORE0_DBUS_ACS_MSK_DC_INT_CLR_W::new(self)
     }
     #[doc = "Bit 4 - The bit is used to clear interrupt by authentication fail."]
     #[inline(always)]
     pub fn core0_dbus_reject_int_clr(&mut self) -> CORE0_DBUS_REJECT_INT_CLR_W {
-        CORE0_DBUS_REJECT_INT_CLR_W { w: self }
+        CORE0_DBUS_REJECT_INT_CLR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -162,18 +67,12 @@ impl W {
         self
     }
 }
-#[doc = "******* Description ***********\n\nThis register you can [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [core0_acs_cache_int_clr]
-(index.html) module"]
+#[doc = "******* Description ***********\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [core0_acs_cache_int_clr](index.html) module"]
 pub struct CORE0_ACS_CACHE_INT_CLR_SPEC;
 impl crate::RegisterSpec for CORE0_ACS_CACHE_INT_CLR_SPEC {
     type Ux = u32;
 }
-#[doc = "`write(|w| ..)` method takes [core0_acs_cache_int_clr::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [core0_acs_cache_int_clr::W](W) writer structure"]
 impl crate::Writable for CORE0_ACS_CACHE_INT_CLR_SPEC {
     type Writer = W;
 }

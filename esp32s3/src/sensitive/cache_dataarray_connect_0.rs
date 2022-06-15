@@ -35,54 +35,22 @@ impl From<crate::W<CACHE_DATAARRAY_CONNECT_0_SPEC>> for W {
     }
 }
 #[doc = "Field `CACHE_DATAARRAY_CONNECT_LOCK` reader - Set 1 to lock cache data array registers."]
-pub struct CACHE_DATAARRAY_CONNECT_LOCK_R(crate::FieldReader<bool, bool>);
-impl CACHE_DATAARRAY_CONNECT_LOCK_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CACHE_DATAARRAY_CONNECT_LOCK_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CACHE_DATAARRAY_CONNECT_LOCK_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CACHE_DATAARRAY_CONNECT_LOCK_R = crate::BitReader<bool>;
 #[doc = "Field `CACHE_DATAARRAY_CONNECT_LOCK` writer - Set 1 to lock cache data array registers."]
-pub struct CACHE_DATAARRAY_CONNECT_LOCK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CACHE_DATAARRAY_CONNECT_LOCK_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type CACHE_DATAARRAY_CONNECT_LOCK_W<'a> =
+    crate::BitWriter<'a, u32, CACHE_DATAARRAY_CONNECT_0_SPEC, bool, 0>;
 impl R {
     #[doc = "Bit 0 - Set 1 to lock cache data array registers."]
     #[inline(always)]
     pub fn cache_dataarray_connect_lock(&self) -> CACHE_DATAARRAY_CONNECT_LOCK_R {
-        CACHE_DATAARRAY_CONNECT_LOCK_R::new((self.bits & 0x01) != 0)
+        CACHE_DATAARRAY_CONNECT_LOCK_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Set 1 to lock cache data array registers."]
     #[inline(always)]
     pub fn cache_dataarray_connect_lock(&mut self) -> CACHE_DATAARRAY_CONNECT_LOCK_W {
-        CACHE_DATAARRAY_CONNECT_LOCK_W { w: self }
+        CACHE_DATAARRAY_CONNECT_LOCK_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -91,25 +59,16 @@ impl W {
         self
     }
 }
-#[doc = "Cache data array configuration register 0.\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cache_dataarray_connect_0]
-(index.html) module"]
+#[doc = "Cache data array configuration register 0.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cache_dataarray_connect_0](index.html) module"]
 pub struct CACHE_DATAARRAY_CONNECT_0_SPEC;
 impl crate::RegisterSpec for CACHE_DATAARRAY_CONNECT_0_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [cache_dataarray_connect_0::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [cache_dataarray_connect_0::R](R) reader structure"]
 impl crate::Readable for CACHE_DATAARRAY_CONNECT_0_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [cache_dataarray_connect_0::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [cache_dataarray_connect_0::W](W) writer structure"]
 impl crate::Writable for CACHE_DATAARRAY_CONNECT_0_SPEC {
     type Writer = W;
 }

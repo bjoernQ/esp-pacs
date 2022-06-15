@@ -14,20 +14,7 @@ impl From<crate::R<SPI_MEM_REJECT_ADDR_SPEC>> for R {
     }
 }
 #[doc = "Field `SPI_MEM_REJECT_ADDR` reader - reg_spi_mem_reject_addr"]
-pub struct SPI_MEM_REJECT_ADDR_R(crate::FieldReader<u32, u32>);
-impl SPI_MEM_REJECT_ADDR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        SPI_MEM_REJECT_ADDR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SPI_MEM_REJECT_ADDR_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SPI_MEM_REJECT_ADDR_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31 - reg_spi_mem_reject_addr"]
     #[inline(always)]
@@ -35,16 +22,12 @@ impl R {
         SPI_MEM_REJECT_ADDR_R::new(self.bits)
     }
 }
-#[doc = "APB_CTRL_SPI_MEM_REJECT_ADDR_REG\n\nThis register you can [`read`]
-(crate::generic::Reg::read). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [spi_mem_reject_addr]
-(index.html) module"]
+#[doc = "APB_CTRL_SPI_MEM_REJECT_ADDR_REG\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [spi_mem_reject_addr](index.html) module"]
 pub struct SPI_MEM_REJECT_ADDR_SPEC;
 impl crate::RegisterSpec for SPI_MEM_REJECT_ADDR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [spi_mem_reject_addr::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [spi_mem_reject_addr::R](R) reader structure"]
 impl crate::Readable for SPI_MEM_REJECT_ADDR_SPEC {
     type Reader = R;
 }

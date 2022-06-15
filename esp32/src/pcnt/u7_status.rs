@@ -14,20 +14,7 @@ impl From<crate::R<U7_STATUS_SPEC>> for R {
     }
 }
 #[doc = "Field `CORE_STATUS_U7` reader - "]
-pub struct CORE_STATUS_U7_R(crate::FieldReader<u32, u32>);
-impl CORE_STATUS_U7_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        CORE_STATUS_U7_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CORE_STATUS_U7_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CORE_STATUS_U7_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31"]
     #[inline(always)]
@@ -35,16 +22,12 @@ impl R {
         CORE_STATUS_U7_R::new(self.bits)
     }
 }
-#[doc = "\n\nThis register you can [`read`]
-(crate::generic::Reg::read). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [u7_status]
-(index.html) module"]
+#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [u7_status](index.html) module"]
 pub struct U7_STATUS_SPEC;
 impl crate::RegisterSpec for U7_STATUS_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [u7_status::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [u7_status::R](R) reader structure"]
 impl crate::Readable for U7_STATUS_SPEC {
     type Reader = R;
 }

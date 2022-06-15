@@ -14,20 +14,7 @@ impl From<crate::R<PRO_DCACHE_DBUG2_SPEC>> for R {
     }
 }
 #[doc = "Field `PRO_CACHE_VADDR` reader - "]
-pub struct PRO_CACHE_VADDR_R(crate::FieldReader<u32, u32>);
-impl PRO_CACHE_VADDR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        PRO_CACHE_VADDR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PRO_CACHE_VADDR_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PRO_CACHE_VADDR_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:26"]
     #[inline(always)]
@@ -35,16 +22,12 @@ impl R {
         PRO_CACHE_VADDR_R::new((self.bits & 0x07ff_ffff) as u32)
     }
 }
-#[doc = "\n\nThis register you can [`read`]
-(crate::generic::Reg::read). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pro_dcache_dbug2]
-(index.html) module"]
+#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pro_dcache_dbug2](index.html) module"]
 pub struct PRO_DCACHE_DBUG2_SPEC;
 impl crate::RegisterSpec for PRO_DCACHE_DBUG2_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [pro_dcache_dbug2::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [pro_dcache_dbug2::R](R) reader structure"]
 impl crate::Readable for PRO_DCACHE_DBUG2_SPEC {
     type Reader = R;
 }

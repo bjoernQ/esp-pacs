@@ -35,32 +35,10 @@ impl From<crate::W<DBUS_PMS_TBL_BOUNDARY2_SPEC>> for W {
     }
 }
 #[doc = "Field `DBUS_PMS_BOUNDARY2` reader - The bit is used to configure the dbus permission control section boundary2"]
-pub struct DBUS_PMS_BOUNDARY2_R(crate::FieldReader<u16, u16>);
-impl DBUS_PMS_BOUNDARY2_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        DBUS_PMS_BOUNDARY2_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DBUS_PMS_BOUNDARY2_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DBUS_PMS_BOUNDARY2_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `DBUS_PMS_BOUNDARY2` writer - The bit is used to configure the dbus permission control section boundary2"]
-pub struct DBUS_PMS_BOUNDARY2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DBUS_PMS_BOUNDARY2_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0fff) | (value as u32 & 0x0fff);
-        self.w
-    }
-}
+pub type DBUS_PMS_BOUNDARY2_W<'a> =
+    crate::FieldWriter<'a, u32, DBUS_PMS_TBL_BOUNDARY2_SPEC, u16, u16, 12, 0>;
 impl R {
     #[doc = "Bits 0:11 - The bit is used to configure the dbus permission control section boundary2"]
     #[inline(always)]
@@ -72,7 +50,7 @@ impl W {
     #[doc = "Bits 0:11 - The bit is used to configure the dbus permission control section boundary2"]
     #[inline(always)]
     pub fn dbus_pms_boundary2(&mut self) -> DBUS_PMS_BOUNDARY2_W {
-        DBUS_PMS_BOUNDARY2_W { w: self }
+        DBUS_PMS_BOUNDARY2_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -81,25 +59,16 @@ impl W {
         self
     }
 }
-#[doc = "This description will be updated in the near future.\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dbus_pms_tbl_boundary2]
-(index.html) module"]
+#[doc = "This description will be updated in the near future.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dbus_pms_tbl_boundary2](index.html) module"]
 pub struct DBUS_PMS_TBL_BOUNDARY2_SPEC;
 impl crate::RegisterSpec for DBUS_PMS_TBL_BOUNDARY2_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [dbus_pms_tbl_boundary2::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [dbus_pms_tbl_boundary2::R](R) reader structure"]
 impl crate::Readable for DBUS_PMS_TBL_BOUNDARY2_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [dbus_pms_tbl_boundary2::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [dbus_pms_tbl_boundary2::W](W) writer structure"]
 impl crate::Writable for DBUS_PMS_TBL_BOUNDARY2_SPEC {
     type Writer = W;
 }

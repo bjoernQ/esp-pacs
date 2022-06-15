@@ -35,32 +35,9 @@ impl From<crate::W<STORE5_SPEC>> for W {
     }
 }
 #[doc = "Field `RTC_SCRATCH5` reader - reserved register"]
-pub struct RTC_SCRATCH5_R(crate::FieldReader<u32, u32>);
-impl RTC_SCRATCH5_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        RTC_SCRATCH5_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RTC_SCRATCH5_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RTC_SCRATCH5_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `RTC_SCRATCH5` writer - reserved register"]
-pub struct RTC_SCRATCH5_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RTC_SCRATCH5_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
-    }
-}
+pub type RTC_SCRATCH5_W<'a> = crate::FieldWriter<'a, u32, STORE5_SPEC, u32, u32, 32, 0>;
 impl R {
     #[doc = "Bits 0:31 - reserved register"]
     #[inline(always)]
@@ -72,7 +49,7 @@ impl W {
     #[doc = "Bits 0:31 - reserved register"]
     #[inline(always)]
     pub fn rtc_scratch5(&mut self) -> RTC_SCRATCH5_W {
-        RTC_SCRATCH5_W { w: self }
+        RTC_SCRATCH5_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -81,25 +58,16 @@ impl W {
         self
     }
 }
-#[doc = "reserved register\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [store5]
-(index.html) module"]
+#[doc = "reserved register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [store5](index.html) module"]
 pub struct STORE5_SPEC;
 impl crate::RegisterSpec for STORE5_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [store5::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [store5::R](R) reader structure"]
 impl crate::Readable for STORE5_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [store5::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [store5::W](W) writer structure"]
 impl crate::Writable for STORE5_SPEC {
     type Writer = W;
 }

@@ -14,65 +14,13 @@ impl From<crate::R<SDIO_CRC_ST0_SPEC>> for R {
     }
 }
 #[doc = "Field `DAT0_CRC_ERR_CNT` reader - "]
-pub struct DAT0_CRC_ERR_CNT_R(crate::FieldReader<u8, u8>);
-impl DAT0_CRC_ERR_CNT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        DAT0_CRC_ERR_CNT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DAT0_CRC_ERR_CNT_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DAT0_CRC_ERR_CNT_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DAT1_CRC_ERR_CNT` reader - "]
-pub struct DAT1_CRC_ERR_CNT_R(crate::FieldReader<u8, u8>);
-impl DAT1_CRC_ERR_CNT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        DAT1_CRC_ERR_CNT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DAT1_CRC_ERR_CNT_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DAT1_CRC_ERR_CNT_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DAT2_CRC_ERR_CNT` reader - "]
-pub struct DAT2_CRC_ERR_CNT_R(crate::FieldReader<u8, u8>);
-impl DAT2_CRC_ERR_CNT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        DAT2_CRC_ERR_CNT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DAT2_CRC_ERR_CNT_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DAT2_CRC_ERR_CNT_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DAT3_CRC_ERR_CNT` reader - "]
-pub struct DAT3_CRC_ERR_CNT_R(crate::FieldReader<u8, u8>);
-impl DAT3_CRC_ERR_CNT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        DAT3_CRC_ERR_CNT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DAT3_CRC_ERR_CNT_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DAT3_CRC_ERR_CNT_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:7"]
     #[inline(always)]
@@ -95,16 +43,12 @@ impl R {
         DAT3_CRC_ERR_CNT_R::new(((self.bits >> 24) & 0xff) as u8)
     }
 }
-#[doc = "\n\nThis register you can [`read`]
-(crate::generic::Reg::read). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sdio_crc_st0]
-(index.html) module"]
+#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sdio_crc_st0](index.html) module"]
 pub struct SDIO_CRC_ST0_SPEC;
 impl crate::RegisterSpec for SDIO_CRC_ST0_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [sdio_crc_st0::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [sdio_crc_st0::R](R) reader structure"]
 impl crate::Readable for SDIO_CRC_ST0_SPEC {
     type Reader = R;
 }

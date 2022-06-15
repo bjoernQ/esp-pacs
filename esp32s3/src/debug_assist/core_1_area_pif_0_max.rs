@@ -35,32 +35,10 @@ impl From<crate::W<CORE_1_AREA_PIF_0_MAX_SPEC>> for W {
     }
 }
 #[doc = "Field `CORE_1_AREA_PIF_0_MAX` reader - Core1 PIF region0 end addr"]
-pub struct CORE_1_AREA_PIF_0_MAX_R(crate::FieldReader<u32, u32>);
-impl CORE_1_AREA_PIF_0_MAX_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        CORE_1_AREA_PIF_0_MAX_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CORE_1_AREA_PIF_0_MAX_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CORE_1_AREA_PIF_0_MAX_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `CORE_1_AREA_PIF_0_MAX` writer - Core1 PIF region0 end addr"]
-pub struct CORE_1_AREA_PIF_0_MAX_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CORE_1_AREA_PIF_0_MAX_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
-    }
-}
+pub type CORE_1_AREA_PIF_0_MAX_W<'a> =
+    crate::FieldWriter<'a, u32, CORE_1_AREA_PIF_0_MAX_SPEC, u32, u32, 32, 0>;
 impl R {
     #[doc = "Bits 0:31 - Core1 PIF region0 end addr"]
     #[inline(always)]
@@ -72,7 +50,7 @@ impl W {
     #[doc = "Bits 0:31 - Core1 PIF region0 end addr"]
     #[inline(always)]
     pub fn core_1_area_pif_0_max(&mut self) -> CORE_1_AREA_PIF_0_MAX_W {
-        CORE_1_AREA_PIF_0_MAX_W { w: self }
+        CORE_1_AREA_PIF_0_MAX_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -81,25 +59,16 @@ impl W {
         self
     }
 }
-#[doc = "Core1 PIF region0 addr configuration register\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [core_1_area_pif_0_max]
-(index.html) module"]
+#[doc = "Core1 PIF region0 addr configuration register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [core_1_area_pif_0_max](index.html) module"]
 pub struct CORE_1_AREA_PIF_0_MAX_SPEC;
 impl crate::RegisterSpec for CORE_1_AREA_PIF_0_MAX_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [core_1_area_pif_0_max::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [core_1_area_pif_0_max::R](R) reader structure"]
 impl crate::Readable for CORE_1_AREA_PIF_0_MAX_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [core_1_area_pif_0_max::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [core_1_area_pif_0_max::W](W) writer structure"]
 impl crate::Writable for CORE_1_AREA_PIF_0_MAX_SPEC {
     type Writer = W;
 }

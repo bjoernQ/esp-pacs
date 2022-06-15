@@ -14,20 +14,7 @@ impl From<crate::R<CAP_CH0_SPEC>> for R {
     }
 }
 #[doc = "Field `CAP0_VALUE` reader - Value of last capture on channel 0"]
-pub struct CAP0_VALUE_R(crate::FieldReader<u32, u32>);
-impl CAP0_VALUE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        CAP0_VALUE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CAP0_VALUE_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CAP0_VALUE_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Value of last capture on channel 0"]
     #[inline(always)]
@@ -35,16 +22,12 @@ impl R {
         CAP0_VALUE_R::new(self.bits)
     }
 }
-#[doc = "Value of last capture on channel 0\n\nThis register you can [`read`]
-(crate::generic::Reg::read). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cap_ch0]
-(index.html) module"]
+#[doc = "Value of last capture on channel 0\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cap_ch0](index.html) module"]
 pub struct CAP_CH0_SPEC;
 impl crate::RegisterSpec for CAP_CH0_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [cap_ch0::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [cap_ch0::R](R) reader structure"]
 impl crate::Readable for CAP_CH0_SPEC {
     type Reader = R;
 }

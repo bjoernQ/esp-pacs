@@ -35,54 +35,22 @@ impl From<crate::W<APB_PERIPHERAL_1_SPEC>> for W {
     }
 }
 #[doc = "Field `APB_PERIPHERAL_SPLIT_BURST` reader - Setting to 1 splits the data phase of the last access and the address phase of following access."]
-pub struct APB_PERIPHERAL_SPLIT_BURST_R(crate::FieldReader<bool, bool>);
-impl APB_PERIPHERAL_SPLIT_BURST_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        APB_PERIPHERAL_SPLIT_BURST_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for APB_PERIPHERAL_SPLIT_BURST_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type APB_PERIPHERAL_SPLIT_BURST_R = crate::BitReader<bool>;
 #[doc = "Field `APB_PERIPHERAL_SPLIT_BURST` writer - Setting to 1 splits the data phase of the last access and the address phase of following access."]
-pub struct APB_PERIPHERAL_SPLIT_BURST_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> APB_PERIPHERAL_SPLIT_BURST_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type APB_PERIPHERAL_SPLIT_BURST_W<'a> =
+    crate::BitWriter<'a, u32, APB_PERIPHERAL_1_SPEC, bool, 0>;
 impl R {
     #[doc = "Bit 0 - Setting to 1 splits the data phase of the last access and the address phase of following access."]
     #[inline(always)]
     pub fn apb_peripheral_split_burst(&self) -> APB_PERIPHERAL_SPLIT_BURST_R {
-        APB_PERIPHERAL_SPLIT_BURST_R::new((self.bits & 0x01) != 0)
+        APB_PERIPHERAL_SPLIT_BURST_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Setting to 1 splits the data phase of the last access and the address phase of following access."]
     #[inline(always)]
     pub fn apb_peripheral_split_burst(&mut self) -> APB_PERIPHERAL_SPLIT_BURST_W {
-        APB_PERIPHERAL_SPLIT_BURST_W { w: self }
+        APB_PERIPHERAL_SPLIT_BURST_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -91,25 +59,16 @@ impl W {
         self
     }
 }
-#[doc = "Peripheral access permission control register 1.\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [apb_peripheral_1]
-(index.html) module"]
+#[doc = "Peripheral access permission control register 1.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [apb_peripheral_1](index.html) module"]
 pub struct APB_PERIPHERAL_1_SPEC;
 impl crate::RegisterSpec for APB_PERIPHERAL_1_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [apb_peripheral_1::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [apb_peripheral_1::R](R) reader structure"]
 impl crate::Readable for APB_PERIPHERAL_1_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [apb_peripheral_1::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [apb_peripheral_1::W](W) writer structure"]
 impl crate::Writable for APB_PERIPHERAL_1_SPEC {
     type Writer = W;
 }

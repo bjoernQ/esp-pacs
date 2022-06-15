@@ -35,32 +35,9 @@ impl From<crate::W<W9_SPEC>> for W {
     }
 }
 #[doc = "Field `BUF9` reader - 32 bits data buffer 9, transferred in the unit of byte. Byte addressable in slave half-duplex mode."]
-pub struct BUF9_R(crate::FieldReader<u32, u32>);
-impl BUF9_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        BUF9_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for BUF9_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type BUF9_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `BUF9` writer - 32 bits data buffer 9, transferred in the unit of byte. Byte addressable in slave half-duplex mode."]
-pub struct BUF9_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BUF9_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
-    }
-}
+pub type BUF9_W<'a> = crate::FieldWriter<'a, u32, W9_SPEC, u32, u32, 32, 0>;
 impl R {
     #[doc = "Bits 0:31 - 32 bits data buffer 9, transferred in the unit of byte. Byte addressable in slave half-duplex mode."]
     #[inline(always)]
@@ -72,7 +49,7 @@ impl W {
     #[doc = "Bits 0:31 - 32 bits data buffer 9, transferred in the unit of byte. Byte addressable in slave half-duplex mode."]
     #[inline(always)]
     pub fn buf9(&mut self) -> BUF9_W {
-        BUF9_W { w: self }
+        BUF9_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -81,25 +58,16 @@ impl W {
         self
     }
 }
-#[doc = "Data buffer 9\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [w9]
-(index.html) module"]
+#[doc = "Data buffer 9\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [w9](index.html) module"]
 pub struct W9_SPEC;
 impl crate::RegisterSpec for W9_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [w9::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [w9::R](R) reader structure"]
 impl crate::Readable for W9_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [w9::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [w9::W](W) writer structure"]
 impl crate::Writable for W9_SPEC {
     type Writer = W;
 }

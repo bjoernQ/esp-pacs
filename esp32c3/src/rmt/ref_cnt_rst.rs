@@ -20,113 +20,33 @@ impl From<crate::W<REF_CNT_RST_SPEC>> for W {
     }
 }
 #[doc = "Field `CH0` writer - reg_ref_cnt_rst_ch0."]
-pub struct CH0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH0_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type CH0_W<'a> = crate::BitWriter<'a, u32, REF_CNT_RST_SPEC, bool, 0>;
 #[doc = "Field `CH1` writer - reg_ref_cnt_rst_ch1."]
-pub struct CH1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH1_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type CH1_W<'a> = crate::BitWriter<'a, u32, REF_CNT_RST_SPEC, bool, 1>;
 #[doc = "Field `CH2` writer - reg_ref_cnt_rst_ch2."]
-pub struct CH2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH2_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type CH2_W<'a> = crate::BitWriter<'a, u32, REF_CNT_RST_SPEC, bool, 2>;
 #[doc = "Field `CH3` writer - reg_ref_cnt_rst_ch3."]
-pub struct CH3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH3_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type CH3_W<'a> = crate::BitWriter<'a, u32, REF_CNT_RST_SPEC, bool, 3>;
 impl W {
     #[doc = "Bit 0 - reg_ref_cnt_rst_ch0."]
     #[inline(always)]
     pub fn ch0(&mut self) -> CH0_W {
-        CH0_W { w: self }
+        CH0_W::new(self)
     }
     #[doc = "Bit 1 - reg_ref_cnt_rst_ch1."]
     #[inline(always)]
     pub fn ch1(&mut self) -> CH1_W {
-        CH1_W { w: self }
+        CH1_W::new(self)
     }
     #[doc = "Bit 2 - reg_ref_cnt_rst_ch2."]
     #[inline(always)]
     pub fn ch2(&mut self) -> CH2_W {
-        CH2_W { w: self }
+        CH2_W::new(self)
     }
     #[doc = "Bit 3 - reg_ref_cnt_rst_ch3."]
     #[inline(always)]
     pub fn ch3(&mut self) -> CH3_W {
-        CH3_W { w: self }
+        CH3_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -135,18 +55,12 @@ impl W {
         self
     }
 }
-#[doc = "RMT_REF_CNT_RST_REG.\n\nThis register you can [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ref_cnt_rst]
-(index.html) module"]
+#[doc = "RMT_REF_CNT_RST_REG.\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ref_cnt_rst](index.html) module"]
 pub struct REF_CNT_RST_SPEC;
 impl crate::RegisterSpec for REF_CNT_RST_SPEC {
     type Ux = u32;
 }
-#[doc = "`write(|w| ..)` method takes [ref_cnt_rst::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [ref_cnt_rst::W](W) writer structure"]
 impl crate::Writable for REF_CNT_RST_SPEC {
     type Writer = W;
 }

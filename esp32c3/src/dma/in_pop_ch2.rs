@@ -35,57 +35,11 @@ impl From<crate::W<IN_POP_CH2_SPEC>> for W {
     }
 }
 #[doc = "Field `INFIFO_RDATA_CH2` reader - This register stores the data popping from DMA FIFO."]
-pub struct INFIFO_RDATA_CH2_R(crate::FieldReader<u16, u16>);
-impl INFIFO_RDATA_CH2_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        INFIFO_RDATA_CH2_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for INFIFO_RDATA_CH2_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type INFIFO_RDATA_CH2_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `INFIFO_POP_CH2` reader - Set this bit to pop data from DMA FIFO."]
-pub struct INFIFO_POP_CH2_R(crate::FieldReader<bool, bool>);
-impl INFIFO_POP_CH2_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        INFIFO_POP_CH2_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for INFIFO_POP_CH2_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type INFIFO_POP_CH2_R = crate::BitReader<bool>;
 #[doc = "Field `INFIFO_POP_CH2` writer - Set this bit to pop data from DMA FIFO."]
-pub struct INFIFO_POP_CH2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> INFIFO_POP_CH2_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
-        self.w
-    }
-}
+pub type INFIFO_POP_CH2_W<'a> = crate::BitWriter<'a, u32, IN_POP_CH2_SPEC, bool, 12>;
 impl R {
     #[doc = "Bits 0:11 - This register stores the data popping from DMA FIFO."]
     #[inline(always)]
@@ -95,14 +49,14 @@ impl R {
     #[doc = "Bit 12 - Set this bit to pop data from DMA FIFO."]
     #[inline(always)]
     pub fn infifo_pop_ch2(&self) -> INFIFO_POP_CH2_R {
-        INFIFO_POP_CH2_R::new(((self.bits >> 12) & 0x01) != 0)
+        INFIFO_POP_CH2_R::new(((self.bits >> 12) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 12 - Set this bit to pop data from DMA FIFO."]
     #[inline(always)]
     pub fn infifo_pop_ch2(&mut self) -> INFIFO_POP_CH2_W {
-        INFIFO_POP_CH2_W { w: self }
+        INFIFO_POP_CH2_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -111,25 +65,16 @@ impl W {
         self
     }
 }
-#[doc = "DMA_IN_POP_CH2_REG.\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [in_pop_ch2]
-(index.html) module"]
+#[doc = "DMA_IN_POP_CH2_REG.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [in_pop_ch2](index.html) module"]
 pub struct IN_POP_CH2_SPEC;
 impl crate::RegisterSpec for IN_POP_CH2_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [in_pop_ch2::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [in_pop_ch2::R](R) reader structure"]
 impl crate::Readable for IN_POP_CH2_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [in_pop_ch2::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [in_pop_ch2::W](W) writer structure"]
 impl crate::Writable for IN_POP_CH2_SPEC {
     type Writer = W;
 }

@@ -35,59 +35,13 @@ impl From<crate::W<SAR_AMP_CTRL1_SPEC>> for W {
     }
 }
 #[doc = "Field `SAR_AMP_WAIT1` reader - "]
-pub struct SAR_AMP_WAIT1_R(crate::FieldReader<u16, u16>);
-impl SAR_AMP_WAIT1_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        SAR_AMP_WAIT1_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SAR_AMP_WAIT1_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SAR_AMP_WAIT1_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `SAR_AMP_WAIT1` writer - "]
-pub struct SAR_AMP_WAIT1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SAR_AMP_WAIT1_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
-        self.w
-    }
-}
+pub type SAR_AMP_WAIT1_W<'a> = crate::FieldWriter<'a, u32, SAR_AMP_CTRL1_SPEC, u16, u16, 16, 0>;
 #[doc = "Field `SAR_AMP_WAIT2` reader - "]
-pub struct SAR_AMP_WAIT2_R(crate::FieldReader<u16, u16>);
-impl SAR_AMP_WAIT2_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        SAR_AMP_WAIT2_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SAR_AMP_WAIT2_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SAR_AMP_WAIT2_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `SAR_AMP_WAIT2` writer - "]
-pub struct SAR_AMP_WAIT2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SAR_AMP_WAIT2_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xffff << 16)) | ((value as u32 & 0xffff) << 16);
-        self.w
-    }
-}
+pub type SAR_AMP_WAIT2_W<'a> = crate::FieldWriter<'a, u32, SAR_AMP_CTRL1_SPEC, u16, u16, 16, 16>;
 impl R {
     #[doc = "Bits 0:15"]
     #[inline(always)]
@@ -104,12 +58,12 @@ impl W {
     #[doc = "Bits 0:15"]
     #[inline(always)]
     pub fn sar_amp_wait1(&mut self) -> SAR_AMP_WAIT1_W {
-        SAR_AMP_WAIT1_W { w: self }
+        SAR_AMP_WAIT1_W::new(self)
     }
     #[doc = "Bits 16:31"]
     #[inline(always)]
     pub fn sar_amp_wait2(&mut self) -> SAR_AMP_WAIT2_W {
-        SAR_AMP_WAIT2_W { w: self }
+        SAR_AMP_WAIT2_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -118,25 +72,16 @@ impl W {
         self
     }
 }
-#[doc = "AMP control\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sar_amp_ctrl1]
-(index.html) module"]
+#[doc = "AMP control\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sar_amp_ctrl1](index.html) module"]
 pub struct SAR_AMP_CTRL1_SPEC;
 impl crate::RegisterSpec for SAR_AMP_CTRL1_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [sar_amp_ctrl1::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [sar_amp_ctrl1::R](R) reader structure"]
 impl crate::Readable for SAR_AMP_CTRL1_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [sar_amp_ctrl1::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [sar_amp_ctrl1::W](W) writer structure"]
 impl crate::Writable for SAR_AMP_CTRL1_SPEC {
     type Writer = W;
 }

@@ -35,32 +35,9 @@ impl From<crate::W<LSCH3_DUTY_SPEC>> for W {
     }
 }
 #[doc = "Field `DUTY_LSCH3` reader - reg_duty_lsch3."]
-pub struct DUTY_LSCH3_R(crate::FieldReader<u32, u32>);
-impl DUTY_LSCH3_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        DUTY_LSCH3_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DUTY_LSCH3_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DUTY_LSCH3_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `DUTY_LSCH3` writer - reg_duty_lsch3."]
-pub struct DUTY_LSCH3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DUTY_LSCH3_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0007_ffff) | (value as u32 & 0x0007_ffff);
-        self.w
-    }
-}
+pub type DUTY_LSCH3_W<'a> = crate::FieldWriter<'a, u32, LSCH3_DUTY_SPEC, u32, u32, 19, 0>;
 impl R {
     #[doc = "Bits 0:18 - reg_duty_lsch3."]
     #[inline(always)]
@@ -72,7 +49,7 @@ impl W {
     #[doc = "Bits 0:18 - reg_duty_lsch3."]
     #[inline(always)]
     pub fn duty_lsch3(&mut self) -> DUTY_LSCH3_W {
-        DUTY_LSCH3_W { w: self }
+        DUTY_LSCH3_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -81,25 +58,16 @@ impl W {
         self
     }
 }
-#[doc = "LEDC_LSCH3_DUTY.\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [lsch3_duty]
-(index.html) module"]
+#[doc = "LEDC_LSCH3_DUTY.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [lsch3_duty](index.html) module"]
 pub struct LSCH3_DUTY_SPEC;
 impl crate::RegisterSpec for LSCH3_DUTY_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [lsch3_duty::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [lsch3_duty::R](R) reader structure"]
 impl crate::Readable for LSCH3_DUTY_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [lsch3_duty::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [lsch3_duty::W](W) writer structure"]
 impl crate::Writable for LSCH3_DUTY_SPEC {
     type Writer = W;
 }

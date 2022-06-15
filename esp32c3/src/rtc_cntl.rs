@@ -66,7 +66,7 @@ pub struct RegisterBlock {
     #[doc = "0x7c - rtc configure register"]
     pub bias_conf: crate::Reg<bias_conf::BIAS_CONF_SPEC>,
     #[doc = "0x80 - rtc configure register"]
-    pub rtc: crate::Reg<rtc::RTC_SPEC>,
+    pub rtc_cntl: crate::Reg<rtc_cntl::RTC_CNTL_SPEC>,
     #[doc = "0x84 - rtc configure register"]
     pub pwc: crate::Reg<pwc::PWC_SPEC>,
     #[doc = "0x88 - rtc configure register"]
@@ -134,21 +134,21 @@ pub struct RegisterBlock {
     #[doc = "0x104 - rtc configure register"]
     pub int_ena_rtc_w1tc: crate::Reg<int_ena_rtc_w1tc::INT_ENA_RTC_W1TC_SPEC>,
     #[doc = "0x108 - rtc configure register"]
-    pub cntl_retention_ctrl: crate::Reg<cntl_retention_ctrl::CNTL_RETENTION_CTRL_SPEC>,
+    pub retention_ctrl: crate::Reg<retention_ctrl::RETENTION_CTRL_SPEC>,
     #[doc = "0x10c - rtc configure register"]
     pub fib_sel: crate::Reg<fib_sel::FIB_SEL_SPEC>,
     #[doc = "0x110 - rtc configure register"]
-    pub cntl_gpio_wakeup: crate::Reg<cntl_gpio_wakeup::CNTL_GPIO_WAKEUP_SPEC>,
+    pub gpio_wakeup: crate::Reg<gpio_wakeup::GPIO_WAKEUP_SPEC>,
     #[doc = "0x114 - rtc configure register"]
-    pub cntl_dbg_sel: crate::Reg<cntl_dbg_sel::CNTL_DBG_SEL_SPEC>,
+    pub dbg_sel: crate::Reg<dbg_sel::DBG_SEL_SPEC>,
     #[doc = "0x118 - rtc configure register"]
-    pub cntl_dbg_map: crate::Reg<cntl_dbg_map::CNTL_DBG_MAP_SPEC>,
+    pub dbg_map: crate::Reg<dbg_map::DBG_MAP_SPEC>,
     #[doc = "0x11c - rtc configure register"]
-    pub cntl_sensor_ctrl: crate::Reg<cntl_sensor_ctrl::CNTL_SENSOR_CTRL_SPEC>,
+    pub sensor_ctrl: crate::Reg<sensor_ctrl::SENSOR_CTRL_SPEC>,
     #[doc = "0x120 - rtc configure register"]
-    pub cntl_dbg_sar_sel: crate::Reg<cntl_dbg_sar_sel::CNTL_DBG_SAR_SEL_SPEC>,
+    pub dbg_sar_sel: crate::Reg<dbg_sar_sel::DBG_SAR_SEL_SPEC>,
     #[doc = "0x124 - rtc configure register"]
-    pub cntl_pg_ctrl: crate::Reg<cntl_pg_ctrl::CNTL_PG_CTRL_SPEC>,
+    pub pg_ctrl: crate::Reg<pg_ctrl::PG_CTRL_SPEC>,
     _reserved74: [u8; 0xd4],
     #[doc = "0x1fc - rtc configure register"]
     pub date: crate::Reg<date::DATE_SPEC>,
@@ -281,10 +281,10 @@ pub mod sdio_conf;
 pub type BIAS_CONF = crate::Reg<bias_conf::BIAS_CONF_SPEC>;
 #[doc = "rtc configure register"]
 pub mod bias_conf;
-#[doc = "RTC register accessor: an alias for `Reg<RTC_SPEC>`"]
-pub type RTC = crate::Reg<rtc::RTC_SPEC>;
+#[doc = "RTC_CNTL register accessor: an alias for `Reg<RTC_CNTL_SPEC>`"]
+pub type RTC_CNTL = crate::Reg<rtc_cntl::RTC_CNTL_SPEC>;
 #[doc = "rtc configure register"]
-pub mod rtc;
+pub mod rtc_cntl;
 #[doc = "PWC register accessor: an alias for `Reg<PWC_SPEC>`"]
 pub type PWC = crate::Reg<pwc::PWC_SPEC>;
 #[doc = "rtc configure register"]
@@ -417,38 +417,38 @@ pub mod int_ena_rtc_w1ts;
 pub type INT_ENA_RTC_W1TC = crate::Reg<int_ena_rtc_w1tc::INT_ENA_RTC_W1TC_SPEC>;
 #[doc = "rtc configure register"]
 pub mod int_ena_rtc_w1tc;
-#[doc = "CNTL_RETENTION_CTRL register accessor: an alias for `Reg<CNTL_RETENTION_CTRL_SPEC>`"]
-pub type CNTL_RETENTION_CTRL = crate::Reg<cntl_retention_ctrl::CNTL_RETENTION_CTRL_SPEC>;
+#[doc = "RETENTION_CTRL register accessor: an alias for `Reg<RETENTION_CTRL_SPEC>`"]
+pub type RETENTION_CTRL = crate::Reg<retention_ctrl::RETENTION_CTRL_SPEC>;
 #[doc = "rtc configure register"]
-pub mod cntl_retention_ctrl;
+pub mod retention_ctrl;
 #[doc = "FIB_SEL register accessor: an alias for `Reg<FIB_SEL_SPEC>`"]
 pub type FIB_SEL = crate::Reg<fib_sel::FIB_SEL_SPEC>;
 #[doc = "rtc configure register"]
 pub mod fib_sel;
-#[doc = "CNTL_GPIO_WAKEUP register accessor: an alias for `Reg<CNTL_GPIO_WAKEUP_SPEC>`"]
-pub type CNTL_GPIO_WAKEUP = crate::Reg<cntl_gpio_wakeup::CNTL_GPIO_WAKEUP_SPEC>;
+#[doc = "GPIO_WAKEUP register accessor: an alias for `Reg<GPIO_WAKEUP_SPEC>`"]
+pub type GPIO_WAKEUP = crate::Reg<gpio_wakeup::GPIO_WAKEUP_SPEC>;
 #[doc = "rtc configure register"]
-pub mod cntl_gpio_wakeup;
-#[doc = "CNTL_DBG_SEL register accessor: an alias for `Reg<CNTL_DBG_SEL_SPEC>`"]
-pub type CNTL_DBG_SEL = crate::Reg<cntl_dbg_sel::CNTL_DBG_SEL_SPEC>;
+pub mod gpio_wakeup;
+#[doc = "DBG_SEL register accessor: an alias for `Reg<DBG_SEL_SPEC>`"]
+pub type DBG_SEL = crate::Reg<dbg_sel::DBG_SEL_SPEC>;
 #[doc = "rtc configure register"]
-pub mod cntl_dbg_sel;
-#[doc = "CNTL_DBG_MAP register accessor: an alias for `Reg<CNTL_DBG_MAP_SPEC>`"]
-pub type CNTL_DBG_MAP = crate::Reg<cntl_dbg_map::CNTL_DBG_MAP_SPEC>;
+pub mod dbg_sel;
+#[doc = "DBG_MAP register accessor: an alias for `Reg<DBG_MAP_SPEC>`"]
+pub type DBG_MAP = crate::Reg<dbg_map::DBG_MAP_SPEC>;
 #[doc = "rtc configure register"]
-pub mod cntl_dbg_map;
-#[doc = "CNTL_SENSOR_CTRL register accessor: an alias for `Reg<CNTL_SENSOR_CTRL_SPEC>`"]
-pub type CNTL_SENSOR_CTRL = crate::Reg<cntl_sensor_ctrl::CNTL_SENSOR_CTRL_SPEC>;
+pub mod dbg_map;
+#[doc = "SENSOR_CTRL register accessor: an alias for `Reg<SENSOR_CTRL_SPEC>`"]
+pub type SENSOR_CTRL = crate::Reg<sensor_ctrl::SENSOR_CTRL_SPEC>;
 #[doc = "rtc configure register"]
-pub mod cntl_sensor_ctrl;
-#[doc = "CNTL_DBG_SAR_SEL register accessor: an alias for `Reg<CNTL_DBG_SAR_SEL_SPEC>`"]
-pub type CNTL_DBG_SAR_SEL = crate::Reg<cntl_dbg_sar_sel::CNTL_DBG_SAR_SEL_SPEC>;
+pub mod sensor_ctrl;
+#[doc = "DBG_SAR_SEL register accessor: an alias for `Reg<DBG_SAR_SEL_SPEC>`"]
+pub type DBG_SAR_SEL = crate::Reg<dbg_sar_sel::DBG_SAR_SEL_SPEC>;
 #[doc = "rtc configure register"]
-pub mod cntl_dbg_sar_sel;
-#[doc = "CNTL_PG_CTRL register accessor: an alias for `Reg<CNTL_PG_CTRL_SPEC>`"]
-pub type CNTL_PG_CTRL = crate::Reg<cntl_pg_ctrl::CNTL_PG_CTRL_SPEC>;
+pub mod dbg_sar_sel;
+#[doc = "PG_CTRL register accessor: an alias for `Reg<PG_CTRL_SPEC>`"]
+pub type PG_CTRL = crate::Reg<pg_ctrl::PG_CTRL_SPEC>;
 #[doc = "rtc configure register"]
-pub mod cntl_pg_ctrl;
+pub mod pg_ctrl;
 #[doc = "DATE register accessor: an alias for `Reg<DATE_SPEC>`"]
 pub type DATE = crate::Reg<date::DATE_SPEC>;
 #[doc = "rtc configure register"]

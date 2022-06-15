@@ -20,22 +20,12 @@ impl From<crate::W<ADDRESS_SPEC>> for W {
     }
 }
 #[doc = "Field `ADDRESS` writer - The physical address on the off-chip flash must be 8-word boundary aligned."]
-pub struct ADDRESS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADDRESS_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type ADDRESS_W<'a> = crate::FieldWriter<'a, u32, ADDRESS_SPEC, u8, u8, 8, 0>;
 impl W {
     #[doc = "Bits 0:7 - The physical address on the off-chip flash must be 8-word boundary aligned."]
     #[inline(always)]
     pub fn address(&mut self) -> ADDRESS_W {
-        ADDRESS_W { w: self }
+        ADDRESS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -44,18 +34,12 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [address]
-(index.html) module"]
+#[doc = "\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [address](index.html) module"]
 pub struct ADDRESS_SPEC;
 impl crate::RegisterSpec for ADDRESS_SPEC {
     type Ux = u32;
 }
-#[doc = "`write(|w| ..)` method takes [address::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [address::W](W) writer structure"]
 impl crate::Writable for ADDRESS_SPEC {
     type Writer = W;
 }

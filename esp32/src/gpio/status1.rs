@@ -35,32 +35,9 @@ impl From<crate::W<STATUS1_SPEC>> for W {
     }
 }
 #[doc = "Field `INT` reader - GPIO32~39 interrupt status"]
-pub struct INT_R(crate::FieldReader<u8, u8>);
-impl INT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        INT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for INT_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type INT_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `INT` writer - GPIO32~39 interrupt status"]
-pub struct INT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> INT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type INT_W<'a> = crate::FieldWriter<'a, u32, STATUS1_SPEC, u8, u8, 8, 0>;
 impl R {
     #[doc = "Bits 0:7 - GPIO32~39 interrupt status"]
     #[inline(always)]
@@ -72,7 +49,7 @@ impl W {
     #[doc = "Bits 0:7 - GPIO32~39 interrupt status"]
     #[inline(always)]
     pub fn int(&mut self) -> INT_W {
-        INT_W { w: self }
+        INT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -81,25 +58,16 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [status1]
-(index.html) module"]
+#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [status1](index.html) module"]
 pub struct STATUS1_SPEC;
 impl crate::RegisterSpec for STATUS1_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [status1::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [status1::R](R) reader structure"]
 impl crate::Readable for STATUS1_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [status1::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [status1::W](W) writer structure"]
 impl crate::Writable for STATUS1_SPEC {
     type Writer = W;
 }

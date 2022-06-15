@@ -14,20 +14,7 @@ impl From<crate::R<CORE_0_RCD_PDEBUGSP_SPEC>> for R {
     }
 }
 #[doc = "Field `CORE_0_RCD_PDEBUGSP` reader - reg_core_0_rcd_pdebugsp"]
-pub struct CORE_0_RCD_PDEBUGSP_R(crate::FieldReader<u32, u32>);
-impl CORE_0_RCD_PDEBUGSP_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        CORE_0_RCD_PDEBUGSP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CORE_0_RCD_PDEBUGSP_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CORE_0_RCD_PDEBUGSP_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31 - reg_core_0_rcd_pdebugsp"]
     #[inline(always)]
@@ -35,16 +22,12 @@ impl R {
         CORE_0_RCD_PDEBUGSP_R::new(self.bits)
     }
 }
-#[doc = "ASSIST_DEBUG_CORE_0_RCD_PDEBUGSP_REG\n\nThis register you can [`read`]
-(crate::generic::Reg::read). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [core_0_rcd_pdebugsp]
-(index.html) module"]
+#[doc = "ASSIST_DEBUG_CORE_0_RCD_PDEBUGSP_REG\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [core_0_rcd_pdebugsp](index.html) module"]
 pub struct CORE_0_RCD_PDEBUGSP_SPEC;
 impl crate::RegisterSpec for CORE_0_RCD_PDEBUGSP_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [core_0_rcd_pdebugsp::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [core_0_rcd_pdebugsp::R](R) reader structure"]
 impl crate::Readable for CORE_0_RCD_PDEBUGSP_SPEC {
     type Reader = R;
 }

@@ -14,65 +14,13 @@ impl From<crate::R<SAR_TOUCH_STATUS16_SPEC>> for R {
     }
 }
 #[doc = "Field `TOUCH_APPROACH_PAD2_CNT` reader - Count status of proximity pad 2."]
-pub struct TOUCH_APPROACH_PAD2_CNT_R(crate::FieldReader<u8, u8>);
-impl TOUCH_APPROACH_PAD2_CNT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        TOUCH_APPROACH_PAD2_CNT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TOUCH_APPROACH_PAD2_CNT_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TOUCH_APPROACH_PAD2_CNT_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `TOUCH_APPROACH_PAD1_CNT` reader - Count status of proximity pad 1."]
-pub struct TOUCH_APPROACH_PAD1_CNT_R(crate::FieldReader<u8, u8>);
-impl TOUCH_APPROACH_PAD1_CNT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        TOUCH_APPROACH_PAD1_CNT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TOUCH_APPROACH_PAD1_CNT_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TOUCH_APPROACH_PAD1_CNT_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `TOUCH_APPROACH_PAD0_CNT` reader - Count status of proximity pad 0."]
-pub struct TOUCH_APPROACH_PAD0_CNT_R(crate::FieldReader<u8, u8>);
-impl TOUCH_APPROACH_PAD0_CNT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        TOUCH_APPROACH_PAD0_CNT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TOUCH_APPROACH_PAD0_CNT_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TOUCH_APPROACH_PAD0_CNT_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `TOUCH_SLP_APPROACH_CNT` reader - Count status of sleep pad in proximity mode."]
-pub struct TOUCH_SLP_APPROACH_CNT_R(crate::FieldReader<u8, u8>);
-impl TOUCH_SLP_APPROACH_CNT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        TOUCH_SLP_APPROACH_CNT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TOUCH_SLP_APPROACH_CNT_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TOUCH_SLP_APPROACH_CNT_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:7 - Count status of proximity pad 2."]
     #[inline(always)]
@@ -95,16 +43,12 @@ impl R {
         TOUCH_SLP_APPROACH_CNT_R::new(((self.bits >> 24) & 0xff) as u8)
     }
 }
-#[doc = "Touch approach count status\n\nThis register you can [`read`]
-(crate::generic::Reg::read). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sar_touch_status16]
-(index.html) module"]
+#[doc = "Touch approach count status\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sar_touch_status16](index.html) module"]
 pub struct SAR_TOUCH_STATUS16_SPEC;
 impl crate::RegisterSpec for SAR_TOUCH_STATUS16_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [sar_touch_status16::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [sar_touch_status16::R](R) reader structure"]
 impl crate::Readable for SAR_TOUCH_STATUS16_SPEC {
     type Reader = R;
 }

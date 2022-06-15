@@ -14,20 +14,7 @@ impl From<crate::R<DBUS1_ACS_MISS_CNT_SPEC>> for R {
     }
 }
 #[doc = "Field `DBUS1_ACS_MISS_CNT` reader - The bits are used to count the number of the cache miss caused by dbus1 access."]
-pub struct DBUS1_ACS_MISS_CNT_R(crate::FieldReader<u32, u32>);
-impl DBUS1_ACS_MISS_CNT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        DBUS1_ACS_MISS_CNT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DBUS1_ACS_MISS_CNT_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DBUS1_ACS_MISS_CNT_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31 - The bits are used to count the number of the cache miss caused by dbus1 access."]
     #[inline(always)]
@@ -35,16 +22,12 @@ impl R {
         DBUS1_ACS_MISS_CNT_R::new(self.bits)
     }
 }
-#[doc = "register description\n\nThis register you can [`read`]
-(crate::generic::Reg::read). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dbus1_acs_miss_cnt]
-(index.html) module"]
+#[doc = "register description\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dbus1_acs_miss_cnt](index.html) module"]
 pub struct DBUS1_ACS_MISS_CNT_SPEC;
 impl crate::RegisterSpec for DBUS1_ACS_MISS_CNT_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [dbus1_acs_miss_cnt::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [dbus1_acs_miss_cnt::R](R) reader structure"]
 impl crate::Readable for DBUS1_ACS_MISS_CNT_SPEC {
     type Reader = R;
 }

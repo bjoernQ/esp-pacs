@@ -35,121 +35,42 @@ impl From<crate::W<DMA_TX_I_2_SPEC>> for W {
     }
 }
 #[doc = "Field `DMA_TX_I_ILG_CLR` reader - The clear signal for TX Copy DMA access interrupt."]
-pub struct DMA_TX_I_ILG_CLR_R(crate::FieldReader<bool, bool>);
-impl DMA_TX_I_ILG_CLR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DMA_TX_I_ILG_CLR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DMA_TX_I_ILG_CLR_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DMA_TX_I_ILG_CLR_R = crate::BitReader<bool>;
 #[doc = "Field `DMA_TX_I_ILG_CLR` writer - The clear signal for TX Copy DMA access interrupt."]
-pub struct DMA_TX_I_ILG_CLR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DMA_TX_I_ILG_CLR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type DMA_TX_I_ILG_CLR_W<'a> = crate::BitWriter<'a, u32, DMA_TX_I_2_SPEC, bool, 0>;
 #[doc = "Field `DMA_TX_I_ILG_EN` reader - The enable signal for TX Copy DMA access interrupt."]
-pub struct DMA_TX_I_ILG_EN_R(crate::FieldReader<bool, bool>);
-impl DMA_TX_I_ILG_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DMA_TX_I_ILG_EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DMA_TX_I_ILG_EN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DMA_TX_I_ILG_EN_R = crate::BitReader<bool>;
 #[doc = "Field `DMA_TX_I_ILG_EN` writer - The enable signal for TX Copy DMA access interrupt."]
-pub struct DMA_TX_I_ILG_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DMA_TX_I_ILG_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type DMA_TX_I_ILG_EN_W<'a> = crate::BitWriter<'a, u32, DMA_TX_I_2_SPEC, bool, 1>;
 #[doc = "Field `DMA_TX_I_ILG_INTR` reader - TX Copy DMA access interrupt signal."]
-pub struct DMA_TX_I_ILG_INTR_R(crate::FieldReader<bool, bool>);
-impl DMA_TX_I_ILG_INTR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DMA_TX_I_ILG_INTR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DMA_TX_I_ILG_INTR_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DMA_TX_I_ILG_INTR_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 0 - The clear signal for TX Copy DMA access interrupt."]
     #[inline(always)]
     pub fn dma_tx_i_ilg_clr(&self) -> DMA_TX_I_ILG_CLR_R {
-        DMA_TX_I_ILG_CLR_R::new((self.bits & 0x01) != 0)
+        DMA_TX_I_ILG_CLR_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - The enable signal for TX Copy DMA access interrupt."]
     #[inline(always)]
     pub fn dma_tx_i_ilg_en(&self) -> DMA_TX_I_ILG_EN_R {
-        DMA_TX_I_ILG_EN_R::new(((self.bits >> 1) & 0x01) != 0)
+        DMA_TX_I_ILG_EN_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - TX Copy DMA access interrupt signal."]
     #[inline(always)]
     pub fn dma_tx_i_ilg_intr(&self) -> DMA_TX_I_ILG_INTR_R {
-        DMA_TX_I_ILG_INTR_R::new(((self.bits >> 2) & 0x01) != 0)
+        DMA_TX_I_ILG_INTR_R::new(((self.bits >> 2) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - The clear signal for TX Copy DMA access interrupt."]
     #[inline(always)]
     pub fn dma_tx_i_ilg_clr(&mut self) -> DMA_TX_I_ILG_CLR_W {
-        DMA_TX_I_ILG_CLR_W { w: self }
+        DMA_TX_I_ILG_CLR_W::new(self)
     }
     #[doc = "Bit 1 - The enable signal for TX Copy DMA access interrupt."]
     #[inline(always)]
     pub fn dma_tx_i_ilg_en(&mut self) -> DMA_TX_I_ILG_EN_W {
-        DMA_TX_I_ILG_EN_W { w: self }
+        DMA_TX_I_ILG_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -158,25 +79,16 @@ impl W {
         self
     }
 }
-#[doc = "TX Copy DMA permission control register 2.\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dma_tx_i_2]
-(index.html) module"]
+#[doc = "TX Copy DMA permission control register 2.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dma_tx_i_2](index.html) module"]
 pub struct DMA_TX_I_2_SPEC;
 impl crate::RegisterSpec for DMA_TX_I_2_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [dma_tx_i_2::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [dma_tx_i_2::R](R) reader structure"]
 impl crate::Readable for DMA_TX_I_2_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [dma_tx_i_2::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [dma_tx_i_2::W](W) writer structure"]
 impl crate::Writable for DMA_TX_I_2_SPEC {
     type Writer = W;
 }

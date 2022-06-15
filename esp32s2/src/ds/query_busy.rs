@@ -14,37 +14,20 @@ impl From<crate::R<QUERY_BUSY_SPEC>> for R {
     }
 }
 #[doc = "Field `QUERY_BUSY` reader - 1: The DS peripheral is busy. 0: The DS peripheral is idle."]
-pub struct QUERY_BUSY_R(crate::FieldReader<bool, bool>);
-impl QUERY_BUSY_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        QUERY_BUSY_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for QUERY_BUSY_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type QUERY_BUSY_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 0 - 1: The DS peripheral is busy. 0: The DS peripheral is idle."]
     #[inline(always)]
     pub fn query_busy(&self) -> QUERY_BUSY_R {
-        QUERY_BUSY_R::new((self.bits & 0x01) != 0)
+        QUERY_BUSY_R::new((self.bits & 1) != 0)
     }
 }
-#[doc = "Status of the DS\n\nThis register you can [`read`]
-(crate::generic::Reg::read). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [query_busy]
-(index.html) module"]
+#[doc = "Status of the DS\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [query_busy](index.html) module"]
 pub struct QUERY_BUSY_SPEC;
 impl crate::RegisterSpec for QUERY_BUSY_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [query_busy::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [query_busy::R](R) reader structure"]
 impl crate::Readable for QUERY_BUSY_SPEC {
     type Reader = R;
 }

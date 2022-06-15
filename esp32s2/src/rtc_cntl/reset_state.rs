@@ -35,109 +35,17 @@ impl From<crate::W<RESET_STATE_SPEC>> for W {
     }
 }
 #[doc = "Field `RESET_CAUSE_PROCPU` reader - Stores the CPU reset cause."]
-pub struct RESET_CAUSE_PROCPU_R(crate::FieldReader<u8, u8>);
-impl RESET_CAUSE_PROCPU_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        RESET_CAUSE_PROCPU_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RESET_CAUSE_PROCPU_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RESET_CAUSE_PROCPU_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `RESET_CAUSE_APPCPU` reader - reset cause of APP CPU"]
-pub struct RESET_CAUSE_APPCPU_R(crate::FieldReader<u8, u8>);
-impl RESET_CAUSE_APPCPU_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        RESET_CAUSE_APPCPU_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RESET_CAUSE_APPCPU_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RESET_CAUSE_APPCPU_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `APPCPU_STAT_VECTOR_SEL` reader - APP CPU state vector sel"]
-pub struct APPCPU_STAT_VECTOR_SEL_R(crate::FieldReader<bool, bool>);
-impl APPCPU_STAT_VECTOR_SEL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        APPCPU_STAT_VECTOR_SEL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for APPCPU_STAT_VECTOR_SEL_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type APPCPU_STAT_VECTOR_SEL_R = crate::BitReader<bool>;
 #[doc = "Field `APPCPU_STAT_VECTOR_SEL` writer - APP CPU state vector sel"]
-pub struct APPCPU_STAT_VECTOR_SEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> APPCPU_STAT_VECTOR_SEL_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
-        self.w
-    }
-}
-#[doc = "Field `PROCPU_STAT_VECTOR_SEL` reader - Selects the CPU static vector."]
-pub struct PROCPU_STAT_VECTOR_SEL_R(crate::FieldReader<bool, bool>);
-impl PROCPU_STAT_VECTOR_SEL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        PROCPU_STAT_VECTOR_SEL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PROCPU_STAT_VECTOR_SEL_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Field `PROCPU_STAT_VECTOR_SEL` writer - Selects the CPU static vector."]
-pub struct PROCPU_STAT_VECTOR_SEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PROCPU_STAT_VECTOR_SEL_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
-        self.w
-    }
-}
+pub type APPCPU_STAT_VECTOR_SEL_W<'a> = crate::BitWriter<'a, u32, RESET_STATE_SPEC, bool, 12>;
+#[doc = "Field `PROCPU_STAT_VECTOR_SEL` reader - Selects the CPU state vector."]
+pub type PROCPU_STAT_VECTOR_SEL_R = crate::BitReader<bool>;
+#[doc = "Field `PROCPU_STAT_VECTOR_SEL` writer - Selects the CPU state vector."]
+pub type PROCPU_STAT_VECTOR_SEL_W<'a> = crate::BitWriter<'a, u32, RESET_STATE_SPEC, bool, 13>;
 impl R {
     #[doc = "Bits 0:5 - Stores the CPU reset cause."]
     #[inline(always)]
@@ -152,24 +60,24 @@ impl R {
     #[doc = "Bit 12 - APP CPU state vector sel"]
     #[inline(always)]
     pub fn appcpu_stat_vector_sel(&self) -> APPCPU_STAT_VECTOR_SEL_R {
-        APPCPU_STAT_VECTOR_SEL_R::new(((self.bits >> 12) & 0x01) != 0)
+        APPCPU_STAT_VECTOR_SEL_R::new(((self.bits >> 12) & 1) != 0)
     }
-    #[doc = "Bit 13 - Selects the CPU static vector."]
+    #[doc = "Bit 13 - Selects the CPU state vector."]
     #[inline(always)]
     pub fn procpu_stat_vector_sel(&self) -> PROCPU_STAT_VECTOR_SEL_R {
-        PROCPU_STAT_VECTOR_SEL_R::new(((self.bits >> 13) & 0x01) != 0)
+        PROCPU_STAT_VECTOR_SEL_R::new(((self.bits >> 13) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 12 - APP CPU state vector sel"]
     #[inline(always)]
     pub fn appcpu_stat_vector_sel(&mut self) -> APPCPU_STAT_VECTOR_SEL_W {
-        APPCPU_STAT_VECTOR_SEL_W { w: self }
+        APPCPU_STAT_VECTOR_SEL_W::new(self)
     }
-    #[doc = "Bit 13 - Selects the CPU static vector."]
+    #[doc = "Bit 13 - Selects the CPU state vector."]
     #[inline(always)]
     pub fn procpu_stat_vector_sel(&mut self) -> PROCPU_STAT_VECTOR_SEL_W {
-        PROCPU_STAT_VECTOR_SEL_W { w: self }
+        PROCPU_STAT_VECTOR_SEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -178,25 +86,16 @@ impl W {
         self
     }
 }
-#[doc = "Indicates the CPU reset source. For more information about the reset cause, please refer to Table \\ref{table:resetreasons} in Chapter \\ref{module:ResetandClock} \\textit{\nameref{module:ResetandClock}}.\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [reset_state]
-(index.html) module"]
+#[doc = "Indicates the CPU reset source. For more information about the reset cause, please refer to Table \\ref{table:resetreasons} in Chapter \\ref{module:ResetandClock} \\textit{\nameref{module:ResetandClock}}.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [reset_state](index.html) module"]
 pub struct RESET_STATE_SPEC;
 impl crate::RegisterSpec for RESET_STATE_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [reset_state::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [reset_state::R](R) reader structure"]
 impl crate::Readable for RESET_STATE_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [reset_state::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [reset_state::W](W) writer structure"]
 impl crate::Writable for RESET_STATE_SPEC {
     type Writer = W;
 }

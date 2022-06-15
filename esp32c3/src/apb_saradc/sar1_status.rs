@@ -14,20 +14,7 @@ impl From<crate::R<SAR1_STATUS_SPEC>> for R {
     }
 }
 #[doc = "Field `SARADC_SAR1_STATUS` reader - saradc1 status about data and channel"]
-pub struct SARADC_SAR1_STATUS_R(crate::FieldReader<u32, u32>);
-impl SARADC_SAR1_STATUS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        SARADC_SAR1_STATUS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SARADC_SAR1_STATUS_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SARADC_SAR1_STATUS_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31 - saradc1 status about data and channel"]
     #[inline(always)]
@@ -35,16 +22,12 @@ impl R {
         SARADC_SAR1_STATUS_R::new(self.bits)
     }
 }
-#[doc = "digital saradc configure register\n\nThis register you can [`read`]
-(crate::generic::Reg::read). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sar1_status]
-(index.html) module"]
+#[doc = "digital saradc configure register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sar1_status](index.html) module"]
 pub struct SAR1_STATUS_SPEC;
 impl crate::RegisterSpec for SAR1_STATUS_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [sar1_status::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [sar1_status::R](R) reader structure"]
 impl crate::Readable for SAR1_STATUS_SPEC {
     type Reader = R;
 }

@@ -14,20 +14,7 @@ impl From<crate::R<RX_HEAD_SPEC>> for R {
     }
 }
 #[doc = "Field `RX_HEAD` reader - a"]
-pub struct RX_HEAD_R(crate::FieldReader<u32, u32>);
-impl RX_HEAD_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        RX_HEAD_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RX_HEAD_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RX_HEAD_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31 - a"]
     #[inline(always)]
@@ -35,16 +22,12 @@ impl R {
         RX_HEAD_R::new(self.bits)
     }
 }
-#[doc = "a\n\nThis register you can [`read`]
-(crate::generic::Reg::read). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rx_head]
-(index.html) module"]
+#[doc = "a\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rx_head](index.html) module"]
 pub struct RX_HEAD_SPEC;
 impl crate::RegisterSpec for RX_HEAD_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [rx_head::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [rx_head::R](R) reader structure"]
 impl crate::Readable for RX_HEAD_SPEC {
     type Reader = R;
 }

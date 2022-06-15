@@ -20,140 +20,40 @@ impl From<crate::W<INT_CLR_SPEC>> for W {
     }
 }
 #[doc = "Field `PER_END_INT_CLR` writer - The clear bit for SPI_MEM_PER_END_INT interrupt."]
-pub struct PER_END_INT_CLR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PER_END_INT_CLR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type PER_END_INT_CLR_W<'a> = crate::BitWriter<'a, u32, INT_CLR_SPEC, bool, 0>;
 #[doc = "Field `PES_END_INT_CLR` writer - The clear bit for SPI_MEM_PES_END_INT interrupt."]
-pub struct PES_END_INT_CLR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PES_END_INT_CLR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type PES_END_INT_CLR_W<'a> = crate::BitWriter<'a, u32, INT_CLR_SPEC, bool, 1>;
 #[doc = "Field `WPE_END_INT_CLR` writer - The clear bit for SPI_MEM_WPE_END_INT interrupt."]
-pub struct WPE_END_INT_CLR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WPE_END_INT_CLR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type WPE_END_INT_CLR_W<'a> = crate::BitWriter<'a, u32, INT_CLR_SPEC, bool, 2>;
 #[doc = "Field `SLV_ST_END_INT_CLR` writer - The clear bit for SPI_MEM_SLV_ST_END_INT interrupt."]
-pub struct SLV_ST_END_INT_CLR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SLV_ST_END_INT_CLR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type SLV_ST_END_INT_CLR_W<'a> = crate::BitWriter<'a, u32, INT_CLR_SPEC, bool, 3>;
 #[doc = "Field `MST_ST_END_INT_CLR` writer - The clear bit for SPI_MEM_MST_ST_END_INT interrupt."]
-pub struct MST_ST_END_INT_CLR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MST_ST_END_INT_CLR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type MST_ST_END_INT_CLR_W<'a> = crate::BitWriter<'a, u32, INT_CLR_SPEC, bool, 4>;
 impl W {
     #[doc = "Bit 0 - The clear bit for SPI_MEM_PER_END_INT interrupt."]
     #[inline(always)]
     pub fn per_end_int_clr(&mut self) -> PER_END_INT_CLR_W {
-        PER_END_INT_CLR_W { w: self }
+        PER_END_INT_CLR_W::new(self)
     }
     #[doc = "Bit 1 - The clear bit for SPI_MEM_PES_END_INT interrupt."]
     #[inline(always)]
     pub fn pes_end_int_clr(&mut self) -> PES_END_INT_CLR_W {
-        PES_END_INT_CLR_W { w: self }
+        PES_END_INT_CLR_W::new(self)
     }
     #[doc = "Bit 2 - The clear bit for SPI_MEM_WPE_END_INT interrupt."]
     #[inline(always)]
     pub fn wpe_end_int_clr(&mut self) -> WPE_END_INT_CLR_W {
-        WPE_END_INT_CLR_W { w: self }
+        WPE_END_INT_CLR_W::new(self)
     }
     #[doc = "Bit 3 - The clear bit for SPI_MEM_SLV_ST_END_INT interrupt."]
     #[inline(always)]
     pub fn slv_st_end_int_clr(&mut self) -> SLV_ST_END_INT_CLR_W {
-        SLV_ST_END_INT_CLR_W { w: self }
+        SLV_ST_END_INT_CLR_W::new(self)
     }
     #[doc = "Bit 4 - The clear bit for SPI_MEM_MST_ST_END_INT interrupt."]
     #[inline(always)]
     pub fn mst_st_end_int_clr(&mut self) -> MST_ST_END_INT_CLR_W {
-        MST_ST_END_INT_CLR_W { w: self }
+        MST_ST_END_INT_CLR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -162,18 +62,12 @@ impl W {
         self
     }
 }
-#[doc = "SPI1 interrupt clear register\n\nThis register you can [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [int_clr]
-(index.html) module"]
+#[doc = "SPI1 interrupt clear register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [int_clr](index.html) module"]
 pub struct INT_CLR_SPEC;
 impl crate::RegisterSpec for INT_CLR_SPEC {
     type Ux = u32;
 }
-#[doc = "`write(|w| ..)` method takes [int_clr::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [int_clr::W](W) writer structure"]
 impl crate::Writable for INT_CLR_SPEC {
     type Writer = W;
 }

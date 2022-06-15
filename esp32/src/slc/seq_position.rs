@@ -35,59 +35,13 @@ impl From<crate::W<SEQ_POSITION_SPEC>> for W {
     }
 }
 #[doc = "Field `SLC0_SEQ_POSITION` reader - "]
-pub struct SLC0_SEQ_POSITION_R(crate::FieldReader<u8, u8>);
-impl SLC0_SEQ_POSITION_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        SLC0_SEQ_POSITION_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SLC0_SEQ_POSITION_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SLC0_SEQ_POSITION_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `SLC0_SEQ_POSITION` writer - "]
-pub struct SLC0_SEQ_POSITION_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SLC0_SEQ_POSITION_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type SLC0_SEQ_POSITION_W<'a> = crate::FieldWriter<'a, u32, SEQ_POSITION_SPEC, u8, u8, 8, 0>;
 #[doc = "Field `SLC1_SEQ_POSITION` reader - "]
-pub struct SLC1_SEQ_POSITION_R(crate::FieldReader<u8, u8>);
-impl SLC1_SEQ_POSITION_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        SLC1_SEQ_POSITION_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SLC1_SEQ_POSITION_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SLC1_SEQ_POSITION_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `SLC1_SEQ_POSITION` writer - "]
-pub struct SLC1_SEQ_POSITION_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SLC1_SEQ_POSITION_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 8)) | ((value as u32 & 0xff) << 8);
-        self.w
-    }
-}
+pub type SLC1_SEQ_POSITION_W<'a> = crate::FieldWriter<'a, u32, SEQ_POSITION_SPEC, u8, u8, 8, 8>;
 impl R {
     #[doc = "Bits 0:7"]
     #[inline(always)]
@@ -104,12 +58,12 @@ impl W {
     #[doc = "Bits 0:7"]
     #[inline(always)]
     pub fn slc0_seq_position(&mut self) -> SLC0_SEQ_POSITION_W {
-        SLC0_SEQ_POSITION_W { w: self }
+        SLC0_SEQ_POSITION_W::new(self)
     }
     #[doc = "Bits 8:15"]
     #[inline(always)]
     pub fn slc1_seq_position(&mut self) -> SLC1_SEQ_POSITION_W {
-        SLC1_SEQ_POSITION_W { w: self }
+        SLC1_SEQ_POSITION_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -118,25 +72,16 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [seq_position]
-(index.html) module"]
+#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [seq_position](index.html) module"]
 pub struct SEQ_POSITION_SPEC;
 impl crate::RegisterSpec for SEQ_POSITION_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [seq_position::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [seq_position::R](R) reader structure"]
 impl crate::Readable for SEQ_POSITION_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [seq_position::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [seq_position::W](W) writer structure"]
 impl crate::Writable for SEQ_POSITION_SPEC {
     type Writer = W;
 }

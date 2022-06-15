@@ -35,32 +35,9 @@ impl From<crate::W<CAP_TIMER_PHASE_SPEC>> for W {
     }
 }
 #[doc = "Field `CAP_PHASE` reader - Phase value for capture timer sync operation."]
-pub struct CAP_PHASE_R(crate::FieldReader<u32, u32>);
-impl CAP_PHASE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        CAP_PHASE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CAP_PHASE_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CAP_PHASE_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `CAP_PHASE` writer - Phase value for capture timer sync operation."]
-pub struct CAP_PHASE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CAP_PHASE_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
-    }
-}
+pub type CAP_PHASE_W<'a> = crate::FieldWriter<'a, u32, CAP_TIMER_PHASE_SPEC, u32, u32, 32, 0>;
 impl R {
     #[doc = "Bits 0:31 - Phase value for capture timer sync operation."]
     #[inline(always)]
@@ -72,7 +49,7 @@ impl W {
     #[doc = "Bits 0:31 - Phase value for capture timer sync operation."]
     #[inline(always)]
     pub fn cap_phase(&mut self) -> CAP_PHASE_W {
-        CAP_PHASE_W { w: self }
+        CAP_PHASE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -81,25 +58,16 @@ impl W {
         self
     }
 }
-#[doc = "Phase for capture timer sync\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cap_timer_phase]
-(index.html) module"]
+#[doc = "Phase for capture timer sync\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cap_timer_phase](index.html) module"]
 pub struct CAP_TIMER_PHASE_SPEC;
 impl crate::RegisterSpec for CAP_TIMER_PHASE_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [cap_timer_phase::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [cap_timer_phase::R](R) reader structure"]
 impl crate::Readable for CAP_TIMER_PHASE_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [cap_timer_phase::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [cap_timer_phase::W](W) writer structure"]
 impl crate::Writable for CAP_TIMER_PHASE_SPEC {
     type Writer = W;
 }

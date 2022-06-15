@@ -35,59 +35,13 @@ impl From<crate::W<TMOUT_SPEC>> for W {
     }
 }
 #[doc = "Field `RESPONSE_TIMEOUT` reader - Response timeout value. Value is specified in terms of number of card output clocks, i.e., sdhost_cclk_out."]
-pub struct RESPONSE_TIMEOUT_R(crate::FieldReader<u8, u8>);
-impl RESPONSE_TIMEOUT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        RESPONSE_TIMEOUT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RESPONSE_TIMEOUT_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RESPONSE_TIMEOUT_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `RESPONSE_TIMEOUT` writer - Response timeout value. Value is specified in terms of number of card output clocks, i.e., sdhost_cclk_out."]
-pub struct RESPONSE_TIMEOUT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RESPONSE_TIMEOUT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type RESPONSE_TIMEOUT_W<'a> = crate::FieldWriter<'a, u32, TMOUT_SPEC, u8, u8, 8, 0>;
 #[doc = "Field `DATA_TIMEOUT` reader - Value for card data read timeout. This value is also used for data starvation by host timeout. The timeout counter is started only after the card clock is stopped. This value is specified in number of card output clocks, i.e. sdhost_cclk_out of the selected card. NOTE: The software timer should be used if the timeout value is in the order of 100 ms. In this case, read data timeout interrupt needs to be disabled."]
-pub struct DATA_TIMEOUT_R(crate::FieldReader<u32, u32>);
-impl DATA_TIMEOUT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        DATA_TIMEOUT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DATA_TIMEOUT_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DATA_TIMEOUT_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `DATA_TIMEOUT` writer - Value for card data read timeout. This value is also used for data starvation by host timeout. The timeout counter is started only after the card clock is stopped. This value is specified in number of card output clocks, i.e. sdhost_cclk_out of the selected card. NOTE: The software timer should be used if the timeout value is in the order of 100 ms. In this case, read data timeout interrupt needs to be disabled."]
-pub struct DATA_TIMEOUT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DATA_TIMEOUT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x00ff_ffff << 8)) | ((value as u32 & 0x00ff_ffff) << 8);
-        self.w
-    }
-}
+pub type DATA_TIMEOUT_W<'a> = crate::FieldWriter<'a, u32, TMOUT_SPEC, u32, u32, 24, 8>;
 impl R {
     #[doc = "Bits 0:7 - Response timeout value. Value is specified in terms of number of card output clocks, i.e., sdhost_cclk_out."]
     #[inline(always)]
@@ -104,12 +58,12 @@ impl W {
     #[doc = "Bits 0:7 - Response timeout value. Value is specified in terms of number of card output clocks, i.e., sdhost_cclk_out."]
     #[inline(always)]
     pub fn response_timeout(&mut self) -> RESPONSE_TIMEOUT_W {
-        RESPONSE_TIMEOUT_W { w: self }
+        RESPONSE_TIMEOUT_W::new(self)
     }
     #[doc = "Bits 8:31 - Value for card data read timeout. This value is also used for data starvation by host timeout. The timeout counter is started only after the card clock is stopped. This value is specified in number of card output clocks, i.e. sdhost_cclk_out of the selected card. NOTE: The software timer should be used if the timeout value is in the order of 100 ms. In this case, read data timeout interrupt needs to be disabled."]
     #[inline(always)]
     pub fn data_timeout(&mut self) -> DATA_TIMEOUT_W {
-        DATA_TIMEOUT_W { w: self }
+        DATA_TIMEOUT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -118,25 +72,16 @@ impl W {
         self
     }
 }
-#[doc = "Data and response timeout configuration register\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tmout]
-(index.html) module"]
+#[doc = "Data and response timeout configuration register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tmout](index.html) module"]
 pub struct TMOUT_SPEC;
 impl crate::RegisterSpec for TMOUT_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [tmout::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [tmout::R](R) reader structure"]
 impl crate::Readable for TMOUT_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [tmout::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [tmout::W](W) writer structure"]
 impl crate::Writable for TMOUT_SPEC {
     type Writer = W;
 }

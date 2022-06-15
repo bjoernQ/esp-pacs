@@ -81,6 +81,10 @@ pub mod rxfifo_st;
 pub type FIFO_CONF = crate::Reg<fifo_conf::FIFO_CONF_SPEC>;
 #[doc = ""]
 pub mod fifo_conf;
+#[doc = "DATA register accessor: an alias for `Reg<DATA_SPEC>`"]
+pub type DATA = crate::Reg<data::DATA_SPEC>;
+#[doc = ""]
+pub mod data;
 #[doc = "INT_RAW register accessor: an alias for `Reg<INT_RAW_SPEC>`"]
 pub type INT_RAW = crate::Reg<int_raw::INT_RAW_SPEC>;
 #[doc = ""]
@@ -145,7 +149,3 @@ pub mod date;
 pub type FIFO_START_ADDR = crate::Reg<fifo_start_addr::FIFO_START_ADDR_SPEC>;
 #[doc = ""]
 pub mod fifo_start_addr;
-#[doc = "DATA register accessor: an alias for `Reg<DATA_SPEC>`"]
-pub type DATA = crate::Reg<data::DATA_SPEC>;
-#[doc = ""]
-pub mod data;

@@ -14,20 +14,7 @@ impl From<crate::R<T1LO_SPEC>> for R {
     }
 }
 #[doc = "Field `T1_LO` reader - Register to store timer 1 time-base counter current value lower 32 bits."]
-pub struct T1_LO_R(crate::FieldReader<u32, u32>);
-impl T1_LO_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        T1_LO_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for T1_LO_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type T1_LO_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Register to store timer 1 time-base counter current value lower 32 bits."]
     #[inline(always)]
@@ -35,16 +22,12 @@ impl R {
         T1_LO_R::new(self.bits)
     }
 }
-#[doc = "\n\nThis register you can [`read`]
-(crate::generic::Reg::read). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [t1lo]
-(index.html) module"]
+#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [t1lo](index.html) module"]
 pub struct T1LO_SPEC;
 impl crate::RegisterSpec for T1LO_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [t1lo::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [t1lo::R](R) reader structure"]
 impl crate::Readable for T1LO_SPEC {
     type Reader = R;
 }

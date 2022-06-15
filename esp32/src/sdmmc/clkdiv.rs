@@ -35,113 +35,21 @@ impl From<crate::W<CLKDIV_SPEC>> for W {
     }
 }
 #[doc = "Field `CLK_DIVIDER0` reader - Clock divider0 value. Clock divisor is 2*n, where n = 0 bypasses the divider (divisor of 1). For example, a value of 1 means divided by 2*1 = 2, a value of 0xFF means divided by 2*255 = 510, and so on."]
-pub struct CLK_DIVIDER0_R(crate::FieldReader<u8, u8>);
-impl CLK_DIVIDER0_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CLK_DIVIDER0_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CLK_DIVIDER0_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CLK_DIVIDER0_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CLK_DIVIDER0` writer - Clock divider0 value. Clock divisor is 2*n, where n = 0 bypasses the divider (divisor of 1). For example, a value of 1 means divided by 2*1 = 2, a value of 0xFF means divided by 2*255 = 510, and so on."]
-pub struct CLK_DIVIDER0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CLK_DIVIDER0_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type CLK_DIVIDER0_W<'a> = crate::FieldWriter<'a, u32, CLKDIV_SPEC, u8, u8, 8, 0>;
 #[doc = "Field `CLK_DIVIDER1` reader - Clock divider1 value. Clock divisor is 2*n, where n = 0 bypasses the divider (divisor of 1). For example, a value of 1 means divided by 2*1 = 2, a value of 0xFF means divided by 2*255 = 510, and so on."]
-pub struct CLK_DIVIDER1_R(crate::FieldReader<u8, u8>);
-impl CLK_DIVIDER1_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CLK_DIVIDER1_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CLK_DIVIDER1_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CLK_DIVIDER1_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CLK_DIVIDER1` writer - Clock divider1 value. Clock divisor is 2*n, where n = 0 bypasses the divider (divisor of 1). For example, a value of 1 means divided by 2*1 = 2, a value of 0xFF means divided by 2*255 = 510, and so on."]
-pub struct CLK_DIVIDER1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CLK_DIVIDER1_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 8)) | ((value as u32 & 0xff) << 8);
-        self.w
-    }
-}
+pub type CLK_DIVIDER1_W<'a> = crate::FieldWriter<'a, u32, CLKDIV_SPEC, u8, u8, 8, 8>;
 #[doc = "Field `CLK_DIVIDER2` reader - Clock divider2 value. Clock divisor is 2*n, where n = 0 bypasses the divider (divisor of 1). For example, a value of 1 means divided by 2*1 = 2, a value of 0xFF means divided by 2*255 = 510, and so on."]
-pub struct CLK_DIVIDER2_R(crate::FieldReader<u8, u8>);
-impl CLK_DIVIDER2_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CLK_DIVIDER2_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CLK_DIVIDER2_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CLK_DIVIDER2_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CLK_DIVIDER2` writer - Clock divider2 value. Clock divisor is 2*n, where n = 0 bypasses the divider (divisor of 1). For example, a value of 1 means divided by 2*1 = 2, a value of 0xFF means divided by 2*255 = 510, and so on."]
-pub struct CLK_DIVIDER2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CLK_DIVIDER2_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 16)) | ((value as u32 & 0xff) << 16);
-        self.w
-    }
-}
+pub type CLK_DIVIDER2_W<'a> = crate::FieldWriter<'a, u32, CLKDIV_SPEC, u8, u8, 8, 16>;
 #[doc = "Field `CLK_DIVIDER3` reader - Clock divider3 value. Clock divisor is 2*n, where n = 0 bypasses the divider (divisor of 1). For example, a value of 1 means divided by 2*1 = 2, a value of 0xFF means divided by 2*255 = 510, and so on."]
-pub struct CLK_DIVIDER3_R(crate::FieldReader<u8, u8>);
-impl CLK_DIVIDER3_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CLK_DIVIDER3_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CLK_DIVIDER3_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CLK_DIVIDER3_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CLK_DIVIDER3` writer - Clock divider3 value. Clock divisor is 2*n, where n = 0 bypasses the divider (divisor of 1). For example, a value of 1 means divided by 2*1 = 2, a value of 0xFF means divided by 2*255 = 510, and so on."]
-pub struct CLK_DIVIDER3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CLK_DIVIDER3_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 24)) | ((value as u32 & 0xff) << 24);
-        self.w
-    }
-}
+pub type CLK_DIVIDER3_W<'a> = crate::FieldWriter<'a, u32, CLKDIV_SPEC, u8, u8, 8, 24>;
 impl R {
     #[doc = "Bits 0:7 - Clock divider0 value. Clock divisor is 2*n, where n = 0 bypasses the divider (divisor of 1). For example, a value of 1 means divided by 2*1 = 2, a value of 0xFF means divided by 2*255 = 510, and so on."]
     #[inline(always)]
@@ -168,22 +76,22 @@ impl W {
     #[doc = "Bits 0:7 - Clock divider0 value. Clock divisor is 2*n, where n = 0 bypasses the divider (divisor of 1). For example, a value of 1 means divided by 2*1 = 2, a value of 0xFF means divided by 2*255 = 510, and so on."]
     #[inline(always)]
     pub fn clk_divider0(&mut self) -> CLK_DIVIDER0_W {
-        CLK_DIVIDER0_W { w: self }
+        CLK_DIVIDER0_W::new(self)
     }
     #[doc = "Bits 8:15 - Clock divider1 value. Clock divisor is 2*n, where n = 0 bypasses the divider (divisor of 1). For example, a value of 1 means divided by 2*1 = 2, a value of 0xFF means divided by 2*255 = 510, and so on."]
     #[inline(always)]
     pub fn clk_divider1(&mut self) -> CLK_DIVIDER1_W {
-        CLK_DIVIDER1_W { w: self }
+        CLK_DIVIDER1_W::new(self)
     }
     #[doc = "Bits 16:23 - Clock divider2 value. Clock divisor is 2*n, where n = 0 bypasses the divider (divisor of 1). For example, a value of 1 means divided by 2*1 = 2, a value of 0xFF means divided by 2*255 = 510, and so on."]
     #[inline(always)]
     pub fn clk_divider2(&mut self) -> CLK_DIVIDER2_W {
-        CLK_DIVIDER2_W { w: self }
+        CLK_DIVIDER2_W::new(self)
     }
     #[doc = "Bits 24:31 - Clock divider3 value. Clock divisor is 2*n, where n = 0 bypasses the divider (divisor of 1). For example, a value of 1 means divided by 2*1 = 2, a value of 0xFF means divided by 2*255 = 510, and so on."]
     #[inline(always)]
     pub fn clk_divider3(&mut self) -> CLK_DIVIDER3_W {
-        CLK_DIVIDER3_W { w: self }
+        CLK_DIVIDER3_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -192,25 +100,16 @@ impl W {
         self
     }
 }
-#[doc = "Clock divider configuration register\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clkdiv]
-(index.html) module"]
+#[doc = "Clock divider configuration register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clkdiv](index.html) module"]
 pub struct CLKDIV_SPEC;
 impl crate::RegisterSpec for CLKDIV_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [clkdiv::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [clkdiv::R](R) reader structure"]
 impl crate::Readable for CLKDIV_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [clkdiv::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [clkdiv::W](W) writer structure"]
 impl crate::Writable for CLKDIV_SPEC {
     type Writer = W;
 }

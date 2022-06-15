@@ -13,50 +13,21 @@ impl From<crate::R<DMA_TX_I_3_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Field `DMA_TX_I_ILG_ST` reader - Record the illegitimate information of TX Copy DMA. \\[22:6\\]
-: store the bits \\[18:2\\]
- of address. \\[5\\]
-: if bits \\[31:19\\]
- of address are 0x7ff, then the bit value is 1, otherwise it is 0. \\[4\\]
-: 1 means write operation, 0 means read operation. \\[3:0\\]
-: TX Copy DMA bus byte enables."]
-pub struct DMA_TX_I_ILG_ST_R(crate::FieldReader<u32, u32>);
-impl DMA_TX_I_ILG_ST_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        DMA_TX_I_ILG_ST_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DMA_TX_I_ILG_ST_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `DMA_TX_I_ILG_ST` reader - Record the illegitimate information of TX Copy DMA. \\[22:6\\]: store the bits \\[18:2\\] of address. \\[5\\]: if bits \\[31:19\\] of address are 0x7ff, then the bit value is 1, otherwise it is 0. \\[4\\]: 1 means write operation, 0 means read operation. \\[3:0\\]: TX Copy DMA bus byte enables."]
+pub type DMA_TX_I_ILG_ST_R = crate::FieldReader<u32, u32>;
 impl R {
-    #[doc = "Bits 0:22 - Record the illegitimate information of TX Copy DMA. \\[22:6\\]
-: store the bits \\[18:2\\]
- of address. \\[5\\]
-: if bits \\[31:19\\]
- of address are 0x7ff, then the bit value is 1, otherwise it is 0. \\[4\\]
-: 1 means write operation, 0 means read operation. \\[3:0\\]
-: TX Copy DMA bus byte enables."]
+    #[doc = "Bits 0:22 - Record the illegitimate information of TX Copy DMA. \\[22:6\\]: store the bits \\[18:2\\] of address. \\[5\\]: if bits \\[31:19\\] of address are 0x7ff, then the bit value is 1, otherwise it is 0. \\[4\\]: 1 means write operation, 0 means read operation. \\[3:0\\]: TX Copy DMA bus byte enables."]
     #[inline(always)]
     pub fn dma_tx_i_ilg_st(&self) -> DMA_TX_I_ILG_ST_R {
         DMA_TX_I_ILG_ST_R::new((self.bits & 0x007f_ffff) as u32)
     }
 }
-#[doc = "TX Copy DMA status register.\n\nThis register you can [`read`]
-(crate::generic::Reg::read). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dma_tx_i_3]
-(index.html) module"]
+#[doc = "TX Copy DMA status register.\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dma_tx_i_3](index.html) module"]
 pub struct DMA_TX_I_3_SPEC;
 impl crate::RegisterSpec for DMA_TX_I_3_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [dma_tx_i_3::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [dma_tx_i_3::R](R) reader structure"]
 impl crate::Readable for DMA_TX_I_3_SPEC {
     type Reader = R;
 }

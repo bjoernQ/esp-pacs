@@ -35,32 +35,9 @@ impl From<crate::W<CACHE_IA_INT_MAP_SPEC>> for W {
     }
 }
 #[doc = "Field `CACHE_IA_INT_MAP` reader - this register used to map cache_ia interrupt to one of core1's external interrupt"]
-pub struct CACHE_IA_INT_MAP_R(crate::FieldReader<u8, u8>);
-impl CACHE_IA_INT_MAP_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CACHE_IA_INT_MAP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CACHE_IA_INT_MAP_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CACHE_IA_INT_MAP_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CACHE_IA_INT_MAP` writer - this register used to map cache_ia interrupt to one of core1's external interrupt"]
-pub struct CACHE_IA_INT_MAP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CACHE_IA_INT_MAP_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x1f) | (value as u32 & 0x1f);
-        self.w
-    }
-}
+pub type CACHE_IA_INT_MAP_W<'a> = crate::FieldWriter<'a, u32, CACHE_IA_INT_MAP_SPEC, u8, u8, 5, 0>;
 impl R {
     #[doc = "Bits 0:4 - this register used to map cache_ia interrupt to one of core1's external interrupt"]
     #[inline(always)]
@@ -72,7 +49,7 @@ impl W {
     #[doc = "Bits 0:4 - this register used to map cache_ia interrupt to one of core1's external interrupt"]
     #[inline(always)]
     pub fn cache_ia_int_map(&mut self) -> CACHE_IA_INT_MAP_W {
-        CACHE_IA_INT_MAP_W { w: self }
+        CACHE_IA_INT_MAP_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -81,25 +58,16 @@ impl W {
         self
     }
 }
-#[doc = "cache_ia interrupt configuration register\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cache_ia_int_map]
-(index.html) module"]
+#[doc = "cache_ia interrupt configuration register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cache_ia_int_map](index.html) module"]
 pub struct CACHE_IA_INT_MAP_SPEC;
 impl crate::RegisterSpec for CACHE_IA_INT_MAP_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [cache_ia_int_map::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [cache_ia_int_map::R](R) reader structure"]
 impl crate::Readable for CACHE_IA_INT_MAP_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [cache_ia_int_map::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [cache_ia_int_map::W](W) writer structure"]
 impl crate::Writable for CACHE_IA_INT_MAP_SPEC {
     type Writer = W;
 }

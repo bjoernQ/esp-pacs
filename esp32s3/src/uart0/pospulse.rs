@@ -14,20 +14,7 @@ impl From<crate::R<POSPULSE_SPEC>> for R {
     }
 }
 #[doc = "Field `POSEDGE_MIN_CNT` reader - This register stores the minimal input clock count between two positive edges. It is used in boudrate-detect process."]
-pub struct POSEDGE_MIN_CNT_R(crate::FieldReader<u16, u16>);
-impl POSEDGE_MIN_CNT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        POSEDGE_MIN_CNT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for POSEDGE_MIN_CNT_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type POSEDGE_MIN_CNT_R = crate::FieldReader<u16, u16>;
 impl R {
     #[doc = "Bits 0:11 - This register stores the minimal input clock count between two positive edges. It is used in boudrate-detect process."]
     #[inline(always)]
@@ -35,16 +22,12 @@ impl R {
         POSEDGE_MIN_CNT_R::new((self.bits & 0x0fff) as u16)
     }
 }
-#[doc = "Autobaud high pulse register\n\nThis register you can [`read`]
-(crate::generic::Reg::read). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pospulse]
-(index.html) module"]
+#[doc = "Autobaud high pulse register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pospulse](index.html) module"]
 pub struct POSPULSE_SPEC;
 impl crate::RegisterSpec for POSPULSE_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [pospulse::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [pospulse::R](R) reader structure"]
 impl crate::Readable for POSPULSE_SPEC {
     type Reader = R;
 }

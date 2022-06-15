@@ -14,37 +14,20 @@ impl From<crate::R<DONE_SPEC>> for R {
     }
 }
 #[doc = "Field `FLASH_DONE` reader - Set this bit when encryption operation is complete."]
-pub struct FLASH_DONE_R(crate::FieldReader<bool, bool>);
-impl FLASH_DONE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        FLASH_DONE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FLASH_DONE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FLASH_DONE_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 0 - Set this bit when encryption operation is complete."]
     #[inline(always)]
     pub fn flash_done(&self) -> FLASH_DONE_R {
-        FLASH_DONE_R::new((self.bits & 0x01) != 0)
+        FLASH_DONE_R::new((self.bits & 1) != 0)
     }
 }
-#[doc = "\n\nThis register you can [`read`]
-(crate::generic::Reg::read). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [done]
-(index.html) module"]
+#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [done](index.html) module"]
 pub struct DONE_SPEC;
 impl crate::RegisterSpec for DONE_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [done::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [done::R](R) reader structure"]
 impl crate::Readable for DONE_SPEC {
     type Reader = R;
 }

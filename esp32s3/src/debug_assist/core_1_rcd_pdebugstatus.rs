@@ -14,20 +14,7 @@ impl From<crate::R<CORE_1_RCD_PDEBUGSTATUS_SPEC>> for R {
     }
 }
 #[doc = "Field `CORE_1_RCD_PDEBUGSTATUS` reader - Core1 pdebugstatus"]
-pub struct CORE_1_RCD_PDEBUGSTATUS_R(crate::FieldReader<u8, u8>);
-impl CORE_1_RCD_PDEBUGSTATUS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CORE_1_RCD_PDEBUGSTATUS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CORE_1_RCD_PDEBUGSTATUS_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CORE_1_RCD_PDEBUGSTATUS_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:7 - Core1 pdebugstatus"]
     #[inline(always)]
@@ -35,16 +22,12 @@ impl R {
         CORE_1_RCD_PDEBUGSTATUS_R::new((self.bits & 0xff) as u8)
     }
 }
-#[doc = "Core1 pdebug status register\n\nThis register you can [`read`]
-(crate::generic::Reg::read). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [core_1_rcd_pdebugstatus]
-(index.html) module"]
+#[doc = "Core1 pdebug status register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [core_1_rcd_pdebugstatus](index.html) module"]
 pub struct CORE_1_RCD_PDEBUGSTATUS_SPEC;
 impl crate::RegisterSpec for CORE_1_RCD_PDEBUGSTATUS_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [core_1_rcd_pdebugstatus::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [core_1_rcd_pdebugstatus::R](R) reader structure"]
 impl crate::Readable for CORE_1_RCD_PDEBUGSTATUS_SPEC {
     type Reader = R;
 }

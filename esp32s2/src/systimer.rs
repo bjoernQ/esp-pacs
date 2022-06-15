@@ -30,11 +30,11 @@ pub struct RegisterBlock {
     #[doc = "0x34 - Configure work mode for system timer target 2"]
     pub target2_conf: crate::Reg<target2_conf::TARGET2_CONF_SPEC>,
     #[doc = "0x38 - Read out system timer value"]
-    pub update: crate::Reg<update::UPDATE_SPEC>,
+    pub unit0_op: crate::Reg<unit0_op::UNIT0_OP_SPEC>,
     #[doc = "0x3c - System timer value, high 32 bits"]
-    pub value_hi: crate::Reg<value_hi::VALUE_HI_SPEC>,
+    pub unit0_value_hi: crate::Reg<unit0_value_hi::UNIT0_VALUE_HI_SPEC>,
     #[doc = "0x40 - System timer value, low 32 bits"]
-    pub value_lo: crate::Reg<value_lo::VALUE_LO_SPEC>,
+    pub unit0_value_lo: crate::Reg<unit0_value_lo::UNIT0_VALUE_LO_SPEC>,
     #[doc = "0x44 - System timer interrupt enable"]
     pub int_ena: crate::Reg<int_ena::INT_ENA_SPEC>,
     #[doc = "0x48 - System timer interrupt raw"]
@@ -101,18 +101,18 @@ pub mod target1_conf;
 pub type TARGET2_CONF = crate::Reg<target2_conf::TARGET2_CONF_SPEC>;
 #[doc = "Configure work mode for system timer target 2"]
 pub mod target2_conf;
-#[doc = "UPDATE register accessor: an alias for `Reg<UPDATE_SPEC>`"]
-pub type UPDATE = crate::Reg<update::UPDATE_SPEC>;
+#[doc = "UNIT0_OP register accessor: an alias for `Reg<UNIT0_OP_SPEC>`"]
+pub type UNIT0_OP = crate::Reg<unit0_op::UNIT0_OP_SPEC>;
 #[doc = "Read out system timer value"]
-pub mod update;
-#[doc = "VALUE_HI register accessor: an alias for `Reg<VALUE_HI_SPEC>`"]
-pub type VALUE_HI = crate::Reg<value_hi::VALUE_HI_SPEC>;
+pub mod unit0_op;
+#[doc = "UNIT0_VALUE_HI register accessor: an alias for `Reg<UNIT0_VALUE_HI_SPEC>`"]
+pub type UNIT0_VALUE_HI = crate::Reg<unit0_value_hi::UNIT0_VALUE_HI_SPEC>;
 #[doc = "System timer value, high 32 bits"]
-pub mod value_hi;
-#[doc = "VALUE_LO register accessor: an alias for `Reg<VALUE_LO_SPEC>`"]
-pub type VALUE_LO = crate::Reg<value_lo::VALUE_LO_SPEC>;
+pub mod unit0_value_hi;
+#[doc = "UNIT0_VALUE_LO register accessor: an alias for `Reg<UNIT0_VALUE_LO_SPEC>`"]
+pub type UNIT0_VALUE_LO = crate::Reg<unit0_value_lo::UNIT0_VALUE_LO_SPEC>;
 #[doc = "System timer value, low 32 bits"]
-pub mod value_lo;
+pub mod unit0_value_lo;
 #[doc = "INT_ENA register accessor: an alias for `Reg<INT_ENA_SPEC>`"]
 pub type INT_ENA = crate::Reg<int_ena::INT_ENA_SPEC>;
 #[doc = "System timer interrupt enable"]

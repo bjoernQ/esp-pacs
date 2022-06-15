@@ -14,20 +14,7 @@ impl From<crate::R<U5_CNT_SPEC>> for R {
     }
 }
 #[doc = "Field `PLUS_CNT_U5` reader - This register stores the current pulse count value for unit5."]
-pub struct PLUS_CNT_U5_R(crate::FieldReader<u16, u16>);
-impl PLUS_CNT_U5_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        PLUS_CNT_U5_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PLUS_CNT_U5_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PLUS_CNT_U5_R = crate::FieldReader<u16, u16>;
 impl R {
     #[doc = "Bits 0:15 - This register stores the current pulse count value for unit5."]
     #[inline(always)]
@@ -35,16 +22,12 @@ impl R {
         PLUS_CNT_U5_R::new((self.bits & 0xffff) as u16)
     }
 }
-#[doc = "\n\nThis register you can [`read`]
-(crate::generic::Reg::read). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [u5_cnt]
-(index.html) module"]
+#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [u5_cnt](index.html) module"]
 pub struct U5_CNT_SPEC;
 impl crate::RegisterSpec for U5_CNT_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [u5_cnt::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [u5_cnt::R](R) reader structure"]
 impl crate::Readable for U5_CNT_SPEC {
     type Reader = R;
 }

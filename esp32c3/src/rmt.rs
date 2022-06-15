@@ -9,16 +9,14 @@ pub struct RegisterBlock {
     pub ch2data: crate::Reg<ch2data::CH2DATA_SPEC>,
     #[doc = "0x0c - RMT_CH3DATA_REG."]
     pub ch3data: crate::Reg<ch3data::CH3DATA_SPEC>,
-    #[doc = "0x10 - RMT_CH0CONF0_REG."]
-    pub ch0conf0: crate::Reg<ch0conf0::CH0CONF0_SPEC>,
-    #[doc = "0x14 - RMT_CH1CONF0_REG."]
-    pub ch1conf0: crate::Reg<ch1conf0::CH1CONF0_SPEC>,
+    #[doc = "0x10..0x18 - RMT_CH%sCONF%s_REG."]
+    pub ch_tx_conf0: [crate::Reg<ch_tx_conf0::CH_TX_CONF0_SPEC>; 2],
     #[doc = "0x18 - RMT_CH2CONF0_REG."]
-    pub ch2conf0: crate::Reg<ch2conf0::CH2CONF0_SPEC>,
+    pub ch2_rx_conf0: crate::Reg<ch_rx_conf0::CH_RX_CONF0_SPEC>,
     #[doc = "0x1c - RMT_CH2CONF1_REG."]
     pub ch2conf1: crate::Reg<ch2conf1::CH2CONF1_SPEC>,
-    #[doc = "0x20 - RMT_CH3CONF0_REG."]
-    pub ch3conf0: crate::Reg<ch3conf0::CH3CONF0_SPEC>,
+    #[doc = "0x20 - RMT_CH2CONF0_REG."]
+    pub ch3_rx_conf0: crate::Reg<ch_rx_conf0::CH_RX_CONF0_SPEC>,
     #[doc = "0x24 - RMT_CH3CONF1_REG."]
     pub ch3conf1: crate::Reg<ch3conf1::CH3CONF1_SPEC>,
     #[doc = "0x28 - RMT_CH0STATUS_REG."]
@@ -45,23 +43,31 @@ pub struct RegisterBlock {
     pub ch2_rx_carrier_rm: crate::Reg<ch2_rx_carrier_rm::CH2_RX_CARRIER_RM_SPEC>,
     #[doc = "0x54 - RMT_CH3_RX_CARRIER_RM_REG."]
     pub ch3_rx_carrier_rm: crate::Reg<ch3_rx_carrier_rm::CH3_RX_CARRIER_RM_SPEC>,
-    #[doc = "0x58 - RMT_CH0_TX_LIM_REG."]
-    pub ch0_tx_lim: crate::Reg<ch0_tx_lim::CH0_TX_LIM_SPEC>,
-    #[doc = "0x5c - RMT_CH1_TX_LIM_REG."]
-    pub ch1_tx_lim: crate::Reg<ch1_tx_lim::CH1_TX_LIM_SPEC>,
-    #[doc = "0x60 - RMT_CH2_RX_LIM_REG."]
-    pub ch2_rx_lim: crate::Reg<ch2_rx_lim::CH2_RX_LIM_SPEC>,
-    #[doc = "0x64 - RMT_CH3_RX_LIM_REG."]
-    pub ch3_rx_lim: crate::Reg<ch3_rx_lim::CH3_RX_LIM_SPEC>,
+    #[doc = "0x58..0x60 - RMT_CH%s_TX_LIM_REG."]
+    pub ch_tx_lim: [crate::Reg<ch_tx_lim::CH_TX_LIM_SPEC>; 2],
+    #[doc = "0x60..0x68 - RMT_CH2_RX_LIM_REG."]
+    pub ch_rx_lim: [crate::Reg<ch_rx_lim::CH_RX_LIM_SPEC>; 2],
     #[doc = "0x68 - RMT_SYS_CONF_REG."]
     pub sys_conf: crate::Reg<sys_conf::SYS_CONF_SPEC>,
     #[doc = "0x6c - RMT_TX_SIM_REG."]
     pub tx_sim: crate::Reg<tx_sim::TX_SIM_SPEC>,
     #[doc = "0x70 - RMT_REF_CNT_RST_REG."]
     pub ref_cnt_rst: crate::Reg<ref_cnt_rst::REF_CNT_RST_SPEC>,
-    _reserved29: [u8; 0x58],
+    _reserved26: [u8; 0x58],
     #[doc = "0xcc - RMT_DATE_REG."]
     pub date: crate::Reg<date::DATE_SPEC>,
+}
+impl RegisterBlock {
+    #[doc = "0x60 - RMT_CH2_RX_LIM_REG."]
+    #[inline(always)]
+    pub fn ch2_rx_lim(&self) -> &crate::Reg<ch_rx_lim::CH_RX_LIM_SPEC> {
+        &self.ch_rx_lim[0]
+    }
+    #[doc = "0x64 - RMT_CH2_RX_LIM_REG."]
+    #[inline(always)]
+    pub fn ch3_rx_lim(&self) -> &crate::Reg<ch_rx_lim::CH_RX_LIM_SPEC> {
+        &self.ch_rx_lim[1]
+    }
 }
 #[doc = "CH0DATA register accessor: an alias for `Reg<CH0DATA_SPEC>`"]
 pub type CH0DATA = crate::Reg<ch0data::CH0DATA_SPEC>;
@@ -79,26 +85,18 @@ pub mod ch2data;
 pub type CH3DATA = crate::Reg<ch3data::CH3DATA_SPEC>;
 #[doc = "RMT_CH3DATA_REG."]
 pub mod ch3data;
-#[doc = "CH0CONF0 register accessor: an alias for `Reg<CH0CONF0_SPEC>`"]
-pub type CH0CONF0 = crate::Reg<ch0conf0::CH0CONF0_SPEC>;
-#[doc = "RMT_CH0CONF0_REG."]
-pub mod ch0conf0;
-#[doc = "CH1CONF0 register accessor: an alias for `Reg<CH1CONF0_SPEC>`"]
-pub type CH1CONF0 = crate::Reg<ch1conf0::CH1CONF0_SPEC>;
-#[doc = "RMT_CH1CONF0_REG."]
-pub mod ch1conf0;
-#[doc = "CH2CONF0 register accessor: an alias for `Reg<CH2CONF0_SPEC>`"]
-pub type CH2CONF0 = crate::Reg<ch2conf0::CH2CONF0_SPEC>;
+#[doc = "CH_TX_CONF0 register accessor: an alias for `Reg<CH_TX_CONF0_SPEC>`"]
+pub type CH_TX_CONF0 = crate::Reg<ch_tx_conf0::CH_TX_CONF0_SPEC>;
+#[doc = "RMT_CH%sCONF%s_REG."]
+pub mod ch_tx_conf0;
+#[doc = "CH_RX_CONF0 register accessor: an alias for `Reg<CH_RX_CONF0_SPEC>`"]
+pub type CH_RX_CONF0 = crate::Reg<ch_rx_conf0::CH_RX_CONF0_SPEC>;
 #[doc = "RMT_CH2CONF0_REG."]
-pub mod ch2conf0;
+pub mod ch_rx_conf0;
 #[doc = "CH2CONF1 register accessor: an alias for `Reg<CH2CONF1_SPEC>`"]
 pub type CH2CONF1 = crate::Reg<ch2conf1::CH2CONF1_SPEC>;
 #[doc = "RMT_CH2CONF1_REG."]
 pub mod ch2conf1;
-#[doc = "CH3CONF0 register accessor: an alias for `Reg<CH3CONF0_SPEC>`"]
-pub type CH3CONF0 = crate::Reg<ch3conf0::CH3CONF0_SPEC>;
-#[doc = "RMT_CH3CONF0_REG."]
-pub mod ch3conf0;
 #[doc = "CH3CONF1 register accessor: an alias for `Reg<CH3CONF1_SPEC>`"]
 pub type CH3CONF1 = crate::Reg<ch3conf1::CH3CONF1_SPEC>;
 #[doc = "RMT_CH3CONF1_REG."]
@@ -151,22 +149,14 @@ pub mod ch2_rx_carrier_rm;
 pub type CH3_RX_CARRIER_RM = crate::Reg<ch3_rx_carrier_rm::CH3_RX_CARRIER_RM_SPEC>;
 #[doc = "RMT_CH3_RX_CARRIER_RM_REG."]
 pub mod ch3_rx_carrier_rm;
-#[doc = "CH0_TX_LIM register accessor: an alias for `Reg<CH0_TX_LIM_SPEC>`"]
-pub type CH0_TX_LIM = crate::Reg<ch0_tx_lim::CH0_TX_LIM_SPEC>;
-#[doc = "RMT_CH0_TX_LIM_REG."]
-pub mod ch0_tx_lim;
-#[doc = "CH1_TX_LIM register accessor: an alias for `Reg<CH1_TX_LIM_SPEC>`"]
-pub type CH1_TX_LIM = crate::Reg<ch1_tx_lim::CH1_TX_LIM_SPEC>;
-#[doc = "RMT_CH1_TX_LIM_REG."]
-pub mod ch1_tx_lim;
-#[doc = "CH2_RX_LIM register accessor: an alias for `Reg<CH2_RX_LIM_SPEC>`"]
-pub type CH2_RX_LIM = crate::Reg<ch2_rx_lim::CH2_RX_LIM_SPEC>;
+#[doc = "CH_TX_LIM register accessor: an alias for `Reg<CH_TX_LIM_SPEC>`"]
+pub type CH_TX_LIM = crate::Reg<ch_tx_lim::CH_TX_LIM_SPEC>;
+#[doc = "RMT_CH%s_TX_LIM_REG."]
+pub mod ch_tx_lim;
+#[doc = "CH_RX_LIM register accessor: an alias for `Reg<CH_RX_LIM_SPEC>`"]
+pub type CH_RX_LIM = crate::Reg<ch_rx_lim::CH_RX_LIM_SPEC>;
 #[doc = "RMT_CH2_RX_LIM_REG."]
-pub mod ch2_rx_lim;
-#[doc = "CH3_RX_LIM register accessor: an alias for `Reg<CH3_RX_LIM_SPEC>`"]
-pub type CH3_RX_LIM = crate::Reg<ch3_rx_lim::CH3_RX_LIM_SPEC>;
-#[doc = "RMT_CH3_RX_LIM_REG."]
-pub mod ch3_rx_lim;
+pub mod ch_rx_lim;
 #[doc = "SYS_CONF register accessor: an alias for `Reg<SYS_CONF_SPEC>`"]
 pub type SYS_CONF = crate::Reg<sys_conf::SYS_CONF_SPEC>;
 #[doc = "RMT_SYS_CONF_REG."]

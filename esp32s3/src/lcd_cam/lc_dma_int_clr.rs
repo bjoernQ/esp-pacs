@@ -20,113 +20,33 @@ impl From<crate::W<LC_DMA_INT_CLR_SPEC>> for W {
     }
 }
 #[doc = "Field `LCD_VSYNC_INT_CLR` writer - The clear bit for LCD frame end interrupt."]
-pub struct LCD_VSYNC_INT_CLR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LCD_VSYNC_INT_CLR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type LCD_VSYNC_INT_CLR_W<'a> = crate::BitWriter<'a, u32, LC_DMA_INT_CLR_SPEC, bool, 0>;
 #[doc = "Field `LCD_TRANS_DONE_INT_CLR` writer - The clear bit for lcd transfer end interrupt."]
-pub struct LCD_TRANS_DONE_INT_CLR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LCD_TRANS_DONE_INT_CLR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type LCD_TRANS_DONE_INT_CLR_W<'a> = crate::BitWriter<'a, u32, LC_DMA_INT_CLR_SPEC, bool, 1>;
 #[doc = "Field `CAM_VSYNC_INT_CLR` writer - The clear bit for Camera frame end interrupt."]
-pub struct CAM_VSYNC_INT_CLR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CAM_VSYNC_INT_CLR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type CAM_VSYNC_INT_CLR_W<'a> = crate::BitWriter<'a, u32, LC_DMA_INT_CLR_SPEC, bool, 2>;
 #[doc = "Field `CAM_HS_INT_CLR` writer - The clear bit for Camera line interrupt."]
-pub struct CAM_HS_INT_CLR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CAM_HS_INT_CLR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type CAM_HS_INT_CLR_W<'a> = crate::BitWriter<'a, u32, LC_DMA_INT_CLR_SPEC, bool, 3>;
 impl W {
     #[doc = "Bit 0 - The clear bit for LCD frame end interrupt."]
     #[inline(always)]
     pub fn lcd_vsync_int_clr(&mut self) -> LCD_VSYNC_INT_CLR_W {
-        LCD_VSYNC_INT_CLR_W { w: self }
+        LCD_VSYNC_INT_CLR_W::new(self)
     }
     #[doc = "Bit 1 - The clear bit for lcd transfer end interrupt."]
     #[inline(always)]
     pub fn lcd_trans_done_int_clr(&mut self) -> LCD_TRANS_DONE_INT_CLR_W {
-        LCD_TRANS_DONE_INT_CLR_W { w: self }
+        LCD_TRANS_DONE_INT_CLR_W::new(self)
     }
     #[doc = "Bit 2 - The clear bit for Camera frame end interrupt."]
     #[inline(always)]
     pub fn cam_vsync_int_clr(&mut self) -> CAM_VSYNC_INT_CLR_W {
-        CAM_VSYNC_INT_CLR_W { w: self }
+        CAM_VSYNC_INT_CLR_W::new(self)
     }
     #[doc = "Bit 3 - The clear bit for Camera line interrupt."]
     #[inline(always)]
     pub fn cam_hs_int_clr(&mut self) -> CAM_HS_INT_CLR_W {
-        CAM_HS_INT_CLR_W { w: self }
+        CAM_HS_INT_CLR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -135,18 +55,12 @@ impl W {
         self
     }
 }
-#[doc = "LCD_camera DMA inturrupt clear register\n\nThis register you can [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [lc_dma_int_clr]
-(index.html) module"]
+#[doc = "LCD_camera DMA inturrupt clear register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [lc_dma_int_clr](index.html) module"]
 pub struct LC_DMA_INT_CLR_SPEC;
 impl crate::RegisterSpec for LC_DMA_INT_CLR_SPEC {
     type Ux = u32;
 }
-#[doc = "`write(|w| ..)` method takes [lc_dma_int_clr::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [lc_dma_int_clr::W](W) writer structure"]
 impl crate::Writable for LC_DMA_INT_CLR_SPEC {
     type Writer = W;
 }

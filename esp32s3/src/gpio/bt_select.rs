@@ -35,32 +35,9 @@ impl From<crate::W<BT_SELECT_SPEC>> for W {
     }
 }
 #[doc = "Field `BT_SEL` reader - GPIO bit select register"]
-pub struct BT_SEL_R(crate::FieldReader<u32, u32>);
-impl BT_SEL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        BT_SEL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for BT_SEL_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type BT_SEL_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `BT_SEL` writer - GPIO bit select register"]
-pub struct BT_SEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BT_SEL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
-    }
-}
+pub type BT_SEL_W<'a> = crate::FieldWriter<'a, u32, BT_SELECT_SPEC, u32, u32, 32, 0>;
 impl R {
     #[doc = "Bits 0:31 - GPIO bit select register"]
     #[inline(always)]
@@ -72,7 +49,7 @@ impl W {
     #[doc = "Bits 0:31 - GPIO bit select register"]
     #[inline(always)]
     pub fn bt_sel(&mut self) -> BT_SEL_W {
-        BT_SEL_W { w: self }
+        BT_SEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -81,25 +58,16 @@ impl W {
         self
     }
 }
-#[doc = "GPIO bit select register\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [bt_select]
-(index.html) module"]
+#[doc = "GPIO bit select register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [bt_select](index.html) module"]
 pub struct BT_SELECT_SPEC;
 impl crate::RegisterSpec for BT_SELECT_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [bt_select::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [bt_select::R](R) reader structure"]
 impl crate::Readable for BT_SELECT_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [bt_select::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [bt_select::W](W) writer structure"]
 impl crate::Writable for BT_SELECT_SPEC {
     type Writer = W;
 }

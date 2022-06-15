@@ -35,44 +35,21 @@ impl From<crate::W<FLASH_ACE0_ATTR_SPEC>> for W {
     }
 }
 #[doc = "Field `FLASH_ACE0_ATTR` reader - reg_flash_ace0_attr"]
-pub struct FLASH_ACE0_ATTR_R(crate::FieldReader<u8, u8>);
-impl FLASH_ACE0_ATTR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        FLASH_ACE0_ATTR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FLASH_ACE0_ATTR_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FLASH_ACE0_ATTR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `FLASH_ACE0_ATTR` writer - reg_flash_ace0_attr"]
-pub struct FLASH_ACE0_ATTR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FLASH_ACE0_ATTR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
-        self.w
-    }
-}
+pub type FLASH_ACE0_ATTR_W<'a> = crate::FieldWriter<'a, u32, FLASH_ACE0_ATTR_SPEC, u8, u8, 2, 0>;
 impl R {
     #[doc = "Bits 0:1 - reg_flash_ace0_attr"]
     #[inline(always)]
     pub fn flash_ace0_attr(&self) -> FLASH_ACE0_ATTR_R {
-        FLASH_ACE0_ATTR_R::new((self.bits & 0x03) as u8)
+        FLASH_ACE0_ATTR_R::new((self.bits & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - reg_flash_ace0_attr"]
     #[inline(always)]
     pub fn flash_ace0_attr(&mut self) -> FLASH_ACE0_ATTR_W {
-        FLASH_ACE0_ATTR_W { w: self }
+        FLASH_ACE0_ATTR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -81,25 +58,16 @@ impl W {
         self
     }
 }
-#[doc = "APB_CTRL_FLASH_ACE0_ATTR_REG\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [flash_ace0_attr]
-(index.html) module"]
+#[doc = "APB_CTRL_FLASH_ACE0_ATTR_REG\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [flash_ace0_attr](index.html) module"]
 pub struct FLASH_ACE0_ATTR_SPEC;
 impl crate::RegisterSpec for FLASH_ACE0_ATTR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [flash_ace0_attr::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [flash_ace0_attr::R](R) reader structure"]
 impl crate::Readable for FLASH_ACE0_ATTR_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [flash_ace0_attr::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [flash_ace0_attr::W](W) writer structure"]
 impl crate::Writable for FLASH_ACE0_ATTR_SPEC {
     type Writer = W;
 }

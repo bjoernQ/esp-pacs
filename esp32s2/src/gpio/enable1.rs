@@ -35,32 +35,9 @@ impl From<crate::W<ENABLE1_SPEC>> for W {
     }
 }
 #[doc = "Field `DATA` reader - GPIO32~53 output enable register."]
-pub struct DATA_R(crate::FieldReader<u32, u32>);
-impl DATA_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        DATA_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DATA_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DATA_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `DATA` writer - GPIO32~53 output enable register."]
-pub struct DATA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DATA_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x003f_ffff) | (value as u32 & 0x003f_ffff);
-        self.w
-    }
-}
+pub type DATA_W<'a> = crate::FieldWriter<'a, u32, ENABLE1_SPEC, u32, u32, 22, 0>;
 impl R {
     #[doc = "Bits 0:21 - GPIO32~53 output enable register."]
     #[inline(always)]
@@ -72,7 +49,7 @@ impl W {
     #[doc = "Bits 0:21 - GPIO32~53 output enable register."]
     #[inline(always)]
     pub fn data(&mut self) -> DATA_W {
-        DATA_W { w: self }
+        DATA_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -81,25 +58,16 @@ impl W {
         self
     }
 }
-#[doc = "GPIO32 ~ 53 output enable register\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [enable1]
-(index.html) module"]
+#[doc = "GPIO32 ~ 53 output enable register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [enable1](index.html) module"]
 pub struct ENABLE1_SPEC;
 impl crate::RegisterSpec for ENABLE1_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [enable1::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [enable1::R](R) reader structure"]
 impl crate::Readable for ENABLE1_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [enable1::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [enable1::W](W) writer structure"]
 impl crate::Writable for ENABLE1_SPEC {
     type Writer = W;
 }

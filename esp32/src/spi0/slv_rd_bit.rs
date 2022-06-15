@@ -35,32 +35,9 @@ impl From<crate::W<SLV_RD_BIT_SPEC>> for W {
     }
 }
 #[doc = "Field `SLV_RDATA_BIT` reader - In the slave mode it is the bit length of read data. The value is the length - 1."]
-pub struct SLV_RDATA_BIT_R(crate::FieldReader<u32, u32>);
-impl SLV_RDATA_BIT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        SLV_RDATA_BIT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SLV_RDATA_BIT_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SLV_RDATA_BIT_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `SLV_RDATA_BIT` writer - In the slave mode it is the bit length of read data. The value is the length - 1."]
-pub struct SLV_RDATA_BIT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SLV_RDATA_BIT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x00ff_ffff) | (value as u32 & 0x00ff_ffff);
-        self.w
-    }
-}
+pub type SLV_RDATA_BIT_W<'a> = crate::FieldWriter<'a, u32, SLV_RD_BIT_SPEC, u32, u32, 24, 0>;
 impl R {
     #[doc = "Bits 0:23 - In the slave mode it is the bit length of read data. The value is the length - 1."]
     #[inline(always)]
@@ -72,7 +49,7 @@ impl W {
     #[doc = "Bits 0:23 - In the slave mode it is the bit length of read data. The value is the length - 1."]
     #[inline(always)]
     pub fn slv_rdata_bit(&mut self) -> SLV_RDATA_BIT_W {
-        SLV_RDATA_BIT_W { w: self }
+        SLV_RDATA_BIT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -81,25 +58,16 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [slv_rd_bit]
-(index.html) module"]
+#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [slv_rd_bit](index.html) module"]
 pub struct SLV_RD_BIT_SPEC;
 impl crate::RegisterSpec for SLV_RD_BIT_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [slv_rd_bit::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [slv_rd_bit::R](R) reader structure"]
 impl crate::Readable for SLV_RD_BIT_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [slv_rd_bit::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [slv_rd_bit::W](W) writer structure"]
 impl crate::Writable for SLV_RD_BIT_SPEC {
     type Writer = W;
 }

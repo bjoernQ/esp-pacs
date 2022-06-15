@@ -35,175 +35,63 @@ impl From<crate::W<QUICK_SENT_SPEC>> for W {
     }
 }
 #[doc = "Field `SINGLE_SEND_NUM` reader - a"]
-pub struct SINGLE_SEND_NUM_R(crate::FieldReader<u8, u8>);
-impl SINGLE_SEND_NUM_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        SINGLE_SEND_NUM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SINGLE_SEND_NUM_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SINGLE_SEND_NUM_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `SINGLE_SEND_NUM` writer - a"]
-pub struct SINGLE_SEND_NUM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SINGLE_SEND_NUM_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07) | (value as u32 & 0x07);
-        self.w
-    }
-}
+pub type SINGLE_SEND_NUM_W<'a> = crate::FieldWriter<'a, u32, QUICK_SENT_SPEC, u8, u8, 3, 0>;
 #[doc = "Field `SINGLE_SEND_EN` reader - a"]
-pub struct SINGLE_SEND_EN_R(crate::FieldReader<bool, bool>);
-impl SINGLE_SEND_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        SINGLE_SEND_EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SINGLE_SEND_EN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SINGLE_SEND_EN_R = crate::BitReader<bool>;
 #[doc = "Field `SINGLE_SEND_EN` writer - a"]
-pub struct SINGLE_SEND_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SINGLE_SEND_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type SINGLE_SEND_EN_W<'a> = crate::BitWriter<'a, u32, QUICK_SENT_SPEC, bool, 3>;
 #[doc = "Field `ALWAYS_SEND_NUM` reader - a"]
-pub struct ALWAYS_SEND_NUM_R(crate::FieldReader<u8, u8>);
-impl ALWAYS_SEND_NUM_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        ALWAYS_SEND_NUM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ALWAYS_SEND_NUM_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ALWAYS_SEND_NUM_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `ALWAYS_SEND_NUM` writer - a"]
-pub struct ALWAYS_SEND_NUM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ALWAYS_SEND_NUM_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 4)) | ((value as u32 & 0x07) << 4);
-        self.w
-    }
-}
+pub type ALWAYS_SEND_NUM_W<'a> = crate::FieldWriter<'a, u32, QUICK_SENT_SPEC, u8, u8, 3, 4>;
 #[doc = "Field `ALWAYS_SEND_EN` reader - a"]
-pub struct ALWAYS_SEND_EN_R(crate::FieldReader<bool, bool>);
-impl ALWAYS_SEND_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ALWAYS_SEND_EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ALWAYS_SEND_EN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ALWAYS_SEND_EN_R = crate::BitReader<bool>;
 #[doc = "Field `ALWAYS_SEND_EN` writer - a"]
-pub struct ALWAYS_SEND_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ALWAYS_SEND_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
-}
+pub type ALWAYS_SEND_EN_W<'a> = crate::BitWriter<'a, u32, QUICK_SENT_SPEC, bool, 7>;
 impl R {
     #[doc = "Bits 0:2 - a"]
     #[inline(always)]
     pub fn single_send_num(&self) -> SINGLE_SEND_NUM_R {
-        SINGLE_SEND_NUM_R::new((self.bits & 0x07) as u8)
+        SINGLE_SEND_NUM_R::new((self.bits & 7) as u8)
     }
     #[doc = "Bit 3 - a"]
     #[inline(always)]
     pub fn single_send_en(&self) -> SINGLE_SEND_EN_R {
-        SINGLE_SEND_EN_R::new(((self.bits >> 3) & 0x01) != 0)
+        SINGLE_SEND_EN_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bits 4:6 - a"]
     #[inline(always)]
     pub fn always_send_num(&self) -> ALWAYS_SEND_NUM_R {
-        ALWAYS_SEND_NUM_R::new(((self.bits >> 4) & 0x07) as u8)
+        ALWAYS_SEND_NUM_R::new(((self.bits >> 4) & 7) as u8)
     }
     #[doc = "Bit 7 - a"]
     #[inline(always)]
     pub fn always_send_en(&self) -> ALWAYS_SEND_EN_R {
-        ALWAYS_SEND_EN_R::new(((self.bits >> 7) & 0x01) != 0)
+        ALWAYS_SEND_EN_R::new(((self.bits >> 7) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:2 - a"]
     #[inline(always)]
     pub fn single_send_num(&mut self) -> SINGLE_SEND_NUM_W {
-        SINGLE_SEND_NUM_W { w: self }
+        SINGLE_SEND_NUM_W::new(self)
     }
     #[doc = "Bit 3 - a"]
     #[inline(always)]
     pub fn single_send_en(&mut self) -> SINGLE_SEND_EN_W {
-        SINGLE_SEND_EN_W { w: self }
+        SINGLE_SEND_EN_W::new(self)
     }
     #[doc = "Bits 4:6 - a"]
     #[inline(always)]
     pub fn always_send_num(&mut self) -> ALWAYS_SEND_NUM_W {
-        ALWAYS_SEND_NUM_W { w: self }
+        ALWAYS_SEND_NUM_W::new(self)
     }
     #[doc = "Bit 7 - a"]
     #[inline(always)]
     pub fn always_send_en(&mut self) -> ALWAYS_SEND_EN_W {
-        ALWAYS_SEND_EN_W { w: self }
+        ALWAYS_SEND_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -212,25 +100,16 @@ impl W {
         self
     }
 }
-#[doc = "a\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [quick_sent]
-(index.html) module"]
+#[doc = "a\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [quick_sent](index.html) module"]
 pub struct QUICK_SENT_SPEC;
 impl crate::RegisterSpec for QUICK_SENT_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [quick_sent::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [quick_sent::R](R) reader structure"]
 impl crate::Readable for QUICK_SENT_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [quick_sent::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [quick_sent::W](W) writer structure"]
 impl crate::Writable for QUICK_SENT_SPEC {
     type Writer = W;
 }

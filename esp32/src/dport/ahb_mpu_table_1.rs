@@ -35,32 +35,10 @@ impl From<crate::W<AHB_MPU_TABLE_1_SPEC>> for W {
     }
 }
 #[doc = "Field `AHB_ACCESS_GRANT_1` reader - "]
-pub struct AHB_ACCESS_GRANT_1_R(crate::FieldReader<u16, u16>);
-impl AHB_ACCESS_GRANT_1_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        AHB_ACCESS_GRANT_1_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for AHB_ACCESS_GRANT_1_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type AHB_ACCESS_GRANT_1_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `AHB_ACCESS_GRANT_1` writer - "]
-pub struct AHB_ACCESS_GRANT_1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> AHB_ACCESS_GRANT_1_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01ff) | (value as u32 & 0x01ff);
-        self.w
-    }
-}
+pub type AHB_ACCESS_GRANT_1_W<'a> =
+    crate::FieldWriter<'a, u32, AHB_MPU_TABLE_1_SPEC, u16, u16, 9, 0>;
 impl R {
     #[doc = "Bits 0:8"]
     #[inline(always)]
@@ -72,7 +50,7 @@ impl W {
     #[doc = "Bits 0:8"]
     #[inline(always)]
     pub fn ahb_access_grant_1(&mut self) -> AHB_ACCESS_GRANT_1_W {
-        AHB_ACCESS_GRANT_1_W { w: self }
+        AHB_ACCESS_GRANT_1_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -81,25 +59,16 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ahb_mpu_table_1]
-(index.html) module"]
+#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ahb_mpu_table_1](index.html) module"]
 pub struct AHB_MPU_TABLE_1_SPEC;
 impl crate::RegisterSpec for AHB_MPU_TABLE_1_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [ahb_mpu_table_1::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [ahb_mpu_table_1::R](R) reader structure"]
 impl crate::Readable for AHB_MPU_TABLE_1_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [ahb_mpu_table_1::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [ahb_mpu_table_1::W](W) writer structure"]
 impl crate::Writable for AHB_MPU_TABLE_1_SPEC {
     type Writer = W;
 }

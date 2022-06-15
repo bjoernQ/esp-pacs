@@ -20,22 +20,12 @@ impl From<crate::W<SET_PARA_PURPOSE_SPEC>> for W {
     }
 }
 #[doc = "Field `PURPOSE_SET` writer - Set hmac purpose."]
-pub struct PURPOSE_SET_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PURPOSE_SET_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0f) | (value as u32 & 0x0f);
-        self.w
-    }
-}
+pub type PURPOSE_SET_W<'a> = crate::FieldWriter<'a, u32, SET_PARA_PURPOSE_SPEC, u8, u8, 4, 0>;
 impl W {
     #[doc = "Bits 0:3 - Set hmac purpose."]
     #[inline(always)]
     pub fn purpose_set(&mut self) -> PURPOSE_SET_W {
-        PURPOSE_SET_W { w: self }
+        PURPOSE_SET_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -44,18 +34,12 @@ impl W {
         self
     }
 }
-#[doc = "HMAC parameter configuration register\n\nThis register you can [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [set_para_purpose]
-(index.html) module"]
+#[doc = "HMAC parameter configuration register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [set_para_purpose](index.html) module"]
 pub struct SET_PARA_PURPOSE_SPEC;
 impl crate::RegisterSpec for SET_PARA_PURPOSE_SPEC {
     type Ux = u32;
 }
-#[doc = "`write(|w| ..)` method takes [set_para_purpose::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [set_para_purpose::W](W) writer structure"]
 impl crate::Writable for SET_PARA_PURPOSE_SPEC {
     type Writer = W;
 }

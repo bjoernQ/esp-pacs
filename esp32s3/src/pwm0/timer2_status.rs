@@ -14,35 +14,9 @@ impl From<crate::R<TIMER2_STATUS_SPEC>> for R {
     }
 }
 #[doc = "Field `TIMER2_VALUE` reader - current PWM timer2 counter value"]
-pub struct TIMER2_VALUE_R(crate::FieldReader<u16, u16>);
-impl TIMER2_VALUE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        TIMER2_VALUE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TIMER2_VALUE_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TIMER2_VALUE_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `TIMER2_DIRECTION` reader - current PWM timer2 counter direction, 0: increment 1: decrement"]
-pub struct TIMER2_DIRECTION_R(crate::FieldReader<bool, bool>);
-impl TIMER2_DIRECTION_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TIMER2_DIRECTION_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TIMER2_DIRECTION_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TIMER2_DIRECTION_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bits 0:15 - current PWM timer2 counter value"]
     #[inline(always)]
@@ -52,19 +26,15 @@ impl R {
     #[doc = "Bit 16 - current PWM timer2 counter direction, 0: increment 1: decrement"]
     #[inline(always)]
     pub fn timer2_direction(&self) -> TIMER2_DIRECTION_R {
-        TIMER2_DIRECTION_R::new(((self.bits >> 16) & 0x01) != 0)
+        TIMER2_DIRECTION_R::new(((self.bits >> 16) & 1) != 0)
     }
 }
-#[doc = "PWM timer2 status register.\n\nThis register you can [`read`]
-(crate::generic::Reg::read). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [timer2_status]
-(index.html) module"]
+#[doc = "PWM timer2 status register.\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [timer2_status](index.html) module"]
 pub struct TIMER2_STATUS_SPEC;
 impl crate::RegisterSpec for TIMER2_STATUS_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [timer2_status::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [timer2_status::R](R) reader structure"]
 impl crate::Readable for TIMER2_STATUS_SPEC {
     type Reader = R;
 }

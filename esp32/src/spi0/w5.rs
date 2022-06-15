@@ -35,32 +35,9 @@ impl From<crate::W<W5_SPEC>> for W {
     }
 }
 #[doc = "Field `BUF5` reader - data buffer"]
-pub struct BUF5_R(crate::FieldReader<u32, u32>);
-impl BUF5_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        BUF5_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for BUF5_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type BUF5_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `BUF5` writer - data buffer"]
-pub struct BUF5_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BUF5_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
-    }
-}
+pub type BUF5_W<'a> = crate::FieldWriter<'a, u32, W5_SPEC, u32, u32, 32, 0>;
 impl R {
     #[doc = "Bits 0:31 - data buffer"]
     #[inline(always)]
@@ -72,7 +49,7 @@ impl W {
     #[doc = "Bits 0:31 - data buffer"]
     #[inline(always)]
     pub fn buf5(&mut self) -> BUF5_W {
-        BUF5_W { w: self }
+        BUF5_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -81,25 +58,16 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [w5]
-(index.html) module"]
+#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [w5](index.html) module"]
 pub struct W5_SPEC;
 impl crate::RegisterSpec for W5_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [w5::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [w5::R](R) reader structure"]
 impl crate::Readable for W5_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [w5::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [w5::W](W) writer structure"]
 impl crate::Writable for W5_SPEC {
     type Writer = W;
 }

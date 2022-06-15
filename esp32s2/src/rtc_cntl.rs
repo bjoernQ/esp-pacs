@@ -9,7 +9,7 @@ pub struct RegisterBlock {
     pub slp_timer1: crate::Reg<slp_timer1::SLP_TIMER1_SPEC>,
     #[doc = "0x0c - RTC timer update control register"]
     pub time_update: crate::Reg<time_update::TIME_UPDATE_SPEC>,
-    #[doc = "0x10 - Stores the lower 32 bits of RTC timer 0"]
+    #[doc = "0x10 - Stores the lower 32 bits of RTC timer 0."]
     pub time_low0: crate::Reg<time_low0::TIME_LOW0_SPEC>,
     #[doc = "0x14 - Stores the higher 16 bits of RTC timer 0"]
     pub time_high0: crate::Reg<time_high0::TIME_HIGH0_SPEC>,
@@ -71,7 +71,7 @@ pub struct RegisterBlock {
     pub reg: crate::Reg<reg::REG_SPEC>,
     #[doc = "0x88 - RTC power configuraiton register"]
     pub pwc: crate::Reg<pwc::PWC_SPEC>,
-    #[doc = "0x8c - Digital system power configuration register"]
+    #[doc = "0x8c - Digital system power configuraiton register"]
     pub dig_pwc: crate::Reg<dig_pwc::DIG_PWC_SPEC>,
     #[doc = "0x90 - Digital system ISO configuration register"]
     pub dig_iso: crate::Reg<dig_iso::DIG_ISO_SPEC>,
@@ -177,7 +177,7 @@ pub type TIME_UPDATE = crate::Reg<time_update::TIME_UPDATE_SPEC>;
 pub mod time_update;
 #[doc = "TIME_LOW0 register accessor: an alias for `Reg<TIME_LOW0_SPEC>`"]
 pub type TIME_LOW0 = crate::Reg<time_low0::TIME_LOW0_SPEC>;
-#[doc = "Stores the lower 32 bits of RTC timer 0"]
+#[doc = "Stores the lower 32 bits of RTC timer 0."]
 pub mod time_low0;
 #[doc = "TIME_HIGH0 register accessor: an alias for `Reg<TIME_HIGH0_SPEC>`"]
 pub type TIME_HIGH0 = crate::Reg<time_high0::TIME_HIGH0_SPEC>;
@@ -301,7 +301,7 @@ pub type PWC = crate::Reg<pwc::PWC_SPEC>;
 pub mod pwc;
 #[doc = "DIG_PWC register accessor: an alias for `Reg<DIG_PWC_SPEC>`"]
 pub type DIG_PWC = crate::Reg<dig_pwc::DIG_PWC_SPEC>;
-#[doc = "Digital system power configuration register"]
+#[doc = "Digital system power configuraiton register"]
 pub mod dig_pwc;
 #[doc = "DIG_ISO register accessor: an alias for `Reg<DIG_ISO_SPEC>`"]
 pub type DIG_ISO = crate::Reg<dig_iso::DIG_ISO_SPEC>;

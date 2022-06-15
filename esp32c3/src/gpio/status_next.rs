@@ -14,20 +14,7 @@ impl From<crate::R<STATUS_NEXT_SPEC>> for R {
     }
 }
 #[doc = "Field `STATUS_INTERRUPT_NEXT` reader - GPIO interrupt source register for GPIO0-25"]
-pub struct STATUS_INTERRUPT_NEXT_R(crate::FieldReader<u32, u32>);
-impl STATUS_INTERRUPT_NEXT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        STATUS_INTERRUPT_NEXT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for STATUS_INTERRUPT_NEXT_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type STATUS_INTERRUPT_NEXT_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:25 - GPIO interrupt source register for GPIO0-25"]
     #[inline(always)]
@@ -35,16 +22,12 @@ impl R {
         STATUS_INTERRUPT_NEXT_R::new((self.bits & 0x03ff_ffff) as u32)
     }
 }
-#[doc = "GPIO interrupt source register\n\nThis register you can [`read`]
-(crate::generic::Reg::read). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [status_next]
-(index.html) module"]
+#[doc = "GPIO interrupt source register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [status_next](index.html) module"]
 pub struct STATUS_NEXT_SPEC;
 impl crate::RegisterSpec for STATUS_NEXT_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [status_next::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [status_next::R](R) reader structure"]
 impl crate::Readable for STATUS_NEXT_SPEC {
     type Reader = R;
 }

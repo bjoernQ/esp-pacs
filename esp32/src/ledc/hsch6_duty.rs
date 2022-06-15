@@ -14,20 +14,7 @@ impl From<crate::R<HSCH6_DUTY_SPEC>> for R {
     }
 }
 #[doc = "Field `DUTY_HSCH6` reader - This register represents the current duty of the output signal for high speed channel6."]
-pub struct DUTY_HSCH6_R(crate::FieldReader<u32, u32>);
-impl DUTY_HSCH6_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        DUTY_HSCH6_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DUTY_HSCH6_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DUTY_HSCH6_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:24 - This register represents the current duty of the output signal for high speed channel6."]
     #[inline(always)]
@@ -35,16 +22,12 @@ impl R {
         DUTY_HSCH6_R::new((self.bits & 0x01ff_ffff) as u32)
     }
 }
-#[doc = "\n\nThis register you can [`read`]
-(crate::generic::Reg::read). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hsch6_duty]
-(index.html) module"]
+#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hsch6_duty](index.html) module"]
 pub struct HSCH6_DUTY_SPEC;
 impl crate::RegisterSpec for HSCH6_DUTY_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [hsch6_duty::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [hsch6_duty::R](R) reader structure"]
 impl crate::Readable for HSCH6_DUTY_SPEC {
     type Reader = R;
 }

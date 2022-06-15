@@ -35,32 +35,9 @@ impl From<crate::W<DIG_PAD_HOLD_SPEC>> for W {
     }
 }
 #[doc = "Field `DIG_PAD_HOLD` reader - configure digtal pad hold"]
-pub struct DIG_PAD_HOLD_R(crate::FieldReader<u32, u32>);
-impl DIG_PAD_HOLD_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        DIG_PAD_HOLD_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DIG_PAD_HOLD_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DIG_PAD_HOLD_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `DIG_PAD_HOLD` writer - configure digtal pad hold"]
-pub struct DIG_PAD_HOLD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DIG_PAD_HOLD_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
-    }
-}
+pub type DIG_PAD_HOLD_W<'a> = crate::FieldWriter<'a, u32, DIG_PAD_HOLD_SPEC, u32, u32, 32, 0>;
 impl R {
     #[doc = "Bits 0:31 - configure digtal pad hold"]
     #[inline(always)]
@@ -72,7 +49,7 @@ impl W {
     #[doc = "Bits 0:31 - configure digtal pad hold"]
     #[inline(always)]
     pub fn dig_pad_hold(&mut self) -> DIG_PAD_HOLD_W {
-        DIG_PAD_HOLD_W { w: self }
+        DIG_PAD_HOLD_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -81,25 +58,16 @@ impl W {
         self
     }
 }
-#[doc = "configure digtal pad hold\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dig_pad_hold]
-(index.html) module"]
+#[doc = "configure digtal pad hold\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dig_pad_hold](index.html) module"]
 pub struct DIG_PAD_HOLD_SPEC;
 impl crate::RegisterSpec for DIG_PAD_HOLD_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [dig_pad_hold::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [dig_pad_hold::R](R) reader structure"]
 impl crate::Readable for DIG_PAD_HOLD_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [dig_pad_hold::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [dig_pad_hold::W](W) writer structure"]
 impl crate::Writable for DIG_PAD_HOLD_SPEC {
     type Writer = W;
 }

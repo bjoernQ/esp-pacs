@@ -35,32 +35,9 @@ impl From<crate::W<T_STRING_SPEC>> for W {
     }
 }
 #[doc = "Field `T_STRING` reader - Defines t_string for calculating the initial Hash value for SHA-512/t."]
-pub struct T_STRING_R(crate::FieldReader<u32, u32>);
-impl T_STRING_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        T_STRING_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for T_STRING_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type T_STRING_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `T_STRING` writer - Defines t_string for calculating the initial Hash value for SHA-512/t."]
-pub struct T_STRING_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> T_STRING_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
-    }
-}
+pub type T_STRING_W<'a> = crate::FieldWriter<'a, u32, T_STRING_SPEC, u32, u32, 32, 0>;
 impl R {
     #[doc = "Bits 0:31 - Defines t_string for calculating the initial Hash value for SHA-512/t."]
     #[inline(always)]
@@ -72,7 +49,7 @@ impl W {
     #[doc = "Bits 0:31 - Defines t_string for calculating the initial Hash value for SHA-512/t."]
     #[inline(always)]
     pub fn t_string(&mut self) -> T_STRING_W {
-        T_STRING_W { w: self }
+        T_STRING_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -81,25 +58,16 @@ impl W {
         self
     }
 }
-#[doc = "String content register for calculating initial Hash Value (only effective for SHA-512/t)\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [t_string]
-(index.html) module"]
+#[doc = "String content register for calculating initial Hash Value (only effective for SHA-512/t)\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [t_string](index.html) module"]
 pub struct T_STRING_SPEC;
 impl crate::RegisterSpec for T_STRING_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [t_string::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [t_string::R](R) reader structure"]
 impl crate::Readable for T_STRING_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [t_string::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [t_string::W](W) writer structure"]
 impl crate::Writable for T_STRING_SPEC {
     type Writer = W;
 }

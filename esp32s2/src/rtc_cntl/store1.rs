@@ -34,45 +34,22 @@ impl From<crate::W<STORE1_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `SCRATCH1` reader - Reservation register 1."]
-pub struct SCRATCH1_R(crate::FieldReader<u32, u32>);
-impl SCRATCH1_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        SCRATCH1_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SCRATCH1_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Field `SCRATCH1` writer - Reservation register 1."]
-pub struct SCRATCH1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SCRATCH1_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
-    }
-}
+#[doc = "Field `SCRATCH1` reader - Reservation register 1"]
+pub type SCRATCH1_R = crate::FieldReader<u32, u32>;
+#[doc = "Field `SCRATCH1` writer - Reservation register 1"]
+pub type SCRATCH1_W<'a> = crate::FieldWriter<'a, u32, STORE1_SPEC, u32, u32, 32, 0>;
 impl R {
-    #[doc = "Bits 0:31 - Reservation register 1."]
+    #[doc = "Bits 0:31 - Reservation register 1"]
     #[inline(always)]
     pub fn scratch1(&self) -> SCRATCH1_R {
         SCRATCH1_R::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - Reservation register 1."]
+    #[doc = "Bits 0:31 - Reservation register 1"]
     #[inline(always)]
     pub fn scratch1(&mut self) -> SCRATCH1_W {
-        SCRATCH1_W { w: self }
+        SCRATCH1_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -81,25 +58,16 @@ impl W {
         self
     }
 }
-#[doc = "Reservation register 1\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [store1]
-(index.html) module"]
+#[doc = "Reservation register 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [store1](index.html) module"]
 pub struct STORE1_SPEC;
 impl crate::RegisterSpec for STORE1_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [store1::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [store1::R](R) reader structure"]
 impl crate::Readable for STORE1_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [store1::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [store1::W](W) writer structure"]
 impl crate::Writable for STORE1_SPEC {
     type Writer = W;
 }

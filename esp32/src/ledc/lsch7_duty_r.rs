@@ -42,25 +42,16 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [lsch7_duty_r]
-(index.html) module"]
+#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [lsch7_duty_r](index.html) module"]
 pub struct LSCH7_DUTY_R_SPEC;
 impl crate::RegisterSpec for LSCH7_DUTY_R_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [lsch7_duty_r::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [lsch7_duty_r::R](R) reader structure"]
 impl crate::Readable for LSCH7_DUTY_R_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [lsch7_duty_r::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [lsch7_duty_r::W](W) writer structure"]
 impl crate::Writable for LSCH7_DUTY_R_SPEC {
     type Writer = W;
 }

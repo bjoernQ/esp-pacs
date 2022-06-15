@@ -35,113 +35,21 @@ impl From<crate::W<TIMER4_SPEC>> for W {
     }
 }
 #[doc = "Field `WAIT_TIMER` reader - "]
-pub struct WAIT_TIMER_R(crate::FieldReader<u16, u16>);
-impl WAIT_TIMER_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        WAIT_TIMER_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WAIT_TIMER_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type WAIT_TIMER_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `WAIT_TIMER` writer - "]
-pub struct WAIT_TIMER_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WAIT_TIMER_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01ff) | (value as u32 & 0x01ff);
-        self.w
-    }
-}
+pub type WAIT_TIMER_W<'a> = crate::FieldWriter<'a, u32, TIMER4_SPEC, u16, u16, 9, 0>;
 #[doc = "Field `POWERUP_TIMER` reader - "]
-pub struct POWERUP_TIMER_R(crate::FieldReader<u8, u8>);
-impl POWERUP_TIMER_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        POWERUP_TIMER_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for POWERUP_TIMER_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type POWERUP_TIMER_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `POWERUP_TIMER` writer - "]
-pub struct POWERUP_TIMER_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> POWERUP_TIMER_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x7f << 9)) | ((value as u32 & 0x7f) << 9);
-        self.w
-    }
-}
+pub type POWERUP_TIMER_W<'a> = crate::FieldWriter<'a, u32, TIMER4_SPEC, u8, u8, 7, 9>;
 #[doc = "Field `DG_WRAP_WAIT_TIMER` reader - "]
-pub struct DG_WRAP_WAIT_TIMER_R(crate::FieldReader<u16, u16>);
-impl DG_WRAP_WAIT_TIMER_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        DG_WRAP_WAIT_TIMER_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DG_WRAP_WAIT_TIMER_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DG_WRAP_WAIT_TIMER_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `DG_WRAP_WAIT_TIMER` writer - "]
-pub struct DG_WRAP_WAIT_TIMER_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DG_WRAP_WAIT_TIMER_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01ff << 16)) | ((value as u32 & 0x01ff) << 16);
-        self.w
-    }
-}
+pub type DG_WRAP_WAIT_TIMER_W<'a> = crate::FieldWriter<'a, u32, TIMER4_SPEC, u16, u16, 9, 16>;
 #[doc = "Field `DG_WRAP_POWERUP_TIMER` reader - "]
-pub struct DG_WRAP_POWERUP_TIMER_R(crate::FieldReader<u8, u8>);
-impl DG_WRAP_POWERUP_TIMER_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        DG_WRAP_POWERUP_TIMER_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DG_WRAP_POWERUP_TIMER_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DG_WRAP_POWERUP_TIMER_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DG_WRAP_POWERUP_TIMER` writer - "]
-pub struct DG_WRAP_POWERUP_TIMER_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DG_WRAP_POWERUP_TIMER_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x7f << 25)) | ((value as u32 & 0x7f) << 25);
-        self.w
-    }
-}
+pub type DG_WRAP_POWERUP_TIMER_W<'a> = crate::FieldWriter<'a, u32, TIMER4_SPEC, u8, u8, 7, 25>;
 impl R {
     #[doc = "Bits 0:8"]
     #[inline(always)]
@@ -168,22 +76,22 @@ impl W {
     #[doc = "Bits 0:8"]
     #[inline(always)]
     pub fn wait_timer(&mut self) -> WAIT_TIMER_W {
-        WAIT_TIMER_W { w: self }
+        WAIT_TIMER_W::new(self)
     }
     #[doc = "Bits 9:15"]
     #[inline(always)]
     pub fn powerup_timer(&mut self) -> POWERUP_TIMER_W {
-        POWERUP_TIMER_W { w: self }
+        POWERUP_TIMER_W::new(self)
     }
     #[doc = "Bits 16:24"]
     #[inline(always)]
     pub fn dg_wrap_wait_timer(&mut self) -> DG_WRAP_WAIT_TIMER_W {
-        DG_WRAP_WAIT_TIMER_W { w: self }
+        DG_WRAP_WAIT_TIMER_W::new(self)
     }
     #[doc = "Bits 25:31"]
     #[inline(always)]
     pub fn dg_wrap_powerup_timer(&mut self) -> DG_WRAP_POWERUP_TIMER_W {
-        DG_WRAP_POWERUP_TIMER_W { w: self }
+        DG_WRAP_POWERUP_TIMER_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -192,25 +100,16 @@ impl W {
         self
     }
 }
-#[doc = "configure some wait time for power on\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [timer4]
-(index.html) module"]
+#[doc = "configure some wait time for power on\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [timer4](index.html) module"]
 pub struct TIMER4_SPEC;
 impl crate::RegisterSpec for TIMER4_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [timer4::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [timer4::R](R) reader structure"]
 impl crate::Readable for TIMER4_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [timer4::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [timer4::W](W) writer structure"]
 impl crate::Writable for TIMER4_SPEC {
     type Writer = W;
 }

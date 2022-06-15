@@ -14,20 +14,7 @@ impl From<crate::R<STRAP_SPEC>> for R {
     }
 }
 #[doc = "Field `STRAPPING` reader - GPIO strapping values: bit4 ~ bit2 correspond to stripping pins GPIO45, GPIO0, and GPIO46 respectively."]
-pub struct STRAPPING_R(crate::FieldReader<u16, u16>);
-impl STRAPPING_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        STRAPPING_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for STRAPPING_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type STRAPPING_R = crate::FieldReader<u16, u16>;
 impl R {
     #[doc = "Bits 0:15 - GPIO strapping values: bit4 ~ bit2 correspond to stripping pins GPIO45, GPIO0, and GPIO46 respectively."]
     #[inline(always)]
@@ -35,16 +22,12 @@ impl R {
         STRAPPING_R::new((self.bits & 0xffff) as u16)
     }
 }
-#[doc = "Bootstrap pin value register\n\nThis register you can [`read`]
-(crate::generic::Reg::read). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [strap]
-(index.html) module"]
+#[doc = "Bootstrap pin value register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [strap](index.html) module"]
 pub struct STRAP_SPEC;
 impl crate::RegisterSpec for STRAP_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [strap::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [strap::R](R) reader structure"]
 impl crate::Readable for STRAP_SPEC {
     type Reader = R;
 }

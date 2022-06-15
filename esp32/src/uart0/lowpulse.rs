@@ -14,20 +14,7 @@ impl From<crate::R<LOWPULSE_SPEC>> for R {
     }
 }
 #[doc = "Field `MIN_CNT` reader - This register stores the value of the minimum duration time for the low level pulse. it is used in baudrate-detect process."]
-pub struct MIN_CNT_R(crate::FieldReader<u32, u32>);
-impl MIN_CNT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        MIN_CNT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MIN_CNT_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MIN_CNT_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:19 - This register stores the value of the minimum duration time for the low level pulse. it is used in baudrate-detect process."]
     #[inline(always)]
@@ -35,16 +22,12 @@ impl R {
         MIN_CNT_R::new((self.bits & 0x000f_ffff) as u32)
     }
 }
-#[doc = "\n\nThis register you can [`read`]
-(crate::generic::Reg::read). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [lowpulse]
-(index.html) module"]
+#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [lowpulse](index.html) module"]
 pub struct LOWPULSE_SPEC;
 impl crate::RegisterSpec for LOWPULSE_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [lowpulse::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [lowpulse::R](R) reader structure"]
 impl crate::Readable for LOWPULSE_SPEC {
     type Reader = R;
 }

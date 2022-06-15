@@ -35,123 +35,21 @@ impl From<crate::W<CLOCK_SPEC>> for W {
     }
 }
 #[doc = "Field `CLKCNT_L` reader - It must equal to the value of SPI_MEM_CLKCNT_N."]
-pub struct CLKCNT_L_R(crate::FieldReader<u8, u8>);
-impl CLKCNT_L_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CLKCNT_L_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CLKCNT_L_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CLKCNT_L_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CLKCNT_L` writer - It must equal to the value of SPI_MEM_CLKCNT_N."]
-pub struct CLKCNT_L_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CLKCNT_L_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type CLKCNT_L_W<'a> = crate::FieldWriter<'a, u32, CLOCK_SPEC, u8, u8, 8, 0>;
 #[doc = "Field `CLKCNT_H` reader - It must be a floor value of ((SPI_MEM_CLKCNT_N+1)/2-1)."]
-pub struct CLKCNT_H_R(crate::FieldReader<u8, u8>);
-impl CLKCNT_H_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CLKCNT_H_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CLKCNT_H_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CLKCNT_H_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CLKCNT_H` writer - It must be a floor value of ((SPI_MEM_CLKCNT_N+1)/2-1)."]
-pub struct CLKCNT_H_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CLKCNT_H_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 8)) | ((value as u32 & 0xff) << 8);
-        self.w
-    }
-}
-#[doc = "Field `CLKCNT_N` reader - When SPI1 accesses to flash or Ext_RAM, f_SPI_CLK = f_MSPI_CORE_CLK/(SPI_MEM_CLKCNT_N+1)"]
-pub struct CLKCNT_N_R(crate::FieldReader<u8, u8>);
-impl CLKCNT_N_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CLKCNT_N_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CLKCNT_N_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Field `CLKCNT_N` writer - When SPI1 accesses to flash or Ext_RAM, f_SPI_CLK = f_MSPI_CORE_CLK/(SPI_MEM_CLKCNT_N+1)"]
-pub struct CLKCNT_N_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CLKCNT_N_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 16)) | ((value as u32 & 0xff) << 16);
-        self.w
-    }
-}
-#[doc = "Field `CLK_EQU_SYSCLK` reader - When SPI1 access to flash or Ext_RAM, set this bit in 1-division mode, f_SPI_CLK = f_MSPI_CORE_CLK."]
-pub struct CLK_EQU_SYSCLK_R(crate::FieldReader<bool, bool>);
-impl CLK_EQU_SYSCLK_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CLK_EQU_SYSCLK_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CLK_EQU_SYSCLK_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Field `CLK_EQU_SYSCLK` writer - When SPI1 access to flash or Ext_RAM, set this bit in 1-division mode, f_SPI_CLK = f_MSPI_CORE_CLK."]
-pub struct CLK_EQU_SYSCLK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CLK_EQU_SYSCLK_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
-        self.w
-    }
-}
+pub type CLKCNT_H_W<'a> = crate::FieldWriter<'a, u32, CLOCK_SPEC, u8, u8, 8, 8>;
+#[doc = "Field `CLKCNT_N` reader - When SPI0 accesses flash, f_SPI_CLK = f_MSPI_CORE_CLK/(SPI_MEM_CLKCNT_N+1)"]
+pub type CLKCNT_N_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `CLKCNT_N` writer - When SPI0 accesses flash, f_SPI_CLK = f_MSPI_CORE_CLK/(SPI_MEM_CLKCNT_N+1)"]
+pub type CLKCNT_N_W<'a> = crate::FieldWriter<'a, u32, CLOCK_SPEC, u8, u8, 8, 16>;
+#[doc = "Field `CLK_EQU_SYSCLK` reader - When SPI0 accesses flash, set this bit in 1-division mode, f_SPI_CLK = f_MSPI_CORE_CLK."]
+pub type CLK_EQU_SYSCLK_R = crate::BitReader<bool>;
+#[doc = "Field `CLK_EQU_SYSCLK` writer - When SPI0 accesses flash, set this bit in 1-division mode, f_SPI_CLK = f_MSPI_CORE_CLK."]
+pub type CLK_EQU_SYSCLK_W<'a> = crate::BitWriter<'a, u32, CLOCK_SPEC, bool, 31>;
 impl R {
     #[doc = "Bits 0:7 - It must equal to the value of SPI_MEM_CLKCNT_N."]
     #[inline(always)]
@@ -163,37 +61,37 @@ impl R {
     pub fn clkcnt_h(&self) -> CLKCNT_H_R {
         CLKCNT_H_R::new(((self.bits >> 8) & 0xff) as u8)
     }
-    #[doc = "Bits 16:23 - When SPI1 accesses to flash or Ext_RAM, f_SPI_CLK = f_MSPI_CORE_CLK/(SPI_MEM_CLKCNT_N+1)"]
+    #[doc = "Bits 16:23 - When SPI0 accesses flash, f_SPI_CLK = f_MSPI_CORE_CLK/(SPI_MEM_CLKCNT_N+1)"]
     #[inline(always)]
     pub fn clkcnt_n(&self) -> CLKCNT_N_R {
         CLKCNT_N_R::new(((self.bits >> 16) & 0xff) as u8)
     }
-    #[doc = "Bit 31 - When SPI1 access to flash or Ext_RAM, set this bit in 1-division mode, f_SPI_CLK = f_MSPI_CORE_CLK."]
+    #[doc = "Bit 31 - When SPI0 accesses flash, set this bit in 1-division mode, f_SPI_CLK = f_MSPI_CORE_CLK."]
     #[inline(always)]
     pub fn clk_equ_sysclk(&self) -> CLK_EQU_SYSCLK_R {
-        CLK_EQU_SYSCLK_R::new(((self.bits >> 31) & 0x01) != 0)
+        CLK_EQU_SYSCLK_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:7 - It must equal to the value of SPI_MEM_CLKCNT_N."]
     #[inline(always)]
     pub fn clkcnt_l(&mut self) -> CLKCNT_L_W {
-        CLKCNT_L_W { w: self }
+        CLKCNT_L_W::new(self)
     }
     #[doc = "Bits 8:15 - It must be a floor value of ((SPI_MEM_CLKCNT_N+1)/2-1)."]
     #[inline(always)]
     pub fn clkcnt_h(&mut self) -> CLKCNT_H_W {
-        CLKCNT_H_W { w: self }
+        CLKCNT_H_W::new(self)
     }
-    #[doc = "Bits 16:23 - When SPI1 accesses to flash or Ext_RAM, f_SPI_CLK = f_MSPI_CORE_CLK/(SPI_MEM_CLKCNT_N+1)"]
+    #[doc = "Bits 16:23 - When SPI0 accesses flash, f_SPI_CLK = f_MSPI_CORE_CLK/(SPI_MEM_CLKCNT_N+1)"]
     #[inline(always)]
     pub fn clkcnt_n(&mut self) -> CLKCNT_N_W {
-        CLKCNT_N_W { w: self }
+        CLKCNT_N_W::new(self)
     }
-    #[doc = "Bit 31 - When SPI1 access to flash or Ext_RAM, set this bit in 1-division mode, f_SPI_CLK = f_MSPI_CORE_CLK."]
+    #[doc = "Bit 31 - When SPI0 accesses flash, set this bit in 1-division mode, f_SPI_CLK = f_MSPI_CORE_CLK."]
     #[inline(always)]
     pub fn clk_equ_sysclk(&mut self) -> CLK_EQU_SYSCLK_W {
-        CLK_EQU_SYSCLK_W { w: self }
+        CLK_EQU_SYSCLK_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -202,25 +100,16 @@ impl W {
         self
     }
 }
-#[doc = "SPI_CLK clock division register when SPI1 accesses to flash or Ext_RAM.\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clock]
-(index.html) module"]
+#[doc = "SPI_CLK clock division register when SPI0 accesses to flash.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clock](index.html) module"]
 pub struct CLOCK_SPEC;
 impl crate::RegisterSpec for CLOCK_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [clock::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [clock::R](R) reader structure"]
 impl crate::Readable for CLOCK_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [clock::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [clock::W](W) writer structure"]
 impl crate::Writable for CLOCK_SPEC {
     type Writer = W;
 }

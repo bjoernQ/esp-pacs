@@ -35,32 +35,9 @@ impl From<crate::W<CONF_SIGLE_DATA_SPEC>> for W {
     }
 }
 #[doc = "Field `SIGLE_DATA` reader - "]
-pub struct SIGLE_DATA_R(crate::FieldReader<u32, u32>);
-impl SIGLE_DATA_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        SIGLE_DATA_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SIGLE_DATA_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SIGLE_DATA_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `SIGLE_DATA` writer - "]
-pub struct SIGLE_DATA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SIGLE_DATA_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
-    }
-}
+pub type SIGLE_DATA_W<'a> = crate::FieldWriter<'a, u32, CONF_SIGLE_DATA_SPEC, u32, u32, 32, 0>;
 impl R {
     #[doc = "Bits 0:31"]
     #[inline(always)]
@@ -72,7 +49,7 @@ impl W {
     #[doc = "Bits 0:31"]
     #[inline(always)]
     pub fn sigle_data(&mut self) -> SIGLE_DATA_W {
-        SIGLE_DATA_W { w: self }
+        SIGLE_DATA_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -81,25 +58,16 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [conf_sigle_data]
-(index.html) module"]
+#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [conf_sigle_data](index.html) module"]
 pub struct CONF_SIGLE_DATA_SPEC;
 impl crate::RegisterSpec for CONF_SIGLE_DATA_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [conf_sigle_data::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [conf_sigle_data::R](R) reader structure"]
 impl crate::Readable for CONF_SIGLE_DATA_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [conf_sigle_data::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [conf_sigle_data::W](W) writer structure"]
 impl crate::Writable for CONF_SIGLE_DATA_SPEC {
     type Writer = W;
 }

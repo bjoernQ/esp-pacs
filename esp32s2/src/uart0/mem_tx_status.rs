@@ -14,35 +14,9 @@ impl From<crate::R<MEM_TX_STATUS_SPEC>> for R {
     }
 }
 #[doc = "Field `APB_TX_WADDR` reader - This register stores the offset address in TX FIFO when software writes TX FIFO via APB."]
-pub struct APB_TX_WADDR_R(crate::FieldReader<u16, u16>);
-impl APB_TX_WADDR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        APB_TX_WADDR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for APB_TX_WADDR_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type APB_TX_WADDR_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `TX_RADDR` reader - This register stores the offset address in TX FIFO when TX FSM reads data via Tx_FIFO_Ctrl."]
-pub struct TX_RADDR_R(crate::FieldReader<u16, u16>);
-impl TX_RADDR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        TX_RADDR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TX_RADDR_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TX_RADDR_R = crate::FieldReader<u16, u16>;
 impl R {
     #[doc = "Bits 0:9 - This register stores the offset address in TX FIFO when software writes TX FIFO via APB."]
     #[inline(always)]
@@ -55,16 +29,12 @@ impl R {
         TX_RADDR_R::new(((self.bits >> 11) & 0x03ff) as u16)
     }
 }
-#[doc = "TX FIFO write and read offset address\n\nThis register you can [`read`]
-(crate::generic::Reg::read). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mem_tx_status]
-(index.html) module"]
+#[doc = "TX FIFO write and read offset address\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mem_tx_status](index.html) module"]
 pub struct MEM_TX_STATUS_SPEC;
 impl crate::RegisterSpec for MEM_TX_STATUS_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [mem_tx_status::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [mem_tx_status::R](R) reader structure"]
 impl crate::Readable for MEM_TX_STATUS_SPEC {
     type Reader = R;
 }

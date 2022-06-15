@@ -14,20 +14,7 @@ impl From<crate::R<OUT_EOF_BFR_DES_ADDR_SPEC>> for R {
     }
 }
 #[doc = "Field `DMA_OUT_EOF_BFR_DES_ADDR` reader - The address of buffer relative to the outlink descriptor that produce eof."]
-pub struct DMA_OUT_EOF_BFR_DES_ADDR_R(crate::FieldReader<u32, u32>);
-impl DMA_OUT_EOF_BFR_DES_ADDR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        DMA_OUT_EOF_BFR_DES_ADDR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DMA_OUT_EOF_BFR_DES_ADDR_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DMA_OUT_EOF_BFR_DES_ADDR_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31 - The address of buffer relative to the outlink descriptor that produce eof."]
     #[inline(always)]
@@ -35,16 +22,12 @@ impl R {
         DMA_OUT_EOF_BFR_DES_ADDR_R::new(self.bits)
     }
 }
-#[doc = "\n\nThis register you can [`read`]
-(crate::generic::Reg::read). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [out_eof_bfr_des_addr]
-(index.html) module"]
+#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [out_eof_bfr_des_addr](index.html) module"]
 pub struct OUT_EOF_BFR_DES_ADDR_SPEC;
 impl crate::RegisterSpec for OUT_EOF_BFR_DES_ADDR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [out_eof_bfr_des_addr::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [out_eof_bfr_des_addr::R](R) reader structure"]
 impl crate::Readable for OUT_EOF_BFR_DES_ADDR_SPEC {
     type Reader = R;
 }

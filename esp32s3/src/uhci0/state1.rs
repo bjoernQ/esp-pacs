@@ -14,37 +14,20 @@ impl From<crate::R<STATE1_SPEC>> for R {
     }
 }
 #[doc = "Field `ENCODE_STATE` reader - UHCI encoder status."]
-pub struct ENCODE_STATE_R(crate::FieldReader<u8, u8>);
-impl ENCODE_STATE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        ENCODE_STATE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ENCODE_STATE_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ENCODE_STATE_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:2 - UHCI encoder status."]
     #[inline(always)]
     pub fn encode_state(&self) -> ENCODE_STATE_R {
-        ENCODE_STATE_R::new((self.bits & 0x07) as u8)
+        ENCODE_STATE_R::new((self.bits & 7) as u8)
     }
 }
-#[doc = "UHCI transmit status\n\nThis register you can [`read`]
-(crate::generic::Reg::read). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [state1]
-(index.html) module"]
+#[doc = "UHCI transmit status\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [state1](index.html) module"]
 pub struct STATE1_SPEC;
 impl crate::RegisterSpec for STATE1_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [state1::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [state1::R](R) reader structure"]
 impl crate::Readable for STATE1_SPEC {
     type Reader = R;
 }

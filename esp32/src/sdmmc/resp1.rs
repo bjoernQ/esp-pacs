@@ -13,40 +13,21 @@ impl From<crate::R<RESP1_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Field `RESPONSE1` reader - Bit\\[63:32\\]
- of long response."]
-pub struct RESPONSE1_R(crate::FieldReader<u32, u32>);
-impl RESPONSE1_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        RESPONSE1_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RESPONSE1_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `RESPONSE1` reader - Bit\\[63:32\\] of long response."]
+pub type RESPONSE1_R = crate::FieldReader<u32, u32>;
 impl R {
-    #[doc = "Bits 0:31 - Bit\\[63:32\\]
- of long response."]
+    #[doc = "Bits 0:31 - Bit\\[63:32\\] of long response."]
     #[inline(always)]
     pub fn response1(&self) -> RESPONSE1_R {
         RESPONSE1_R::new(self.bits)
     }
 }
-#[doc = "Long response data register\n\nThis register you can [`read`]
-(crate::generic::Reg::read). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [resp1]
-(index.html) module"]
+#[doc = "Long response data register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [resp1](index.html) module"]
 pub struct RESP1_SPEC;
 impl crate::RegisterSpec for RESP1_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [resp1::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [resp1::R](R) reader structure"]
 impl crate::Readable for RESP1_SPEC {
     type Reader = R;
 }

@@ -35,32 +35,9 @@ impl From<crate::W<FLASH_ACE2_SIZE_SPEC>> for W {
     }
 }
 #[doc = "Field `FLASH_ACE2_SIZE` reader - reg_flash_ace2_size"]
-pub struct FLASH_ACE2_SIZE_R(crate::FieldReader<u16, u16>);
-impl FLASH_ACE2_SIZE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        FLASH_ACE2_SIZE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FLASH_ACE2_SIZE_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FLASH_ACE2_SIZE_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `FLASH_ACE2_SIZE` writer - reg_flash_ace2_size"]
-pub struct FLASH_ACE2_SIZE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FLASH_ACE2_SIZE_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x1fff) | (value as u32 & 0x1fff);
-        self.w
-    }
-}
+pub type FLASH_ACE2_SIZE_W<'a> = crate::FieldWriter<'a, u32, FLASH_ACE2_SIZE_SPEC, u16, u16, 13, 0>;
 impl R {
     #[doc = "Bits 0:12 - reg_flash_ace2_size"]
     #[inline(always)]
@@ -72,7 +49,7 @@ impl W {
     #[doc = "Bits 0:12 - reg_flash_ace2_size"]
     #[inline(always)]
     pub fn flash_ace2_size(&mut self) -> FLASH_ACE2_SIZE_W {
-        FLASH_ACE2_SIZE_W { w: self }
+        FLASH_ACE2_SIZE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -81,25 +58,16 @@ impl W {
         self
     }
 }
-#[doc = "APB_CTRL_FLASH_ACE2_SIZE_REG\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [flash_ace2_size]
-(index.html) module"]
+#[doc = "APB_CTRL_FLASH_ACE2_SIZE_REG\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [flash_ace2_size](index.html) module"]
 pub struct FLASH_ACE2_SIZE_SPEC;
 impl crate::RegisterSpec for FLASH_ACE2_SIZE_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [flash_ace2_size::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [flash_ace2_size::R](R) reader structure"]
 impl crate::Readable for FLASH_ACE2_SIZE_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [flash_ace2_size::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [flash_ace2_size::W](W) writer structure"]
 impl crate::Writable for FLASH_ACE2_SIZE_SPEC {
     type Writer = W;
 }

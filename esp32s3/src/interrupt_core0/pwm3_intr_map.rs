@@ -35,32 +35,9 @@ impl From<crate::W<PWM3_INTR_MAP_SPEC>> for W {
     }
 }
 #[doc = "Field `PWM3_INTR_MAP` reader - this register used to map pwm3 interrupt to one of core0's external interrupt"]
-pub struct PWM3_INTR_MAP_R(crate::FieldReader<u8, u8>);
-impl PWM3_INTR_MAP_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        PWM3_INTR_MAP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PWM3_INTR_MAP_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PWM3_INTR_MAP_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PWM3_INTR_MAP` writer - this register used to map pwm3 interrupt to one of core0's external interrupt"]
-pub struct PWM3_INTR_MAP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PWM3_INTR_MAP_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x1f) | (value as u32 & 0x1f);
-        self.w
-    }
-}
+pub type PWM3_INTR_MAP_W<'a> = crate::FieldWriter<'a, u32, PWM3_INTR_MAP_SPEC, u8, u8, 5, 0>;
 impl R {
     #[doc = "Bits 0:4 - this register used to map pwm3 interrupt to one of core0's external interrupt"]
     #[inline(always)]
@@ -72,7 +49,7 @@ impl W {
     #[doc = "Bits 0:4 - this register used to map pwm3 interrupt to one of core0's external interrupt"]
     #[inline(always)]
     pub fn pwm3_intr_map(&mut self) -> PWM3_INTR_MAP_W {
-        PWM3_INTR_MAP_W { w: self }
+        PWM3_INTR_MAP_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -81,25 +58,16 @@ impl W {
         self
     }
 }
-#[doc = "pwm3 interrupt configuration register\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pwm3_intr_map]
-(index.html) module"]
+#[doc = "pwm3 interrupt configuration register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pwm3_intr_map](index.html) module"]
 pub struct PWM3_INTR_MAP_SPEC;
 impl crate::RegisterSpec for PWM3_INTR_MAP_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [pwm3_intr_map::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [pwm3_intr_map::R](R) reader structure"]
 impl crate::Readable for PWM3_INTR_MAP_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [pwm3_intr_map::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [pwm3_intr_map::W](W) writer structure"]
 impl crate::Writable for PWM3_INTR_MAP_SPEC {
     type Writer = W;
 }

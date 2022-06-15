@@ -35,32 +35,9 @@ impl From<crate::W<W16_SPEC>> for W {
     }
 }
 #[doc = "Field `BUF16` reader - 32 bits data buffer 16, transferred in the unit of byte. Byte addressable in slave half-duplex mode."]
-pub struct BUF16_R(crate::FieldReader<u32, u32>);
-impl BUF16_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        BUF16_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for BUF16_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type BUF16_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `BUF16` writer - 32 bits data buffer 16, transferred in the unit of byte. Byte addressable in slave half-duplex mode."]
-pub struct BUF16_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BUF16_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
-    }
-}
+pub type BUF16_W<'a> = crate::FieldWriter<'a, u32, W16_SPEC, u32, u32, 32, 0>;
 impl R {
     #[doc = "Bits 0:31 - 32 bits data buffer 16, transferred in the unit of byte. Byte addressable in slave half-duplex mode."]
     #[inline(always)]
@@ -72,7 +49,7 @@ impl W {
     #[doc = "Bits 0:31 - 32 bits data buffer 16, transferred in the unit of byte. Byte addressable in slave half-duplex mode."]
     #[inline(always)]
     pub fn buf16(&mut self) -> BUF16_W {
-        BUF16_W { w: self }
+        BUF16_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -81,25 +58,16 @@ impl W {
         self
     }
 }
-#[doc = "Data buffer 16\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [w16]
-(index.html) module"]
+#[doc = "Data buffer 16\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [w16](index.html) module"]
 pub struct W16_SPEC;
 impl crate::RegisterSpec for W16_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [w16::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [w16::R](R) reader structure"]
 impl crate::Readable for W16_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [w16::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [w16::W](W) writer structure"]
 impl crate::Writable for W16_SPEC {
     type Writer = W;
 }

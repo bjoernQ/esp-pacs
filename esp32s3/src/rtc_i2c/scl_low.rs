@@ -35,32 +35,9 @@ impl From<crate::W<SCL_LOW_SPEC>> for W {
     }
 }
 #[doc = "Field `PERIOD` reader - time period that scl =0"]
-pub struct PERIOD_R(crate::FieldReader<u32, u32>);
-impl PERIOD_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        PERIOD_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PERIOD_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PERIOD_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `PERIOD` writer - time period that scl =0"]
-pub struct PERIOD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PERIOD_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x000f_ffff) | (value as u32 & 0x000f_ffff);
-        self.w
-    }
-}
+pub type PERIOD_W<'a> = crate::FieldWriter<'a, u32, SCL_LOW_SPEC, u32, u32, 20, 0>;
 impl R {
     #[doc = "Bits 0:19 - time period that scl =0"]
     #[inline(always)]
@@ -72,7 +49,7 @@ impl W {
     #[doc = "Bits 0:19 - time period that scl =0"]
     #[inline(always)]
     pub fn period(&mut self) -> PERIOD_W {
-        PERIOD_W { w: self }
+        PERIOD_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -81,25 +58,16 @@ impl W {
         self
     }
 }
-#[doc = "configure low scl period\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [scl_low]
-(index.html) module"]
+#[doc = "configure low scl period\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [scl_low](index.html) module"]
 pub struct SCL_LOW_SPEC;
 impl crate::RegisterSpec for SCL_LOW_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [scl_low::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [scl_low::R](R) reader structure"]
 impl crate::Readable for SCL_LOW_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [scl_low::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [scl_low::W](W) writer structure"]
 impl crate::Writable for SCL_LOW_SPEC {
     type Writer = W;
 }

@@ -35,32 +35,9 @@ impl From<crate::W<APB_ADDR_SPEC>> for W {
     }
 }
 #[doc = "Field `APB_START_ADDR` reader - x"]
-pub struct APB_START_ADDR_R(crate::FieldReader<u32, u32>);
-impl APB_START_ADDR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        APB_START_ADDR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for APB_START_ADDR_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type APB_START_ADDR_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `APB_START_ADDR` writer - x"]
-pub struct APB_START_ADDR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> APB_START_ADDR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
-    }
-}
+pub type APB_START_ADDR_W<'a> = crate::FieldWriter<'a, u32, APB_ADDR_SPEC, u32, u32, 32, 0>;
 impl R {
     #[doc = "Bits 0:31 - x"]
     #[inline(always)]
@@ -72,7 +49,7 @@ impl W {
     #[doc = "Bits 0:31 - x"]
     #[inline(always)]
     pub fn apb_start_addr(&mut self) -> APB_START_ADDR_W {
-        APB_START_ADDR_W { w: self }
+        APB_START_ADDR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -81,25 +58,16 @@ impl W {
         self
     }
 }
-#[doc = "x\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [apb_addr]
-(index.html) module"]
+#[doc = "x\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [apb_addr](index.html) module"]
 pub struct APB_ADDR_SPEC;
 impl crate::RegisterSpec for APB_ADDR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [apb_addr::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [apb_addr::R](R) reader structure"]
 impl crate::Readable for APB_ADDR_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [apb_addr::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [apb_addr::W](W) writer structure"]
 impl crate::Writable for APB_ADDR_SPEC {
     type Writer = W;
 }

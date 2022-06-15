@@ -35,54 +35,21 @@ impl From<crate::W<CACHE_REQUEST_SPEC>> for W {
     }
 }
 #[doc = "Field `BYPASS` reader - The bit is used to disable request recording which could cause performance issue"]
-pub struct BYPASS_R(crate::FieldReader<bool, bool>);
-impl BYPASS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        BYPASS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for BYPASS_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type BYPASS_R = crate::BitReader<bool>;
 #[doc = "Field `BYPASS` writer - The bit is used to disable request recording which could cause performance issue"]
-pub struct BYPASS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BYPASS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type BYPASS_W<'a> = crate::BitWriter<'a, u32, CACHE_REQUEST_SPEC, bool, 0>;
 impl R {
     #[doc = "Bit 0 - The bit is used to disable request recording which could cause performance issue"]
     #[inline(always)]
     pub fn bypass(&self) -> BYPASS_R {
-        BYPASS_R::new((self.bits & 0x01) != 0)
+        BYPASS_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - The bit is used to disable request recording which could cause performance issue"]
     #[inline(always)]
     pub fn bypass(&mut self) -> BYPASS_W {
-        BYPASS_W { w: self }
+        BYPASS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -91,25 +58,16 @@ impl W {
         self
     }
 }
-#[doc = "******* Description ***********\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cache_request]
-(index.html) module"]
+#[doc = "******* Description ***********\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cache_request](index.html) module"]
 pub struct CACHE_REQUEST_SPEC;
 impl crate::RegisterSpec for CACHE_REQUEST_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [cache_request::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [cache_request::R](R) reader structure"]
 impl crate::Readable for CACHE_REQUEST_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [cache_request::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [cache_request::W](W) writer structure"]
 impl crate::Writable for CACHE_REQUEST_SPEC {
     type Writer = W;
 }

@@ -35,177 +35,29 @@ impl From<crate::W<RTC_DEBUG_SEL_SPEC>> for W {
     }
 }
 #[doc = "Field `DEBUG_SEL0` reader - "]
-pub struct DEBUG_SEL0_R(crate::FieldReader<u8, u8>);
-impl DEBUG_SEL0_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        DEBUG_SEL0_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DEBUG_SEL0_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DEBUG_SEL0_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DEBUG_SEL0` writer - "]
-pub struct DEBUG_SEL0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DEBUG_SEL0_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x1f) | (value as u32 & 0x1f);
-        self.w
-    }
-}
+pub type DEBUG_SEL0_W<'a> = crate::FieldWriter<'a, u32, RTC_DEBUG_SEL_SPEC, u8, u8, 5, 0>;
 #[doc = "Field `DEBUG_SEL1` reader - "]
-pub struct DEBUG_SEL1_R(crate::FieldReader<u8, u8>);
-impl DEBUG_SEL1_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        DEBUG_SEL1_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DEBUG_SEL1_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DEBUG_SEL1_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DEBUG_SEL1` writer - "]
-pub struct DEBUG_SEL1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DEBUG_SEL1_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x1f << 5)) | ((value as u32 & 0x1f) << 5);
-        self.w
-    }
-}
+pub type DEBUG_SEL1_W<'a> = crate::FieldWriter<'a, u32, RTC_DEBUG_SEL_SPEC, u8, u8, 5, 5>;
 #[doc = "Field `DEBUG_SEL2` reader - "]
-pub struct DEBUG_SEL2_R(crate::FieldReader<u8, u8>);
-impl DEBUG_SEL2_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        DEBUG_SEL2_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DEBUG_SEL2_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DEBUG_SEL2_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DEBUG_SEL2` writer - "]
-pub struct DEBUG_SEL2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DEBUG_SEL2_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x1f << 10)) | ((value as u32 & 0x1f) << 10);
-        self.w
-    }
-}
+pub type DEBUG_SEL2_W<'a> = crate::FieldWriter<'a, u32, RTC_DEBUG_SEL_SPEC, u8, u8, 5, 10>;
 #[doc = "Field `DEBUG_SEL3` reader - "]
-pub struct DEBUG_SEL3_R(crate::FieldReader<u8, u8>);
-impl DEBUG_SEL3_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        DEBUG_SEL3_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DEBUG_SEL3_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DEBUG_SEL3_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DEBUG_SEL3` writer - "]
-pub struct DEBUG_SEL3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DEBUG_SEL3_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x1f << 15)) | ((value as u32 & 0x1f) << 15);
-        self.w
-    }
-}
+pub type DEBUG_SEL3_W<'a> = crate::FieldWriter<'a, u32, RTC_DEBUG_SEL_SPEC, u8, u8, 5, 15>;
 #[doc = "Field `DEBUG_SEL4` reader - "]
-pub struct DEBUG_SEL4_R(crate::FieldReader<u8, u8>);
-impl DEBUG_SEL4_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        DEBUG_SEL4_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DEBUG_SEL4_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DEBUG_SEL4_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DEBUG_SEL4` writer - "]
-pub struct DEBUG_SEL4_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DEBUG_SEL4_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x1f << 20)) | ((value as u32 & 0x1f) << 20);
-        self.w
-    }
-}
+pub type DEBUG_SEL4_W<'a> = crate::FieldWriter<'a, u32, RTC_DEBUG_SEL_SPEC, u8, u8, 5, 20>;
 #[doc = "Field `DEBUG_12M_NO_GATING` reader - "]
-pub struct DEBUG_12M_NO_GATING_R(crate::FieldReader<bool, bool>);
-impl DEBUG_12M_NO_GATING_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DEBUG_12M_NO_GATING_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DEBUG_12M_NO_GATING_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DEBUG_12M_NO_GATING_R = crate::BitReader<bool>;
 #[doc = "Field `DEBUG_12M_NO_GATING` writer - "]
-pub struct DEBUG_12M_NO_GATING_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DEBUG_12M_NO_GATING_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 25)) | ((value as u32 & 0x01) << 25);
-        self.w
-    }
-}
+pub type DEBUG_12M_NO_GATING_W<'a> = crate::BitWriter<'a, u32, RTC_DEBUG_SEL_SPEC, bool, 25>;
 impl R {
     #[doc = "Bits 0:4"]
     #[inline(always)]
@@ -235,39 +87,39 @@ impl R {
     #[doc = "Bit 25"]
     #[inline(always)]
     pub fn debug_12m_no_gating(&self) -> DEBUG_12M_NO_GATING_R {
-        DEBUG_12M_NO_GATING_R::new(((self.bits >> 25) & 0x01) != 0)
+        DEBUG_12M_NO_GATING_R::new(((self.bits >> 25) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:4"]
     #[inline(always)]
     pub fn debug_sel0(&mut self) -> DEBUG_SEL0_W {
-        DEBUG_SEL0_W { w: self }
+        DEBUG_SEL0_W::new(self)
     }
     #[doc = "Bits 5:9"]
     #[inline(always)]
     pub fn debug_sel1(&mut self) -> DEBUG_SEL1_W {
-        DEBUG_SEL1_W { w: self }
+        DEBUG_SEL1_W::new(self)
     }
     #[doc = "Bits 10:14"]
     #[inline(always)]
     pub fn debug_sel2(&mut self) -> DEBUG_SEL2_W {
-        DEBUG_SEL2_W { w: self }
+        DEBUG_SEL2_W::new(self)
     }
     #[doc = "Bits 15:19"]
     #[inline(always)]
     pub fn debug_sel3(&mut self) -> DEBUG_SEL3_W {
-        DEBUG_SEL3_W { w: self }
+        DEBUG_SEL3_W::new(self)
     }
     #[doc = "Bits 20:24"]
     #[inline(always)]
     pub fn debug_sel4(&mut self) -> DEBUG_SEL4_W {
-        DEBUG_SEL4_W { w: self }
+        DEBUG_SEL4_W::new(self)
     }
     #[doc = "Bit 25"]
     #[inline(always)]
     pub fn debug_12m_no_gating(&mut self) -> DEBUG_12M_NO_GATING_W {
-        DEBUG_12M_NO_GATING_W { w: self }
+        DEBUG_12M_NO_GATING_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -276,25 +128,16 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rtc_debug_sel]
-(index.html) module"]
+#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rtc_debug_sel](index.html) module"]
 pub struct RTC_DEBUG_SEL_SPEC;
 impl crate::RegisterSpec for RTC_DEBUG_SEL_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [rtc_debug_sel::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [rtc_debug_sel::R](R) reader structure"]
 impl crate::Readable for RTC_DEBUG_SEL_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [rtc_debug_sel::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [rtc_debug_sel::W](W) writer structure"]
 impl crate::Writable for RTC_DEBUG_SEL_SPEC {
     type Writer = W;
 }

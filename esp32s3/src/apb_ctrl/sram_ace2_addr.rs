@@ -35,32 +35,9 @@ impl From<crate::W<SRAM_ACE2_ADDR_SPEC>> for W {
     }
 }
 #[doc = "Field `S` reader - ******* Description ***********"]
-pub struct S_R(crate::FieldReader<u32, u32>);
-impl S_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        S_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for S_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type S_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `S` writer - ******* Description ***********"]
-pub struct S_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> S_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
-    }
-}
+pub type S_W<'a> = crate::FieldWriter<'a, u32, SRAM_ACE2_ADDR_SPEC, u32, u32, 32, 0>;
 impl R {
     #[doc = "Bits 0:31 - ******* Description ***********"]
     #[inline(always)]
@@ -72,7 +49,7 @@ impl W {
     #[doc = "Bits 0:31 - ******* Description ***********"]
     #[inline(always)]
     pub fn s(&mut self) -> S_W {
-        S_W { w: self }
+        S_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -81,25 +58,16 @@ impl W {
         self
     }
 }
-#[doc = "******* Description ***********\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sram_ace2_addr]
-(index.html) module"]
+#[doc = "******* Description ***********\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sram_ace2_addr](index.html) module"]
 pub struct SRAM_ACE2_ADDR_SPEC;
 impl crate::RegisterSpec for SRAM_ACE2_ADDR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [sram_ace2_addr::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [sram_ace2_addr::R](R) reader structure"]
 impl crate::Readable for SRAM_ACE2_ADDR_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [sram_ace2_addr::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [sram_ace2_addr::W](W) writer structure"]
 impl crate::Writable for SRAM_ACE2_ADDR_SPEC {
     type Writer = W;
 }

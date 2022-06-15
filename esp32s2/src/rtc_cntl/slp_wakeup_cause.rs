@@ -14,20 +14,7 @@ impl From<crate::R<SLP_WAKEUP_CAUSE_SPEC>> for R {
     }
 }
 #[doc = "Field `WAKEUP_CAUSE` reader - Stores the wakeup cause."]
-pub struct WAKEUP_CAUSE_R(crate::FieldReader<u32, u32>);
-impl WAKEUP_CAUSE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        WAKEUP_CAUSE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WAKEUP_CAUSE_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type WAKEUP_CAUSE_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:16 - Stores the wakeup cause."]
     #[inline(always)]
@@ -35,16 +22,12 @@ impl R {
         WAKEUP_CAUSE_R::new((self.bits & 0x0001_ffff) as u32)
     }
 }
-#[doc = "Stores the sleep-to-wakeup cause.\n\nThis register you can [`read`]
-(crate::generic::Reg::read). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [slp_wakeup_cause]
-(index.html) module"]
+#[doc = "Stores the sleep-to-wakeup cause.\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [slp_wakeup_cause](index.html) module"]
 pub struct SLP_WAKEUP_CAUSE_SPEC;
 impl crate::RegisterSpec for SLP_WAKEUP_CAUSE_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [slp_wakeup_cause::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [slp_wakeup_cause::R](R) reader structure"]
 impl crate::Readable for SLP_WAKEUP_CAUSE_SPEC {
     type Reader = R;
 }

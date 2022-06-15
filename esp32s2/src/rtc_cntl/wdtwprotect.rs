@@ -35,32 +35,9 @@ impl From<crate::W<WDTWPROTECT_SPEC>> for W {
     }
 }
 #[doc = "Field `WDT_WKEY` reader - Sets the write protection key of the watchdog."]
-pub struct WDT_WKEY_R(crate::FieldReader<u32, u32>);
-impl WDT_WKEY_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        WDT_WKEY_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WDT_WKEY_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type WDT_WKEY_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `WDT_WKEY` writer - Sets the write protection key of the watchdog."]
-pub struct WDT_WKEY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WDT_WKEY_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
-    }
-}
+pub type WDT_WKEY_W<'a> = crate::FieldWriter<'a, u32, WDTWPROTECT_SPEC, u32, u32, 32, 0>;
 impl R {
     #[doc = "Bits 0:31 - Sets the write protection key of the watchdog."]
     #[inline(always)]
@@ -72,7 +49,7 @@ impl W {
     #[doc = "Bits 0:31 - Sets the write protection key of the watchdog."]
     #[inline(always)]
     pub fn wdt_wkey(&mut self) -> WDT_WKEY_W {
-        WDT_WKEY_W { w: self }
+        WDT_WKEY_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -81,25 +58,16 @@ impl W {
         self
     }
 }
-#[doc = "RTC watchdog write protection configuration register\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wdtwprotect]
-(index.html) module"]
+#[doc = "RTC watchdog write protection configuration register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wdtwprotect](index.html) module"]
 pub struct WDTWPROTECT_SPEC;
 impl crate::RegisterSpec for WDTWPROTECT_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [wdtwprotect::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [wdtwprotect::R](R) reader structure"]
 impl crate::Readable for WDTWPROTECT_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [wdtwprotect::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [wdtwprotect::W](W) writer structure"]
 impl crate::Writable for WDTWPROTECT_SPEC {
     type Writer = W;
 }

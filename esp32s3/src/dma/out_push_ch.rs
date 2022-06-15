@@ -35,69 +35,13 @@ impl From<crate::W<OUT_PUSH_CH_SPEC>> for W {
     }
 }
 #[doc = "Field `OUTFIFO_WDATA_CH` reader - This register stores the data that need to be pushed into DMA FIFO."]
-pub struct OUTFIFO_WDATA_CH_R(crate::FieldReader<u16, u16>);
-impl OUTFIFO_WDATA_CH_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        OUTFIFO_WDATA_CH_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for OUTFIFO_WDATA_CH_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type OUTFIFO_WDATA_CH_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `OUTFIFO_WDATA_CH` writer - This register stores the data that need to be pushed into DMA FIFO."]
-pub struct OUTFIFO_WDATA_CH_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OUTFIFO_WDATA_CH_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01ff) | (value as u32 & 0x01ff);
-        self.w
-    }
-}
+pub type OUTFIFO_WDATA_CH_W<'a> = crate::FieldWriter<'a, u32, OUT_PUSH_CH_SPEC, u16, u16, 9, 0>;
 #[doc = "Field `OUTFIFO_PUSH_CH` reader - Set this bit to push data into DMA FIFO."]
-pub struct OUTFIFO_PUSH_CH_R(crate::FieldReader<bool, bool>);
-impl OUTFIFO_PUSH_CH_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        OUTFIFO_PUSH_CH_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for OUTFIFO_PUSH_CH_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type OUTFIFO_PUSH_CH_R = crate::BitReader<bool>;
 #[doc = "Field `OUTFIFO_PUSH_CH` writer - Set this bit to push data into DMA FIFO."]
-pub struct OUTFIFO_PUSH_CH_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OUTFIFO_PUSH_CH_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
-    }
-}
+pub type OUTFIFO_PUSH_CH_W<'a> = crate::BitWriter<'a, u32, OUT_PUSH_CH_SPEC, bool, 9>;
 impl R {
     #[doc = "Bits 0:8 - This register stores the data that need to be pushed into DMA FIFO."]
     #[inline(always)]
@@ -107,19 +51,19 @@ impl R {
     #[doc = "Bit 9 - Set this bit to push data into DMA FIFO."]
     #[inline(always)]
     pub fn outfifo_push_ch(&self) -> OUTFIFO_PUSH_CH_R {
-        OUTFIFO_PUSH_CH_R::new(((self.bits >> 9) & 0x01) != 0)
+        OUTFIFO_PUSH_CH_R::new(((self.bits >> 9) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:8 - This register stores the data that need to be pushed into DMA FIFO."]
     #[inline(always)]
     pub fn outfifo_wdata_ch(&mut self) -> OUTFIFO_WDATA_CH_W {
-        OUTFIFO_WDATA_CH_W { w: self }
+        OUTFIFO_WDATA_CH_W::new(self)
     }
     #[doc = "Bit 9 - Set this bit to push data into DMA FIFO."]
     #[inline(always)]
     pub fn outfifo_push_ch(&mut self) -> OUTFIFO_PUSH_CH_W {
-        OUTFIFO_PUSH_CH_W { w: self }
+        OUTFIFO_PUSH_CH_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -128,25 +72,16 @@ impl W {
         self
     }
 }
-#[doc = "Push control register of Rx channel 0\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [out_push_ch]
-(index.html) module"]
+#[doc = "Push control register of Rx channel 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [out_push_ch](index.html) module"]
 pub struct OUT_PUSH_CH_SPEC;
 impl crate::RegisterSpec for OUT_PUSH_CH_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [out_push_ch::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [out_push_ch::R](R) reader structure"]
 impl crate::Readable for OUT_PUSH_CH_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [out_push_ch::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [out_push_ch::W](W) writer structure"]
 impl crate::Writable for OUT_PUSH_CH_SPEC {
     type Writer = W;
 }

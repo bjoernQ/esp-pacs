@@ -13,58 +13,28 @@ impl From<crate::R<CHADDR_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Field `APB_MEM_WADDR_CH0` reader - This register records the memory address offset when writes RAM over APB bus."]
-pub struct APB_MEM_WADDR_CH0_R(crate::FieldReader<u16, u16>);
-impl APB_MEM_WADDR_CH0_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        APB_MEM_WADDR_CH0_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for APB_MEM_WADDR_CH0_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Field `APB_MEM_RADDR_CH0` reader - This register records the memory address offset when reads RAM over APB bus."]
-pub struct APB_MEM_RADDR_CH0_R(crate::FieldReader<u16, u16>);
-impl APB_MEM_RADDR_CH0_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        APB_MEM_RADDR_CH0_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for APB_MEM_RADDR_CH0_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `APB_MEM_WADDR` reader - This register records the memory address offset when writes RAM over APB bus."]
+pub type APB_MEM_WADDR_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `APB_MEM_RADDR` reader - This register records the memory address offset when reads RAM over APB bus."]
+pub type APB_MEM_RADDR_R = crate::FieldReader<u16, u16>;
 impl R {
     #[doc = "Bits 0:8 - This register records the memory address offset when writes RAM over APB bus."]
     #[inline(always)]
-    pub fn apb_mem_waddr_ch0(&self) -> APB_MEM_WADDR_CH0_R {
-        APB_MEM_WADDR_CH0_R::new((self.bits & 0x01ff) as u16)
+    pub fn apb_mem_waddr(&self) -> APB_MEM_WADDR_R {
+        APB_MEM_WADDR_R::new((self.bits & 0x01ff) as u16)
     }
     #[doc = "Bits 10:18 - This register records the memory address offset when reads RAM over APB bus."]
     #[inline(always)]
-    pub fn apb_mem_raddr_ch0(&self) -> APB_MEM_RADDR_CH0_R {
-        APB_MEM_RADDR_CH0_R::new(((self.bits >> 10) & 0x01ff) as u16)
+    pub fn apb_mem_raddr(&self) -> APB_MEM_RADDR_R {
+        APB_MEM_RADDR_R::new(((self.bits >> 10) & 0x01ff) as u16)
     }
 }
-#[doc = "Channel %s address register\n\nThis register you can [`read`]
-(crate::generic::Reg::read). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [chaddr]
-(index.html) module"]
+#[doc = "Channel %s address register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [chaddr](index.html) module"]
 pub struct CHADDR_SPEC;
 impl crate::RegisterSpec for CHADDR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [chaddr::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [chaddr::R](R) reader structure"]
 impl crate::Readable for CHADDR_SPEC {
     type Reader = R;
 }

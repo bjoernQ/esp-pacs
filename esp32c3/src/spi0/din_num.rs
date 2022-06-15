@@ -35,155 +35,63 @@ impl From<crate::W<DIN_NUM_SPEC>> for W {
     }
 }
 #[doc = "Field `DIN0_NUM` reader - the input signals are delayed by system clock cycles, 0: delayed by 1 cycle, 1: delayed by 2 cycles,..."]
-pub struct DIN0_NUM_R(crate::FieldReader<u8, u8>);
-impl DIN0_NUM_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        DIN0_NUM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DIN0_NUM_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DIN0_NUM_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DIN0_NUM` writer - the input signals are delayed by system clock cycles, 0: delayed by 1 cycle, 1: delayed by 2 cycles,..."]
-pub struct DIN0_NUM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DIN0_NUM_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
-        self.w
-    }
-}
+pub type DIN0_NUM_W<'a> = crate::FieldWriter<'a, u32, DIN_NUM_SPEC, u8, u8, 2, 0>;
 #[doc = "Field `DIN1_NUM` reader - the input signals are delayed by system clock cycles, 0: delayed by 1 cycle, 1: delayed by 2 cycles,..."]
-pub struct DIN1_NUM_R(crate::FieldReader<u8, u8>);
-impl DIN1_NUM_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        DIN1_NUM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DIN1_NUM_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DIN1_NUM_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DIN1_NUM` writer - the input signals are delayed by system clock cycles, 0: delayed by 1 cycle, 1: delayed by 2 cycles,..."]
-pub struct DIN1_NUM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DIN1_NUM_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 2)) | ((value as u32 & 0x03) << 2);
-        self.w
-    }
-}
+pub type DIN1_NUM_W<'a> = crate::FieldWriter<'a, u32, DIN_NUM_SPEC, u8, u8, 2, 2>;
 #[doc = "Field `DIN2_NUM` reader - the input signals are delayed by system clock cycles, 0: delayed by 1 cycle, 1: delayed by 2 cycles,..."]
-pub struct DIN2_NUM_R(crate::FieldReader<u8, u8>);
-impl DIN2_NUM_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        DIN2_NUM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DIN2_NUM_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DIN2_NUM_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DIN2_NUM` writer - the input signals are delayed by system clock cycles, 0: delayed by 1 cycle, 1: delayed by 2 cycles,..."]
-pub struct DIN2_NUM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DIN2_NUM_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 4)) | ((value as u32 & 0x03) << 4);
-        self.w
-    }
-}
+pub type DIN2_NUM_W<'a> = crate::FieldWriter<'a, u32, DIN_NUM_SPEC, u8, u8, 2, 4>;
 #[doc = "Field `DIN3_NUM` reader - the input signals are delayed by system clock cycles, 0: delayed by 1 cycle, 1: delayed by 2 cycles,..."]
-pub struct DIN3_NUM_R(crate::FieldReader<u8, u8>);
-impl DIN3_NUM_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        DIN3_NUM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DIN3_NUM_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DIN3_NUM_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DIN3_NUM` writer - the input signals are delayed by system clock cycles, 0: delayed by 1 cycle, 1: delayed by 2 cycles,..."]
-pub struct DIN3_NUM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DIN3_NUM_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 6)) | ((value as u32 & 0x03) << 6);
-        self.w
-    }
-}
+pub type DIN3_NUM_W<'a> = crate::FieldWriter<'a, u32, DIN_NUM_SPEC, u8, u8, 2, 6>;
 impl R {
     #[doc = "Bits 0:1 - the input signals are delayed by system clock cycles, 0: delayed by 1 cycle, 1: delayed by 2 cycles,..."]
     #[inline(always)]
     pub fn din0_num(&self) -> DIN0_NUM_R {
-        DIN0_NUM_R::new((self.bits & 0x03) as u8)
+        DIN0_NUM_R::new((self.bits & 3) as u8)
     }
     #[doc = "Bits 2:3 - the input signals are delayed by system clock cycles, 0: delayed by 1 cycle, 1: delayed by 2 cycles,..."]
     #[inline(always)]
     pub fn din1_num(&self) -> DIN1_NUM_R {
-        DIN1_NUM_R::new(((self.bits >> 2) & 0x03) as u8)
+        DIN1_NUM_R::new(((self.bits >> 2) & 3) as u8)
     }
     #[doc = "Bits 4:5 - the input signals are delayed by system clock cycles, 0: delayed by 1 cycle, 1: delayed by 2 cycles,..."]
     #[inline(always)]
     pub fn din2_num(&self) -> DIN2_NUM_R {
-        DIN2_NUM_R::new(((self.bits >> 4) & 0x03) as u8)
+        DIN2_NUM_R::new(((self.bits >> 4) & 3) as u8)
     }
     #[doc = "Bits 6:7 - the input signals are delayed by system clock cycles, 0: delayed by 1 cycle, 1: delayed by 2 cycles,..."]
     #[inline(always)]
     pub fn din3_num(&self) -> DIN3_NUM_R {
-        DIN3_NUM_R::new(((self.bits >> 6) & 0x03) as u8)
+        DIN3_NUM_R::new(((self.bits >> 6) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - the input signals are delayed by system clock cycles, 0: delayed by 1 cycle, 1: delayed by 2 cycles,..."]
     #[inline(always)]
     pub fn din0_num(&mut self) -> DIN0_NUM_W {
-        DIN0_NUM_W { w: self }
+        DIN0_NUM_W::new(self)
     }
     #[doc = "Bits 2:3 - the input signals are delayed by system clock cycles, 0: delayed by 1 cycle, 1: delayed by 2 cycles,..."]
     #[inline(always)]
     pub fn din1_num(&mut self) -> DIN1_NUM_W {
-        DIN1_NUM_W { w: self }
+        DIN1_NUM_W::new(self)
     }
     #[doc = "Bits 4:5 - the input signals are delayed by system clock cycles, 0: delayed by 1 cycle, 1: delayed by 2 cycles,..."]
     #[inline(always)]
     pub fn din2_num(&mut self) -> DIN2_NUM_W {
-        DIN2_NUM_W { w: self }
+        DIN2_NUM_W::new(self)
     }
     #[doc = "Bits 6:7 - the input signals are delayed by system clock cycles, 0: delayed by 1 cycle, 1: delayed by 2 cycles,..."]
     #[inline(always)]
     pub fn din3_num(&mut self) -> DIN3_NUM_W {
-        DIN3_NUM_W { w: self }
+        DIN3_NUM_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -192,25 +100,16 @@ impl W {
         self
     }
 }
-#[doc = "SPI0 input delay number control register\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [din_num]
-(index.html) module"]
+#[doc = "SPI0 input delay number control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [din_num](index.html) module"]
 pub struct DIN_NUM_SPEC;
 impl crate::RegisterSpec for DIN_NUM_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [din_num::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [din_num::R](R) reader structure"]
 impl crate::Readable for DIN_NUM_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [din_num::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [din_num::W](W) writer structure"]
 impl crate::Writable for DIN_NUM_SPEC {
     type Writer = W;
 }

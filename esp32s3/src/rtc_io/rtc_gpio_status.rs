@@ -35,32 +35,9 @@ impl From<crate::W<RTC_GPIO_STATUS_SPEC>> for W {
     }
 }
 #[doc = "Field `INT` reader - RTC GPIO 0 ~ 21 interrupt status"]
-pub struct INT_R(crate::FieldReader<u32, u32>);
-impl INT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        INT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for INT_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type INT_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `INT` writer - RTC GPIO 0 ~ 21 interrupt status"]
-pub struct INT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> INT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x003f_ffff << 10)) | ((value as u32 & 0x003f_ffff) << 10);
-        self.w
-    }
-}
+pub type INT_W<'a> = crate::FieldWriter<'a, u32, RTC_GPIO_STATUS_SPEC, u32, u32, 22, 10>;
 impl R {
     #[doc = "Bits 10:31 - RTC GPIO 0 ~ 21 interrupt status"]
     #[inline(always)]
@@ -72,7 +49,7 @@ impl W {
     #[doc = "Bits 10:31 - RTC GPIO 0 ~ 21 interrupt status"]
     #[inline(always)]
     pub fn int(&mut self) -> INT_W {
-        INT_W { w: self }
+        INT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -81,25 +58,16 @@ impl W {
         self
     }
 }
-#[doc = "RTC GPIO 0 ~ 21 interrupt status\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rtc_gpio_status]
-(index.html) module"]
+#[doc = "RTC GPIO 0 ~ 21 interrupt status\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rtc_gpio_status](index.html) module"]
 pub struct RTC_GPIO_STATUS_SPEC;
 impl crate::RegisterSpec for RTC_GPIO_STATUS_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [rtc_gpio_status::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [rtc_gpio_status::R](R) reader structure"]
 impl crate::Readable for RTC_GPIO_STATUS_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [rtc_gpio_status::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [rtc_gpio_status::W](W) writer structure"]
 impl crate::Writable for RTC_GPIO_STATUS_SPEC {
     type Writer = W;
 }

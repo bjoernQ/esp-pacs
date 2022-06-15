@@ -35,54 +35,11 @@ impl From<crate::W<WDTCONFIG1_SPEC>> for W {
     }
 }
 #[doc = "Field `WDT_DIVCNT_RST` writer - reg_wdt_divcnt_rst."]
-pub struct WDT_DIVCNT_RST_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WDT_DIVCNT_RST_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type WDT_DIVCNT_RST_W<'a> = crate::BitWriter<'a, u32, WDTCONFIG1_SPEC, bool, 0>;
 #[doc = "Field `WDT_CLK_PRESCALE` reader - reg_wdt_clk_prescale."]
-pub struct WDT_CLK_PRESCALE_R(crate::FieldReader<u16, u16>);
-impl WDT_CLK_PRESCALE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        WDT_CLK_PRESCALE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WDT_CLK_PRESCALE_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type WDT_CLK_PRESCALE_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `WDT_CLK_PRESCALE` writer - reg_wdt_clk_prescale."]
-pub struct WDT_CLK_PRESCALE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WDT_CLK_PRESCALE_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xffff << 16)) | ((value as u32 & 0xffff) << 16);
-        self.w
-    }
-}
+pub type WDT_CLK_PRESCALE_W<'a> = crate::FieldWriter<'a, u32, WDTCONFIG1_SPEC, u16, u16, 16, 16>;
 impl R {
     #[doc = "Bits 16:31 - reg_wdt_clk_prescale."]
     #[inline(always)]
@@ -94,12 +51,12 @@ impl W {
     #[doc = "Bit 0 - reg_wdt_divcnt_rst."]
     #[inline(always)]
     pub fn wdt_divcnt_rst(&mut self) -> WDT_DIVCNT_RST_W {
-        WDT_DIVCNT_RST_W { w: self }
+        WDT_DIVCNT_RST_W::new(self)
     }
     #[doc = "Bits 16:31 - reg_wdt_clk_prescale."]
     #[inline(always)]
     pub fn wdt_clk_prescale(&mut self) -> WDT_CLK_PRESCALE_W {
-        WDT_CLK_PRESCALE_W { w: self }
+        WDT_CLK_PRESCALE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -108,25 +65,16 @@ impl W {
         self
     }
 }
-#[doc = "TIMG_WDTCONFIG1_REG.\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wdtconfig1]
-(index.html) module"]
+#[doc = "TIMG_WDTCONFIG1_REG.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wdtconfig1](index.html) module"]
 pub struct WDTCONFIG1_SPEC;
 impl crate::RegisterSpec for WDTCONFIG1_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [wdtconfig1::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [wdtconfig1::R](R) reader structure"]
 impl crate::Readable for WDTCONFIG1_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [wdtconfig1::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [wdtconfig1::W](W) writer structure"]
 impl crate::Writable for WDTCONFIG1_SPEC {
     type Writer = W;
 }

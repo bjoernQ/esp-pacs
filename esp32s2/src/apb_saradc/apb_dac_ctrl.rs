@@ -35,217 +35,29 @@ impl From<crate::W<APB_DAC_CTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `DAC_TIMER_TARGET` reader - Set DAC timer target."]
-pub struct DAC_TIMER_TARGET_R(crate::FieldReader<u16, u16>);
-impl DAC_TIMER_TARGET_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        DAC_TIMER_TARGET_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DAC_TIMER_TARGET_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DAC_TIMER_TARGET_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `DAC_TIMER_TARGET` writer - Set DAC timer target."]
-pub struct DAC_TIMER_TARGET_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DAC_TIMER_TARGET_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0fff) | (value as u32 & 0x0fff);
-        self.w
-    }
-}
+pub type DAC_TIMER_TARGET_W<'a> = crate::FieldWriter<'a, u32, APB_DAC_CTRL_SPEC, u16, u16, 12, 0>;
 #[doc = "Field `DAC_TIMER_EN` reader - Enable read dac data."]
-pub struct DAC_TIMER_EN_R(crate::FieldReader<bool, bool>);
-impl DAC_TIMER_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DAC_TIMER_EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DAC_TIMER_EN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DAC_TIMER_EN_R = crate::BitReader<bool>;
 #[doc = "Field `DAC_TIMER_EN` writer - Enable read dac data."]
-pub struct DAC_TIMER_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DAC_TIMER_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
-        self.w
-    }
-}
+pub type DAC_TIMER_EN_W<'a> = crate::BitWriter<'a, u32, APB_DAC_CTRL_SPEC, bool, 12>;
 #[doc = "Field `APB_DAC_ALTER_MODE` reader - Enable DAC alter mode."]
-pub struct APB_DAC_ALTER_MODE_R(crate::FieldReader<bool, bool>);
-impl APB_DAC_ALTER_MODE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        APB_DAC_ALTER_MODE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for APB_DAC_ALTER_MODE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type APB_DAC_ALTER_MODE_R = crate::BitReader<bool>;
 #[doc = "Field `APB_DAC_ALTER_MODE` writer - Enable DAC alter mode."]
-pub struct APB_DAC_ALTER_MODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> APB_DAC_ALTER_MODE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
-        self.w
-    }
-}
+pub type APB_DAC_ALTER_MODE_W<'a> = crate::BitWriter<'a, u32, APB_DAC_CTRL_SPEC, bool, 13>;
 #[doc = "Field `APB_DAC_TRANS` reader - Enable DMA_DAC."]
-pub struct APB_DAC_TRANS_R(crate::FieldReader<bool, bool>);
-impl APB_DAC_TRANS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        APB_DAC_TRANS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for APB_DAC_TRANS_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type APB_DAC_TRANS_R = crate::BitReader<bool>;
 #[doc = "Field `APB_DAC_TRANS` writer - Enable DMA_DAC."]
-pub struct APB_DAC_TRANS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> APB_DAC_TRANS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
-        self.w
-    }
-}
+pub type APB_DAC_TRANS_W<'a> = crate::BitWriter<'a, u32, APB_DAC_CTRL_SPEC, bool, 14>;
 #[doc = "Field `DAC_RESET_FIFO` reader - Reset DIG DAC FIFO."]
-pub struct DAC_RESET_FIFO_R(crate::FieldReader<bool, bool>);
-impl DAC_RESET_FIFO_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DAC_RESET_FIFO_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DAC_RESET_FIFO_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DAC_RESET_FIFO_R = crate::BitReader<bool>;
 #[doc = "Field `DAC_RESET_FIFO` writer - Reset DIG DAC FIFO."]
-pub struct DAC_RESET_FIFO_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DAC_RESET_FIFO_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
-        self.w
-    }
-}
+pub type DAC_RESET_FIFO_W<'a> = crate::BitWriter<'a, u32, APB_DAC_CTRL_SPEC, bool, 15>;
 #[doc = "Field `APB_DAC_RST` reader - Reset DIG DAC by software."]
-pub struct APB_DAC_RST_R(crate::FieldReader<bool, bool>);
-impl APB_DAC_RST_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        APB_DAC_RST_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for APB_DAC_RST_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type APB_DAC_RST_R = crate::BitReader<bool>;
 #[doc = "Field `APB_DAC_RST` writer - Reset DIG DAC by software."]
-pub struct APB_DAC_RST_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> APB_DAC_RST_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
-        self.w
-    }
-}
+pub type APB_DAC_RST_W<'a> = crate::BitWriter<'a, u32, APB_DAC_CTRL_SPEC, bool, 16>;
 impl R {
     #[doc = "Bits 0:11 - Set DAC timer target."]
     #[inline(always)]
@@ -255,59 +67,59 @@ impl R {
     #[doc = "Bit 12 - Enable read dac data."]
     #[inline(always)]
     pub fn dac_timer_en(&self) -> DAC_TIMER_EN_R {
-        DAC_TIMER_EN_R::new(((self.bits >> 12) & 0x01) != 0)
+        DAC_TIMER_EN_R::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bit 13 - Enable DAC alter mode."]
     #[inline(always)]
     pub fn apb_dac_alter_mode(&self) -> APB_DAC_ALTER_MODE_R {
-        APB_DAC_ALTER_MODE_R::new(((self.bits >> 13) & 0x01) != 0)
+        APB_DAC_ALTER_MODE_R::new(((self.bits >> 13) & 1) != 0)
     }
     #[doc = "Bit 14 - Enable DMA_DAC."]
     #[inline(always)]
     pub fn apb_dac_trans(&self) -> APB_DAC_TRANS_R {
-        APB_DAC_TRANS_R::new(((self.bits >> 14) & 0x01) != 0)
+        APB_DAC_TRANS_R::new(((self.bits >> 14) & 1) != 0)
     }
     #[doc = "Bit 15 - Reset DIG DAC FIFO."]
     #[inline(always)]
     pub fn dac_reset_fifo(&self) -> DAC_RESET_FIFO_R {
-        DAC_RESET_FIFO_R::new(((self.bits >> 15) & 0x01) != 0)
+        DAC_RESET_FIFO_R::new(((self.bits >> 15) & 1) != 0)
     }
     #[doc = "Bit 16 - Reset DIG DAC by software."]
     #[inline(always)]
     pub fn apb_dac_rst(&self) -> APB_DAC_RST_R {
-        APB_DAC_RST_R::new(((self.bits >> 16) & 0x01) != 0)
+        APB_DAC_RST_R::new(((self.bits >> 16) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:11 - Set DAC timer target."]
     #[inline(always)]
     pub fn dac_timer_target(&mut self) -> DAC_TIMER_TARGET_W {
-        DAC_TIMER_TARGET_W { w: self }
+        DAC_TIMER_TARGET_W::new(self)
     }
     #[doc = "Bit 12 - Enable read dac data."]
     #[inline(always)]
     pub fn dac_timer_en(&mut self) -> DAC_TIMER_EN_W {
-        DAC_TIMER_EN_W { w: self }
+        DAC_TIMER_EN_W::new(self)
     }
     #[doc = "Bit 13 - Enable DAC alter mode."]
     #[inline(always)]
     pub fn apb_dac_alter_mode(&mut self) -> APB_DAC_ALTER_MODE_W {
-        APB_DAC_ALTER_MODE_W { w: self }
+        APB_DAC_ALTER_MODE_W::new(self)
     }
     #[doc = "Bit 14 - Enable DMA_DAC."]
     #[inline(always)]
     pub fn apb_dac_trans(&mut self) -> APB_DAC_TRANS_W {
-        APB_DAC_TRANS_W { w: self }
+        APB_DAC_TRANS_W::new(self)
     }
     #[doc = "Bit 15 - Reset DIG DAC FIFO."]
     #[inline(always)]
     pub fn dac_reset_fifo(&mut self) -> DAC_RESET_FIFO_W {
-        DAC_RESET_FIFO_W { w: self }
+        DAC_RESET_FIFO_W::new(self)
     }
     #[doc = "Bit 16 - Reset DIG DAC by software."]
     #[inline(always)]
     pub fn apb_dac_rst(&mut self) -> APB_DAC_RST_W {
-        APB_DAC_RST_W { w: self }
+        APB_DAC_RST_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -316,25 +128,16 @@ impl W {
         self
     }
 }
-#[doc = "Configure DAC settings\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [apb_dac_ctrl]
-(index.html) module"]
+#[doc = "Configure DAC settings\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [apb_dac_ctrl](index.html) module"]
 pub struct APB_DAC_CTRL_SPEC;
 impl crate::RegisterSpec for APB_DAC_CTRL_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [apb_dac_ctrl::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [apb_dac_ctrl::R](R) reader structure"]
 impl crate::Readable for APB_DAC_CTRL_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [apb_dac_ctrl::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [apb_dac_ctrl::W](W) writer structure"]
 impl crate::Writable for APB_DAC_CTRL_SPEC {
     type Writer = W;
 }

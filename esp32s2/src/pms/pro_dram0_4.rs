@@ -13,48 +13,21 @@ impl From<crate::R<PRO_DRAM0_4_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Field `PRO_DRAM0_ILG_ST` reader - Record the illegitimate information of DBUS. \\[25:6\\]
-: store the bits \\[21:2\\]
- of DBUS address. \\[5\\]
-: 1 means atomic access, 0 means nonatomic access. \\[4\\]
-: 1 means write operation, 0 means read operation. \\[3:0\\]
-: DBUS0 bus byte enables."]
-pub struct PRO_DRAM0_ILG_ST_R(crate::FieldReader<u32, u32>);
-impl PRO_DRAM0_ILG_ST_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        PRO_DRAM0_ILG_ST_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PRO_DRAM0_ILG_ST_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `PRO_DRAM0_ILG_ST` reader - Record the illegitimate information of DBUS. \\[25:6\\]: store the bits \\[21:2\\] of DBUS address. \\[5\\]: 1 means atomic access, 0 means nonatomic access. \\[4\\]: 1 means write operation, 0 means read operation. \\[3:0\\]: DBUS0 bus byte enables."]
+pub type PRO_DRAM0_ILG_ST_R = crate::FieldReader<u32, u32>;
 impl R {
-    #[doc = "Bits 0:25 - Record the illegitimate information of DBUS. \\[25:6\\]
-: store the bits \\[21:2\\]
- of DBUS address. \\[5\\]
-: 1 means atomic access, 0 means nonatomic access. \\[4\\]
-: 1 means write operation, 0 means read operation. \\[3:0\\]
-: DBUS0 bus byte enables."]
+    #[doc = "Bits 0:25 - Record the illegitimate information of DBUS. \\[25:6\\]: store the bits \\[21:2\\] of DBUS address. \\[5\\]: 1 means atomic access, 0 means nonatomic access. \\[4\\]: 1 means write operation, 0 means read operation. \\[3:0\\]: DBUS0 bus byte enables."]
     #[inline(always)]
     pub fn pro_dram0_ilg_st(&self) -> PRO_DRAM0_ILG_ST_R {
         PRO_DRAM0_ILG_ST_R::new((self.bits & 0x03ff_ffff) as u32)
     }
 }
-#[doc = "DBUS status register.\n\nThis register you can [`read`]
-(crate::generic::Reg::read). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pro_dram0_4]
-(index.html) module"]
+#[doc = "DBUS status register.\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pro_dram0_4](index.html) module"]
 pub struct PRO_DRAM0_4_SPEC;
 impl crate::RegisterSpec for PRO_DRAM0_4_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [pro_dram0_4::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [pro_dram0_4::R](R) reader structure"]
 impl crate::Readable for PRO_DRAM0_4_SPEC {
     type Reader = R;
 }

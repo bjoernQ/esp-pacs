@@ -35,59 +35,13 @@ impl From<crate::W<SIGMADELTA6_SPEC>> for W {
     }
 }
 #[doc = "Field `GPIO_SD6_IN` reader - "]
-pub struct GPIO_SD6_IN_R(crate::FieldReader<u8, u8>);
-impl GPIO_SD6_IN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        GPIO_SD6_IN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for GPIO_SD6_IN_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type GPIO_SD6_IN_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `GPIO_SD6_IN` writer - "]
-pub struct GPIO_SD6_IN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> GPIO_SD6_IN_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type GPIO_SD6_IN_W<'a> = crate::FieldWriter<'a, u32, SIGMADELTA6_SPEC, u8, u8, 8, 0>;
 #[doc = "Field `GPIO_SD6_PRESCALE` reader - "]
-pub struct GPIO_SD6_PRESCALE_R(crate::FieldReader<u8, u8>);
-impl GPIO_SD6_PRESCALE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        GPIO_SD6_PRESCALE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for GPIO_SD6_PRESCALE_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type GPIO_SD6_PRESCALE_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `GPIO_SD6_PRESCALE` writer - "]
-pub struct GPIO_SD6_PRESCALE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> GPIO_SD6_PRESCALE_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 8)) | ((value as u32 & 0xff) << 8);
-        self.w
-    }
-}
+pub type GPIO_SD6_PRESCALE_W<'a> = crate::FieldWriter<'a, u32, SIGMADELTA6_SPEC, u8, u8, 8, 8>;
 impl R {
     #[doc = "Bits 0:7"]
     #[inline(always)]
@@ -104,12 +58,12 @@ impl W {
     #[doc = "Bits 0:7"]
     #[inline(always)]
     pub fn gpio_sd6_in(&mut self) -> GPIO_SD6_IN_W {
-        GPIO_SD6_IN_W { w: self }
+        GPIO_SD6_IN_W::new(self)
     }
     #[doc = "Bits 8:15"]
     #[inline(always)]
     pub fn gpio_sd6_prescale(&mut self) -> GPIO_SD6_PRESCALE_W {
-        GPIO_SD6_PRESCALE_W { w: self }
+        GPIO_SD6_PRESCALE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -118,25 +72,16 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sigmadelta6]
-(index.html) module"]
+#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sigmadelta6](index.html) module"]
 pub struct SIGMADELTA6_SPEC;
 impl crate::RegisterSpec for SIGMADELTA6_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [sigmadelta6::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [sigmadelta6::R](R) reader structure"]
 impl crate::Readable for SIGMADELTA6_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [sigmadelta6::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [sigmadelta6::W](W) writer structure"]
 impl crate::Writable for SIGMADELTA6_SPEC {
     type Writer = W;
 }

@@ -14,20 +14,7 @@ impl From<crate::R<HOST_SLCHOST_CHECK_SUM0_SPEC>> for R {
     }
 }
 #[doc = "Field `HOST_SLCHOST_CHECK_SUM0` reader - "]
-pub struct HOST_SLCHOST_CHECK_SUM0_R(crate::FieldReader<u32, u32>);
-impl HOST_SLCHOST_CHECK_SUM0_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        HOST_SLCHOST_CHECK_SUM0_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for HOST_SLCHOST_CHECK_SUM0_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type HOST_SLCHOST_CHECK_SUM0_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31"]
     #[inline(always)]
@@ -35,16 +22,12 @@ impl R {
         HOST_SLCHOST_CHECK_SUM0_R::new(self.bits)
     }
 }
-#[doc = "\n\nThis register you can [`read`]
-(crate::generic::Reg::read). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [host_slchost_check_sum0]
-(index.html) module"]
+#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [host_slchost_check_sum0](index.html) module"]
 pub struct HOST_SLCHOST_CHECK_SUM0_SPEC;
 impl crate::RegisterSpec for HOST_SLCHOST_CHECK_SUM0_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [host_slchost_check_sum0::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [host_slchost_check_sum0::R](R) reader structure"]
 impl crate::Readable for HOST_SLCHOST_CHECK_SUM0_SPEC {
     type Reader = R;
 }

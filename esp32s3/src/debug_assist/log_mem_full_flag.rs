@@ -35,54 +35,21 @@ impl From<crate::W<LOG_MEM_FULL_FLAG_SPEC>> for W {
     }
 }
 #[doc = "Field `LOG_MEM_FULL_FLAG` reader - when it's 1,show that mem write loop morte than one time."]
-pub struct LOG_MEM_FULL_FLAG_R(crate::FieldReader<bool, bool>);
-impl LOG_MEM_FULL_FLAG_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        LOG_MEM_FULL_FLAG_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LOG_MEM_FULL_FLAG_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type LOG_MEM_FULL_FLAG_R = crate::BitReader<bool>;
 #[doc = "Field `LOG_MEM_FULL_FLAG` writer - when it's 1,show that mem write loop morte than one time."]
-pub struct LOG_MEM_FULL_FLAG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LOG_MEM_FULL_FLAG_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type LOG_MEM_FULL_FLAG_W<'a> = crate::BitWriter<'a, u32, LOG_MEM_FULL_FLAG_SPEC, bool, 0>;
 impl R {
     #[doc = "Bit 0 - when it's 1,show that mem write loop morte than one time."]
     #[inline(always)]
     pub fn log_mem_full_flag(&self) -> LOG_MEM_FULL_FLAG_R {
-        LOG_MEM_FULL_FLAG_R::new((self.bits & 0x01) != 0)
+        LOG_MEM_FULL_FLAG_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - when it's 1,show that mem write loop morte than one time."]
     #[inline(always)]
     pub fn log_mem_full_flag(&mut self) -> LOG_MEM_FULL_FLAG_W {
-        LOG_MEM_FULL_FLAG_W { w: self }
+        LOG_MEM_FULL_FLAG_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -91,25 +58,16 @@ impl W {
         self
     }
 }
-#[doc = "log mem status register\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [log_mem_full_flag]
-(index.html) module"]
+#[doc = "log mem status register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [log_mem_full_flag](index.html) module"]
 pub struct LOG_MEM_FULL_FLAG_SPEC;
 impl crate::RegisterSpec for LOG_MEM_FULL_FLAG_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [log_mem_full_flag::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [log_mem_full_flag::R](R) reader structure"]
 impl crate::Readable for LOG_MEM_FULL_FLAG_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [log_mem_full_flag::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [log_mem_full_flag::W](W) writer structure"]
 impl crate::Writable for LOG_MEM_FULL_FLAG_SPEC {
     type Writer = W;
 }

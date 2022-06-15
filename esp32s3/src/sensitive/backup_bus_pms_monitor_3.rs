@@ -14,20 +14,7 @@ impl From<crate::R<BACKUP_BUS_PMS_MONITOR_3_SPEC>> for R {
     }
 }
 #[doc = "Field `BACKUP_BUS_PMS_MONITOR_VIOLATE_HADDR` reader - Record address information when BackUp initiate illegal access."]
-pub struct BACKUP_BUS_PMS_MONITOR_VIOLATE_HADDR_R(crate::FieldReader<u32, u32>);
-impl BACKUP_BUS_PMS_MONITOR_VIOLATE_HADDR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        BACKUP_BUS_PMS_MONITOR_VIOLATE_HADDR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for BACKUP_BUS_PMS_MONITOR_VIOLATE_HADDR_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type BACKUP_BUS_PMS_MONITOR_VIOLATE_HADDR_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Record address information when BackUp initiate illegal access."]
     #[inline(always)]
@@ -35,16 +22,12 @@ impl R {
         BACKUP_BUS_PMS_MONITOR_VIOLATE_HADDR_R::new(self.bits)
     }
 }
-#[doc = "BackUp permission report register 3.\n\nThis register you can [`read`]
-(crate::generic::Reg::read). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [backup_bus_pms_monitor_3]
-(index.html) module"]
+#[doc = "BackUp permission report register 3.\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [backup_bus_pms_monitor_3](index.html) module"]
 pub struct BACKUP_BUS_PMS_MONITOR_3_SPEC;
 impl crate::RegisterSpec for BACKUP_BUS_PMS_MONITOR_3_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [backup_bus_pms_monitor_3::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [backup_bus_pms_monitor_3::R](R) reader structure"]
 impl crate::Readable for BACKUP_BUS_PMS_MONITOR_3_SPEC {
     type Reader = R;
 }

@@ -35,86 +35,18 @@ impl From<crate::W<TIMER1_CFG0_SPEC>> for W {
     }
 }
 #[doc = "Field `TIMER1_PRESCALE` reader - "]
-pub struct TIMER1_PRESCALE_R(crate::FieldReader<u8, u8>);
-impl TIMER1_PRESCALE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        TIMER1_PRESCALE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TIMER1_PRESCALE_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TIMER1_PRESCALE_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `TIMER1_PRESCALE` writer - "]
-pub struct TIMER1_PRESCALE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TIMER1_PRESCALE_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type TIMER1_PRESCALE_W<'a> = crate::FieldWriter<'a, u32, TIMER1_CFG0_SPEC, u8, u8, 8, 0>;
 #[doc = "Field `TIMER1_PERIOD` reader - "]
-pub struct TIMER1_PERIOD_R(crate::FieldReader<u16, u16>);
-impl TIMER1_PERIOD_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        TIMER1_PERIOD_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TIMER1_PERIOD_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TIMER1_PERIOD_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `TIMER1_PERIOD` writer - "]
-pub struct TIMER1_PERIOD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TIMER1_PERIOD_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xffff << 8)) | ((value as u32 & 0xffff) << 8);
-        self.w
-    }
-}
+pub type TIMER1_PERIOD_W<'a> = crate::FieldWriter<'a, u32, TIMER1_CFG0_SPEC, u16, u16, 16, 8>;
 #[doc = "Field `TIMER1_PERIOD_UPMETHOD` reader - "]
-pub struct TIMER1_PERIOD_UPMETHOD_R(crate::FieldReader<u8, u8>);
-impl TIMER1_PERIOD_UPMETHOD_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        TIMER1_PERIOD_UPMETHOD_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TIMER1_PERIOD_UPMETHOD_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TIMER1_PERIOD_UPMETHOD_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `TIMER1_PERIOD_UPMETHOD` writer - "]
-pub struct TIMER1_PERIOD_UPMETHOD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TIMER1_PERIOD_UPMETHOD_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 24)) | ((value as u32 & 0x03) << 24);
-        self.w
-    }
-}
+pub type TIMER1_PERIOD_UPMETHOD_W<'a> =
+    crate::FieldWriter<'a, u32, TIMER1_CFG0_SPEC, u8, u8, 2, 24>;
 impl R {
     #[doc = "Bits 0:7"]
     #[inline(always)]
@@ -129,24 +61,24 @@ impl R {
     #[doc = "Bits 24:25"]
     #[inline(always)]
     pub fn timer1_period_upmethod(&self) -> TIMER1_PERIOD_UPMETHOD_R {
-        TIMER1_PERIOD_UPMETHOD_R::new(((self.bits >> 24) & 0x03) as u8)
+        TIMER1_PERIOD_UPMETHOD_R::new(((self.bits >> 24) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:7"]
     #[inline(always)]
     pub fn timer1_prescale(&mut self) -> TIMER1_PRESCALE_W {
-        TIMER1_PRESCALE_W { w: self }
+        TIMER1_PRESCALE_W::new(self)
     }
     #[doc = "Bits 8:23"]
     #[inline(always)]
     pub fn timer1_period(&mut self) -> TIMER1_PERIOD_W {
-        TIMER1_PERIOD_W { w: self }
+        TIMER1_PERIOD_W::new(self)
     }
     #[doc = "Bits 24:25"]
     #[inline(always)]
     pub fn timer1_period_upmethod(&mut self) -> TIMER1_PERIOD_UPMETHOD_W {
-        TIMER1_PERIOD_UPMETHOD_W { w: self }
+        TIMER1_PERIOD_UPMETHOD_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -155,25 +87,16 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [timer1_cfg0]
-(index.html) module"]
+#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [timer1_cfg0](index.html) module"]
 pub struct TIMER1_CFG0_SPEC;
 impl crate::RegisterSpec for TIMER1_CFG0_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [timer1_cfg0::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [timer1_cfg0::R](R) reader structure"]
 impl crate::Readable for TIMER1_CFG0_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [timer1_cfg0::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [timer1_cfg0::W](W) writer structure"]
 impl crate::Writable for TIMER1_CFG0_SPEC {
     type Writer = W;
 }

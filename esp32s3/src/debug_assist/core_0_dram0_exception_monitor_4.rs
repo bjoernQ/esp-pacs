@@ -14,20 +14,7 @@ impl From<crate::R<CORE_0_DRAM0_EXCEPTION_MONITOR_4_SPEC>> for R {
     }
 }
 #[doc = "Field `CORE_0_DRAM0_RECORDING_BYTEEN_1` reader - The second dram0's byteen status when trigger DRAM busy interrupt"]
-pub struct CORE_0_DRAM0_RECORDING_BYTEEN_1_R(crate::FieldReader<u16, u16>);
-impl CORE_0_DRAM0_RECORDING_BYTEEN_1_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        CORE_0_DRAM0_RECORDING_BYTEEN_1_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CORE_0_DRAM0_RECORDING_BYTEEN_1_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CORE_0_DRAM0_RECORDING_BYTEEN_1_R = crate::FieldReader<u16, u16>;
 impl R {
     #[doc = "Bits 0:15 - The second dram0's byteen status when trigger DRAM busy interrupt"]
     #[inline(always)]
@@ -35,16 +22,12 @@ impl R {
         CORE_0_DRAM0_RECORDING_BYTEEN_1_R::new((self.bits & 0xffff) as u16)
     }
 }
-#[doc = "core0 bus busy configuration regsiter\n\nThis register you can [`read`]
-(crate::generic::Reg::read). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [core_0_dram0_exception_monitor_4]
-(index.html) module"]
+#[doc = "core0 bus busy configuration regsiter\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [core_0_dram0_exception_monitor_4](index.html) module"]
 pub struct CORE_0_DRAM0_EXCEPTION_MONITOR_4_SPEC;
 impl crate::RegisterSpec for CORE_0_DRAM0_EXCEPTION_MONITOR_4_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [core_0_dram0_exception_monitor_4::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [core_0_dram0_exception_monitor_4::R](R) reader structure"]
 impl crate::Readable for CORE_0_DRAM0_EXCEPTION_MONITOR_4_SPEC {
     type Reader = R;
 }

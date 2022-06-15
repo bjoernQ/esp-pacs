@@ -35,59 +35,15 @@ impl From<crate::W<CORE_0_PIF_PMS_CONSTRAIN_9_SPEC>> for W {
     }
 }
 #[doc = "Field `CORE_0_PIF_PMS_CONSTRAIN_RTCFAST_SPLTADDR_WORLD_0` reader - core_0_pif_pms_constrain_rtcfast_spltaddr_world_0"]
-pub struct CORE_0_PIF_PMS_CONSTRAIN_RTCFAST_SPLTADDR_WORLD_0_R(crate::FieldReader<u16, u16>);
-impl CORE_0_PIF_PMS_CONSTRAIN_RTCFAST_SPLTADDR_WORLD_0_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        CORE_0_PIF_PMS_CONSTRAIN_RTCFAST_SPLTADDR_WORLD_0_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CORE_0_PIF_PMS_CONSTRAIN_RTCFAST_SPLTADDR_WORLD_0_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CORE_0_PIF_PMS_CONSTRAIN_RTCFAST_SPLTADDR_WORLD_0_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `CORE_0_PIF_PMS_CONSTRAIN_RTCFAST_SPLTADDR_WORLD_0` writer - core_0_pif_pms_constrain_rtcfast_spltaddr_world_0"]
-pub struct CORE_0_PIF_PMS_CONSTRAIN_RTCFAST_SPLTADDR_WORLD_0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CORE_0_PIF_PMS_CONSTRAIN_RTCFAST_SPLTADDR_WORLD_0_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07ff) | (value as u32 & 0x07ff);
-        self.w
-    }
-}
+pub type CORE_0_PIF_PMS_CONSTRAIN_RTCFAST_SPLTADDR_WORLD_0_W<'a> =
+    crate::FieldWriter<'a, u32, CORE_0_PIF_PMS_CONSTRAIN_9_SPEC, u16, u16, 11, 0>;
 #[doc = "Field `CORE_0_PIF_PMS_CONSTRAIN_RTCFAST_SPLTADDR_WORLD_1` reader - core_0_pif_pms_constrain_rtcfast_spltaddr_world_1"]
-pub struct CORE_0_PIF_PMS_CONSTRAIN_RTCFAST_SPLTADDR_WORLD_1_R(crate::FieldReader<u16, u16>);
-impl CORE_0_PIF_PMS_CONSTRAIN_RTCFAST_SPLTADDR_WORLD_1_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        CORE_0_PIF_PMS_CONSTRAIN_RTCFAST_SPLTADDR_WORLD_1_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CORE_0_PIF_PMS_CONSTRAIN_RTCFAST_SPLTADDR_WORLD_1_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CORE_0_PIF_PMS_CONSTRAIN_RTCFAST_SPLTADDR_WORLD_1_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `CORE_0_PIF_PMS_CONSTRAIN_RTCFAST_SPLTADDR_WORLD_1` writer - core_0_pif_pms_constrain_rtcfast_spltaddr_world_1"]
-pub struct CORE_0_PIF_PMS_CONSTRAIN_RTCFAST_SPLTADDR_WORLD_1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CORE_0_PIF_PMS_CONSTRAIN_RTCFAST_SPLTADDR_WORLD_1_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07ff << 11)) | ((value as u32 & 0x07ff) << 11);
-        self.w
-    }
-}
+pub type CORE_0_PIF_PMS_CONSTRAIN_RTCFAST_SPLTADDR_WORLD_1_W<'a> =
+    crate::FieldWriter<'a, u32, CORE_0_PIF_PMS_CONSTRAIN_9_SPEC, u16, u16, 11, 11>;
 impl R {
     #[doc = "Bits 0:10 - core_0_pif_pms_constrain_rtcfast_spltaddr_world_0"]
     #[inline(always)]
@@ -112,14 +68,14 @@ impl W {
     pub fn core_0_pif_pms_constrain_rtcfast_spltaddr_world_0(
         &mut self,
     ) -> CORE_0_PIF_PMS_CONSTRAIN_RTCFAST_SPLTADDR_WORLD_0_W {
-        CORE_0_PIF_PMS_CONSTRAIN_RTCFAST_SPLTADDR_WORLD_0_W { w: self }
+        CORE_0_PIF_PMS_CONSTRAIN_RTCFAST_SPLTADDR_WORLD_0_W::new(self)
     }
     #[doc = "Bits 11:21 - core_0_pif_pms_constrain_rtcfast_spltaddr_world_1"]
     #[inline(always)]
     pub fn core_0_pif_pms_constrain_rtcfast_spltaddr_world_1(
         &mut self,
     ) -> CORE_0_PIF_PMS_CONSTRAIN_RTCFAST_SPLTADDR_WORLD_1_W {
-        CORE_0_PIF_PMS_CONSTRAIN_RTCFAST_SPLTADDR_WORLD_1_W { w: self }
+        CORE_0_PIF_PMS_CONSTRAIN_RTCFAST_SPLTADDR_WORLD_1_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -128,25 +84,16 @@ impl W {
         self
     }
 }
-#[doc = "SENSITIVE_CORE_0_PIF_PMS_CONSTRAIN_9_REG\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [core_0_pif_pms_constrain_9]
-(index.html) module"]
+#[doc = "SENSITIVE_CORE_0_PIF_PMS_CONSTRAIN_9_REG\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [core_0_pif_pms_constrain_9](index.html) module"]
 pub struct CORE_0_PIF_PMS_CONSTRAIN_9_SPEC;
 impl crate::RegisterSpec for CORE_0_PIF_PMS_CONSTRAIN_9_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [core_0_pif_pms_constrain_9::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [core_0_pif_pms_constrain_9::R](R) reader structure"]
 impl crate::Readable for CORE_0_PIF_PMS_CONSTRAIN_9_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [core_0_pif_pms_constrain_9::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [core_0_pif_pms_constrain_9::W](W) writer structure"]
 impl crate::Writable for CORE_0_PIF_PMS_CONSTRAIN_9_SPEC {
     type Writer = W;
 }

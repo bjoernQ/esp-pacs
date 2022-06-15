@@ -35,229 +35,33 @@ impl From<crate::W<ULP_CP_CTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `ULP_CP_MEM_ADDR_INIT` reader - "]
-pub struct ULP_CP_MEM_ADDR_INIT_R(crate::FieldReader<u16, u16>);
-impl ULP_CP_MEM_ADDR_INIT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        ULP_CP_MEM_ADDR_INIT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ULP_CP_MEM_ADDR_INIT_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ULP_CP_MEM_ADDR_INIT_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `ULP_CP_MEM_ADDR_INIT` writer - "]
-pub struct ULP_CP_MEM_ADDR_INIT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ULP_CP_MEM_ADDR_INIT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07ff) | (value as u32 & 0x07ff);
-        self.w
-    }
-}
+pub type ULP_CP_MEM_ADDR_INIT_W<'a> =
+    crate::FieldWriter<'a, u32, ULP_CP_CTRL_SPEC, u16, u16, 11, 0>;
 #[doc = "Field `ULP_CP_MEM_ADDR_SIZE` reader - "]
-pub struct ULP_CP_MEM_ADDR_SIZE_R(crate::FieldReader<u16, u16>);
-impl ULP_CP_MEM_ADDR_SIZE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        ULP_CP_MEM_ADDR_SIZE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ULP_CP_MEM_ADDR_SIZE_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ULP_CP_MEM_ADDR_SIZE_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `ULP_CP_MEM_ADDR_SIZE` writer - "]
-pub struct ULP_CP_MEM_ADDR_SIZE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ULP_CP_MEM_ADDR_SIZE_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07ff << 11)) | ((value as u32 & 0x07ff) << 11);
-        self.w
-    }
-}
+pub type ULP_CP_MEM_ADDR_SIZE_W<'a> =
+    crate::FieldWriter<'a, u32, ULP_CP_CTRL_SPEC, u16, u16, 11, 11>;
 #[doc = "Field `ULP_CP_MEM_OFFSET_CLR` writer - "]
-pub struct ULP_CP_MEM_OFFSET_CLR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ULP_CP_MEM_OFFSET_CLR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 22)) | ((value as u32 & 0x01) << 22);
-        self.w
-    }
-}
+pub type ULP_CP_MEM_OFFSET_CLR_W<'a> = crate::BitWriter<'a, u32, ULP_CP_CTRL_SPEC, bool, 22>;
 #[doc = "Field `ULP_CP_CLK_FO` reader - ULP-FSM clock force on"]
-pub struct ULP_CP_CLK_FO_R(crate::FieldReader<bool, bool>);
-impl ULP_CP_CLK_FO_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ULP_CP_CLK_FO_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ULP_CP_CLK_FO_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ULP_CP_CLK_FO_R = crate::BitReader<bool>;
 #[doc = "Field `ULP_CP_CLK_FO` writer - ULP-FSM clock force on"]
-pub struct ULP_CP_CLK_FO_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ULP_CP_CLK_FO_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 28)) | ((value as u32 & 0x01) << 28);
-        self.w
-    }
-}
+pub type ULP_CP_CLK_FO_W<'a> = crate::BitWriter<'a, u32, ULP_CP_CTRL_SPEC, bool, 28>;
 #[doc = "Field `ULP_CP_RESET` reader - ULP-FSM clock software reset"]
-pub struct ULP_CP_RESET_R(crate::FieldReader<bool, bool>);
-impl ULP_CP_RESET_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ULP_CP_RESET_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ULP_CP_RESET_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ULP_CP_RESET_R = crate::BitReader<bool>;
 #[doc = "Field `ULP_CP_RESET` writer - ULP-FSM clock software reset"]
-pub struct ULP_CP_RESET_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ULP_CP_RESET_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 29)) | ((value as u32 & 0x01) << 29);
-        self.w
-    }
-}
+pub type ULP_CP_RESET_W<'a> = crate::BitWriter<'a, u32, ULP_CP_CTRL_SPEC, bool, 29>;
 #[doc = "Field `ULP_CP_FORCE_START_TOP` reader - Write 1 to start ULP-FSM by software"]
-pub struct ULP_CP_FORCE_START_TOP_R(crate::FieldReader<bool, bool>);
-impl ULP_CP_FORCE_START_TOP_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ULP_CP_FORCE_START_TOP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ULP_CP_FORCE_START_TOP_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ULP_CP_FORCE_START_TOP_R = crate::BitReader<bool>;
 #[doc = "Field `ULP_CP_FORCE_START_TOP` writer - Write 1 to start ULP-FSM by software"]
-pub struct ULP_CP_FORCE_START_TOP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ULP_CP_FORCE_START_TOP_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 30)) | ((value as u32 & 0x01) << 30);
-        self.w
-    }
-}
+pub type ULP_CP_FORCE_START_TOP_W<'a> = crate::BitWriter<'a, u32, ULP_CP_CTRL_SPEC, bool, 30>;
 #[doc = "Field `ULP_CP_START_TOP` reader - Write 1 to start ULP-FSM"]
-pub struct ULP_CP_START_TOP_R(crate::FieldReader<bool, bool>);
-impl ULP_CP_START_TOP_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ULP_CP_START_TOP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ULP_CP_START_TOP_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ULP_CP_START_TOP_R = crate::BitReader<bool>;
 #[doc = "Field `ULP_CP_START_TOP` writer - Write 1 to start ULP-FSM"]
-pub struct ULP_CP_START_TOP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ULP_CP_START_TOP_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
-        self.w
-    }
-}
+pub type ULP_CP_START_TOP_W<'a> = crate::BitWriter<'a, u32, ULP_CP_CTRL_SPEC, bool, 31>;
 impl R {
     #[doc = "Bits 0:10"]
     #[inline(always)]
@@ -272,59 +76,59 @@ impl R {
     #[doc = "Bit 28 - ULP-FSM clock force on"]
     #[inline(always)]
     pub fn ulp_cp_clk_fo(&self) -> ULP_CP_CLK_FO_R {
-        ULP_CP_CLK_FO_R::new(((self.bits >> 28) & 0x01) != 0)
+        ULP_CP_CLK_FO_R::new(((self.bits >> 28) & 1) != 0)
     }
     #[doc = "Bit 29 - ULP-FSM clock software reset"]
     #[inline(always)]
     pub fn ulp_cp_reset(&self) -> ULP_CP_RESET_R {
-        ULP_CP_RESET_R::new(((self.bits >> 29) & 0x01) != 0)
+        ULP_CP_RESET_R::new(((self.bits >> 29) & 1) != 0)
     }
     #[doc = "Bit 30 - Write 1 to start ULP-FSM by software"]
     #[inline(always)]
     pub fn ulp_cp_force_start_top(&self) -> ULP_CP_FORCE_START_TOP_R {
-        ULP_CP_FORCE_START_TOP_R::new(((self.bits >> 30) & 0x01) != 0)
+        ULP_CP_FORCE_START_TOP_R::new(((self.bits >> 30) & 1) != 0)
     }
     #[doc = "Bit 31 - Write 1 to start ULP-FSM"]
     #[inline(always)]
     pub fn ulp_cp_start_top(&self) -> ULP_CP_START_TOP_R {
-        ULP_CP_START_TOP_R::new(((self.bits >> 31) & 0x01) != 0)
+        ULP_CP_START_TOP_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:10"]
     #[inline(always)]
     pub fn ulp_cp_mem_addr_init(&mut self) -> ULP_CP_MEM_ADDR_INIT_W {
-        ULP_CP_MEM_ADDR_INIT_W { w: self }
+        ULP_CP_MEM_ADDR_INIT_W::new(self)
     }
     #[doc = "Bits 11:21"]
     #[inline(always)]
     pub fn ulp_cp_mem_addr_size(&mut self) -> ULP_CP_MEM_ADDR_SIZE_W {
-        ULP_CP_MEM_ADDR_SIZE_W { w: self }
+        ULP_CP_MEM_ADDR_SIZE_W::new(self)
     }
     #[doc = "Bit 22"]
     #[inline(always)]
     pub fn ulp_cp_mem_offset_clr(&mut self) -> ULP_CP_MEM_OFFSET_CLR_W {
-        ULP_CP_MEM_OFFSET_CLR_W { w: self }
+        ULP_CP_MEM_OFFSET_CLR_W::new(self)
     }
     #[doc = "Bit 28 - ULP-FSM clock force on"]
     #[inline(always)]
     pub fn ulp_cp_clk_fo(&mut self) -> ULP_CP_CLK_FO_W {
-        ULP_CP_CLK_FO_W { w: self }
+        ULP_CP_CLK_FO_W::new(self)
     }
     #[doc = "Bit 29 - ULP-FSM clock software reset"]
     #[inline(always)]
     pub fn ulp_cp_reset(&mut self) -> ULP_CP_RESET_W {
-        ULP_CP_RESET_W { w: self }
+        ULP_CP_RESET_W::new(self)
     }
     #[doc = "Bit 30 - Write 1 to start ULP-FSM by software"]
     #[inline(always)]
     pub fn ulp_cp_force_start_top(&mut self) -> ULP_CP_FORCE_START_TOP_W {
-        ULP_CP_FORCE_START_TOP_W { w: self }
+        ULP_CP_FORCE_START_TOP_W::new(self)
     }
     #[doc = "Bit 31 - Write 1 to start ULP-FSM"]
     #[inline(always)]
     pub fn ulp_cp_start_top(&mut self) -> ULP_CP_START_TOP_W {
-        ULP_CP_START_TOP_W { w: self }
+        ULP_CP_START_TOP_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -333,25 +137,16 @@ impl W {
         self
     }
 }
-#[doc = "ULP-FSM configuration register\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ulp_cp_ctrl]
-(index.html) module"]
+#[doc = "ULP-FSM configuration register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ulp_cp_ctrl](index.html) module"]
 pub struct ULP_CP_CTRL_SPEC;
 impl crate::RegisterSpec for ULP_CP_CTRL_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [ulp_cp_ctrl::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [ulp_cp_ctrl::R](R) reader structure"]
 impl crate::Readable for ULP_CP_CTRL_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [ulp_cp_ctrl::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [ulp_cp_ctrl::W](W) writer structure"]
 impl crate::Writable for ULP_CP_CTRL_SPEC {
     type Writer = W;
 }

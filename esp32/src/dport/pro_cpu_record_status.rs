@@ -14,37 +14,20 @@ impl From<crate::R<PRO_CPU_RECORD_STATUS_SPEC>> for R {
     }
 }
 #[doc = "Field `PRO_CPU_RECORDING` reader - "]
-pub struct PRO_CPU_RECORDING_R(crate::FieldReader<bool, bool>);
-impl PRO_CPU_RECORDING_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        PRO_CPU_RECORDING_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PRO_CPU_RECORDING_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PRO_CPU_RECORDING_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 0"]
     #[inline(always)]
     pub fn pro_cpu_recording(&self) -> PRO_CPU_RECORDING_R {
-        PRO_CPU_RECORDING_R::new((self.bits & 0x01) != 0)
+        PRO_CPU_RECORDING_R::new((self.bits & 1) != 0)
     }
 }
-#[doc = "\n\nThis register you can [`read`]
-(crate::generic::Reg::read). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pro_cpu_record_status]
-(index.html) module"]
+#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pro_cpu_record_status](index.html) module"]
 pub struct PRO_CPU_RECORD_STATUS_SPEC;
 impl crate::RegisterSpec for PRO_CPU_RECORD_STATUS_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [pro_cpu_record_status::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [pro_cpu_record_status::R](R) reader structure"]
 impl crate::Readable for PRO_CPU_RECORD_STATUS_SPEC {
     type Reader = R;
 }

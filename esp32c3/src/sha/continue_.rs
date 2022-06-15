@@ -14,20 +14,7 @@ impl From<crate::R<CONTINUE_SPEC>> for R {
     }
 }
 #[doc = "Field `CONTINUE` reader - Reserved."]
-pub struct CONTINUE_R(crate::FieldReader<u32, u32>);
-impl CONTINUE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        CONTINUE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CONTINUE_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CONTINUE_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 1:31 - Reserved."]
     #[inline(always)]
@@ -35,16 +22,12 @@ impl R {
         CONTINUE_R::new(((self.bits >> 1) & 0x7fff_ffff) as u32)
     }
 }
-#[doc = "Typical SHA configuration register 1.\n\nThis register you can [`read`]
-(crate::generic::Reg::read). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [continue_]
-(index.html) module"]
+#[doc = "Typical SHA configuration register 1.\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [continue_](index.html) module"]
 pub struct CONTINUE_SPEC;
 impl crate::RegisterSpec for CONTINUE_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [continue_::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [continue_::R](R) reader structure"]
 impl crate::Readable for CONTINUE_SPEC {
     type Reader = R;
 }

@@ -20,32 +20,12 @@ impl From<crate::W<SET_INVALIDATE_JTAG_SPEC>> for W {
     }
 }
 #[doc = "Field `SET_INVALIDATE_JTAG` writer - Set this bit to clear calculation results in JTAG re-enable function under downstream mode."]
-pub struct SET_INVALIDATE_JTAG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SET_INVALIDATE_JTAG_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type SET_INVALIDATE_JTAG_W<'a> = crate::BitWriter<'a, u32, SET_INVALIDATE_JTAG_SPEC, bool, 0>;
 impl W {
     #[doc = "Bit 0 - Set this bit to clear calculation results in JTAG re-enable function under downstream mode."]
     #[inline(always)]
     pub fn set_invalidate_jtag(&mut self) -> SET_INVALIDATE_JTAG_W {
-        SET_INVALIDATE_JTAG_W { w: self }
+        SET_INVALIDATE_JTAG_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -54,18 +34,12 @@ impl W {
         self
     }
 }
-#[doc = "Invalidate JTAG result register\n\nThis register you can [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [set_invalidate_jtag]
-(index.html) module"]
+#[doc = "Invalidate JTAG result register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [set_invalidate_jtag](index.html) module"]
 pub struct SET_INVALIDATE_JTAG_SPEC;
 impl crate::RegisterSpec for SET_INVALIDATE_JTAG_SPEC {
     type Ux = u32;
 }
-#[doc = "`write(|w| ..)` method takes [set_invalidate_jtag::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [set_invalidate_jtag::W](W) writer structure"]
 impl crate::Writable for SET_INVALIDATE_JTAG_SPEC {
     type Writer = W;
 }

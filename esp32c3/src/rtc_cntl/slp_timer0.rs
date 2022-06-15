@@ -35,32 +35,9 @@ impl From<crate::W<SLP_TIMER0_SPEC>> for W {
     }
 }
 #[doc = "Field `SLP_VAL_LO` reader - configure the sleep time"]
-pub struct SLP_VAL_LO_R(crate::FieldReader<u32, u32>);
-impl SLP_VAL_LO_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        SLP_VAL_LO_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SLP_VAL_LO_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SLP_VAL_LO_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `SLP_VAL_LO` writer - configure the sleep time"]
-pub struct SLP_VAL_LO_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SLP_VAL_LO_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
-    }
-}
+pub type SLP_VAL_LO_W<'a> = crate::FieldWriter<'a, u32, SLP_TIMER0_SPEC, u32, u32, 32, 0>;
 impl R {
     #[doc = "Bits 0:31 - configure the sleep time"]
     #[inline(always)]
@@ -72,7 +49,7 @@ impl W {
     #[doc = "Bits 0:31 - configure the sleep time"]
     #[inline(always)]
     pub fn slp_val_lo(&mut self) -> SLP_VAL_LO_W {
-        SLP_VAL_LO_W { w: self }
+        SLP_VAL_LO_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -81,25 +58,16 @@ impl W {
         self
     }
 }
-#[doc = "rtc configure register\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [slp_timer0]
-(index.html) module"]
+#[doc = "rtc configure register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [slp_timer0](index.html) module"]
 pub struct SLP_TIMER0_SPEC;
 impl crate::RegisterSpec for SLP_TIMER0_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [slp_timer0::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [slp_timer0::R](R) reader structure"]
 impl crate::Readable for SLP_TIMER0_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [slp_timer0::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [slp_timer0::W](W) writer structure"]
 impl crate::Writable for SLP_TIMER0_SPEC {
     type Writer = W;
 }

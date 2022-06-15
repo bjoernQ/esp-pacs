@@ -35,57 +35,11 @@ impl From<crate::W<INFIFO_POP_SPEC>> for W {
     }
 }
 #[doc = "Field `INFIFO_RDATA` reader - "]
-pub struct INFIFO_RDATA_R(crate::FieldReader<u16, u16>);
-impl INFIFO_RDATA_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        INFIFO_RDATA_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for INFIFO_RDATA_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type INFIFO_RDATA_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `INFIFO_POP` reader - "]
-pub struct INFIFO_POP_R(crate::FieldReader<bool, bool>);
-impl INFIFO_POP_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        INFIFO_POP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for INFIFO_POP_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type INFIFO_POP_R = crate::BitReader<bool>;
 #[doc = "Field `INFIFO_POP` writer - "]
-pub struct INFIFO_POP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> INFIFO_POP_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
-        self.w
-    }
-}
+pub type INFIFO_POP_W<'a> = crate::BitWriter<'a, u32, INFIFO_POP_SPEC, bool, 16>;
 impl R {
     #[doc = "Bits 0:11"]
     #[inline(always)]
@@ -95,14 +49,14 @@ impl R {
     #[doc = "Bit 16"]
     #[inline(always)]
     pub fn infifo_pop(&self) -> INFIFO_POP_R {
-        INFIFO_POP_R::new(((self.bits >> 16) & 0x01) != 0)
+        INFIFO_POP_R::new(((self.bits >> 16) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 16"]
     #[inline(always)]
     pub fn infifo_pop(&mut self) -> INFIFO_POP_W {
-        INFIFO_POP_W { w: self }
+        INFIFO_POP_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -111,25 +65,16 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [infifo_pop]
-(index.html) module"]
+#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [infifo_pop](index.html) module"]
 pub struct INFIFO_POP_SPEC;
 impl crate::RegisterSpec for INFIFO_POP_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [infifo_pop::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [infifo_pop::R](R) reader structure"]
 impl crate::Readable for INFIFO_POP_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [infifo_pop::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [infifo_pop::W](W) writer structure"]
 impl crate::Writable for INFIFO_POP_SPEC {
     type Writer = W;
 }

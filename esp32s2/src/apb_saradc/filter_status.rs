@@ -14,35 +14,9 @@ impl From<crate::R<FILTER_STATUS_SPEC>> for R {
     }
 }
 #[doc = "Field `ADC2_FILTER_DATA` reader - ADC2 filter data."]
-pub struct ADC2_FILTER_DATA_R(crate::FieldReader<u16, u16>);
-impl ADC2_FILTER_DATA_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        ADC2_FILTER_DATA_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ADC2_FILTER_DATA_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ADC2_FILTER_DATA_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `ADC1_FILTER_DATA` reader - ADC1 filter data."]
-pub struct ADC1_FILTER_DATA_R(crate::FieldReader<u16, u16>);
-impl ADC1_FILTER_DATA_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        ADC1_FILTER_DATA_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ADC1_FILTER_DATA_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ADC1_FILTER_DATA_R = crate::FieldReader<u16, u16>;
 impl R {
     #[doc = "Bits 0:15 - ADC2 filter data."]
     #[inline(always)]
@@ -55,16 +29,12 @@ impl R {
         ADC1_FILTER_DATA_R::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
-#[doc = "Data status of DIG ADC2 filter\n\nThis register you can [`read`]
-(crate::generic::Reg::read). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [filter_status]
-(index.html) module"]
+#[doc = "Data status of DIG ADC2 filter\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [filter_status](index.html) module"]
 pub struct FILTER_STATUS_SPEC;
 impl crate::RegisterSpec for FILTER_STATUS_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [filter_status::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [filter_status::R](R) reader structure"]
 impl crate::Readable for FILTER_STATUS_SPEC {
     type Reader = R;
 }

@@ -35,148 +35,49 @@ impl From<crate::W<PRO_DCACHE_CTRL1_SPEC>> for W {
     }
 }
 #[doc = "Field `PRO_DCACHE_MASK_BUS0` reader - The bit is used to disable dbus0, 0: enable, 1: disable"]
-pub struct PRO_DCACHE_MASK_BUS0_R(crate::FieldReader<bool, bool>);
-impl PRO_DCACHE_MASK_BUS0_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        PRO_DCACHE_MASK_BUS0_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PRO_DCACHE_MASK_BUS0_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PRO_DCACHE_MASK_BUS0_R = crate::BitReader<bool>;
 #[doc = "Field `PRO_DCACHE_MASK_BUS0` writer - The bit is used to disable dbus0, 0: enable, 1: disable"]
-pub struct PRO_DCACHE_MASK_BUS0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PRO_DCACHE_MASK_BUS0_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type PRO_DCACHE_MASK_BUS0_W<'a> = crate::BitWriter<'a, u32, PRO_DCACHE_CTRL1_SPEC, bool, 0>;
 #[doc = "Field `PRO_DCACHE_MASK_BUS1` reader - The bit is used to disable dbus1, 0: enable, 1: disable"]
-pub struct PRO_DCACHE_MASK_BUS1_R(crate::FieldReader<bool, bool>);
-impl PRO_DCACHE_MASK_BUS1_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        PRO_DCACHE_MASK_BUS1_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PRO_DCACHE_MASK_BUS1_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PRO_DCACHE_MASK_BUS1_R = crate::BitReader<bool>;
 #[doc = "Field `PRO_DCACHE_MASK_BUS1` writer - The bit is used to disable dbus1, 0: enable, 1: disable"]
-pub struct PRO_DCACHE_MASK_BUS1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PRO_DCACHE_MASK_BUS1_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type PRO_DCACHE_MASK_BUS1_W<'a> = crate::BitWriter<'a, u32, PRO_DCACHE_CTRL1_SPEC, bool, 1>;
 #[doc = "Field `PRO_DCACHE_MASK_BUS2` reader - The bit is used to disable dbus2, 0: enable, 1: disable"]
-pub struct PRO_DCACHE_MASK_BUS2_R(crate::FieldReader<bool, bool>);
-impl PRO_DCACHE_MASK_BUS2_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        PRO_DCACHE_MASK_BUS2_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PRO_DCACHE_MASK_BUS2_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PRO_DCACHE_MASK_BUS2_R = crate::BitReader<bool>;
 #[doc = "Field `PRO_DCACHE_MASK_BUS2` writer - The bit is used to disable dbus2, 0: enable, 1: disable"]
-pub struct PRO_DCACHE_MASK_BUS2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PRO_DCACHE_MASK_BUS2_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type PRO_DCACHE_MASK_BUS2_W<'a> = crate::BitWriter<'a, u32, PRO_DCACHE_CTRL1_SPEC, bool, 2>;
 impl R {
     #[doc = "Bit 0 - The bit is used to disable dbus0, 0: enable, 1: disable"]
     #[inline(always)]
     pub fn pro_dcache_mask_bus0(&self) -> PRO_DCACHE_MASK_BUS0_R {
-        PRO_DCACHE_MASK_BUS0_R::new((self.bits & 0x01) != 0)
+        PRO_DCACHE_MASK_BUS0_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - The bit is used to disable dbus1, 0: enable, 1: disable"]
     #[inline(always)]
     pub fn pro_dcache_mask_bus1(&self) -> PRO_DCACHE_MASK_BUS1_R {
-        PRO_DCACHE_MASK_BUS1_R::new(((self.bits >> 1) & 0x01) != 0)
+        PRO_DCACHE_MASK_BUS1_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - The bit is used to disable dbus2, 0: enable, 1: disable"]
     #[inline(always)]
     pub fn pro_dcache_mask_bus2(&self) -> PRO_DCACHE_MASK_BUS2_R {
-        PRO_DCACHE_MASK_BUS2_R::new(((self.bits >> 2) & 0x01) != 0)
+        PRO_DCACHE_MASK_BUS2_R::new(((self.bits >> 2) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - The bit is used to disable dbus0, 0: enable, 1: disable"]
     #[inline(always)]
     pub fn pro_dcache_mask_bus0(&mut self) -> PRO_DCACHE_MASK_BUS0_W {
-        PRO_DCACHE_MASK_BUS0_W { w: self }
+        PRO_DCACHE_MASK_BUS0_W::new(self)
     }
     #[doc = "Bit 1 - The bit is used to disable dbus1, 0: enable, 1: disable"]
     #[inline(always)]
     pub fn pro_dcache_mask_bus1(&mut self) -> PRO_DCACHE_MASK_BUS1_W {
-        PRO_DCACHE_MASK_BUS1_W { w: self }
+        PRO_DCACHE_MASK_BUS1_W::new(self)
     }
     #[doc = "Bit 2 - The bit is used to disable dbus2, 0: enable, 1: disable"]
     #[inline(always)]
     pub fn pro_dcache_mask_bus2(&mut self) -> PRO_DCACHE_MASK_BUS2_W {
-        PRO_DCACHE_MASK_BUS2_W { w: self }
+        PRO_DCACHE_MASK_BUS2_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -185,25 +86,16 @@ impl W {
         self
     }
 }
-#[doc = "register description\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pro_dcache_ctrl1]
-(index.html) module"]
+#[doc = "register description\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pro_dcache_ctrl1](index.html) module"]
 pub struct PRO_DCACHE_CTRL1_SPEC;
 impl crate::RegisterSpec for PRO_DCACHE_CTRL1_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [pro_dcache_ctrl1::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [pro_dcache_ctrl1::R](R) reader structure"]
 impl crate::Readable for PRO_DCACHE_CTRL1_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [pro_dcache_ctrl1::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [pro_dcache_ctrl1::W](W) writer structure"]
 impl crate::Writable for PRO_DCACHE_CTRL1_SPEC {
     type Writer = W;
 }

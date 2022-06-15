@@ -14,95 +14,17 @@ impl From<crate::R<LC_STATE0_SPEC>> for R {
     }
 }
 #[doc = "Field `OUTLINK_DSCR_ADDR` reader - I2S DMA out descriptor address."]
-pub struct OUTLINK_DSCR_ADDR_R(crate::FieldReader<u32, u32>);
-impl OUTLINK_DSCR_ADDR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        OUTLINK_DSCR_ADDR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for OUTLINK_DSCR_ADDR_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type OUTLINK_DSCR_ADDR_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `OUT_DSCR_STATE` reader - I2S DMA out descriptor state."]
-pub struct OUT_DSCR_STATE_R(crate::FieldReader<u8, u8>);
-impl OUT_DSCR_STATE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        OUT_DSCR_STATE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for OUT_DSCR_STATE_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type OUT_DSCR_STATE_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `OUT_STATE` reader - I2S DMA out data state."]
-pub struct OUT_STATE_R(crate::FieldReader<u8, u8>);
-impl OUT_STATE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        OUT_STATE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for OUT_STATE_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type OUT_STATE_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `OUTFIFO_CNT` reader - The remains of I2S DMA outfifo data."]
-pub struct OUTFIFO_CNT_R(crate::FieldReader<u8, u8>);
-impl OUTFIFO_CNT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        OUTFIFO_CNT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for OUTFIFO_CNT_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type OUTFIFO_CNT_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `OUT_FULL` reader - I2S DMA outfifo is full."]
-pub struct OUT_FULL_R(crate::FieldReader<bool, bool>);
-impl OUT_FULL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        OUT_FULL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for OUT_FULL_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type OUT_FULL_R = crate::BitReader<bool>;
 #[doc = "Field `OUT_EMPTY` reader - I2S DMA outfifo is empty."]
-pub struct OUT_EMPTY_R(crate::FieldReader<bool, bool>);
-impl OUT_EMPTY_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        OUT_EMPTY_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for OUT_EMPTY_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type OUT_EMPTY_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bits 0:17 - I2S DMA out descriptor address."]
     #[inline(always)]
@@ -112,12 +34,12 @@ impl R {
     #[doc = "Bits 18:19 - I2S DMA out descriptor state."]
     #[inline(always)]
     pub fn out_dscr_state(&self) -> OUT_DSCR_STATE_R {
-        OUT_DSCR_STATE_R::new(((self.bits >> 18) & 0x03) as u8)
+        OUT_DSCR_STATE_R::new(((self.bits >> 18) & 3) as u8)
     }
     #[doc = "Bits 20:22 - I2S DMA out data state."]
     #[inline(always)]
     pub fn out_state(&self) -> OUT_STATE_R {
-        OUT_STATE_R::new(((self.bits >> 20) & 0x07) as u8)
+        OUT_STATE_R::new(((self.bits >> 20) & 7) as u8)
     }
     #[doc = "Bits 23:29 - The remains of I2S DMA outfifo data."]
     #[inline(always)]
@@ -127,24 +49,20 @@ impl R {
     #[doc = "Bit 30 - I2S DMA outfifo is full."]
     #[inline(always)]
     pub fn out_full(&self) -> OUT_FULL_R {
-        OUT_FULL_R::new(((self.bits >> 30) & 0x01) != 0)
+        OUT_FULL_R::new(((self.bits >> 30) & 1) != 0)
     }
     #[doc = "Bit 31 - I2S DMA outfifo is empty."]
     #[inline(always)]
     pub fn out_empty(&self) -> OUT_EMPTY_R {
-        OUT_EMPTY_R::new(((self.bits >> 31) & 0x01) != 0)
+        OUT_EMPTY_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
-#[doc = "I2S DMA TX status\n\nThis register you can [`read`]
-(crate::generic::Reg::read). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [lc_state0]
-(index.html) module"]
+#[doc = "I2S DMA TX status\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [lc_state0](index.html) module"]
 pub struct LC_STATE0_SPEC;
 impl crate::RegisterSpec for LC_STATE0_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [lc_state0::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [lc_state0::R](R) reader structure"]
 impl crate::Readable for LC_STATE0_SPEC {
     type Reader = R;
 }

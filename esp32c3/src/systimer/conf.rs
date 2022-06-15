@@ -35,524 +35,161 @@ impl From<crate::W<CONF_SPEC>> for W {
     }
 }
 #[doc = "Field `SYSTIMER_CLK_FO` reader - systimer clock force on"]
-pub struct SYSTIMER_CLK_FO_R(crate::FieldReader<bool, bool>);
-impl SYSTIMER_CLK_FO_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        SYSTIMER_CLK_FO_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SYSTIMER_CLK_FO_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SYSTIMER_CLK_FO_R = crate::BitReader<bool>;
 #[doc = "Field `SYSTIMER_CLK_FO` writer - systimer clock force on"]
-pub struct SYSTIMER_CLK_FO_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SYSTIMER_CLK_FO_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type SYSTIMER_CLK_FO_W<'a> = crate::BitWriter<'a, u32, CONF_SPEC, bool, 0>;
 #[doc = "Field `TARGET2_WORK_EN` reader - target2 work enable"]
-pub struct TARGET2_WORK_EN_R(crate::FieldReader<bool, bool>);
-impl TARGET2_WORK_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TARGET2_WORK_EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TARGET2_WORK_EN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TARGET2_WORK_EN_R = crate::BitReader<bool>;
 #[doc = "Field `TARGET2_WORK_EN` writer - target2 work enable"]
-pub struct TARGET2_WORK_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TARGET2_WORK_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 22)) | ((value as u32 & 0x01) << 22);
-        self.w
-    }
-}
+pub type TARGET2_WORK_EN_W<'a> = crate::BitWriter<'a, u32, CONF_SPEC, bool, 22>;
 #[doc = "Field `TARGET1_WORK_EN` reader - target1 work enable"]
-pub struct TARGET1_WORK_EN_R(crate::FieldReader<bool, bool>);
-impl TARGET1_WORK_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TARGET1_WORK_EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TARGET1_WORK_EN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TARGET1_WORK_EN_R = crate::BitReader<bool>;
 #[doc = "Field `TARGET1_WORK_EN` writer - target1 work enable"]
-pub struct TARGET1_WORK_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TARGET1_WORK_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 23)) | ((value as u32 & 0x01) << 23);
-        self.w
-    }
-}
+pub type TARGET1_WORK_EN_W<'a> = crate::BitWriter<'a, u32, CONF_SPEC, bool, 23>;
 #[doc = "Field `TARGET0_WORK_EN` reader - target0 work enable"]
-pub struct TARGET0_WORK_EN_R(crate::FieldReader<bool, bool>);
-impl TARGET0_WORK_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TARGET0_WORK_EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TARGET0_WORK_EN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TARGET0_WORK_EN_R = crate::BitReader<bool>;
 #[doc = "Field `TARGET0_WORK_EN` writer - target0 work enable"]
-pub struct TARGET0_WORK_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TARGET0_WORK_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | ((value as u32 & 0x01) << 24);
-        self.w
-    }
-}
+pub type TARGET0_WORK_EN_W<'a> = crate::BitWriter<'a, u32, CONF_SPEC, bool, 24>;
 #[doc = "Field `TIMER_UNIT1_CORE1_STALL_EN` reader - If timer unit1 is stalled when core1 stalled"]
-pub struct TIMER_UNIT1_CORE1_STALL_EN_R(crate::FieldReader<bool, bool>);
-impl TIMER_UNIT1_CORE1_STALL_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TIMER_UNIT1_CORE1_STALL_EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TIMER_UNIT1_CORE1_STALL_EN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TIMER_UNIT1_CORE1_STALL_EN_R = crate::BitReader<bool>;
 #[doc = "Field `TIMER_UNIT1_CORE1_STALL_EN` writer - If timer unit1 is stalled when core1 stalled"]
-pub struct TIMER_UNIT1_CORE1_STALL_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TIMER_UNIT1_CORE1_STALL_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 25)) | ((value as u32 & 0x01) << 25);
-        self.w
-    }
-}
+pub type TIMER_UNIT1_CORE1_STALL_EN_W<'a> = crate::BitWriter<'a, u32, CONF_SPEC, bool, 25>;
 #[doc = "Field `TIMER_UNIT1_CORE0_STALL_EN` reader - If timer unit1 is stalled when core0 stalled"]
-pub struct TIMER_UNIT1_CORE0_STALL_EN_R(crate::FieldReader<bool, bool>);
-impl TIMER_UNIT1_CORE0_STALL_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TIMER_UNIT1_CORE0_STALL_EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TIMER_UNIT1_CORE0_STALL_EN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TIMER_UNIT1_CORE0_STALL_EN_R = crate::BitReader<bool>;
 #[doc = "Field `TIMER_UNIT1_CORE0_STALL_EN` writer - If timer unit1 is stalled when core0 stalled"]
-pub struct TIMER_UNIT1_CORE0_STALL_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TIMER_UNIT1_CORE0_STALL_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 26)) | ((value as u32 & 0x01) << 26);
-        self.w
-    }
-}
+pub type TIMER_UNIT1_CORE0_STALL_EN_W<'a> = crate::BitWriter<'a, u32, CONF_SPEC, bool, 26>;
 #[doc = "Field `TIMER_UNIT0_CORE1_STALL_EN` reader - If timer unit0 is stalled when core1 stalled"]
-pub struct TIMER_UNIT0_CORE1_STALL_EN_R(crate::FieldReader<bool, bool>);
-impl TIMER_UNIT0_CORE1_STALL_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TIMER_UNIT0_CORE1_STALL_EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TIMER_UNIT0_CORE1_STALL_EN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TIMER_UNIT0_CORE1_STALL_EN_R = crate::BitReader<bool>;
 #[doc = "Field `TIMER_UNIT0_CORE1_STALL_EN` writer - If timer unit0 is stalled when core1 stalled"]
-pub struct TIMER_UNIT0_CORE1_STALL_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TIMER_UNIT0_CORE1_STALL_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 27)) | ((value as u32 & 0x01) << 27);
-        self.w
-    }
-}
+pub type TIMER_UNIT0_CORE1_STALL_EN_W<'a> = crate::BitWriter<'a, u32, CONF_SPEC, bool, 27>;
 #[doc = "Field `TIMER_UNIT0_CORE0_STALL_EN` reader - If timer unit0 is stalled when core0 stalled"]
-pub struct TIMER_UNIT0_CORE0_STALL_EN_R(crate::FieldReader<bool, bool>);
-impl TIMER_UNIT0_CORE0_STALL_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TIMER_UNIT0_CORE0_STALL_EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TIMER_UNIT0_CORE0_STALL_EN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TIMER_UNIT0_CORE0_STALL_EN_R = crate::BitReader<bool>;
 #[doc = "Field `TIMER_UNIT0_CORE0_STALL_EN` writer - If timer unit0 is stalled when core0 stalled"]
-pub struct TIMER_UNIT0_CORE0_STALL_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TIMER_UNIT0_CORE0_STALL_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 28)) | ((value as u32 & 0x01) << 28);
-        self.w
-    }
-}
+pub type TIMER_UNIT0_CORE0_STALL_EN_W<'a> = crate::BitWriter<'a, u32, CONF_SPEC, bool, 28>;
 #[doc = "Field `TIMER_UNIT1_WORK_EN` reader - timer unit1 work enable"]
-pub struct TIMER_UNIT1_WORK_EN_R(crate::FieldReader<bool, bool>);
-impl TIMER_UNIT1_WORK_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TIMER_UNIT1_WORK_EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TIMER_UNIT1_WORK_EN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TIMER_UNIT1_WORK_EN_R = crate::BitReader<bool>;
 #[doc = "Field `TIMER_UNIT1_WORK_EN` writer - timer unit1 work enable"]
-pub struct TIMER_UNIT1_WORK_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TIMER_UNIT1_WORK_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 29)) | ((value as u32 & 0x01) << 29);
-        self.w
-    }
-}
+pub type TIMER_UNIT1_WORK_EN_W<'a> = crate::BitWriter<'a, u32, CONF_SPEC, bool, 29>;
 #[doc = "Field `TIMER_UNIT0_WORK_EN` reader - timer unit0 work enable"]
-pub struct TIMER_UNIT0_WORK_EN_R(crate::FieldReader<bool, bool>);
-impl TIMER_UNIT0_WORK_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TIMER_UNIT0_WORK_EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TIMER_UNIT0_WORK_EN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TIMER_UNIT0_WORK_EN_R = crate::BitReader<bool>;
 #[doc = "Field `TIMER_UNIT0_WORK_EN` writer - timer unit0 work enable"]
-pub struct TIMER_UNIT0_WORK_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TIMER_UNIT0_WORK_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 30)) | ((value as u32 & 0x01) << 30);
-        self.w
-    }
-}
+pub type TIMER_UNIT0_WORK_EN_W<'a> = crate::BitWriter<'a, u32, CONF_SPEC, bool, 30>;
 #[doc = "Field `CLK_EN` reader - register file clk gating"]
-pub struct CLK_EN_R(crate::FieldReader<bool, bool>);
-impl CLK_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CLK_EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CLK_EN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CLK_EN_R = crate::BitReader<bool>;
 #[doc = "Field `CLK_EN` writer - register file clk gating"]
-pub struct CLK_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CLK_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
-        self.w
-    }
-}
+pub type CLK_EN_W<'a> = crate::BitWriter<'a, u32, CONF_SPEC, bool, 31>;
 impl R {
     #[doc = "Bit 0 - systimer clock force on"]
     #[inline(always)]
     pub fn systimer_clk_fo(&self) -> SYSTIMER_CLK_FO_R {
-        SYSTIMER_CLK_FO_R::new((self.bits & 0x01) != 0)
+        SYSTIMER_CLK_FO_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 22 - target2 work enable"]
     #[inline(always)]
     pub fn target2_work_en(&self) -> TARGET2_WORK_EN_R {
-        TARGET2_WORK_EN_R::new(((self.bits >> 22) & 0x01) != 0)
+        TARGET2_WORK_EN_R::new(((self.bits >> 22) & 1) != 0)
     }
     #[doc = "Bit 23 - target1 work enable"]
     #[inline(always)]
     pub fn target1_work_en(&self) -> TARGET1_WORK_EN_R {
-        TARGET1_WORK_EN_R::new(((self.bits >> 23) & 0x01) != 0)
+        TARGET1_WORK_EN_R::new(((self.bits >> 23) & 1) != 0)
     }
     #[doc = "Bit 24 - target0 work enable"]
     #[inline(always)]
     pub fn target0_work_en(&self) -> TARGET0_WORK_EN_R {
-        TARGET0_WORK_EN_R::new(((self.bits >> 24) & 0x01) != 0)
+        TARGET0_WORK_EN_R::new(((self.bits >> 24) & 1) != 0)
     }
     #[doc = "Bit 25 - If timer unit1 is stalled when core1 stalled"]
     #[inline(always)]
     pub fn timer_unit1_core1_stall_en(&self) -> TIMER_UNIT1_CORE1_STALL_EN_R {
-        TIMER_UNIT1_CORE1_STALL_EN_R::new(((self.bits >> 25) & 0x01) != 0)
+        TIMER_UNIT1_CORE1_STALL_EN_R::new(((self.bits >> 25) & 1) != 0)
     }
     #[doc = "Bit 26 - If timer unit1 is stalled when core0 stalled"]
     #[inline(always)]
     pub fn timer_unit1_core0_stall_en(&self) -> TIMER_UNIT1_CORE0_STALL_EN_R {
-        TIMER_UNIT1_CORE0_STALL_EN_R::new(((self.bits >> 26) & 0x01) != 0)
+        TIMER_UNIT1_CORE0_STALL_EN_R::new(((self.bits >> 26) & 1) != 0)
     }
     #[doc = "Bit 27 - If timer unit0 is stalled when core1 stalled"]
     #[inline(always)]
     pub fn timer_unit0_core1_stall_en(&self) -> TIMER_UNIT0_CORE1_STALL_EN_R {
-        TIMER_UNIT0_CORE1_STALL_EN_R::new(((self.bits >> 27) & 0x01) != 0)
+        TIMER_UNIT0_CORE1_STALL_EN_R::new(((self.bits >> 27) & 1) != 0)
     }
     #[doc = "Bit 28 - If timer unit0 is stalled when core0 stalled"]
     #[inline(always)]
     pub fn timer_unit0_core0_stall_en(&self) -> TIMER_UNIT0_CORE0_STALL_EN_R {
-        TIMER_UNIT0_CORE0_STALL_EN_R::new(((self.bits >> 28) & 0x01) != 0)
+        TIMER_UNIT0_CORE0_STALL_EN_R::new(((self.bits >> 28) & 1) != 0)
     }
     #[doc = "Bit 29 - timer unit1 work enable"]
     #[inline(always)]
     pub fn timer_unit1_work_en(&self) -> TIMER_UNIT1_WORK_EN_R {
-        TIMER_UNIT1_WORK_EN_R::new(((self.bits >> 29) & 0x01) != 0)
+        TIMER_UNIT1_WORK_EN_R::new(((self.bits >> 29) & 1) != 0)
     }
     #[doc = "Bit 30 - timer unit0 work enable"]
     #[inline(always)]
     pub fn timer_unit0_work_en(&self) -> TIMER_UNIT0_WORK_EN_R {
-        TIMER_UNIT0_WORK_EN_R::new(((self.bits >> 30) & 0x01) != 0)
+        TIMER_UNIT0_WORK_EN_R::new(((self.bits >> 30) & 1) != 0)
     }
     #[doc = "Bit 31 - register file clk gating"]
     #[inline(always)]
     pub fn clk_en(&self) -> CLK_EN_R {
-        CLK_EN_R::new(((self.bits >> 31) & 0x01) != 0)
+        CLK_EN_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - systimer clock force on"]
     #[inline(always)]
     pub fn systimer_clk_fo(&mut self) -> SYSTIMER_CLK_FO_W {
-        SYSTIMER_CLK_FO_W { w: self }
+        SYSTIMER_CLK_FO_W::new(self)
     }
     #[doc = "Bit 22 - target2 work enable"]
     #[inline(always)]
     pub fn target2_work_en(&mut self) -> TARGET2_WORK_EN_W {
-        TARGET2_WORK_EN_W { w: self }
+        TARGET2_WORK_EN_W::new(self)
     }
     #[doc = "Bit 23 - target1 work enable"]
     #[inline(always)]
     pub fn target1_work_en(&mut self) -> TARGET1_WORK_EN_W {
-        TARGET1_WORK_EN_W { w: self }
+        TARGET1_WORK_EN_W::new(self)
     }
     #[doc = "Bit 24 - target0 work enable"]
     #[inline(always)]
     pub fn target0_work_en(&mut self) -> TARGET0_WORK_EN_W {
-        TARGET0_WORK_EN_W { w: self }
+        TARGET0_WORK_EN_W::new(self)
     }
     #[doc = "Bit 25 - If timer unit1 is stalled when core1 stalled"]
     #[inline(always)]
     pub fn timer_unit1_core1_stall_en(&mut self) -> TIMER_UNIT1_CORE1_STALL_EN_W {
-        TIMER_UNIT1_CORE1_STALL_EN_W { w: self }
+        TIMER_UNIT1_CORE1_STALL_EN_W::new(self)
     }
     #[doc = "Bit 26 - If timer unit1 is stalled when core0 stalled"]
     #[inline(always)]
     pub fn timer_unit1_core0_stall_en(&mut self) -> TIMER_UNIT1_CORE0_STALL_EN_W {
-        TIMER_UNIT1_CORE0_STALL_EN_W { w: self }
+        TIMER_UNIT1_CORE0_STALL_EN_W::new(self)
     }
     #[doc = "Bit 27 - If timer unit0 is stalled when core1 stalled"]
     #[inline(always)]
     pub fn timer_unit0_core1_stall_en(&mut self) -> TIMER_UNIT0_CORE1_STALL_EN_W {
-        TIMER_UNIT0_CORE1_STALL_EN_W { w: self }
+        TIMER_UNIT0_CORE1_STALL_EN_W::new(self)
     }
     #[doc = "Bit 28 - If timer unit0 is stalled when core0 stalled"]
     #[inline(always)]
     pub fn timer_unit0_core0_stall_en(&mut self) -> TIMER_UNIT0_CORE0_STALL_EN_W {
-        TIMER_UNIT0_CORE0_STALL_EN_W { w: self }
+        TIMER_UNIT0_CORE0_STALL_EN_W::new(self)
     }
     #[doc = "Bit 29 - timer unit1 work enable"]
     #[inline(always)]
     pub fn timer_unit1_work_en(&mut self) -> TIMER_UNIT1_WORK_EN_W {
-        TIMER_UNIT1_WORK_EN_W { w: self }
+        TIMER_UNIT1_WORK_EN_W::new(self)
     }
     #[doc = "Bit 30 - timer unit0 work enable"]
     #[inline(always)]
     pub fn timer_unit0_work_en(&mut self) -> TIMER_UNIT0_WORK_EN_W {
-        TIMER_UNIT0_WORK_EN_W { w: self }
+        TIMER_UNIT0_WORK_EN_W::new(self)
     }
     #[doc = "Bit 31 - register file clk gating"]
     #[inline(always)]
     pub fn clk_en(&mut self) -> CLK_EN_W {
-        CLK_EN_W { w: self }
+        CLK_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -561,25 +198,16 @@ impl W {
         self
     }
 }
-#[doc = "SYSTIMER_CONF.\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [conf]
-(index.html) module"]
+#[doc = "SYSTIMER_CONF.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [conf](index.html) module"]
 pub struct CONF_SPEC;
 impl crate::RegisterSpec for CONF_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [conf::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [conf::R](R) reader structure"]
 impl crate::Readable for CONF_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [conf::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [conf::W](W) writer structure"]
 impl crate::Writable for CONF_SPEC {
     type Writer = W;
 }

@@ -14,97 +14,41 @@ impl From<crate::R<TX_STATUS_SPEC>> for R {
     }
 }
 #[doc = "Field `SLC0_TX_FULL` reader - "]
-pub struct SLC0_TX_FULL_R(crate::FieldReader<bool, bool>);
-impl SLC0_TX_FULL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        SLC0_TX_FULL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SLC0_TX_FULL_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SLC0_TX_FULL_R = crate::BitReader<bool>;
 #[doc = "Field `SLC0_TX_EMPTY` reader - "]
-pub struct SLC0_TX_EMPTY_R(crate::FieldReader<bool, bool>);
-impl SLC0_TX_EMPTY_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        SLC0_TX_EMPTY_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SLC0_TX_EMPTY_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SLC0_TX_EMPTY_R = crate::BitReader<bool>;
 #[doc = "Field `SLC1_TX_FULL` reader - "]
-pub struct SLC1_TX_FULL_R(crate::FieldReader<bool, bool>);
-impl SLC1_TX_FULL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        SLC1_TX_FULL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SLC1_TX_FULL_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SLC1_TX_FULL_R = crate::BitReader<bool>;
 #[doc = "Field `SLC1_TX_EMPTY` reader - "]
-pub struct SLC1_TX_EMPTY_R(crate::FieldReader<bool, bool>);
-impl SLC1_TX_EMPTY_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        SLC1_TX_EMPTY_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SLC1_TX_EMPTY_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SLC1_TX_EMPTY_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 0"]
     #[inline(always)]
     pub fn slc0_tx_full(&self) -> SLC0_TX_FULL_R {
-        SLC0_TX_FULL_R::new((self.bits & 0x01) != 0)
+        SLC0_TX_FULL_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
     pub fn slc0_tx_empty(&self) -> SLC0_TX_EMPTY_R {
-        SLC0_TX_EMPTY_R::new(((self.bits >> 1) & 0x01) != 0)
+        SLC0_TX_EMPTY_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 16"]
     #[inline(always)]
     pub fn slc1_tx_full(&self) -> SLC1_TX_FULL_R {
-        SLC1_TX_FULL_R::new(((self.bits >> 16) & 0x01) != 0)
+        SLC1_TX_FULL_R::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 17"]
     #[inline(always)]
     pub fn slc1_tx_empty(&self) -> SLC1_TX_EMPTY_R {
-        SLC1_TX_EMPTY_R::new(((self.bits >> 17) & 0x01) != 0)
+        SLC1_TX_EMPTY_R::new(((self.bits >> 17) & 1) != 0)
     }
 }
-#[doc = "\n\nThis register you can [`read`]
-(crate::generic::Reg::read). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tx_status]
-(index.html) module"]
+#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tx_status](index.html) module"]
 pub struct TX_STATUS_SPEC;
 impl crate::RegisterSpec for TX_STATUS_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [tx_status::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [tx_status::R](R) reader structure"]
 impl crate::Readable for TX_STATUS_SPEC {
     type Reader = R;
 }

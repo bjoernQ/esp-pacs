@@ -14,50 +14,11 @@ impl From<crate::R<OUT_STATE_CH0_SPEC>> for R {
     }
 }
 #[doc = "Field `OUTLINK_DSCR_ADDR_CH0` reader - This register stores the current outlink descriptor's address."]
-pub struct OUTLINK_DSCR_ADDR_CH0_R(crate::FieldReader<u32, u32>);
-impl OUTLINK_DSCR_ADDR_CH0_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        OUTLINK_DSCR_ADDR_CH0_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for OUTLINK_DSCR_ADDR_CH0_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type OUTLINK_DSCR_ADDR_CH0_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `OUT_DSCR_STATE_CH0` reader - reserved"]
-pub struct OUT_DSCR_STATE_CH0_R(crate::FieldReader<u8, u8>);
-impl OUT_DSCR_STATE_CH0_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        OUT_DSCR_STATE_CH0_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for OUT_DSCR_STATE_CH0_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type OUT_DSCR_STATE_CH0_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `OUT_STATE_CH0` reader - reserved"]
-pub struct OUT_STATE_CH0_R(crate::FieldReader<u8, u8>);
-impl OUT_STATE_CH0_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        OUT_STATE_CH0_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for OUT_STATE_CH0_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type OUT_STATE_CH0_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:17 - This register stores the current outlink descriptor's address."]
     #[inline(always)]
@@ -67,24 +28,20 @@ impl R {
     #[doc = "Bits 18:19 - reserved"]
     #[inline(always)]
     pub fn out_dscr_state_ch0(&self) -> OUT_DSCR_STATE_CH0_R {
-        OUT_DSCR_STATE_CH0_R::new(((self.bits >> 18) & 0x03) as u8)
+        OUT_DSCR_STATE_CH0_R::new(((self.bits >> 18) & 3) as u8)
     }
     #[doc = "Bits 20:22 - reserved"]
     #[inline(always)]
     pub fn out_state_ch0(&self) -> OUT_STATE_CH0_R {
-        OUT_STATE_CH0_R::new(((self.bits >> 20) & 0x07) as u8)
+        OUT_STATE_CH0_R::new(((self.bits >> 20) & 7) as u8)
     }
 }
-#[doc = "DMA_OUT_STATE_CH0_REG.\n\nThis register you can [`read`]
-(crate::generic::Reg::read). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [out_state_ch0]
-(index.html) module"]
+#[doc = "DMA_OUT_STATE_CH0_REG.\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [out_state_ch0](index.html) module"]
 pub struct OUT_STATE_CH0_SPEC;
 impl crate::RegisterSpec for OUT_STATE_CH0_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [out_state_ch0::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [out_state_ch0::R](R) reader structure"]
 impl crate::Readable for OUT_STATE_CH0_SPEC {
     type Reader = R;
 }

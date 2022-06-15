@@ -35,59 +35,13 @@ impl From<crate::W<TIMER2_SPEC>> for W {
     }
 }
 #[doc = "Field `ULPCP_TOUCH_START_WAIT` reader - wait cycles in slow_clk_rtc before ULP-coprocessor / touch controller start to work"]
-pub struct ULPCP_TOUCH_START_WAIT_R(crate::FieldReader<u16, u16>);
-impl ULPCP_TOUCH_START_WAIT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        ULPCP_TOUCH_START_WAIT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ULPCP_TOUCH_START_WAIT_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ULPCP_TOUCH_START_WAIT_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `ULPCP_TOUCH_START_WAIT` writer - wait cycles in slow_clk_rtc before ULP-coprocessor / touch controller start to work"]
-pub struct ULPCP_TOUCH_START_WAIT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ULPCP_TOUCH_START_WAIT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01ff << 15)) | ((value as u32 & 0x01ff) << 15);
-        self.w
-    }
-}
+pub type ULPCP_TOUCH_START_WAIT_W<'a> = crate::FieldWriter<'a, u32, TIMER2_SPEC, u16, u16, 9, 15>;
 #[doc = "Field `MIN_TIME_CK8M_OFF` reader - minimal cycles in slow_clk_rtc for CK8M in power down state"]
-pub struct MIN_TIME_CK8M_OFF_R(crate::FieldReader<u8, u8>);
-impl MIN_TIME_CK8M_OFF_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        MIN_TIME_CK8M_OFF_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MIN_TIME_CK8M_OFF_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MIN_TIME_CK8M_OFF_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `MIN_TIME_CK8M_OFF` writer - minimal cycles in slow_clk_rtc for CK8M in power down state"]
-pub struct MIN_TIME_CK8M_OFF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MIN_TIME_CK8M_OFF_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 24)) | ((value as u32 & 0xff) << 24);
-        self.w
-    }
-}
+pub type MIN_TIME_CK8M_OFF_W<'a> = crate::FieldWriter<'a, u32, TIMER2_SPEC, u8, u8, 8, 24>;
 impl R {
     #[doc = "Bits 15:23 - wait cycles in slow_clk_rtc before ULP-coprocessor / touch controller start to work"]
     #[inline(always)]
@@ -104,12 +58,12 @@ impl W {
     #[doc = "Bits 15:23 - wait cycles in slow_clk_rtc before ULP-coprocessor / touch controller start to work"]
     #[inline(always)]
     pub fn ulpcp_touch_start_wait(&mut self) -> ULPCP_TOUCH_START_WAIT_W {
-        ULPCP_TOUCH_START_WAIT_W { w: self }
+        ULPCP_TOUCH_START_WAIT_W::new(self)
     }
     #[doc = "Bits 24:31 - minimal cycles in slow_clk_rtc for CK8M in power down state"]
     #[inline(always)]
     pub fn min_time_ck8m_off(&mut self) -> MIN_TIME_CK8M_OFF_W {
-        MIN_TIME_CK8M_OFF_W { w: self }
+        MIN_TIME_CK8M_OFF_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -118,25 +72,16 @@ impl W {
         self
     }
 }
-#[doc = "rtc monitor state delay time\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [timer2]
-(index.html) module"]
+#[doc = "rtc monitor state delay time\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [timer2](index.html) module"]
 pub struct TIMER2_SPEC;
 impl crate::RegisterSpec for TIMER2_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [timer2::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [timer2::R](R) reader structure"]
 impl crate::Readable for TIMER2_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [timer2::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [timer2::W](W) writer structure"]
 impl crate::Writable for TIMER2_SPEC {
     type Writer = W;
 }

@@ -35,249 +35,41 @@ impl From<crate::W<T0CONFIG_SPEC>> for W {
     }
 }
 #[doc = "Field `T0_USE_XTAL` reader - reg_t0_use_xtal."]
-pub struct T0_USE_XTAL_R(crate::FieldReader<bool, bool>);
-impl T0_USE_XTAL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        T0_USE_XTAL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for T0_USE_XTAL_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type T0_USE_XTAL_R = crate::BitReader<bool>;
 #[doc = "Field `T0_USE_XTAL` writer - reg_t0_use_xtal."]
-pub struct T0_USE_XTAL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> T0_USE_XTAL_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
-    }
-}
+pub type T0_USE_XTAL_W<'a> = crate::BitWriter<'a, u32, T0CONFIG_SPEC, bool, 9>;
 #[doc = "Field `T0_ALARM_EN` reader - reg_t0_alarm_en."]
-pub struct T0_ALARM_EN_R(crate::FieldReader<bool, bool>);
-impl T0_ALARM_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        T0_ALARM_EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for T0_ALARM_EN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type T0_ALARM_EN_R = crate::BitReader<bool>;
 #[doc = "Field `T0_ALARM_EN` writer - reg_t0_alarm_en."]
-pub struct T0_ALARM_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> T0_ALARM_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
-        self.w
-    }
-}
+pub type T0_ALARM_EN_W<'a> = crate::BitWriter<'a, u32, T0CONFIG_SPEC, bool, 10>;
 #[doc = "Field `T0_DIVCNT_RST` writer - reg_t0_divcnt_rst."]
-pub struct T0_DIVCNT_RST_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> T0_DIVCNT_RST_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
-        self.w
-    }
-}
+pub type T0_DIVCNT_RST_W<'a> = crate::BitWriter<'a, u32, T0CONFIG_SPEC, bool, 12>;
 #[doc = "Field `T0_DIVIDER` reader - reg_t0_divider."]
-pub struct T0_DIVIDER_R(crate::FieldReader<u16, u16>);
-impl T0_DIVIDER_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        T0_DIVIDER_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for T0_DIVIDER_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type T0_DIVIDER_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `T0_DIVIDER` writer - reg_t0_divider."]
-pub struct T0_DIVIDER_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> T0_DIVIDER_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xffff << 13)) | ((value as u32 & 0xffff) << 13);
-        self.w
-    }
-}
+pub type T0_DIVIDER_W<'a> = crate::FieldWriter<'a, u32, T0CONFIG_SPEC, u16, u16, 16, 13>;
 #[doc = "Field `T0_AUTORELOAD` reader - reg_t0_autoreload."]
-pub struct T0_AUTORELOAD_R(crate::FieldReader<bool, bool>);
-impl T0_AUTORELOAD_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        T0_AUTORELOAD_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for T0_AUTORELOAD_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type T0_AUTORELOAD_R = crate::BitReader<bool>;
 #[doc = "Field `T0_AUTORELOAD` writer - reg_t0_autoreload."]
-pub struct T0_AUTORELOAD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> T0_AUTORELOAD_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 29)) | ((value as u32 & 0x01) << 29);
-        self.w
-    }
-}
+pub type T0_AUTORELOAD_W<'a> = crate::BitWriter<'a, u32, T0CONFIG_SPEC, bool, 29>;
 #[doc = "Field `T0_INCREASE` reader - reg_t0_increase."]
-pub struct T0_INCREASE_R(crate::FieldReader<bool, bool>);
-impl T0_INCREASE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        T0_INCREASE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for T0_INCREASE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type T0_INCREASE_R = crate::BitReader<bool>;
 #[doc = "Field `T0_INCREASE` writer - reg_t0_increase."]
-pub struct T0_INCREASE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> T0_INCREASE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 30)) | ((value as u32 & 0x01) << 30);
-        self.w
-    }
-}
+pub type T0_INCREASE_W<'a> = crate::BitWriter<'a, u32, T0CONFIG_SPEC, bool, 30>;
 #[doc = "Field `T0_EN` reader - reg_t0_en."]
-pub struct T0_EN_R(crate::FieldReader<bool, bool>);
-impl T0_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        T0_EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for T0_EN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type T0_EN_R = crate::BitReader<bool>;
 #[doc = "Field `T0_EN` writer - reg_t0_en."]
-pub struct T0_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> T0_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
-        self.w
-    }
-}
+pub type T0_EN_W<'a> = crate::BitWriter<'a, u32, T0CONFIG_SPEC, bool, 31>;
 impl R {
     #[doc = "Bit 9 - reg_t0_use_xtal."]
     #[inline(always)]
     pub fn t0_use_xtal(&self) -> T0_USE_XTAL_R {
-        T0_USE_XTAL_R::new(((self.bits >> 9) & 0x01) != 0)
+        T0_USE_XTAL_R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 10 - reg_t0_alarm_en."]
     #[inline(always)]
     pub fn t0_alarm_en(&self) -> T0_ALARM_EN_R {
-        T0_ALARM_EN_R::new(((self.bits >> 10) & 0x01) != 0)
+        T0_ALARM_EN_R::new(((self.bits >> 10) & 1) != 0)
     }
     #[doc = "Bits 13:28 - reg_t0_divider."]
     #[inline(always)]
@@ -287,54 +79,54 @@ impl R {
     #[doc = "Bit 29 - reg_t0_autoreload."]
     #[inline(always)]
     pub fn t0_autoreload(&self) -> T0_AUTORELOAD_R {
-        T0_AUTORELOAD_R::new(((self.bits >> 29) & 0x01) != 0)
+        T0_AUTORELOAD_R::new(((self.bits >> 29) & 1) != 0)
     }
     #[doc = "Bit 30 - reg_t0_increase."]
     #[inline(always)]
     pub fn t0_increase(&self) -> T0_INCREASE_R {
-        T0_INCREASE_R::new(((self.bits >> 30) & 0x01) != 0)
+        T0_INCREASE_R::new(((self.bits >> 30) & 1) != 0)
     }
     #[doc = "Bit 31 - reg_t0_en."]
     #[inline(always)]
     pub fn t0_en(&self) -> T0_EN_R {
-        T0_EN_R::new(((self.bits >> 31) & 0x01) != 0)
+        T0_EN_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 9 - reg_t0_use_xtal."]
     #[inline(always)]
     pub fn t0_use_xtal(&mut self) -> T0_USE_XTAL_W {
-        T0_USE_XTAL_W { w: self }
+        T0_USE_XTAL_W::new(self)
     }
     #[doc = "Bit 10 - reg_t0_alarm_en."]
     #[inline(always)]
     pub fn t0_alarm_en(&mut self) -> T0_ALARM_EN_W {
-        T0_ALARM_EN_W { w: self }
+        T0_ALARM_EN_W::new(self)
     }
     #[doc = "Bit 12 - reg_t0_divcnt_rst."]
     #[inline(always)]
     pub fn t0_divcnt_rst(&mut self) -> T0_DIVCNT_RST_W {
-        T0_DIVCNT_RST_W { w: self }
+        T0_DIVCNT_RST_W::new(self)
     }
     #[doc = "Bits 13:28 - reg_t0_divider."]
     #[inline(always)]
     pub fn t0_divider(&mut self) -> T0_DIVIDER_W {
-        T0_DIVIDER_W { w: self }
+        T0_DIVIDER_W::new(self)
     }
     #[doc = "Bit 29 - reg_t0_autoreload."]
     #[inline(always)]
     pub fn t0_autoreload(&mut self) -> T0_AUTORELOAD_W {
-        T0_AUTORELOAD_W { w: self }
+        T0_AUTORELOAD_W::new(self)
     }
     #[doc = "Bit 30 - reg_t0_increase."]
     #[inline(always)]
     pub fn t0_increase(&mut self) -> T0_INCREASE_W {
-        T0_INCREASE_W { w: self }
+        T0_INCREASE_W::new(self)
     }
     #[doc = "Bit 31 - reg_t0_en."]
     #[inline(always)]
     pub fn t0_en(&mut self) -> T0_EN_W {
-        T0_EN_W { w: self }
+        T0_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -343,25 +135,16 @@ impl W {
         self
     }
 }
-#[doc = "TIMG_T0CONFIG_REG.\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [t0config]
-(index.html) module"]
+#[doc = "TIMG_T0CONFIG_REG.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [t0config](index.html) module"]
 pub struct T0CONFIG_SPEC;
 impl crate::RegisterSpec for T0CONFIG_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [t0config::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [t0config::R](R) reader structure"]
 impl crate::Readable for T0CONFIG_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [t0config::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [t0config::W](W) writer structure"]
 impl crate::Writable for T0CONFIG_SPEC {
     type Writer = W;
 }

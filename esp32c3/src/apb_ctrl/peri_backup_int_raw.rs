@@ -14,57 +14,27 @@ impl From<crate::R<PERI_BACKUP_INT_RAW_SPEC>> for R {
     }
 }
 #[doc = "Field `PERI_BACKUP_DONE_INT_RAW` reader - reg_peri_backup_done_int_raw"]
-pub struct PERI_BACKUP_DONE_INT_RAW_R(crate::FieldReader<bool, bool>);
-impl PERI_BACKUP_DONE_INT_RAW_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        PERI_BACKUP_DONE_INT_RAW_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PERI_BACKUP_DONE_INT_RAW_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PERI_BACKUP_DONE_INT_RAW_R = crate::BitReader<bool>;
 #[doc = "Field `PERI_BACKUP_ERR_INT_RAW` reader - reg_peri_backup_err_int_raw"]
-pub struct PERI_BACKUP_ERR_INT_RAW_R(crate::FieldReader<bool, bool>);
-impl PERI_BACKUP_ERR_INT_RAW_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        PERI_BACKUP_ERR_INT_RAW_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PERI_BACKUP_ERR_INT_RAW_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PERI_BACKUP_ERR_INT_RAW_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 0 - reg_peri_backup_done_int_raw"]
     #[inline(always)]
     pub fn peri_backup_done_int_raw(&self) -> PERI_BACKUP_DONE_INT_RAW_R {
-        PERI_BACKUP_DONE_INT_RAW_R::new((self.bits & 0x01) != 0)
+        PERI_BACKUP_DONE_INT_RAW_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - reg_peri_backup_err_int_raw"]
     #[inline(always)]
     pub fn peri_backup_err_int_raw(&self) -> PERI_BACKUP_ERR_INT_RAW_R {
-        PERI_BACKUP_ERR_INT_RAW_R::new(((self.bits >> 1) & 0x01) != 0)
+        PERI_BACKUP_ERR_INT_RAW_R::new(((self.bits >> 1) & 1) != 0)
     }
 }
-#[doc = "APB_CTRL_PERI_BACKUP_INT_RAW_REG\n\nThis register you can [`read`]
-(crate::generic::Reg::read). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [peri_backup_int_raw]
-(index.html) module"]
+#[doc = "APB_CTRL_PERI_BACKUP_INT_RAW_REG\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [peri_backup_int_raw](index.html) module"]
 pub struct PERI_BACKUP_INT_RAW_SPEC;
 impl crate::RegisterSpec for PERI_BACKUP_INT_RAW_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [peri_backup_int_raw::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [peri_backup_int_raw::R](R) reader structure"]
 impl crate::Readable for PERI_BACKUP_INT_RAW_SPEC {
     type Reader = R;
 }

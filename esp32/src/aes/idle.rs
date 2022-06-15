@@ -14,37 +14,20 @@ impl From<crate::R<IDLE_SPEC>> for R {
     }
 }
 #[doc = "Field `IDLE` reader - AES Idle register. Reads ’zero’ while the AES Accelerator is busy processing; reads ’one’ otherwise."]
-pub struct IDLE_R(crate::FieldReader<bool, bool>);
-impl IDLE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        IDLE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for IDLE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type IDLE_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 0 - AES Idle register. Reads ’zero’ while the AES Accelerator is busy processing; reads ’one’ otherwise."]
     #[inline(always)]
     pub fn idle(&self) -> IDLE_R {
-        IDLE_R::new((self.bits & 0x01) != 0)
+        IDLE_R::new((self.bits & 1) != 0)
     }
 }
-#[doc = "\n\nThis register you can [`read`]
-(crate::generic::Reg::read). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [idle]
-(index.html) module"]
+#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [idle](index.html) module"]
 pub struct IDLE_SPEC;
 impl crate::RegisterSpec for IDLE_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [idle::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [idle::R](R) reader structure"]
 impl crate::Readable for IDLE_SPEC {
     type Reader = R;
 }

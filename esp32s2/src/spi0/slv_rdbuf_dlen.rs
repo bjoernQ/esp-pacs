@@ -35,106 +35,18 @@ impl From<crate::W<SLV_RDBUF_DLEN_SPEC>> for W {
     }
 }
 #[doc = "Field `SLV_DMA_RD_BYTELEN` reader - In the slave mode it is the length in bytes for read operations. The register value shall be byte_num."]
-pub struct SLV_DMA_RD_BYTELEN_R(crate::FieldReader<u32, u32>);
-impl SLV_DMA_RD_BYTELEN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        SLV_DMA_RD_BYTELEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SLV_DMA_RD_BYTELEN_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SLV_DMA_RD_BYTELEN_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `SLV_DMA_RD_BYTELEN` writer - In the slave mode it is the length in bytes for read operations. The register value shall be byte_num."]
-pub struct SLV_DMA_RD_BYTELEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SLV_DMA_RD_BYTELEN_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x000f_ffff) | (value as u32 & 0x000f_ffff);
-        self.w
-    }
-}
+pub type SLV_DMA_RD_BYTELEN_W<'a> =
+    crate::FieldWriter<'a, u32, SLV_RDBUF_DLEN_SPEC, u32, u32, 20, 0>;
 #[doc = "Field `SLV_RD_BUF_DONE` reader - The interrupt raw bit for the completion of read-buffer operation in the slave mode. Can not be changed by CONF_buf."]
-pub struct SLV_RD_BUF_DONE_R(crate::FieldReader<bool, bool>);
-impl SLV_RD_BUF_DONE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        SLV_RD_BUF_DONE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SLV_RD_BUF_DONE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SLV_RD_BUF_DONE_R = crate::BitReader<bool>;
 #[doc = "Field `SLV_RD_BUF_DONE` writer - The interrupt raw bit for the completion of read-buffer operation in the slave mode. Can not be changed by CONF_buf."]
-pub struct SLV_RD_BUF_DONE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SLV_RD_BUF_DONE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | ((value as u32 & 0x01) << 24);
-        self.w
-    }
-}
+pub type SLV_RD_BUF_DONE_W<'a> = crate::BitWriter<'a, u32, SLV_RDBUF_DLEN_SPEC, bool, 24>;
 #[doc = "Field `SEG_MAGIC_ERR` reader - 1: The recent magic value in CONF buffer is not right in master DMA seg-trans mode. 0: others."]
-pub struct SEG_MAGIC_ERR_R(crate::FieldReader<bool, bool>);
-impl SEG_MAGIC_ERR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        SEG_MAGIC_ERR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SEG_MAGIC_ERR_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SEG_MAGIC_ERR_R = crate::BitReader<bool>;
 #[doc = "Field `SEG_MAGIC_ERR` writer - 1: The recent magic value in CONF buffer is not right in master DMA seg-trans mode. 0: others."]
-pub struct SEG_MAGIC_ERR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SEG_MAGIC_ERR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 25)) | ((value as u32 & 0x01) << 25);
-        self.w
-    }
-}
+pub type SEG_MAGIC_ERR_W<'a> = crate::BitWriter<'a, u32, SLV_RDBUF_DLEN_SPEC, bool, 25>;
 impl R {
     #[doc = "Bits 0:19 - In the slave mode it is the length in bytes for read operations. The register value shall be byte_num."]
     #[inline(always)]
@@ -144,29 +56,29 @@ impl R {
     #[doc = "Bit 24 - The interrupt raw bit for the completion of read-buffer operation in the slave mode. Can not be changed by CONF_buf."]
     #[inline(always)]
     pub fn slv_rd_buf_done(&self) -> SLV_RD_BUF_DONE_R {
-        SLV_RD_BUF_DONE_R::new(((self.bits >> 24) & 0x01) != 0)
+        SLV_RD_BUF_DONE_R::new(((self.bits >> 24) & 1) != 0)
     }
     #[doc = "Bit 25 - 1: The recent magic value in CONF buffer is not right in master DMA seg-trans mode. 0: others."]
     #[inline(always)]
     pub fn seg_magic_err(&self) -> SEG_MAGIC_ERR_R {
-        SEG_MAGIC_ERR_R::new(((self.bits >> 25) & 0x01) != 0)
+        SEG_MAGIC_ERR_R::new(((self.bits >> 25) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:19 - In the slave mode it is the length in bytes for read operations. The register value shall be byte_num."]
     #[inline(always)]
     pub fn slv_dma_rd_bytelen(&mut self) -> SLV_DMA_RD_BYTELEN_W {
-        SLV_DMA_RD_BYTELEN_W { w: self }
+        SLV_DMA_RD_BYTELEN_W::new(self)
     }
     #[doc = "Bit 24 - The interrupt raw bit for the completion of read-buffer operation in the slave mode. Can not be changed by CONF_buf."]
     #[inline(always)]
     pub fn slv_rd_buf_done(&mut self) -> SLV_RD_BUF_DONE_W {
-        SLV_RD_BUF_DONE_W { w: self }
+        SLV_RD_BUF_DONE_W::new(self)
     }
     #[doc = "Bit 25 - 1: The recent magic value in CONF buffer is not right in master DMA seg-trans mode. 0: others."]
     #[inline(always)]
     pub fn seg_magic_err(&mut self) -> SEG_MAGIC_ERR_W {
-        SEG_MAGIC_ERR_W { w: self }
+        SEG_MAGIC_ERR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -175,25 +87,16 @@ impl W {
         self
     }
 }
-#[doc = "SPI magic error and slave control register\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [slv_rdbuf_dlen]
-(index.html) module"]
+#[doc = "SPI magic error and slave control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [slv_rdbuf_dlen](index.html) module"]
 pub struct SLV_RDBUF_DLEN_SPEC;
 impl crate::RegisterSpec for SLV_RDBUF_DLEN_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [slv_rdbuf_dlen::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [slv_rdbuf_dlen::R](R) reader structure"]
 impl crate::Readable for SLV_RDBUF_DLEN_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [slv_rdbuf_dlen::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [slv_rdbuf_dlen::W](W) writer structure"]
 impl crate::Writable for SLV_RDBUF_DLEN_SPEC {
     type Writer = W;
 }

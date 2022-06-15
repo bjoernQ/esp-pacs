@@ -14,37 +14,20 @@ impl From<crate::R<CORE_1_NMI_MASK_PHASE_SPEC>> for R {
     }
 }
 #[doc = "Field `CORE_1_NMI_MASK_PHASE` reader - this bit is used to indicates whether the NMI interrupt is being masked, 1 means NMI interrupt is being masked"]
-pub struct CORE_1_NMI_MASK_PHASE_R(crate::FieldReader<bool, bool>);
-impl CORE_1_NMI_MASK_PHASE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CORE_1_NMI_MASK_PHASE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CORE_1_NMI_MASK_PHASE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CORE_1_NMI_MASK_PHASE_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 0 - this bit is used to indicates whether the NMI interrupt is being masked, 1 means NMI interrupt is being masked"]
     #[inline(always)]
     pub fn core_1_nmi_mask_phase(&self) -> CORE_1_NMI_MASK_PHASE_R {
-        CORE_1_NMI_MASK_PHASE_R::new((self.bits & 0x01) != 0)
+        CORE_1_NMI_MASK_PHASE_R::new((self.bits & 1) != 0)
     }
 }
-#[doc = "Core_1 NMI mask phase register\n\nThis register you can [`read`]
-(crate::generic::Reg::read). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [core_1_nmi_mask_phase]
-(index.html) module"]
+#[doc = "Core_1 NMI mask phase register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [core_1_nmi_mask_phase](index.html) module"]
 pub struct CORE_1_NMI_MASK_PHASE_SPEC;
 impl crate::RegisterSpec for CORE_1_NMI_MASK_PHASE_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [core_1_nmi_mask_phase::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [core_1_nmi_mask_phase::R](R) reader structure"]
 impl crate::Readable for CORE_1_NMI_MASK_PHASE_SPEC {
     type Reader = R;
 }

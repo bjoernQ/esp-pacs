@@ -35,91 +35,35 @@ impl From<crate::W<EMMCDDR_SPEC>> for W {
     }
 }
 #[doc = "Field `HALFSTARTBIT` reader - Control for start bit detection mechanism duration of start bit.Each bit refers to one slot.Set this bit to 1 for eMMC4.5 and above,set to 0 for SD applications.For eMMC4.5,start bit can be: 1'b0-Full cycle. 1'b1-less than one full cycle."]
-pub struct HALFSTARTBIT_R(crate::FieldReader<u8, u8>);
-impl HALFSTARTBIT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        HALFSTARTBIT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for HALFSTARTBIT_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type HALFSTARTBIT_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `HALFSTARTBIT` writer - Control for start bit detection mechanism duration of start bit.Each bit refers to one slot.Set this bit to 1 for eMMC4.5 and above,set to 0 for SD applications.For eMMC4.5,start bit can be: 1'b0-Full cycle. 1'b1-less than one full cycle."]
-pub struct HALFSTARTBIT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HALFSTARTBIT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
-        self.w
-    }
-}
+pub type HALFSTARTBIT_W<'a> = crate::FieldWriter<'a, u32, EMMCDDR_SPEC, u8, u8, 2, 0>;
 #[doc = "Field `HS400_MODE` reader - Set 1 to enable HS400 mode."]
-pub struct HS400_MODE_R(crate::FieldReader<bool, bool>);
-impl HS400_MODE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        HS400_MODE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for HS400_MODE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type HS400_MODE_R = crate::BitReader<bool>;
 #[doc = "Field `HS400_MODE` writer - Set 1 to enable HS400 mode."]
-pub struct HS400_MODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HS400_MODE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
-        self.w
-    }
-}
+pub type HS400_MODE_W<'a> = crate::BitWriter<'a, u32, EMMCDDR_SPEC, bool, 31>;
 impl R {
     #[doc = "Bits 0:1 - Control for start bit detection mechanism duration of start bit.Each bit refers to one slot.Set this bit to 1 for eMMC4.5 and above,set to 0 for SD applications.For eMMC4.5,start bit can be: 1'b0-Full cycle. 1'b1-less than one full cycle."]
     #[inline(always)]
     pub fn halfstartbit(&self) -> HALFSTARTBIT_R {
-        HALFSTARTBIT_R::new((self.bits & 0x03) as u8)
+        HALFSTARTBIT_R::new((self.bits & 3) as u8)
     }
     #[doc = "Bit 31 - Set 1 to enable HS400 mode."]
     #[inline(always)]
     pub fn hs400_mode(&self) -> HS400_MODE_R {
-        HS400_MODE_R::new(((self.bits >> 31) & 0x01) != 0)
+        HS400_MODE_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - Control for start bit detection mechanism duration of start bit.Each bit refers to one slot.Set this bit to 1 for eMMC4.5 and above,set to 0 for SD applications.For eMMC4.5,start bit can be: 1'b0-Full cycle. 1'b1-less than one full cycle."]
     #[inline(always)]
     pub fn halfstartbit(&mut self) -> HALFSTARTBIT_W {
-        HALFSTARTBIT_W { w: self }
+        HALFSTARTBIT_W::new(self)
     }
     #[doc = "Bit 31 - Set 1 to enable HS400 mode."]
     #[inline(always)]
     pub fn hs400_mode(&mut self) -> HS400_MODE_W {
-        HS400_MODE_W { w: self }
+        HS400_MODE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -128,25 +72,16 @@ impl W {
         self
     }
 }
-#[doc = "eMMC DDR register\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [emmcddr]
-(index.html) module"]
+#[doc = "eMMC DDR register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [emmcddr](index.html) module"]
 pub struct EMMCDDR_SPEC;
 impl crate::RegisterSpec for EMMCDDR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [emmcddr::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [emmcddr::R](R) reader structure"]
 impl crate::Readable for EMMCDDR_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [emmcddr::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [emmcddr::W](W) writer structure"]
 impl crate::Writable for EMMCDDR_SPEC {
     type Writer = W;
 }

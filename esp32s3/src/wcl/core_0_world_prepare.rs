@@ -35,44 +35,22 @@ impl From<crate::W<CORE_0_WORLD_PREPARE_SPEC>> for W {
     }
 }
 #[doc = "Field `CORE_0_WORLD_PREPARE` reader - This field to used to set world to enter, 2'b01 means WORLD0, 2'b10 means WORLD1"]
-pub struct CORE_0_WORLD_PREPARE_R(crate::FieldReader<u8, u8>);
-impl CORE_0_WORLD_PREPARE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CORE_0_WORLD_PREPARE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CORE_0_WORLD_PREPARE_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CORE_0_WORLD_PREPARE_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CORE_0_WORLD_PREPARE` writer - This field to used to set world to enter, 2'b01 means WORLD0, 2'b10 means WORLD1"]
-pub struct CORE_0_WORLD_PREPARE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CORE_0_WORLD_PREPARE_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
-        self.w
-    }
-}
+pub type CORE_0_WORLD_PREPARE_W<'a> =
+    crate::FieldWriter<'a, u32, CORE_0_WORLD_PREPARE_SPEC, u8, u8, 2, 0>;
 impl R {
     #[doc = "Bits 0:1 - This field to used to set world to enter, 2'b01 means WORLD0, 2'b10 means WORLD1"]
     #[inline(always)]
     pub fn core_0_world_prepare(&self) -> CORE_0_WORLD_PREPARE_R {
-        CORE_0_WORLD_PREPARE_R::new((self.bits & 0x03) as u8)
+        CORE_0_WORLD_PREPARE_R::new((self.bits & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - This field to used to set world to enter, 2'b01 means WORLD0, 2'b10 means WORLD1"]
     #[inline(always)]
     pub fn core_0_world_prepare(&mut self) -> CORE_0_WORLD_PREPARE_W {
-        CORE_0_WORLD_PREPARE_W { w: self }
+        CORE_0_WORLD_PREPARE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -81,25 +59,16 @@ impl W {
         self
     }
 }
-#[doc = "Core_0 prepare world configuration Register\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [core_0_world_prepare]
-(index.html) module"]
+#[doc = "Core_0 prepare world configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [core_0_world_prepare](index.html) module"]
 pub struct CORE_0_WORLD_PREPARE_SPEC;
 impl crate::RegisterSpec for CORE_0_WORLD_PREPARE_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [core_0_world_prepare::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [core_0_world_prepare::R](R) reader structure"]
 impl crate::Readable for CORE_0_WORLD_PREPARE_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [core_0_world_prepare::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [core_0_world_prepare::W](W) writer structure"]
 impl crate::Writable for CORE_0_WORLD_PREPARE_SPEC {
     type Writer = W;
 }

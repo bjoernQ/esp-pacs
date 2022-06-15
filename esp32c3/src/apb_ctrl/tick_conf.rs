@@ -35,96 +35,17 @@ impl From<crate::W<TICK_CONF_SPEC>> for W {
     }
 }
 #[doc = "Field `XTAL_TICK_NUM` reader - reg_xtal_tick_num"]
-pub struct XTAL_TICK_NUM_R(crate::FieldReader<u8, u8>);
-impl XTAL_TICK_NUM_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        XTAL_TICK_NUM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for XTAL_TICK_NUM_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type XTAL_TICK_NUM_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `XTAL_TICK_NUM` writer - reg_xtal_tick_num"]
-pub struct XTAL_TICK_NUM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> XTAL_TICK_NUM_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type XTAL_TICK_NUM_W<'a> = crate::FieldWriter<'a, u32, TICK_CONF_SPEC, u8, u8, 8, 0>;
 #[doc = "Field `CK8M_TICK_NUM` reader - reg_ck8m_tick_num"]
-pub struct CK8M_TICK_NUM_R(crate::FieldReader<u8, u8>);
-impl CK8M_TICK_NUM_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CK8M_TICK_NUM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CK8M_TICK_NUM_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CK8M_TICK_NUM_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CK8M_TICK_NUM` writer - reg_ck8m_tick_num"]
-pub struct CK8M_TICK_NUM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CK8M_TICK_NUM_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 8)) | ((value as u32 & 0xff) << 8);
-        self.w
-    }
-}
+pub type CK8M_TICK_NUM_W<'a> = crate::FieldWriter<'a, u32, TICK_CONF_SPEC, u8, u8, 8, 8>;
 #[doc = "Field `TICK_ENABLE` reader - reg_tick_enable"]
-pub struct TICK_ENABLE_R(crate::FieldReader<bool, bool>);
-impl TICK_ENABLE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TICK_ENABLE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TICK_ENABLE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TICK_ENABLE_R = crate::BitReader<bool>;
 #[doc = "Field `TICK_ENABLE` writer - reg_tick_enable"]
-pub struct TICK_ENABLE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TICK_ENABLE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
-        self.w
-    }
-}
+pub type TICK_ENABLE_W<'a> = crate::BitWriter<'a, u32, TICK_CONF_SPEC, bool, 16>;
 impl R {
     #[doc = "Bits 0:7 - reg_xtal_tick_num"]
     #[inline(always)]
@@ -139,24 +60,24 @@ impl R {
     #[doc = "Bit 16 - reg_tick_enable"]
     #[inline(always)]
     pub fn tick_enable(&self) -> TICK_ENABLE_R {
-        TICK_ENABLE_R::new(((self.bits >> 16) & 0x01) != 0)
+        TICK_ENABLE_R::new(((self.bits >> 16) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:7 - reg_xtal_tick_num"]
     #[inline(always)]
     pub fn xtal_tick_num(&mut self) -> XTAL_TICK_NUM_W {
-        XTAL_TICK_NUM_W { w: self }
+        XTAL_TICK_NUM_W::new(self)
     }
     #[doc = "Bits 8:15 - reg_ck8m_tick_num"]
     #[inline(always)]
     pub fn ck8m_tick_num(&mut self) -> CK8M_TICK_NUM_W {
-        CK8M_TICK_NUM_W { w: self }
+        CK8M_TICK_NUM_W::new(self)
     }
     #[doc = "Bit 16 - reg_tick_enable"]
     #[inline(always)]
     pub fn tick_enable(&mut self) -> TICK_ENABLE_W {
-        TICK_ENABLE_W { w: self }
+        TICK_ENABLE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -165,25 +86,16 @@ impl W {
         self
     }
 }
-#[doc = "APB_CTRL_TICK_CONF_REG\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tick_conf]
-(index.html) module"]
+#[doc = "APB_CTRL_TICK_CONF_REG\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tick_conf](index.html) module"]
 pub struct TICK_CONF_SPEC;
 impl crate::RegisterSpec for TICK_CONF_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [tick_conf::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [tick_conf::R](R) reader structure"]
 impl crate::Readable for TICK_CONF_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [tick_conf::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [tick_conf::W](W) writer structure"]
 impl crate::Writable for TICK_CONF_SPEC {
     type Writer = W;
 }

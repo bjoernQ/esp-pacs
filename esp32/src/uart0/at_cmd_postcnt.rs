@@ -35,32 +35,9 @@ impl From<crate::W<AT_CMD_POSTCNT_SPEC>> for W {
     }
 }
 #[doc = "Field `POST_IDLE_NUM` reader - This register is used to configure the duration time between the last at_cmd and the next data. when the duration is less than this register value it will not take the previous data as at_cmd char."]
-pub struct POST_IDLE_NUM_R(crate::FieldReader<u32, u32>);
-impl POST_IDLE_NUM_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        POST_IDLE_NUM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for POST_IDLE_NUM_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type POST_IDLE_NUM_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `POST_IDLE_NUM` writer - This register is used to configure the duration time between the last at_cmd and the next data. when the duration is less than this register value it will not take the previous data as at_cmd char."]
-pub struct POST_IDLE_NUM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> POST_IDLE_NUM_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x00ff_ffff) | (value as u32 & 0x00ff_ffff);
-        self.w
-    }
-}
+pub type POST_IDLE_NUM_W<'a> = crate::FieldWriter<'a, u32, AT_CMD_POSTCNT_SPEC, u32, u32, 24, 0>;
 impl R {
     #[doc = "Bits 0:23 - This register is used to configure the duration time between the last at_cmd and the next data. when the duration is less than this register value it will not take the previous data as at_cmd char."]
     #[inline(always)]
@@ -72,7 +49,7 @@ impl W {
     #[doc = "Bits 0:23 - This register is used to configure the duration time between the last at_cmd and the next data. when the duration is less than this register value it will not take the previous data as at_cmd char."]
     #[inline(always)]
     pub fn post_idle_num(&mut self) -> POST_IDLE_NUM_W {
-        POST_IDLE_NUM_W { w: self }
+        POST_IDLE_NUM_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -81,25 +58,16 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [at_cmd_postcnt]
-(index.html) module"]
+#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [at_cmd_postcnt](index.html) module"]
 pub struct AT_CMD_POSTCNT_SPEC;
 impl crate::RegisterSpec for AT_CMD_POSTCNT_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [at_cmd_postcnt::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [at_cmd_postcnt::R](R) reader structure"]
 impl crate::Readable for AT_CMD_POSTCNT_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [at_cmd_postcnt::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [at_cmd_postcnt::W](W) writer structure"]
 impl crate::Writable for AT_CMD_POSTCNT_SPEC {
     type Writer = W;
 }

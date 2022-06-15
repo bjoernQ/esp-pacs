@@ -14,37 +14,20 @@ impl From<crate::R<BUSY_SPEC>> for R {
     }
 }
 #[doc = "Field `STATE` reader - Indicates the states of SHA accelerator. 1'h0: idle 1'h1: busy"]
-pub struct STATE_R(crate::FieldReader<bool, bool>);
-impl STATE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        STATE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for STATE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type STATE_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 0 - Indicates the states of SHA accelerator. 1'h0: idle 1'h1: busy"]
     #[inline(always)]
     pub fn state(&self) -> STATE_R {
-        STATE_R::new((self.bits & 0x01) != 0)
+        STATE_R::new((self.bits & 1) != 0)
     }
 }
-#[doc = "Indicates if SHA Accelerator is busy or not\n\nThis register you can [`read`]
-(crate::generic::Reg::read). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [busy]
-(index.html) module"]
+#[doc = "Indicates if SHA Accelerator is busy or not\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [busy](index.html) module"]
 pub struct BUSY_SPEC;
 impl crate::RegisterSpec for BUSY_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [busy::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [busy::R](R) reader structure"]
 impl crate::Readable for BUSY_SPEC {
     type Reader = R;
 }

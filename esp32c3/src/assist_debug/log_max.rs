@@ -35,32 +35,9 @@ impl From<crate::W<LOG_MAX_SPEC>> for W {
     }
 }
 #[doc = "Field `LOG_MAX` reader - reg_log_max"]
-pub struct LOG_MAX_R(crate::FieldReader<u32, u32>);
-impl LOG_MAX_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        LOG_MAX_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LOG_MAX_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type LOG_MAX_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `LOG_MAX` writer - reg_log_max"]
-pub struct LOG_MAX_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LOG_MAX_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
-    }
-}
+pub type LOG_MAX_W<'a> = crate::FieldWriter<'a, u32, LOG_MAX_SPEC, u32, u32, 32, 0>;
 impl R {
     #[doc = "Bits 0:31 - reg_log_max"]
     #[inline(always)]
@@ -72,7 +49,7 @@ impl W {
     #[doc = "Bits 0:31 - reg_log_max"]
     #[inline(always)]
     pub fn log_max(&mut self) -> LOG_MAX_W {
-        LOG_MAX_W { w: self }
+        LOG_MAX_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -81,25 +58,16 @@ impl W {
         self
     }
 }
-#[doc = "ASSIST_DEBUG_LOG_MAX_REG\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [log_max]
-(index.html) module"]
+#[doc = "ASSIST_DEBUG_LOG_MAX_REG\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [log_max](index.html) module"]
 pub struct LOG_MAX_SPEC;
 impl crate::RegisterSpec for LOG_MAX_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [log_max::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [log_max::R](R) reader structure"]
 impl crate::Readable for LOG_MAX_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [log_max::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [log_max::W](W) writer structure"]
 impl crate::Writable for LOG_MAX_SPEC {
     type Writer = W;
 }

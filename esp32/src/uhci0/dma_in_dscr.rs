@@ -14,20 +14,7 @@ impl From<crate::R<DMA_IN_DSCR_SPEC>> for R {
     }
 }
 #[doc = "Field `INLINK_DSCR` reader - The content of current in link descriptor's third dword"]
-pub struct INLINK_DSCR_R(crate::FieldReader<u32, u32>);
-impl INLINK_DSCR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        INLINK_DSCR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for INLINK_DSCR_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type INLINK_DSCR_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31 - The content of current in link descriptor's third dword"]
     #[inline(always)]
@@ -35,16 +22,12 @@ impl R {
         INLINK_DSCR_R::new(self.bits)
     }
 }
-#[doc = "\n\nThis register you can [`read`]
-(crate::generic::Reg::read). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dma_in_dscr]
-(index.html) module"]
+#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dma_in_dscr](index.html) module"]
 pub struct DMA_IN_DSCR_SPEC;
 impl crate::RegisterSpec for DMA_IN_DSCR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [dma_in_dscr::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [dma_in_dscr::R](R) reader structure"]
 impl crate::Readable for DMA_IN_DSCR_SPEC {
     type Reader = R;
 }

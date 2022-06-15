@@ -14,80 +14,15 @@ impl From<crate::R<SAR_COCPU_DEBUG_SPEC>> for R {
     }
 }
 #[doc = "Field `COCPU_PC` reader - ULP-RISCV Program counter"]
-pub struct COCPU_PC_R(crate::FieldReader<u16, u16>);
-impl COCPU_PC_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        COCPU_PC_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for COCPU_PC_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type COCPU_PC_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `COCPU_MEM_VLD` reader - ULP-RISCV memory valid output"]
-pub struct COCPU_MEM_VLD_R(crate::FieldReader<bool, bool>);
-impl COCPU_MEM_VLD_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        COCPU_MEM_VLD_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for COCPU_MEM_VLD_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type COCPU_MEM_VLD_R = crate::BitReader<bool>;
 #[doc = "Field `COCPU_MEM_RDY` reader - ULP-RISCV memory ready input"]
-pub struct COCPU_MEM_RDY_R(crate::FieldReader<bool, bool>);
-impl COCPU_MEM_RDY_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        COCPU_MEM_RDY_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for COCPU_MEM_RDY_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type COCPU_MEM_RDY_R = crate::BitReader<bool>;
 #[doc = "Field `COCPU_MEM_WEN` reader - ULP-RISCV memory write enable output"]
-pub struct COCPU_MEM_WEN_R(crate::FieldReader<u8, u8>);
-impl COCPU_MEM_WEN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        COCPU_MEM_WEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for COCPU_MEM_WEN_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type COCPU_MEM_WEN_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `COCPU_MEM_ADDR` reader - ULP-RISCV memory address output"]
-pub struct COCPU_MEM_ADDR_R(crate::FieldReader<u16, u16>);
-impl COCPU_MEM_ADDR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        COCPU_MEM_ADDR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for COCPU_MEM_ADDR_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type COCPU_MEM_ADDR_R = crate::FieldReader<u16, u16>;
 impl R {
     #[doc = "Bits 0:12 - ULP-RISCV Program counter"]
     #[inline(always)]
@@ -97,12 +32,12 @@ impl R {
     #[doc = "Bit 13 - ULP-RISCV memory valid output"]
     #[inline(always)]
     pub fn cocpu_mem_vld(&self) -> COCPU_MEM_VLD_R {
-        COCPU_MEM_VLD_R::new(((self.bits >> 13) & 0x01) != 0)
+        COCPU_MEM_VLD_R::new(((self.bits >> 13) & 1) != 0)
     }
     #[doc = "Bit 14 - ULP-RISCV memory ready input"]
     #[inline(always)]
     pub fn cocpu_mem_rdy(&self) -> COCPU_MEM_RDY_R {
-        COCPU_MEM_RDY_R::new(((self.bits >> 14) & 0x01) != 0)
+        COCPU_MEM_RDY_R::new(((self.bits >> 14) & 1) != 0)
     }
     #[doc = "Bits 15:18 - ULP-RISCV memory write enable output"]
     #[inline(always)]
@@ -115,16 +50,12 @@ impl R {
         COCPU_MEM_ADDR_R::new(((self.bits >> 19) & 0x1fff) as u16)
     }
 }
-#[doc = "ULP-RISCV debug register\n\nThis register you can [`read`]
-(crate::generic::Reg::read). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sar_cocpu_debug]
-(index.html) module"]
+#[doc = "ULP-RISCV debug register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sar_cocpu_debug](index.html) module"]
 pub struct SAR_COCPU_DEBUG_SPEC;
 impl crate::RegisterSpec for SAR_COCPU_DEBUG_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [sar_cocpu_debug::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [sar_cocpu_debug::R](R) reader structure"]
 impl crate::Readable for SAR_COCPU_DEBUG_SPEC {
     type Reader = R;
 }

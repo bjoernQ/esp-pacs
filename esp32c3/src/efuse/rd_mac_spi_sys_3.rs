@@ -14,35 +14,9 @@ impl From<crate::R<RD_MAC_SPI_SYS_3_SPEC>> for R {
     }
 }
 #[doc = "Field `SPI_PAD_CONF_2` reader - Stores the second part of SPI_PAD_CONF."]
-pub struct SPI_PAD_CONF_2_R(crate::FieldReader<u32, u32>);
-impl SPI_PAD_CONF_2_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        SPI_PAD_CONF_2_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SPI_PAD_CONF_2_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SPI_PAD_CONF_2_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `SYS_DATA_PART0_0` reader - Stores the fist 14 bits of the zeroth part of system data."]
-pub struct SYS_DATA_PART0_0_R(crate::FieldReader<u16, u16>);
-impl SYS_DATA_PART0_0_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        SYS_DATA_PART0_0_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SYS_DATA_PART0_0_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SYS_DATA_PART0_0_R = crate::FieldReader<u16, u16>;
 impl R {
     #[doc = "Bits 0:17 - Stores the second part of SPI_PAD_CONF."]
     #[inline(always)]
@@ -55,16 +29,12 @@ impl R {
         SYS_DATA_PART0_0_R::new(((self.bits >> 18) & 0x3fff) as u16)
     }
 }
-#[doc = "BLOCK1 data register 3.\n\nThis register you can [`read`]
-(crate::generic::Reg::read). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rd_mac_spi_sys_3]
-(index.html) module"]
+#[doc = "BLOCK1 data register 3.\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rd_mac_spi_sys_3](index.html) module"]
 pub struct RD_MAC_SPI_SYS_3_SPEC;
 impl crate::RegisterSpec for RD_MAC_SPI_SYS_3_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [rd_mac_spi_sys_3::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [rd_mac_spi_sys_3::R](R) reader structure"]
 impl crate::Readable for RD_MAC_SPI_SYS_3_SPEC {
     type Reader = R;
 }

@@ -14,20 +14,7 @@ impl From<crate::R<C0RE_0_LASTPC_BEFORE_EXCEPTION_SPEC>> for R {
     }
 }
 #[doc = "Field `CORE_0_LASTPC_BEFORE_EXC` reader - reg_core_0_lastpc_before_exc"]
-pub struct CORE_0_LASTPC_BEFORE_EXC_R(crate::FieldReader<u32, u32>);
-impl CORE_0_LASTPC_BEFORE_EXC_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        CORE_0_LASTPC_BEFORE_EXC_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CORE_0_LASTPC_BEFORE_EXC_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CORE_0_LASTPC_BEFORE_EXC_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31 - reg_core_0_lastpc_before_exc"]
     #[inline(always)]
@@ -35,16 +22,12 @@ impl R {
         CORE_0_LASTPC_BEFORE_EXC_R::new(self.bits)
     }
 }
-#[doc = "ASSIST_DEBUG_C0RE_0_LASTPC_BEFORE_EXCEPTION\n\nThis register you can [`read`]
-(crate::generic::Reg::read). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [c0re_0_lastpc_before_exception]
-(index.html) module"]
+#[doc = "ASSIST_DEBUG_C0RE_0_LASTPC_BEFORE_EXCEPTION\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [c0re_0_lastpc_before_exception](index.html) module"]
 pub struct C0RE_0_LASTPC_BEFORE_EXCEPTION_SPEC;
 impl crate::RegisterSpec for C0RE_0_LASTPC_BEFORE_EXCEPTION_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [c0re_0_lastpc_before_exception::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [c0re_0_lastpc_before_exception::R](R) reader structure"]
 impl crate::Readable for C0RE_0_LASTPC_BEFORE_EXCEPTION_SPEC {
     type Reader = R;
 }

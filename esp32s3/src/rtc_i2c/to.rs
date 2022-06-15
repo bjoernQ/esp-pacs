@@ -35,32 +35,9 @@ impl From<crate::W<TO_SPEC>> for W {
     }
 }
 #[doc = "Field `TIME_OUT` reader - time out threshold"]
-pub struct TIME_OUT_R(crate::FieldReader<u32, u32>);
-impl TIME_OUT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        TIME_OUT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TIME_OUT_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TIME_OUT_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `TIME_OUT` writer - time out threshold"]
-pub struct TIME_OUT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TIME_OUT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x000f_ffff) | (value as u32 & 0x000f_ffff);
-        self.w
-    }
-}
+pub type TIME_OUT_W<'a> = crate::FieldWriter<'a, u32, TO_SPEC, u32, u32, 20, 0>;
 impl R {
     #[doc = "Bits 0:19 - time out threshold"]
     #[inline(always)]
@@ -72,7 +49,7 @@ impl W {
     #[doc = "Bits 0:19 - time out threshold"]
     #[inline(always)]
     pub fn time_out(&mut self) -> TIME_OUT_W {
-        TIME_OUT_W { w: self }
+        TIME_OUT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -81,25 +58,16 @@ impl W {
         self
     }
 }
-#[doc = "configure time out\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [to]
-(index.html) module"]
+#[doc = "configure time out\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [to](index.html) module"]
 pub struct TO_SPEC;
 impl crate::RegisterSpec for TO_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [to::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [to::R](R) reader structure"]
 impl crate::Readable for TO_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [to::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [to::W](W) writer structure"]
 impl crate::Writable for TO_SPEC {
     type Writer = W;
 }

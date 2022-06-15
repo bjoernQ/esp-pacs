@@ -35,32 +35,9 @@ impl From<crate::W<CACHE_VADDR_SPEC>> for W {
     }
 }
 #[doc = "Field `CACHE_VADDR` reader - Those bits stores the virtual address which will decide where inside the specified tag memory object will be accessed."]
-pub struct CACHE_VADDR_R(crate::FieldReader<u32, u32>);
-impl CACHE_VADDR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        CACHE_VADDR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CACHE_VADDR_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CACHE_VADDR_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `CACHE_VADDR` writer - Those bits stores the virtual address which will decide where inside the specified tag memory object will be accessed."]
-pub struct CACHE_VADDR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CACHE_VADDR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
-    }
-}
+pub type CACHE_VADDR_W<'a> = crate::FieldWriter<'a, u32, CACHE_VADDR_SPEC, u32, u32, 32, 0>;
 impl R {
     #[doc = "Bits 0:31 - Those bits stores the virtual address which will decide where inside the specified tag memory object will be accessed."]
     #[inline(always)]
@@ -72,7 +49,7 @@ impl W {
     #[doc = "Bits 0:31 - Those bits stores the virtual address which will decide where inside the specified tag memory object will be accessed."]
     #[inline(always)]
     pub fn cache_vaddr(&mut self) -> CACHE_VADDR_W {
-        CACHE_VADDR_W { w: self }
+        CACHE_VADDR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -81,25 +58,16 @@ impl W {
         self
     }
 }
-#[doc = "******* Description ***********\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cache_vaddr]
-(index.html) module"]
+#[doc = "******* Description ***********\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cache_vaddr](index.html) module"]
 pub struct CACHE_VADDR_SPEC;
 impl crate::RegisterSpec for CACHE_VADDR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [cache_vaddr::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [cache_vaddr::R](R) reader structure"]
 impl crate::Readable for CACHE_VADDR_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [cache_vaddr::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [cache_vaddr::W](W) writer structure"]
 impl crate::Writable for CACHE_VADDR_SPEC {
     type Writer = W;
 }

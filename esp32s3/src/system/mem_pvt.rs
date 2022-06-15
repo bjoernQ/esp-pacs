@@ -35,133 +35,21 @@ impl From<crate::W<MEM_PVT_SPEC>> for W {
     }
 }
 #[doc = "Field `MEM_PATH_LEN` reader - ******* Description ***********"]
-pub struct MEM_PATH_LEN_R(crate::FieldReader<u8, u8>);
-impl MEM_PATH_LEN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        MEM_PATH_LEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MEM_PATH_LEN_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MEM_PATH_LEN_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `MEM_PATH_LEN` writer - ******* Description ***********"]
-pub struct MEM_PATH_LEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MEM_PATH_LEN_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0f) | (value as u32 & 0x0f);
-        self.w
-    }
-}
+pub type MEM_PATH_LEN_W<'a> = crate::FieldWriter<'a, u32, MEM_PVT_SPEC, u8, u8, 4, 0>;
 #[doc = "Field `MEM_ERR_CNT_CLR` writer - ******* Description ***********"]
-pub struct MEM_ERR_CNT_CLR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MEM_ERR_CNT_CLR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type MEM_ERR_CNT_CLR_W<'a> = crate::BitWriter<'a, u32, MEM_PVT_SPEC, bool, 4>;
 #[doc = "Field `MONITOR_EN` reader - ******* Description ***********"]
-pub struct MONITOR_EN_R(crate::FieldReader<bool, bool>);
-impl MONITOR_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        MONITOR_EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MONITOR_EN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MONITOR_EN_R = crate::BitReader<bool>;
 #[doc = "Field `MONITOR_EN` writer - ******* Description ***********"]
-pub struct MONITOR_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MONITOR_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
+pub type MONITOR_EN_W<'a> = crate::BitWriter<'a, u32, MEM_PVT_SPEC, bool, 5>;
 #[doc = "Field `MEM_TIMING_ERR_CNT` reader - ******* Description ***********"]
-pub struct MEM_TIMING_ERR_CNT_R(crate::FieldReader<u16, u16>);
-impl MEM_TIMING_ERR_CNT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        MEM_TIMING_ERR_CNT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MEM_TIMING_ERR_CNT_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MEM_TIMING_ERR_CNT_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `MEM_VT_SEL` reader - ******* Description ***********"]
-pub struct MEM_VT_SEL_R(crate::FieldReader<u8, u8>);
-impl MEM_VT_SEL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        MEM_VT_SEL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MEM_VT_SEL_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MEM_VT_SEL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `MEM_VT_SEL` writer - ******* Description ***********"]
-pub struct MEM_VT_SEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MEM_VT_SEL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 22)) | ((value as u32 & 0x03) << 22);
-        self.w
-    }
-}
+pub type MEM_VT_SEL_W<'a> = crate::FieldWriter<'a, u32, MEM_PVT_SPEC, u8, u8, 2, 22>;
 impl R {
     #[doc = "Bits 0:3 - ******* Description ***********"]
     #[inline(always)]
@@ -171,7 +59,7 @@ impl R {
     #[doc = "Bit 5 - ******* Description ***********"]
     #[inline(always)]
     pub fn monitor_en(&self) -> MONITOR_EN_R {
-        MONITOR_EN_R::new(((self.bits >> 5) & 0x01) != 0)
+        MONITOR_EN_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bits 6:21 - ******* Description ***********"]
     #[inline(always)]
@@ -181,29 +69,29 @@ impl R {
     #[doc = "Bits 22:23 - ******* Description ***********"]
     #[inline(always)]
     pub fn mem_vt_sel(&self) -> MEM_VT_SEL_R {
-        MEM_VT_SEL_R::new(((self.bits >> 22) & 0x03) as u8)
+        MEM_VT_SEL_R::new(((self.bits >> 22) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:3 - ******* Description ***********"]
     #[inline(always)]
     pub fn mem_path_len(&mut self) -> MEM_PATH_LEN_W {
-        MEM_PATH_LEN_W { w: self }
+        MEM_PATH_LEN_W::new(self)
     }
     #[doc = "Bit 4 - ******* Description ***********"]
     #[inline(always)]
     pub fn mem_err_cnt_clr(&mut self) -> MEM_ERR_CNT_CLR_W {
-        MEM_ERR_CNT_CLR_W { w: self }
+        MEM_ERR_CNT_CLR_W::new(self)
     }
     #[doc = "Bit 5 - ******* Description ***********"]
     #[inline(always)]
     pub fn monitor_en(&mut self) -> MONITOR_EN_W {
-        MONITOR_EN_W { w: self }
+        MONITOR_EN_W::new(self)
     }
     #[doc = "Bits 22:23 - ******* Description ***********"]
     #[inline(always)]
     pub fn mem_vt_sel(&mut self) -> MEM_VT_SEL_W {
-        MEM_VT_SEL_W { w: self }
+        MEM_VT_SEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -212,25 +100,16 @@ impl W {
         self
     }
 }
-#[doc = "******* Description ***********\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mem_pvt]
-(index.html) module"]
+#[doc = "******* Description ***********\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mem_pvt](index.html) module"]
 pub struct MEM_PVT_SPEC;
 impl crate::RegisterSpec for MEM_PVT_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [mem_pvt::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [mem_pvt::R](R) reader structure"]
 impl crate::Readable for MEM_PVT_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [mem_pvt::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [mem_pvt::W](W) writer structure"]
 impl crate::Writable for MEM_PVT_SPEC {
     type Writer = W;
 }

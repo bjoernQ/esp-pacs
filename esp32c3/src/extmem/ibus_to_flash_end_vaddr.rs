@@ -35,32 +35,10 @@ impl From<crate::W<IBUS_TO_FLASH_END_VADDR_SPEC>> for W {
     }
 }
 #[doc = "Field `IBUS_TO_FLASH_END_VADDR` reader - The bits are used to configure the end virtual address of ibus to access flash. The register is used to give constraints to ibus access counter."]
-pub struct IBUS_TO_FLASH_END_VADDR_R(crate::FieldReader<u32, u32>);
-impl IBUS_TO_FLASH_END_VADDR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        IBUS_TO_FLASH_END_VADDR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for IBUS_TO_FLASH_END_VADDR_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type IBUS_TO_FLASH_END_VADDR_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `IBUS_TO_FLASH_END_VADDR` writer - The bits are used to configure the end virtual address of ibus to access flash. The register is used to give constraints to ibus access counter."]
-pub struct IBUS_TO_FLASH_END_VADDR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IBUS_TO_FLASH_END_VADDR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
-    }
-}
+pub type IBUS_TO_FLASH_END_VADDR_W<'a> =
+    crate::FieldWriter<'a, u32, IBUS_TO_FLASH_END_VADDR_SPEC, u32, u32, 32, 0>;
 impl R {
     #[doc = "Bits 0:31 - The bits are used to configure the end virtual address of ibus to access flash. The register is used to give constraints to ibus access counter."]
     #[inline(always)]
@@ -72,7 +50,7 @@ impl W {
     #[doc = "Bits 0:31 - The bits are used to configure the end virtual address of ibus to access flash. The register is used to give constraints to ibus access counter."]
     #[inline(always)]
     pub fn ibus_to_flash_end_vaddr(&mut self) -> IBUS_TO_FLASH_END_VADDR_W {
-        IBUS_TO_FLASH_END_VADDR_W { w: self }
+        IBUS_TO_FLASH_END_VADDR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -81,25 +59,16 @@ impl W {
         self
     }
 }
-#[doc = "This description will be updated in the near future.\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ibus_to_flash_end_vaddr]
-(index.html) module"]
+#[doc = "This description will be updated in the near future.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ibus_to_flash_end_vaddr](index.html) module"]
 pub struct IBUS_TO_FLASH_END_VADDR_SPEC;
 impl crate::RegisterSpec for IBUS_TO_FLASH_END_VADDR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [ibus_to_flash_end_vaddr::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [ibus_to_flash_end_vaddr::R](R) reader structure"]
 impl crate::Readable for IBUS_TO_FLASH_END_VADDR_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [ibus_to_flash_end_vaddr::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [ibus_to_flash_end_vaddr::W](W) writer structure"]
 impl crate::Writable for IBUS_TO_FLASH_END_VADDR_SPEC {
     type Writer = W;
 }

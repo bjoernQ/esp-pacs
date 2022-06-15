@@ -35,54 +35,21 @@ impl From<crate::W<MULT_MODE_SPEC>> for W {
     }
 }
 #[doc = "Field `MULT_MODE` reader - This register contains the mode of modular multiplication and multiplication."]
-pub struct MULT_MODE_R(crate::FieldReader<bool, bool>);
-impl MULT_MODE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        MULT_MODE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MULT_MODE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MULT_MODE_R = crate::BitReader<bool>;
 #[doc = "Field `MULT_MODE` writer - This register contains the mode of modular multiplication and multiplication."]
-pub struct MULT_MODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MULT_MODE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type MULT_MODE_W<'a> = crate::BitWriter<'a, u32, MULT_MODE_SPEC, bool, 0>;
 impl R {
     #[doc = "Bit 0 - This register contains the mode of modular multiplication and multiplication."]
     #[inline(always)]
     pub fn mult_mode(&self) -> MULT_MODE_R {
-        MULT_MODE_R::new((self.bits & 0x01) != 0)
+        MULT_MODE_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - This register contains the mode of modular multiplication and multiplication."]
     #[inline(always)]
     pub fn mult_mode(&mut self) -> MULT_MODE_W {
-        MULT_MODE_W { w: self }
+        MULT_MODE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -91,25 +58,16 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mult_mode]
-(index.html) module"]
+#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mult_mode](index.html) module"]
 pub struct MULT_MODE_SPEC;
 impl crate::RegisterSpec for MULT_MODE_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [mult_mode::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [mult_mode::R](R) reader structure"]
 impl crate::Readable for MULT_MODE_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [mult_mode::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [mult_mode::W](W) writer structure"]
 impl crate::Writable for MULT_MODE_SPEC {
     type Writer = W;
 }

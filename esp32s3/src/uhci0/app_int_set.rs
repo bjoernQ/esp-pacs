@@ -20,59 +20,19 @@ impl From<crate::W<APP_INT_SET_SPEC>> for W {
     }
 }
 #[doc = "Field `APP_CTRL0_INT_SET` writer - This bit is software interrupt trigger source of UHCI_APP_CTRL0_INT."]
-pub struct APP_CTRL0_INT_SET_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> APP_CTRL0_INT_SET_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type APP_CTRL0_INT_SET_W<'a> = crate::BitWriter<'a, u32, APP_INT_SET_SPEC, bool, 0>;
 #[doc = "Field `APP_CTRL1_INT_SET` writer - This bit is software interrupt trigger source of UHCI_APP_CTRL1_INT."]
-pub struct APP_CTRL1_INT_SET_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> APP_CTRL1_INT_SET_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type APP_CTRL1_INT_SET_W<'a> = crate::BitWriter<'a, u32, APP_INT_SET_SPEC, bool, 1>;
 impl W {
     #[doc = "Bit 0 - This bit is software interrupt trigger source of UHCI_APP_CTRL0_INT."]
     #[inline(always)]
     pub fn app_ctrl0_int_set(&mut self) -> APP_CTRL0_INT_SET_W {
-        APP_CTRL0_INT_SET_W { w: self }
+        APP_CTRL0_INT_SET_W::new(self)
     }
     #[doc = "Bit 1 - This bit is software interrupt trigger source of UHCI_APP_CTRL1_INT."]
     #[inline(always)]
     pub fn app_ctrl1_int_set(&mut self) -> APP_CTRL1_INT_SET_W {
-        APP_CTRL1_INT_SET_W { w: self }
+        APP_CTRL1_INT_SET_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -81,18 +41,12 @@ impl W {
         self
     }
 }
-#[doc = "Software interrupt trigger source\n\nThis register you can [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [app_int_set]
-(index.html) module"]
+#[doc = "Software interrupt trigger source\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [app_int_set](index.html) module"]
 pub struct APP_INT_SET_SPEC;
 impl crate::RegisterSpec for APP_INT_SET_SPEC {
     type Ux = u32;
 }
-#[doc = "`write(|w| ..)` method takes [app_int_set::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [app_int_set::W](W) writer structure"]
 impl crate::Writable for APP_INT_SET_SPEC {
     type Writer = W;
 }

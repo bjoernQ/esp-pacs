@@ -35,59 +35,15 @@ impl From<crate::W<HOST_SLC1HOST_TOKEN_WDATA_SPEC>> for W {
     }
 }
 #[doc = "Field `HOST_SLC1HOST_TOKEN0_WD` reader - "]
-pub struct HOST_SLC1HOST_TOKEN0_WD_R(crate::FieldReader<u16, u16>);
-impl HOST_SLC1HOST_TOKEN0_WD_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        HOST_SLC1HOST_TOKEN0_WD_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for HOST_SLC1HOST_TOKEN0_WD_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type HOST_SLC1HOST_TOKEN0_WD_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `HOST_SLC1HOST_TOKEN0_WD` writer - "]
-pub struct HOST_SLC1HOST_TOKEN0_WD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HOST_SLC1HOST_TOKEN0_WD_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0fff) | (value as u32 & 0x0fff);
-        self.w
-    }
-}
+pub type HOST_SLC1HOST_TOKEN0_WD_W<'a> =
+    crate::FieldWriter<'a, u32, HOST_SLC1HOST_TOKEN_WDATA_SPEC, u16, u16, 12, 0>;
 #[doc = "Field `HOST_SLC1HOST_TOKEN1_WD` reader - "]
-pub struct HOST_SLC1HOST_TOKEN1_WD_R(crate::FieldReader<u16, u16>);
-impl HOST_SLC1HOST_TOKEN1_WD_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        HOST_SLC1HOST_TOKEN1_WD_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for HOST_SLC1HOST_TOKEN1_WD_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type HOST_SLC1HOST_TOKEN1_WD_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `HOST_SLC1HOST_TOKEN1_WD` writer - "]
-pub struct HOST_SLC1HOST_TOKEN1_WD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HOST_SLC1HOST_TOKEN1_WD_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0fff << 16)) | ((value as u32 & 0x0fff) << 16);
-        self.w
-    }
-}
+pub type HOST_SLC1HOST_TOKEN1_WD_W<'a> =
+    crate::FieldWriter<'a, u32, HOST_SLC1HOST_TOKEN_WDATA_SPEC, u16, u16, 12, 16>;
 impl R {
     #[doc = "Bits 0:11"]
     #[inline(always)]
@@ -104,12 +60,12 @@ impl W {
     #[doc = "Bits 0:11"]
     #[inline(always)]
     pub fn host_slc1host_token0_wd(&mut self) -> HOST_SLC1HOST_TOKEN0_WD_W {
-        HOST_SLC1HOST_TOKEN0_WD_W { w: self }
+        HOST_SLC1HOST_TOKEN0_WD_W::new(self)
     }
     #[doc = "Bits 16:27"]
     #[inline(always)]
     pub fn host_slc1host_token1_wd(&mut self) -> HOST_SLC1HOST_TOKEN1_WD_W {
-        HOST_SLC1HOST_TOKEN1_WD_W { w: self }
+        HOST_SLC1HOST_TOKEN1_WD_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -118,25 +74,16 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [host_slc1host_token_wdata]
-(index.html) module"]
+#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [host_slc1host_token_wdata](index.html) module"]
 pub struct HOST_SLC1HOST_TOKEN_WDATA_SPEC;
 impl crate::RegisterSpec for HOST_SLC1HOST_TOKEN_WDATA_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [host_slc1host_token_wdata::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [host_slc1host_token_wdata::R](R) reader structure"]
 impl crate::Readable for HOST_SLC1HOST_TOKEN_WDATA_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [host_slc1host_token_wdata::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [host_slc1host_token_wdata::W](W) writer structure"]
 impl crate::Writable for HOST_SLC1HOST_TOKEN_WDATA_SPEC {
     type Writer = W;
 }

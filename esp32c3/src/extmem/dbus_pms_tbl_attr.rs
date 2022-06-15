@@ -35,81 +35,37 @@ impl From<crate::W<DBUS_PMS_TBL_ATTR_SPEC>> for W {
     }
 }
 #[doc = "Field `DBUS_PMS_SCT1_ATTR` reader - The bit is used to configure attribute of the dbus permission control section1, bit0: load in world0, bit2: load in world1"]
-pub struct DBUS_PMS_SCT1_ATTR_R(crate::FieldReader<u8, u8>);
-impl DBUS_PMS_SCT1_ATTR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        DBUS_PMS_SCT1_ATTR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DBUS_PMS_SCT1_ATTR_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DBUS_PMS_SCT1_ATTR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DBUS_PMS_SCT1_ATTR` writer - The bit is used to configure attribute of the dbus permission control section1, bit0: load in world0, bit2: load in world1"]
-pub struct DBUS_PMS_SCT1_ATTR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DBUS_PMS_SCT1_ATTR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
-        self.w
-    }
-}
+pub type DBUS_PMS_SCT1_ATTR_W<'a> =
+    crate::FieldWriter<'a, u32, DBUS_PMS_TBL_ATTR_SPEC, u8, u8, 2, 0>;
 #[doc = "Field `DBUS_PMS_SCT2_ATTR` reader - The bit is used to configure attribute of the dbus permission control section2, bit0: load in world0, bit2: load in world1"]
-pub struct DBUS_PMS_SCT2_ATTR_R(crate::FieldReader<u8, u8>);
-impl DBUS_PMS_SCT2_ATTR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        DBUS_PMS_SCT2_ATTR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DBUS_PMS_SCT2_ATTR_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DBUS_PMS_SCT2_ATTR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DBUS_PMS_SCT2_ATTR` writer - The bit is used to configure attribute of the dbus permission control section2, bit0: load in world0, bit2: load in world1"]
-pub struct DBUS_PMS_SCT2_ATTR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DBUS_PMS_SCT2_ATTR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 2)) | ((value as u32 & 0x03) << 2);
-        self.w
-    }
-}
+pub type DBUS_PMS_SCT2_ATTR_W<'a> =
+    crate::FieldWriter<'a, u32, DBUS_PMS_TBL_ATTR_SPEC, u8, u8, 2, 2>;
 impl R {
     #[doc = "Bits 0:1 - The bit is used to configure attribute of the dbus permission control section1, bit0: load in world0, bit2: load in world1"]
     #[inline(always)]
     pub fn dbus_pms_sct1_attr(&self) -> DBUS_PMS_SCT1_ATTR_R {
-        DBUS_PMS_SCT1_ATTR_R::new((self.bits & 0x03) as u8)
+        DBUS_PMS_SCT1_ATTR_R::new((self.bits & 3) as u8)
     }
     #[doc = "Bits 2:3 - The bit is used to configure attribute of the dbus permission control section2, bit0: load in world0, bit2: load in world1"]
     #[inline(always)]
     pub fn dbus_pms_sct2_attr(&self) -> DBUS_PMS_SCT2_ATTR_R {
-        DBUS_PMS_SCT2_ATTR_R::new(((self.bits >> 2) & 0x03) as u8)
+        DBUS_PMS_SCT2_ATTR_R::new(((self.bits >> 2) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - The bit is used to configure attribute of the dbus permission control section1, bit0: load in world0, bit2: load in world1"]
     #[inline(always)]
     pub fn dbus_pms_sct1_attr(&mut self) -> DBUS_PMS_SCT1_ATTR_W {
-        DBUS_PMS_SCT1_ATTR_W { w: self }
+        DBUS_PMS_SCT1_ATTR_W::new(self)
     }
     #[doc = "Bits 2:3 - The bit is used to configure attribute of the dbus permission control section2, bit0: load in world0, bit2: load in world1"]
     #[inline(always)]
     pub fn dbus_pms_sct2_attr(&mut self) -> DBUS_PMS_SCT2_ATTR_W {
-        DBUS_PMS_SCT2_ATTR_W { w: self }
+        DBUS_PMS_SCT2_ATTR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -118,25 +74,16 @@ impl W {
         self
     }
 }
-#[doc = "This description will be updated in the near future.\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dbus_pms_tbl_attr]
-(index.html) module"]
+#[doc = "This description will be updated in the near future.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dbus_pms_tbl_attr](index.html) module"]
 pub struct DBUS_PMS_TBL_ATTR_SPEC;
 impl crate::RegisterSpec for DBUS_PMS_TBL_ATTR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [dbus_pms_tbl_attr::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [dbus_pms_tbl_attr::R](R) reader structure"]
 impl crate::Readable for DBUS_PMS_TBL_ATTR_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [dbus_pms_tbl_attr::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [dbus_pms_tbl_attr::W](W) writer structure"]
 impl crate::Writable for DBUS_PMS_TBL_ATTR_SPEC {
     type Writer = W;
 }

@@ -35,101 +35,23 @@ impl From<crate::W<FLASH_WAITI_CTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `WAITI_DUMMY` reader - The dummy phase enable when wait flash idle (RDSR)"]
-pub struct WAITI_DUMMY_R(crate::FieldReader<bool, bool>);
-impl WAITI_DUMMY_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        WAITI_DUMMY_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WAITI_DUMMY_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type WAITI_DUMMY_R = crate::BitReader<bool>;
 #[doc = "Field `WAITI_DUMMY` writer - The dummy phase enable when wait flash idle (RDSR)"]
-pub struct WAITI_DUMMY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WAITI_DUMMY_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type WAITI_DUMMY_W<'a> = crate::BitWriter<'a, u32, FLASH_WAITI_CTRL_SPEC, bool, 1>;
 #[doc = "Field `WAITI_CMD` reader - The command to wait flash idle(RDSR)."]
-pub struct WAITI_CMD_R(crate::FieldReader<u8, u8>);
-impl WAITI_CMD_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        WAITI_CMD_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WAITI_CMD_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type WAITI_CMD_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `WAITI_CMD` writer - The command to wait flash idle(RDSR)."]
-pub struct WAITI_CMD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WAITI_CMD_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 2)) | ((value as u32 & 0xff) << 2);
-        self.w
-    }
-}
+pub type WAITI_CMD_W<'a> = crate::FieldWriter<'a, u32, FLASH_WAITI_CTRL_SPEC, u8, u8, 8, 2>;
 #[doc = "Field `WAITI_DUMMY_CYCLELEN` reader - The dummy cycle length when wait flash idle(RDSR)."]
-pub struct WAITI_DUMMY_CYCLELEN_R(crate::FieldReader<u8, u8>);
-impl WAITI_DUMMY_CYCLELEN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        WAITI_DUMMY_CYCLELEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WAITI_DUMMY_CYCLELEN_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type WAITI_DUMMY_CYCLELEN_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `WAITI_DUMMY_CYCLELEN` writer - The dummy cycle length when wait flash idle(RDSR)."]
-pub struct WAITI_DUMMY_CYCLELEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WAITI_DUMMY_CYCLELEN_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x3f << 10)) | ((value as u32 & 0x3f) << 10);
-        self.w
-    }
-}
+pub type WAITI_DUMMY_CYCLELEN_W<'a> =
+    crate::FieldWriter<'a, u32, FLASH_WAITI_CTRL_SPEC, u8, u8, 6, 10>;
 impl R {
     #[doc = "Bit 1 - The dummy phase enable when wait flash idle (RDSR)"]
     #[inline(always)]
     pub fn waiti_dummy(&self) -> WAITI_DUMMY_R {
-        WAITI_DUMMY_R::new(((self.bits >> 1) & 0x01) != 0)
+        WAITI_DUMMY_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bits 2:9 - The command to wait flash idle(RDSR)."]
     #[inline(always)]
@@ -146,17 +68,17 @@ impl W {
     #[doc = "Bit 1 - The dummy phase enable when wait flash idle (RDSR)"]
     #[inline(always)]
     pub fn waiti_dummy(&mut self) -> WAITI_DUMMY_W {
-        WAITI_DUMMY_W { w: self }
+        WAITI_DUMMY_W::new(self)
     }
     #[doc = "Bits 2:9 - The command to wait flash idle(RDSR)."]
     #[inline(always)]
     pub fn waiti_cmd(&mut self) -> WAITI_CMD_W {
-        WAITI_CMD_W { w: self }
+        WAITI_CMD_W::new(self)
     }
     #[doc = "Bits 10:15 - The dummy cycle length when wait flash idle(RDSR)."]
     #[inline(always)]
     pub fn waiti_dummy_cyclelen(&mut self) -> WAITI_DUMMY_CYCLELEN_W {
-        WAITI_DUMMY_CYCLELEN_W { w: self }
+        WAITI_DUMMY_CYCLELEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -165,25 +87,16 @@ impl W {
         self
     }
 }
-#[doc = "SPI1 wait idle control register\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [flash_waiti_ctrl]
-(index.html) module"]
+#[doc = "SPI1 wait idle control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [flash_waiti_ctrl](index.html) module"]
 pub struct FLASH_WAITI_CTRL_SPEC;
 impl crate::RegisterSpec for FLASH_WAITI_CTRL_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [flash_waiti_ctrl::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [flash_waiti_ctrl::R](R) reader structure"]
 impl crate::Readable for FLASH_WAITI_CTRL_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [flash_waiti_ctrl::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [flash_waiti_ctrl::W](W) writer structure"]
 impl crate::Writable for FLASH_WAITI_CTRL_SPEC {
     type Writer = W;
 }

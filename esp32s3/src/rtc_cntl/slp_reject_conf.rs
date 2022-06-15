@@ -35,106 +35,18 @@ impl From<crate::W<SLP_REJECT_CONF_SPEC>> for W {
     }
 }
 #[doc = "Field `RTC_SLEEP_REJECT_ENA` reader - sleep reject enable"]
-pub struct RTC_SLEEP_REJECT_ENA_R(crate::FieldReader<u32, u32>);
-impl RTC_SLEEP_REJECT_ENA_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        RTC_SLEEP_REJECT_ENA_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RTC_SLEEP_REJECT_ENA_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RTC_SLEEP_REJECT_ENA_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `RTC_SLEEP_REJECT_ENA` writer - sleep reject enable"]
-pub struct RTC_SLEEP_REJECT_ENA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RTC_SLEEP_REJECT_ENA_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0003_ffff << 12)) | ((value as u32 & 0x0003_ffff) << 12);
-        self.w
-    }
-}
+pub type RTC_SLEEP_REJECT_ENA_W<'a> =
+    crate::FieldWriter<'a, u32, SLP_REJECT_CONF_SPEC, u32, u32, 18, 12>;
 #[doc = "Field `LIGHT_SLP_REJECT_EN` reader - enable reject for light sleep"]
-pub struct LIGHT_SLP_REJECT_EN_R(crate::FieldReader<bool, bool>);
-impl LIGHT_SLP_REJECT_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        LIGHT_SLP_REJECT_EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LIGHT_SLP_REJECT_EN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type LIGHT_SLP_REJECT_EN_R = crate::BitReader<bool>;
 #[doc = "Field `LIGHT_SLP_REJECT_EN` writer - enable reject for light sleep"]
-pub struct LIGHT_SLP_REJECT_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LIGHT_SLP_REJECT_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 30)) | ((value as u32 & 0x01) << 30);
-        self.w
-    }
-}
+pub type LIGHT_SLP_REJECT_EN_W<'a> = crate::BitWriter<'a, u32, SLP_REJECT_CONF_SPEC, bool, 30>;
 #[doc = "Field `DEEP_SLP_REJECT_EN` reader - enable reject for deep sleep"]
-pub struct DEEP_SLP_REJECT_EN_R(crate::FieldReader<bool, bool>);
-impl DEEP_SLP_REJECT_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DEEP_SLP_REJECT_EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DEEP_SLP_REJECT_EN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DEEP_SLP_REJECT_EN_R = crate::BitReader<bool>;
 #[doc = "Field `DEEP_SLP_REJECT_EN` writer - enable reject for deep sleep"]
-pub struct DEEP_SLP_REJECT_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DEEP_SLP_REJECT_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
-        self.w
-    }
-}
+pub type DEEP_SLP_REJECT_EN_W<'a> = crate::BitWriter<'a, u32, SLP_REJECT_CONF_SPEC, bool, 31>;
 impl R {
     #[doc = "Bits 12:29 - sleep reject enable"]
     #[inline(always)]
@@ -144,29 +56,29 @@ impl R {
     #[doc = "Bit 30 - enable reject for light sleep"]
     #[inline(always)]
     pub fn light_slp_reject_en(&self) -> LIGHT_SLP_REJECT_EN_R {
-        LIGHT_SLP_REJECT_EN_R::new(((self.bits >> 30) & 0x01) != 0)
+        LIGHT_SLP_REJECT_EN_R::new(((self.bits >> 30) & 1) != 0)
     }
     #[doc = "Bit 31 - enable reject for deep sleep"]
     #[inline(always)]
     pub fn deep_slp_reject_en(&self) -> DEEP_SLP_REJECT_EN_R {
-        DEEP_SLP_REJECT_EN_R::new(((self.bits >> 31) & 0x01) != 0)
+        DEEP_SLP_REJECT_EN_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 12:29 - sleep reject enable"]
     #[inline(always)]
     pub fn rtc_sleep_reject_ena(&mut self) -> RTC_SLEEP_REJECT_ENA_W {
-        RTC_SLEEP_REJECT_ENA_W { w: self }
+        RTC_SLEEP_REJECT_ENA_W::new(self)
     }
     #[doc = "Bit 30 - enable reject for light sleep"]
     #[inline(always)]
     pub fn light_slp_reject_en(&mut self) -> LIGHT_SLP_REJECT_EN_W {
-        LIGHT_SLP_REJECT_EN_W { w: self }
+        LIGHT_SLP_REJECT_EN_W::new(self)
     }
     #[doc = "Bit 31 - enable reject for deep sleep"]
     #[inline(always)]
     pub fn deep_slp_reject_en(&mut self) -> DEEP_SLP_REJECT_EN_W {
-        DEEP_SLP_REJECT_EN_W { w: self }
+        DEEP_SLP_REJECT_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -175,25 +87,16 @@ impl W {
         self
     }
 }
-#[doc = "reject sleep register\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [slp_reject_conf]
-(index.html) module"]
+#[doc = "reject sleep register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [slp_reject_conf](index.html) module"]
 pub struct SLP_REJECT_CONF_SPEC;
 impl crate::RegisterSpec for SLP_REJECT_CONF_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [slp_reject_conf::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [slp_reject_conf::R](R) reader structure"]
 impl crate::Readable for SLP_REJECT_CONF_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [slp_reject_conf::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [slp_reject_conf::W](W) writer structure"]
 impl crate::Writable for SLP_REJECT_CONF_SPEC {
     type Writer = W;
 }

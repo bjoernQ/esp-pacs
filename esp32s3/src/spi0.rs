@@ -1,90 +1,78 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - SPI1 memory command register"]
-    pub cmd: crate::Reg<cmd::CMD_SPEC>,
-    #[doc = "0x04 - SPI1 address register"]
-    pub addr: crate::Reg<addr::ADDR_SPEC>,
-    #[doc = "0x08 - SPI1 control register"]
+    _reserved0: [u8; 0x08],
+    #[doc = "0x08 - SPI0 control register."]
     pub ctrl: crate::Reg<ctrl::CTRL_SPEC>,
-    #[doc = "0x0c - SPI1 control1 register"]
+    #[doc = "0x0c - SPI0 control 1 register."]
     pub ctrl1: crate::Reg<ctrl1::CTRL1_SPEC>,
-    #[doc = "0x10 - SPI1 control2 register"]
+    #[doc = "0x10 - SPI0 control 2 register."]
     pub ctrl2: crate::Reg<ctrl2::CTRL2_SPEC>,
-    #[doc = "0x14 - SPI_CLK clock division register when SPI1 accesses to flash or Ext_RAM."]
+    #[doc = "0x14 - SPI_CLK clock division register when SPI0 accesses to flash."]
     pub clock: crate::Reg<clock::CLOCK_SPEC>,
-    #[doc = "0x18 - SPI1 user register."]
+    #[doc = "0x18 - SPI0 user register."]
     pub user: crate::Reg<user::USER_SPEC>,
-    #[doc = "0x1c - SPI1 user1 register."]
+    #[doc = "0x1c - SPI0 user1 register."]
     pub user1: crate::Reg<user1::USER1_SPEC>,
-    #[doc = "0x20 - SPI1 user2 register."]
+    #[doc = "0x20 - SPI0 user2 register."]
     pub user2: crate::Reg<user2::USER2_SPEC>,
-    #[doc = "0x24 - SPI1 write-data bit length register."]
-    pub mosi_dlen: crate::Reg<mosi_dlen::MOSI_DLEN_SPEC>,
-    #[doc = "0x28 - SPI1 read-data bit length register."]
-    pub miso_dlen: crate::Reg<miso_dlen::MISO_DLEN_SPEC>,
-    #[doc = "0x2c - SPI1 read control register."]
+    _reserved7: [u8; 0x08],
+    #[doc = "0x2c - SPI0 read control register."]
     pub rd_status: crate::Reg<rd_status::RD_STATUS_SPEC>,
-    #[doc = "0x30 - SPI1 extended address register."]
+    #[doc = "0x30 - SPI0 extended address register."]
     pub ext_addr: crate::Reg<ext_addr::EXT_ADDR_SPEC>,
-    #[doc = "0x34 - SPI1 misc register."]
+    #[doc = "0x34 - SPI0 misc register"]
     pub misc: crate::Reg<misc::MISC_SPEC>,
-    #[doc = "0x38 - SPI1 CRC data register."]
-    pub tx_crc: crate::Reg<tx_crc::TX_CRC_SPEC>,
-    #[doc = "0x3c - SPI1 bit mode control register."]
+    _reserved10: [u8; 0x04],
+    #[doc = "0x3c - SPI0 external RAM bit mode control register."]
     pub cache_fctrl: crate::Reg<cache_fctrl::CACHE_FCTRL_SPEC>,
-    _reserved16: [u8; 0x14],
-    #[doc = "0x54 - SPI1 state machine(FSM) status register."]
+    #[doc = "0x40 - SPI0 external RAM control register"]
+    pub cache_sctrl: crate::Reg<cache_sctrl::CACHE_SCTRL_SPEC>,
+    #[doc = "0x44 - SPI0 external RAM mode control register"]
+    pub sram_cmd: crate::Reg<sram_cmd::SRAM_CMD_SPEC>,
+    #[doc = "0x48 - SPI0 external RAM DDR read command control register"]
+    pub sram_drd_cmd: crate::Reg<sram_drd_cmd::SRAM_DRD_CMD_SPEC>,
+    #[doc = "0x4c - SPI0 external RAM DDR write command control register"]
+    pub sram_dwr_cmd: crate::Reg<sram_dwr_cmd::SRAM_DWR_CMD_SPEC>,
+    #[doc = "0x50 - SPI_CLK clock division register when SPI0 accesses to Ext_RAM."]
+    pub sram_clk: crate::Reg<sram_clk::SRAM_CLK_SPEC>,
+    #[doc = "0x54 - SPI0 state machine(FSM) status register."]
     pub fsm: crate::Reg<fsm::FSM_SPEC>,
-    #[doc = "0x58 - SPI1 memory data buffer0"]
-    pub w0: crate::Reg<w0::W0_SPEC>,
-    #[doc = "0x5c - SPI1 memory data buffer1"]
-    pub w1: crate::Reg<w1::W1_SPEC>,
-    #[doc = "0x60 - SPI1 memory data buffer2"]
-    pub w2: crate::Reg<w2::W2_SPEC>,
-    #[doc = "0x64 - SPI1 memory data buffer3"]
-    pub w3: crate::Reg<w3::W3_SPEC>,
-    #[doc = "0x68 - SPI1 memory data buffer4"]
-    pub w4: crate::Reg<w4::W4_SPEC>,
-    #[doc = "0x6c - SPI1 memory data buffer5"]
-    pub w5: crate::Reg<w5::W5_SPEC>,
-    #[doc = "0x70 - SPI1 memory data buffer6"]
-    pub w6: crate::Reg<w6::W6_SPEC>,
-    #[doc = "0x74 - SPI1 memory data buffer7"]
-    pub w7: crate::Reg<w7::W7_SPEC>,
-    #[doc = "0x78 - SPI1 memory data buffer8"]
-    pub w8: crate::Reg<w8::W8_SPEC>,
-    #[doc = "0x7c - SPI1 memory data buffer9"]
-    pub w9: crate::Reg<w9::W9_SPEC>,
-    #[doc = "0x80 - SPI1 memory data buffer10"]
-    pub w10: crate::Reg<w10::W10_SPEC>,
-    #[doc = "0x84 - SPI1 memory data buffer11"]
-    pub w11: crate::Reg<w11::W11_SPEC>,
-    #[doc = "0x88 - SPI1 memory data buffer12"]
-    pub w12: crate::Reg<w12::W12_SPEC>,
-    #[doc = "0x8c - SPI1 memory data buffer13"]
-    pub w13: crate::Reg<w13::W13_SPEC>,
-    #[doc = "0x90 - SPI1 memory data buffer14"]
-    pub w14: crate::Reg<w14::W14_SPEC>,
-    #[doc = "0x94 - SPI1 memory data buffer15"]
-    pub w15: crate::Reg<w15::W15_SPEC>,
-    #[doc = "0x98 - SPI1 wait idle control register"]
-    pub flash_waiti_ctrl: crate::Reg<flash_waiti_ctrl::FLASH_WAITI_CTRL_SPEC>,
-    #[doc = "0x9c - SPI1 flash suspend control register"]
-    pub flash_sus_cmd: crate::Reg<flash_sus_cmd::FLASH_SUS_CMD_SPEC>,
-    #[doc = "0xa0 - SPI1 flash suspend command register"]
-    pub flash_sus_ctrl: crate::Reg<flash_sus_ctrl::FLASH_SUS_CTRL_SPEC>,
-    #[doc = "0xa4 - SPI1 flash suspend status register"]
-    pub sus_status: crate::Reg<sus_status::SUS_STATUS_SPEC>,
-    #[doc = "0xa8 - SPI1 timing compensation register when accesses to flash or Ext_RAM."]
+    _reserved17: [u8; 0x50],
+    #[doc = "0xa8 - SPI0 timing compensation register when accesses to flash."]
     pub timing_cali: crate::Reg<timing_cali::TIMING_CALI_SPEC>,
-    _reserved38: [u8; 0x34],
-    #[doc = "0xe0 - SPI1 DDR control register"]
+    #[doc = "0xac - MSPI input timing delay mode control register when accesses to flash."]
+    pub din_mode: crate::Reg<din_mode::DIN_MODE_SPEC>,
+    #[doc = "0xb0 - MSPI input timing delay number control register when accesses to flash."]
+    pub din_num: crate::Reg<din_num::DIN_NUM_SPEC>,
+    #[doc = "0xb4 - MSPI output timing delay mode control register when accesses to flash."]
+    pub dout_mode: crate::Reg<dout_mode::DOUT_MODE_SPEC>,
+    _reserved21: [u8; 0x04],
+    #[doc = "0xbc - SPI0 Ext_RAM timing compensation register."]
+    pub spi_smem_timing_cali: crate::Reg<spi_smem_timing_cali::SPI_SMEM_TIMING_CALI_SPEC>,
+    #[doc = "0xc0 - MSPI input timing delay mode control register when accesses to Ext_RAM."]
+    pub spi_smem_din_mode: crate::Reg<spi_smem_din_mode::SPI_SMEM_DIN_MODE_SPEC>,
+    #[doc = "0xc4 - MSPI input timing delay number control register when accesses to Ext_RAM."]
+    pub spi_smem_din_num: crate::Reg<spi_smem_din_num::SPI_SMEM_DIN_NUM_SPEC>,
+    #[doc = "0xc8 - MSPI output timing delay mode control register when accesses to Ext_RAM."]
+    pub spi_smem_dout_mode: crate::Reg<spi_smem_dout_mode::SPI_SMEM_DOUT_MODE_SPEC>,
+    #[doc = "0xcc - MSPI ECC control register"]
+    pub ecc_ctrl: crate::Reg<ecc_ctrl::ECC_CTRL_SPEC>,
+    #[doc = "0xd0 - MSPI ECC error address register"]
+    pub ecc_err_addr: crate::Reg<ecc_err_addr::ECC_ERR_ADDR_SPEC>,
+    #[doc = "0xd4 - MSPI ECC error bits register"]
+    pub ecc_err_bit: crate::Reg<ecc_err_bit::ECC_ERR_BIT_SPEC>,
+    _reserved28: [u8; 0x04],
+    #[doc = "0xdc - MSPI external RAM ECC and SPI CS timing control register"]
+    pub spi_smem_ac: crate::Reg<spi_smem_ac::SPI_SMEM_AC_SPEC>,
+    #[doc = "0xe0 - SPI0 flash DDR mode control register"]
     pub ddr: crate::Reg<ddr::DDR_SPEC>,
-    _reserved39: [u8; 0x04],
-    #[doc = "0xe8 - SPI1 clk_gate register"]
+    #[doc = "0xe4 - SPI0 external RAM DDR mode control register"]
+    pub spi_smem_ddr: crate::Reg<spi_smem_ddr::SPI_SMEM_DDR_SPEC>,
+    #[doc = "0xe8 - SPI0 clk_gate register"]
     pub clock_gate: crate::Reg<clock_gate::CLOCK_GATE_SPEC>,
-    _reserved40: [u8; 0x04],
+    #[doc = "0xec - SPI0 module clock select register"]
+    pub core_clk_sel: crate::Reg<core_clk_sel::CORE_CLK_SEL_SPEC>,
     #[doc = "0xf0 - SPI1 interrupt enable register"]
     pub int_ena: crate::Reg<int_ena::INT_ENA_SPEC>,
     #[doc = "0xf4 - SPI1 interrupt clear register"]
@@ -93,170 +81,142 @@ pub struct RegisterBlock {
     pub int_raw: crate::Reg<int_raw::INT_RAW_SPEC>,
     #[doc = "0xfc - SPI1 interrupt status register"]
     pub int_st: crate::Reg<int_st::INT_ST_SPEC>,
-    _reserved44: [u8; 0x02fc],
+    _reserved37: [u8; 0x02fc],
     #[doc = "0x3fc - SPI0 version control register"]
     pub date: crate::Reg<date::DATE_SPEC>,
 }
-#[doc = "CMD register accessor: an alias for `Reg<CMD_SPEC>`"]
-pub type CMD = crate::Reg<cmd::CMD_SPEC>;
-#[doc = "SPI1 memory command register"]
-pub mod cmd;
-#[doc = "ADDR register accessor: an alias for `Reg<ADDR_SPEC>`"]
-pub type ADDR = crate::Reg<addr::ADDR_SPEC>;
-#[doc = "SPI1 address register"]
-pub mod addr;
 #[doc = "CTRL register accessor: an alias for `Reg<CTRL_SPEC>`"]
 pub type CTRL = crate::Reg<ctrl::CTRL_SPEC>;
-#[doc = "SPI1 control register"]
+#[doc = "SPI0 control register."]
 pub mod ctrl;
 #[doc = "CTRL1 register accessor: an alias for `Reg<CTRL1_SPEC>`"]
 pub type CTRL1 = crate::Reg<ctrl1::CTRL1_SPEC>;
-#[doc = "SPI1 control1 register"]
+#[doc = "SPI0 control 1 register."]
 pub mod ctrl1;
 #[doc = "CTRL2 register accessor: an alias for `Reg<CTRL2_SPEC>`"]
 pub type CTRL2 = crate::Reg<ctrl2::CTRL2_SPEC>;
-#[doc = "SPI1 control2 register"]
+#[doc = "SPI0 control 2 register."]
 pub mod ctrl2;
 #[doc = "CLOCK register accessor: an alias for `Reg<CLOCK_SPEC>`"]
 pub type CLOCK = crate::Reg<clock::CLOCK_SPEC>;
-#[doc = "SPI_CLK clock division register when SPI1 accesses to flash or Ext_RAM."]
+#[doc = "SPI_CLK clock division register when SPI0 accesses to flash."]
 pub mod clock;
 #[doc = "USER register accessor: an alias for `Reg<USER_SPEC>`"]
 pub type USER = crate::Reg<user::USER_SPEC>;
-#[doc = "SPI1 user register."]
+#[doc = "SPI0 user register."]
 pub mod user;
 #[doc = "USER1 register accessor: an alias for `Reg<USER1_SPEC>`"]
 pub type USER1 = crate::Reg<user1::USER1_SPEC>;
-#[doc = "SPI1 user1 register."]
+#[doc = "SPI0 user1 register."]
 pub mod user1;
 #[doc = "USER2 register accessor: an alias for `Reg<USER2_SPEC>`"]
 pub type USER2 = crate::Reg<user2::USER2_SPEC>;
-#[doc = "SPI1 user2 register."]
+#[doc = "SPI0 user2 register."]
 pub mod user2;
-#[doc = "MOSI_DLEN register accessor: an alias for `Reg<MOSI_DLEN_SPEC>`"]
-pub type MOSI_DLEN = crate::Reg<mosi_dlen::MOSI_DLEN_SPEC>;
-#[doc = "SPI1 write-data bit length register."]
-pub mod mosi_dlen;
-#[doc = "MISO_DLEN register accessor: an alias for `Reg<MISO_DLEN_SPEC>`"]
-pub type MISO_DLEN = crate::Reg<miso_dlen::MISO_DLEN_SPEC>;
-#[doc = "SPI1 read-data bit length register."]
-pub mod miso_dlen;
 #[doc = "RD_STATUS register accessor: an alias for `Reg<RD_STATUS_SPEC>`"]
 pub type RD_STATUS = crate::Reg<rd_status::RD_STATUS_SPEC>;
-#[doc = "SPI1 read control register."]
+#[doc = "SPI0 read control register."]
 pub mod rd_status;
 #[doc = "EXT_ADDR register accessor: an alias for `Reg<EXT_ADDR_SPEC>`"]
 pub type EXT_ADDR = crate::Reg<ext_addr::EXT_ADDR_SPEC>;
-#[doc = "SPI1 extended address register."]
+#[doc = "SPI0 extended address register."]
 pub mod ext_addr;
 #[doc = "MISC register accessor: an alias for `Reg<MISC_SPEC>`"]
 pub type MISC = crate::Reg<misc::MISC_SPEC>;
-#[doc = "SPI1 misc register."]
+#[doc = "SPI0 misc register"]
 pub mod misc;
-#[doc = "TX_CRC register accessor: an alias for `Reg<TX_CRC_SPEC>`"]
-pub type TX_CRC = crate::Reg<tx_crc::TX_CRC_SPEC>;
-#[doc = "SPI1 CRC data register."]
-pub mod tx_crc;
 #[doc = "CACHE_FCTRL register accessor: an alias for `Reg<CACHE_FCTRL_SPEC>`"]
 pub type CACHE_FCTRL = crate::Reg<cache_fctrl::CACHE_FCTRL_SPEC>;
-#[doc = "SPI1 bit mode control register."]
+#[doc = "SPI0 external RAM bit mode control register."]
 pub mod cache_fctrl;
+#[doc = "CACHE_SCTRL register accessor: an alias for `Reg<CACHE_SCTRL_SPEC>`"]
+pub type CACHE_SCTRL = crate::Reg<cache_sctrl::CACHE_SCTRL_SPEC>;
+#[doc = "SPI0 external RAM control register"]
+pub mod cache_sctrl;
+#[doc = "SRAM_CMD register accessor: an alias for `Reg<SRAM_CMD_SPEC>`"]
+pub type SRAM_CMD = crate::Reg<sram_cmd::SRAM_CMD_SPEC>;
+#[doc = "SPI0 external RAM mode control register"]
+pub mod sram_cmd;
+#[doc = "SRAM_DRD_CMD register accessor: an alias for `Reg<SRAM_DRD_CMD_SPEC>`"]
+pub type SRAM_DRD_CMD = crate::Reg<sram_drd_cmd::SRAM_DRD_CMD_SPEC>;
+#[doc = "SPI0 external RAM DDR read command control register"]
+pub mod sram_drd_cmd;
+#[doc = "SRAM_DWR_CMD register accessor: an alias for `Reg<SRAM_DWR_CMD_SPEC>`"]
+pub type SRAM_DWR_CMD = crate::Reg<sram_dwr_cmd::SRAM_DWR_CMD_SPEC>;
+#[doc = "SPI0 external RAM DDR write command control register"]
+pub mod sram_dwr_cmd;
+#[doc = "SRAM_CLK register accessor: an alias for `Reg<SRAM_CLK_SPEC>`"]
+pub type SRAM_CLK = crate::Reg<sram_clk::SRAM_CLK_SPEC>;
+#[doc = "SPI_CLK clock division register when SPI0 accesses to Ext_RAM."]
+pub mod sram_clk;
 #[doc = "FSM register accessor: an alias for `Reg<FSM_SPEC>`"]
 pub type FSM = crate::Reg<fsm::FSM_SPEC>;
-#[doc = "SPI1 state machine(FSM) status register."]
+#[doc = "SPI0 state machine(FSM) status register."]
 pub mod fsm;
-#[doc = "W0 register accessor: an alias for `Reg<W0_SPEC>`"]
-pub type W0 = crate::Reg<w0::W0_SPEC>;
-#[doc = "SPI1 memory data buffer0"]
-pub mod w0;
-#[doc = "W1 register accessor: an alias for `Reg<W1_SPEC>`"]
-pub type W1 = crate::Reg<w1::W1_SPEC>;
-#[doc = "SPI1 memory data buffer1"]
-pub mod w1;
-#[doc = "W2 register accessor: an alias for `Reg<W2_SPEC>`"]
-pub type W2 = crate::Reg<w2::W2_SPEC>;
-#[doc = "SPI1 memory data buffer2"]
-pub mod w2;
-#[doc = "W3 register accessor: an alias for `Reg<W3_SPEC>`"]
-pub type W3 = crate::Reg<w3::W3_SPEC>;
-#[doc = "SPI1 memory data buffer3"]
-pub mod w3;
-#[doc = "W4 register accessor: an alias for `Reg<W4_SPEC>`"]
-pub type W4 = crate::Reg<w4::W4_SPEC>;
-#[doc = "SPI1 memory data buffer4"]
-pub mod w4;
-#[doc = "W5 register accessor: an alias for `Reg<W5_SPEC>`"]
-pub type W5 = crate::Reg<w5::W5_SPEC>;
-#[doc = "SPI1 memory data buffer5"]
-pub mod w5;
-#[doc = "W6 register accessor: an alias for `Reg<W6_SPEC>`"]
-pub type W6 = crate::Reg<w6::W6_SPEC>;
-#[doc = "SPI1 memory data buffer6"]
-pub mod w6;
-#[doc = "W7 register accessor: an alias for `Reg<W7_SPEC>`"]
-pub type W7 = crate::Reg<w7::W7_SPEC>;
-#[doc = "SPI1 memory data buffer7"]
-pub mod w7;
-#[doc = "W8 register accessor: an alias for `Reg<W8_SPEC>`"]
-pub type W8 = crate::Reg<w8::W8_SPEC>;
-#[doc = "SPI1 memory data buffer8"]
-pub mod w8;
-#[doc = "W9 register accessor: an alias for `Reg<W9_SPEC>`"]
-pub type W9 = crate::Reg<w9::W9_SPEC>;
-#[doc = "SPI1 memory data buffer9"]
-pub mod w9;
-#[doc = "W10 register accessor: an alias for `Reg<W10_SPEC>`"]
-pub type W10 = crate::Reg<w10::W10_SPEC>;
-#[doc = "SPI1 memory data buffer10"]
-pub mod w10;
-#[doc = "W11 register accessor: an alias for `Reg<W11_SPEC>`"]
-pub type W11 = crate::Reg<w11::W11_SPEC>;
-#[doc = "SPI1 memory data buffer11"]
-pub mod w11;
-#[doc = "W12 register accessor: an alias for `Reg<W12_SPEC>`"]
-pub type W12 = crate::Reg<w12::W12_SPEC>;
-#[doc = "SPI1 memory data buffer12"]
-pub mod w12;
-#[doc = "W13 register accessor: an alias for `Reg<W13_SPEC>`"]
-pub type W13 = crate::Reg<w13::W13_SPEC>;
-#[doc = "SPI1 memory data buffer13"]
-pub mod w13;
-#[doc = "W14 register accessor: an alias for `Reg<W14_SPEC>`"]
-pub type W14 = crate::Reg<w14::W14_SPEC>;
-#[doc = "SPI1 memory data buffer14"]
-pub mod w14;
-#[doc = "W15 register accessor: an alias for `Reg<W15_SPEC>`"]
-pub type W15 = crate::Reg<w15::W15_SPEC>;
-#[doc = "SPI1 memory data buffer15"]
-pub mod w15;
-#[doc = "FLASH_WAITI_CTRL register accessor: an alias for `Reg<FLASH_WAITI_CTRL_SPEC>`"]
-pub type FLASH_WAITI_CTRL = crate::Reg<flash_waiti_ctrl::FLASH_WAITI_CTRL_SPEC>;
-#[doc = "SPI1 wait idle control register"]
-pub mod flash_waiti_ctrl;
-#[doc = "FLASH_SUS_CMD register accessor: an alias for `Reg<FLASH_SUS_CMD_SPEC>`"]
-pub type FLASH_SUS_CMD = crate::Reg<flash_sus_cmd::FLASH_SUS_CMD_SPEC>;
-#[doc = "SPI1 flash suspend control register"]
-pub mod flash_sus_cmd;
-#[doc = "FLASH_SUS_CTRL register accessor: an alias for `Reg<FLASH_SUS_CTRL_SPEC>`"]
-pub type FLASH_SUS_CTRL = crate::Reg<flash_sus_ctrl::FLASH_SUS_CTRL_SPEC>;
-#[doc = "SPI1 flash suspend command register"]
-pub mod flash_sus_ctrl;
-#[doc = "SUS_STATUS register accessor: an alias for `Reg<SUS_STATUS_SPEC>`"]
-pub type SUS_STATUS = crate::Reg<sus_status::SUS_STATUS_SPEC>;
-#[doc = "SPI1 flash suspend status register"]
-pub mod sus_status;
 #[doc = "TIMING_CALI register accessor: an alias for `Reg<TIMING_CALI_SPEC>`"]
 pub type TIMING_CALI = crate::Reg<timing_cali::TIMING_CALI_SPEC>;
-#[doc = "SPI1 timing compensation register when accesses to flash or Ext_RAM."]
+#[doc = "SPI0 timing compensation register when accesses to flash."]
 pub mod timing_cali;
+#[doc = "DIN_MODE register accessor: an alias for `Reg<DIN_MODE_SPEC>`"]
+pub type DIN_MODE = crate::Reg<din_mode::DIN_MODE_SPEC>;
+#[doc = "MSPI input timing delay mode control register when accesses to flash."]
+pub mod din_mode;
+#[doc = "DIN_NUM register accessor: an alias for `Reg<DIN_NUM_SPEC>`"]
+pub type DIN_NUM = crate::Reg<din_num::DIN_NUM_SPEC>;
+#[doc = "MSPI input timing delay number control register when accesses to flash."]
+pub mod din_num;
+#[doc = "DOUT_MODE register accessor: an alias for `Reg<DOUT_MODE_SPEC>`"]
+pub type DOUT_MODE = crate::Reg<dout_mode::DOUT_MODE_SPEC>;
+#[doc = "MSPI output timing delay mode control register when accesses to flash."]
+pub mod dout_mode;
+#[doc = "SPI_SMEM_TIMING_CALI register accessor: an alias for `Reg<SPI_SMEM_TIMING_CALI_SPEC>`"]
+pub type SPI_SMEM_TIMING_CALI = crate::Reg<spi_smem_timing_cali::SPI_SMEM_TIMING_CALI_SPEC>;
+#[doc = "SPI0 Ext_RAM timing compensation register."]
+pub mod spi_smem_timing_cali;
+#[doc = "SPI_SMEM_DIN_MODE register accessor: an alias for `Reg<SPI_SMEM_DIN_MODE_SPEC>`"]
+pub type SPI_SMEM_DIN_MODE = crate::Reg<spi_smem_din_mode::SPI_SMEM_DIN_MODE_SPEC>;
+#[doc = "MSPI input timing delay mode control register when accesses to Ext_RAM."]
+pub mod spi_smem_din_mode;
+#[doc = "SPI_SMEM_DIN_NUM register accessor: an alias for `Reg<SPI_SMEM_DIN_NUM_SPEC>`"]
+pub type SPI_SMEM_DIN_NUM = crate::Reg<spi_smem_din_num::SPI_SMEM_DIN_NUM_SPEC>;
+#[doc = "MSPI input timing delay number control register when accesses to Ext_RAM."]
+pub mod spi_smem_din_num;
+#[doc = "SPI_SMEM_DOUT_MODE register accessor: an alias for `Reg<SPI_SMEM_DOUT_MODE_SPEC>`"]
+pub type SPI_SMEM_DOUT_MODE = crate::Reg<spi_smem_dout_mode::SPI_SMEM_DOUT_MODE_SPEC>;
+#[doc = "MSPI output timing delay mode control register when accesses to Ext_RAM."]
+pub mod spi_smem_dout_mode;
+#[doc = "ECC_CTRL register accessor: an alias for `Reg<ECC_CTRL_SPEC>`"]
+pub type ECC_CTRL = crate::Reg<ecc_ctrl::ECC_CTRL_SPEC>;
+#[doc = "MSPI ECC control register"]
+pub mod ecc_ctrl;
+#[doc = "ECC_ERR_ADDR register accessor: an alias for `Reg<ECC_ERR_ADDR_SPEC>`"]
+pub type ECC_ERR_ADDR = crate::Reg<ecc_err_addr::ECC_ERR_ADDR_SPEC>;
+#[doc = "MSPI ECC error address register"]
+pub mod ecc_err_addr;
+#[doc = "ECC_ERR_BIT register accessor: an alias for `Reg<ECC_ERR_BIT_SPEC>`"]
+pub type ECC_ERR_BIT = crate::Reg<ecc_err_bit::ECC_ERR_BIT_SPEC>;
+#[doc = "MSPI ECC error bits register"]
+pub mod ecc_err_bit;
+#[doc = "SPI_SMEM_AC register accessor: an alias for `Reg<SPI_SMEM_AC_SPEC>`"]
+pub type SPI_SMEM_AC = crate::Reg<spi_smem_ac::SPI_SMEM_AC_SPEC>;
+#[doc = "MSPI external RAM ECC and SPI CS timing control register"]
+pub mod spi_smem_ac;
 #[doc = "DDR register accessor: an alias for `Reg<DDR_SPEC>`"]
 pub type DDR = crate::Reg<ddr::DDR_SPEC>;
-#[doc = "SPI1 DDR control register"]
+#[doc = "SPI0 flash DDR mode control register"]
 pub mod ddr;
+#[doc = "SPI_SMEM_DDR register accessor: an alias for `Reg<SPI_SMEM_DDR_SPEC>`"]
+pub type SPI_SMEM_DDR = crate::Reg<spi_smem_ddr::SPI_SMEM_DDR_SPEC>;
+#[doc = "SPI0 external RAM DDR mode control register"]
+pub mod spi_smem_ddr;
 #[doc = "CLOCK_GATE register accessor: an alias for `Reg<CLOCK_GATE_SPEC>`"]
 pub type CLOCK_GATE = crate::Reg<clock_gate::CLOCK_GATE_SPEC>;
-#[doc = "SPI1 clk_gate register"]
+#[doc = "SPI0 clk_gate register"]
 pub mod clock_gate;
+#[doc = "CORE_CLK_SEL register accessor: an alias for `Reg<CORE_CLK_SEL_SPEC>`"]
+pub type CORE_CLK_SEL = crate::Reg<core_clk_sel::CORE_CLK_SEL_SPEC>;
+#[doc = "SPI0 module clock select register"]
+pub mod core_clk_sel;
 #[doc = "INT_ENA register accessor: an alias for `Reg<INT_ENA_SPEC>`"]
 pub type INT_ENA = crate::Reg<int_ena::INT_ENA_SPEC>;
 #[doc = "SPI1 interrupt enable register"]

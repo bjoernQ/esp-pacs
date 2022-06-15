@@ -35,32 +35,10 @@ impl From<crate::W<REGION_PMS_CONSTRAIN_9_SPEC>> for W {
     }
 }
 #[doc = "Field `REGION_PMS_CONSTRAIN_ADDR_6` reader - region_pms_constrain_addr_6"]
-pub struct REGION_PMS_CONSTRAIN_ADDR_6_R(crate::FieldReader<u32, u32>);
-impl REGION_PMS_CONSTRAIN_ADDR_6_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        REGION_PMS_CONSTRAIN_ADDR_6_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for REGION_PMS_CONSTRAIN_ADDR_6_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type REGION_PMS_CONSTRAIN_ADDR_6_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `REGION_PMS_CONSTRAIN_ADDR_6` writer - region_pms_constrain_addr_6"]
-pub struct REGION_PMS_CONSTRAIN_ADDR_6_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> REGION_PMS_CONSTRAIN_ADDR_6_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x3fff_ffff) | (value as u32 & 0x3fff_ffff);
-        self.w
-    }
-}
+pub type REGION_PMS_CONSTRAIN_ADDR_6_W<'a> =
+    crate::FieldWriter<'a, u32, REGION_PMS_CONSTRAIN_9_SPEC, u32, u32, 30, 0>;
 impl R {
     #[doc = "Bits 0:29 - region_pms_constrain_addr_6"]
     #[inline(always)]
@@ -72,7 +50,7 @@ impl W {
     #[doc = "Bits 0:29 - region_pms_constrain_addr_6"]
     #[inline(always)]
     pub fn region_pms_constrain_addr_6(&mut self) -> REGION_PMS_CONSTRAIN_ADDR_6_W {
-        REGION_PMS_CONSTRAIN_ADDR_6_W { w: self }
+        REGION_PMS_CONSTRAIN_ADDR_6_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -81,25 +59,16 @@ impl W {
         self
     }
 }
-#[doc = "SENSITIVE_REGION_PMS_CONSTRAIN_9_REG\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [region_pms_constrain_9]
-(index.html) module"]
+#[doc = "SENSITIVE_REGION_PMS_CONSTRAIN_9_REG\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [region_pms_constrain_9](index.html) module"]
 pub struct REGION_PMS_CONSTRAIN_9_SPEC;
 impl crate::RegisterSpec for REGION_PMS_CONSTRAIN_9_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [region_pms_constrain_9::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [region_pms_constrain_9::R](R) reader structure"]
 impl crate::Readable for REGION_PMS_CONSTRAIN_9_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [region_pms_constrain_9::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [region_pms_constrain_9::W](W) writer structure"]
 impl crate::Writable for REGION_PMS_CONSTRAIN_9_SPEC {
     type Writer = W;
 }

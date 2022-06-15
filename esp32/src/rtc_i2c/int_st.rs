@@ -42,25 +42,16 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [int_st]
-(index.html) module"]
+#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [int_st](index.html) module"]
 pub struct INT_ST_SPEC;
 impl crate::RegisterSpec for INT_ST_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [int_st::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [int_st::R](R) reader structure"]
 impl crate::Readable for INT_ST_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [int_st::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [int_st::W](W) writer structure"]
 impl crate::Writable for INT_ST_SPEC {
     type Writer = W;
 }

@@ -35,113 +35,25 @@ impl From<crate::W<REGULATOR_DRV_CTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `RTC_REGULATOR_DRV_B_MONITOR` reader - No public"]
-pub struct RTC_REGULATOR_DRV_B_MONITOR_R(crate::FieldReader<u8, u8>);
-impl RTC_REGULATOR_DRV_B_MONITOR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        RTC_REGULATOR_DRV_B_MONITOR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RTC_REGULATOR_DRV_B_MONITOR_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RTC_REGULATOR_DRV_B_MONITOR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `RTC_REGULATOR_DRV_B_MONITOR` writer - No public"]
-pub struct RTC_REGULATOR_DRV_B_MONITOR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RTC_REGULATOR_DRV_B_MONITOR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x3f) | (value as u32 & 0x3f);
-        self.w
-    }
-}
+pub type RTC_REGULATOR_DRV_B_MONITOR_W<'a> =
+    crate::FieldWriter<'a, u32, REGULATOR_DRV_CTRL_SPEC, u8, u8, 6, 0>;
 #[doc = "Field `RTC_REGULATOR_DRV_B_SLP` reader - No public"]
-pub struct RTC_REGULATOR_DRV_B_SLP_R(crate::FieldReader<u8, u8>);
-impl RTC_REGULATOR_DRV_B_SLP_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        RTC_REGULATOR_DRV_B_SLP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RTC_REGULATOR_DRV_B_SLP_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RTC_REGULATOR_DRV_B_SLP_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `RTC_REGULATOR_DRV_B_SLP` writer - No public"]
-pub struct RTC_REGULATOR_DRV_B_SLP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RTC_REGULATOR_DRV_B_SLP_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x3f << 6)) | ((value as u32 & 0x3f) << 6);
-        self.w
-    }
-}
+pub type RTC_REGULATOR_DRV_B_SLP_W<'a> =
+    crate::FieldWriter<'a, u32, REGULATOR_DRV_CTRL_SPEC, u8, u8, 6, 6>;
 #[doc = "Field `DG_VDD_DRV_B_SLP` reader - No public"]
-pub struct DG_VDD_DRV_B_SLP_R(crate::FieldReader<u8, u8>);
-impl DG_VDD_DRV_B_SLP_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        DG_VDD_DRV_B_SLP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DG_VDD_DRV_B_SLP_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DG_VDD_DRV_B_SLP_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DG_VDD_DRV_B_SLP` writer - No public"]
-pub struct DG_VDD_DRV_B_SLP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DG_VDD_DRV_B_SLP_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 12)) | ((value as u32 & 0xff) << 12);
-        self.w
-    }
-}
+pub type DG_VDD_DRV_B_SLP_W<'a> =
+    crate::FieldWriter<'a, u32, REGULATOR_DRV_CTRL_SPEC, u8, u8, 8, 12>;
 #[doc = "Field `DG_VDD_DRV_B_MONITOR` reader - No public"]
-pub struct DG_VDD_DRV_B_MONITOR_R(crate::FieldReader<u8, u8>);
-impl DG_VDD_DRV_B_MONITOR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        DG_VDD_DRV_B_MONITOR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DG_VDD_DRV_B_MONITOR_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DG_VDD_DRV_B_MONITOR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DG_VDD_DRV_B_MONITOR` writer - No public"]
-pub struct DG_VDD_DRV_B_MONITOR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DG_VDD_DRV_B_MONITOR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 20)) | ((value as u32 & 0xff) << 20);
-        self.w
-    }
-}
+pub type DG_VDD_DRV_B_MONITOR_W<'a> =
+    crate::FieldWriter<'a, u32, REGULATOR_DRV_CTRL_SPEC, u8, u8, 8, 20>;
 impl R {
     #[doc = "Bits 0:5 - No public"]
     #[inline(always)]
@@ -168,22 +80,22 @@ impl W {
     #[doc = "Bits 0:5 - No public"]
     #[inline(always)]
     pub fn rtc_regulator_drv_b_monitor(&mut self) -> RTC_REGULATOR_DRV_B_MONITOR_W {
-        RTC_REGULATOR_DRV_B_MONITOR_W { w: self }
+        RTC_REGULATOR_DRV_B_MONITOR_W::new(self)
     }
     #[doc = "Bits 6:11 - No public"]
     #[inline(always)]
     pub fn rtc_regulator_drv_b_slp(&mut self) -> RTC_REGULATOR_DRV_B_SLP_W {
-        RTC_REGULATOR_DRV_B_SLP_W { w: self }
+        RTC_REGULATOR_DRV_B_SLP_W::new(self)
     }
     #[doc = "Bits 12:19 - No public"]
     #[inline(always)]
     pub fn dg_vdd_drv_b_slp(&mut self) -> DG_VDD_DRV_B_SLP_W {
-        DG_VDD_DRV_B_SLP_W { w: self }
+        DG_VDD_DRV_B_SLP_W::new(self)
     }
     #[doc = "Bits 20:27 - No public"]
     #[inline(always)]
     pub fn dg_vdd_drv_b_monitor(&mut self) -> DG_VDD_DRV_B_MONITOR_W {
-        DG_VDD_DRV_B_MONITOR_W { w: self }
+        DG_VDD_DRV_B_MONITOR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -192,25 +104,16 @@ impl W {
         self
     }
 }
-#[doc = "No public\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [regulator_drv_ctrl]
-(index.html) module"]
+#[doc = "No public\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [regulator_drv_ctrl](index.html) module"]
 pub struct REGULATOR_DRV_CTRL_SPEC;
 impl crate::RegisterSpec for REGULATOR_DRV_CTRL_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [regulator_drv_ctrl::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [regulator_drv_ctrl::R](R) reader structure"]
 impl crate::Readable for REGULATOR_DRV_CTRL_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [regulator_drv_ctrl::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [regulator_drv_ctrl::W](W) writer structure"]
 impl crate::Writable for REGULATOR_DRV_CTRL_SPEC {
     type Writer = W;
 }

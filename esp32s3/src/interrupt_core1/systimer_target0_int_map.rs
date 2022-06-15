@@ -35,32 +35,10 @@ impl From<crate::W<SYSTIMER_TARGET0_INT_MAP_SPEC>> for W {
     }
 }
 #[doc = "Field `SYSTIMER_TARGET0_INT_MAP` reader - this register used to map systimer_target0 interrupt to one of core1's external interrupt"]
-pub struct SYSTIMER_TARGET0_INT_MAP_R(crate::FieldReader<u8, u8>);
-impl SYSTIMER_TARGET0_INT_MAP_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        SYSTIMER_TARGET0_INT_MAP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SYSTIMER_TARGET0_INT_MAP_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SYSTIMER_TARGET0_INT_MAP_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `SYSTIMER_TARGET0_INT_MAP` writer - this register used to map systimer_target0 interrupt to one of core1's external interrupt"]
-pub struct SYSTIMER_TARGET0_INT_MAP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SYSTIMER_TARGET0_INT_MAP_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x1f) | (value as u32 & 0x1f);
-        self.w
-    }
-}
+pub type SYSTIMER_TARGET0_INT_MAP_W<'a> =
+    crate::FieldWriter<'a, u32, SYSTIMER_TARGET0_INT_MAP_SPEC, u8, u8, 5, 0>;
 impl R {
     #[doc = "Bits 0:4 - this register used to map systimer_target0 interrupt to one of core1's external interrupt"]
     #[inline(always)]
@@ -72,7 +50,7 @@ impl W {
     #[doc = "Bits 0:4 - this register used to map systimer_target0 interrupt to one of core1's external interrupt"]
     #[inline(always)]
     pub fn systimer_target0_int_map(&mut self) -> SYSTIMER_TARGET0_INT_MAP_W {
-        SYSTIMER_TARGET0_INT_MAP_W { w: self }
+        SYSTIMER_TARGET0_INT_MAP_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -81,25 +59,16 @@ impl W {
         self
     }
 }
-#[doc = "systimer_target0 interrupt configuration register\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [systimer_target0_int_map]
-(index.html) module"]
+#[doc = "systimer_target0 interrupt configuration register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [systimer_target0_int_map](index.html) module"]
 pub struct SYSTIMER_TARGET0_INT_MAP_SPEC;
 impl crate::RegisterSpec for SYSTIMER_TARGET0_INT_MAP_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [systimer_target0_int_map::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [systimer_target0_int_map::R](R) reader structure"]
 impl crate::Readable for SYSTIMER_TARGET0_INT_MAP_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [systimer_target0_int_map::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [systimer_target0_int_map::W](W) writer structure"]
 impl crate::Writable for SYSTIMER_TARGET0_INT_MAP_SPEC {
     type Writer = W;
 }

@@ -14,20 +14,7 @@ impl From<crate::R<PCPU_NMI_INT1_SPEC>> for R {
     }
 }
 #[doc = "Field `PROCPU_NMI_INT1` reader - GPIO PRO_CPU(not shielded) interrupt status register for GPIO32-53"]
-pub struct PROCPU_NMI_INT1_R(crate::FieldReader<u32, u32>);
-impl PROCPU_NMI_INT1_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        PROCPU_NMI_INT1_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PROCPU_NMI_INT1_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PROCPU_NMI_INT1_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:21 - GPIO PRO_CPU(not shielded) interrupt status register for GPIO32-53"]
     #[inline(always)]
@@ -35,16 +22,12 @@ impl R {
         PROCPU_NMI_INT1_R::new((self.bits & 0x003f_ffff) as u32)
     }
 }
-#[doc = "GPIO PRO_CPU(not shielded) interrupt status register for GPIO32-53\n\nThis register you can [`read`]
-(crate::generic::Reg::read). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pcpu_nmi_int1]
-(index.html) module"]
+#[doc = "GPIO PRO_CPU(not shielded) interrupt status register for GPIO32-53\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pcpu_nmi_int1](index.html) module"]
 pub struct PCPU_NMI_INT1_SPEC;
 impl crate::RegisterSpec for PCPU_NMI_INT1_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [pcpu_nmi_int1::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [pcpu_nmi_int1::R](R) reader structure"]
 impl crate::Readable for PCPU_NMI_INT1_SPEC {
     type Reader = R;
 }

@@ -35,59 +35,15 @@ impl From<crate::W<CORE_0_VECBASE_OVERRIDE_1_SPEC>> for W {
     }
 }
 #[doc = "Field `CORE_0_VECBASE_OVERRIDE_WORLD0_VALUE` reader - world0 vecbase_override register, when core0 in world0 use this register to override vecbase register."]
-pub struct CORE_0_VECBASE_OVERRIDE_WORLD0_VALUE_R(crate::FieldReader<u32, u32>);
-impl CORE_0_VECBASE_OVERRIDE_WORLD0_VALUE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        CORE_0_VECBASE_OVERRIDE_WORLD0_VALUE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CORE_0_VECBASE_OVERRIDE_WORLD0_VALUE_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CORE_0_VECBASE_OVERRIDE_WORLD0_VALUE_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `CORE_0_VECBASE_OVERRIDE_WORLD0_VALUE` writer - world0 vecbase_override register, when core0 in world0 use this register to override vecbase register."]
-pub struct CORE_0_VECBASE_OVERRIDE_WORLD0_VALUE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CORE_0_VECBASE_OVERRIDE_WORLD0_VALUE_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x003f_ffff) | (value as u32 & 0x003f_ffff);
-        self.w
-    }
-}
+pub type CORE_0_VECBASE_OVERRIDE_WORLD0_VALUE_W<'a> =
+    crate::FieldWriter<'a, u32, CORE_0_VECBASE_OVERRIDE_1_SPEC, u32, u32, 22, 0>;
 #[doc = "Field `CORE_0_VECBASE_OVERRIDE_SEL` reader - Set 0x3 to sel vecbase_override to override vecbase register."]
-pub struct CORE_0_VECBASE_OVERRIDE_SEL_R(crate::FieldReader<u8, u8>);
-impl CORE_0_VECBASE_OVERRIDE_SEL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CORE_0_VECBASE_OVERRIDE_SEL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CORE_0_VECBASE_OVERRIDE_SEL_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CORE_0_VECBASE_OVERRIDE_SEL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CORE_0_VECBASE_OVERRIDE_SEL` writer - Set 0x3 to sel vecbase_override to override vecbase register."]
-pub struct CORE_0_VECBASE_OVERRIDE_SEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CORE_0_VECBASE_OVERRIDE_SEL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 22)) | ((value as u32 & 0x03) << 22);
-        self.w
-    }
-}
+pub type CORE_0_VECBASE_OVERRIDE_SEL_W<'a> =
+    crate::FieldWriter<'a, u32, CORE_0_VECBASE_OVERRIDE_1_SPEC, u8, u8, 2, 22>;
 impl R {
     #[doc = "Bits 0:21 - world0 vecbase_override register, when core0 in world0 use this register to override vecbase register."]
     #[inline(always)]
@@ -97,7 +53,7 @@ impl R {
     #[doc = "Bits 22:23 - Set 0x3 to sel vecbase_override to override vecbase register."]
     #[inline(always)]
     pub fn core_0_vecbase_override_sel(&self) -> CORE_0_VECBASE_OVERRIDE_SEL_R {
-        CORE_0_VECBASE_OVERRIDE_SEL_R::new(((self.bits >> 22) & 0x03) as u8)
+        CORE_0_VECBASE_OVERRIDE_SEL_R::new(((self.bits >> 22) & 3) as u8)
     }
 }
 impl W {
@@ -106,12 +62,12 @@ impl W {
     pub fn core_0_vecbase_override_world0_value(
         &mut self,
     ) -> CORE_0_VECBASE_OVERRIDE_WORLD0_VALUE_W {
-        CORE_0_VECBASE_OVERRIDE_WORLD0_VALUE_W { w: self }
+        CORE_0_VECBASE_OVERRIDE_WORLD0_VALUE_W::new(self)
     }
     #[doc = "Bits 22:23 - Set 0x3 to sel vecbase_override to override vecbase register."]
     #[inline(always)]
     pub fn core_0_vecbase_override_sel(&mut self) -> CORE_0_VECBASE_OVERRIDE_SEL_W {
-        CORE_0_VECBASE_OVERRIDE_SEL_W { w: self }
+        CORE_0_VECBASE_OVERRIDE_SEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -120,25 +76,16 @@ impl W {
         self
     }
 }
-#[doc = "core0 vecbase override configuration register 1\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [core_0_vecbase_override_1]
-(index.html) module"]
+#[doc = "core0 vecbase override configuration register 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [core_0_vecbase_override_1](index.html) module"]
 pub struct CORE_0_VECBASE_OVERRIDE_1_SPEC;
 impl crate::RegisterSpec for CORE_0_VECBASE_OVERRIDE_1_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [core_0_vecbase_override_1::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [core_0_vecbase_override_1::R](R) reader structure"]
 impl crate::Readable for CORE_0_VECBASE_OVERRIDE_1_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [core_0_vecbase_override_1::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [core_0_vecbase_override_1::W](W) writer structure"]
 impl crate::Writable for CORE_0_VECBASE_OVERRIDE_1_SPEC {
     type Writer = W;
 }

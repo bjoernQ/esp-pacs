@@ -35,59 +35,13 @@ impl From<crate::W<SIGMADELTA_SPEC>> for W {
     }
 }
 #[doc = "Field `SD0_IN` reader - This field is used to configure the duty cycle of sigma delta modulation output."]
-pub struct SD0_IN_R(crate::FieldReader<u8, u8>);
-impl SD0_IN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        SD0_IN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SD0_IN_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SD0_IN_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `SD0_IN` writer - This field is used to configure the duty cycle of sigma delta modulation output."]
-pub struct SD0_IN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SD0_IN_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type SD0_IN_W<'a> = crate::FieldWriter<'a, u32, SIGMADELTA_SPEC, u8, u8, 8, 0>;
 #[doc = "Field `SD0_PRESCALE` reader - This field is used to set a divider value to divide APB clock."]
-pub struct SD0_PRESCALE_R(crate::FieldReader<u8, u8>);
-impl SD0_PRESCALE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        SD0_PRESCALE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SD0_PRESCALE_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SD0_PRESCALE_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `SD0_PRESCALE` writer - This field is used to set a divider value to divide APB clock."]
-pub struct SD0_PRESCALE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SD0_PRESCALE_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 8)) | ((value as u32 & 0xff) << 8);
-        self.w
-    }
-}
+pub type SD0_PRESCALE_W<'a> = crate::FieldWriter<'a, u32, SIGMADELTA_SPEC, u8, u8, 8, 8>;
 impl R {
     #[doc = "Bits 0:7 - This field is used to configure the duty cycle of sigma delta modulation output."]
     #[inline(always)]
@@ -104,12 +58,12 @@ impl W {
     #[doc = "Bits 0:7 - This field is used to configure the duty cycle of sigma delta modulation output."]
     #[inline(always)]
     pub fn sd0_in(&mut self) -> SD0_IN_W {
-        SD0_IN_W { w: self }
+        SD0_IN_W::new(self)
     }
     #[doc = "Bits 8:15 - This field is used to set a divider value to divide APB clock."]
     #[inline(always)]
     pub fn sd0_prescale(&mut self) -> SD0_PRESCALE_W {
-        SD0_PRESCALE_W { w: self }
+        SD0_PRESCALE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -118,25 +72,16 @@ impl W {
         self
     }
 }
-#[doc = "Duty Cycle Configure Register of SDM%s\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sigmadelta]
-(index.html) module"]
+#[doc = "Duty Cycle Configure Register of SDM%s\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sigmadelta](index.html) module"]
 pub struct SIGMADELTA_SPEC;
 impl crate::RegisterSpec for SIGMADELTA_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [sigmadelta::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [sigmadelta::R](R) reader structure"]
 impl crate::Readable for SIGMADELTA_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [sigmadelta::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [sigmadelta::W](W) writer structure"]
 impl crate::Writable for SIGMADELTA_SPEC {
     type Writer = W;
 }

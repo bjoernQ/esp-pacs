@@ -35,32 +35,9 @@ impl From<crate::W<W8_SPEC>> for W {
     }
 }
 #[doc = "Field `BUF8` reader - data buffer"]
-pub struct BUF8_R(crate::FieldReader<u32, u32>);
-impl BUF8_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        BUF8_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for BUF8_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type BUF8_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `BUF8` writer - data buffer"]
-pub struct BUF8_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BUF8_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
-    }
-}
+pub type BUF8_W<'a> = crate::FieldWriter<'a, u32, W8_SPEC, u32, u32, 32, 0>;
 impl R {
     #[doc = "Bits 0:31 - data buffer"]
     #[inline(always)]
@@ -72,7 +49,7 @@ impl W {
     #[doc = "Bits 0:31 - data buffer"]
     #[inline(always)]
     pub fn buf8(&mut self) -> BUF8_W {
-        BUF8_W { w: self }
+        BUF8_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -81,25 +58,16 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [w8]
-(index.html) module"]
+#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [w8](index.html) module"]
 pub struct W8_SPEC;
 impl crate::RegisterSpec for W8_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [w8::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [w8::R](R) reader structure"]
 impl crate::Readable for W8_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [w8::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [w8::W](W) writer structure"]
 impl crate::Writable for W8_SPEC {
     type Writer = W;
 }

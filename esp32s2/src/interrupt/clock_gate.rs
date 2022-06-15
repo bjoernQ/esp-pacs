@@ -35,101 +35,35 @@ impl From<crate::W<CLOCK_GATE_SPEC>> for W {
     }
 }
 #[doc = "Field `CLK_EN` reader - This bit is used to enable or disable the clock of interrupt matrix. 1: enable the clock. 0: disable the clock."]
-pub struct CLK_EN_R(crate::FieldReader<bool, bool>);
-impl CLK_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CLK_EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CLK_EN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CLK_EN_R = crate::BitReader<bool>;
 #[doc = "Field `CLK_EN` writer - This bit is used to enable or disable the clock of interrupt matrix. 1: enable the clock. 0: disable the clock."]
-pub struct CLK_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CLK_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type CLK_EN_W<'a> = crate::BitWriter<'a, u32, CLOCK_GATE_SPEC, bool, 0>;
 #[doc = "Field `PRO_NMI_MASK_HW` reader - This bit is used to disable all NMI interrupt signals to CPU."]
-pub struct PRO_NMI_MASK_HW_R(crate::FieldReader<bool, bool>);
-impl PRO_NMI_MASK_HW_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        PRO_NMI_MASK_HW_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PRO_NMI_MASK_HW_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PRO_NMI_MASK_HW_R = crate::BitReader<bool>;
 #[doc = "Field `PRO_NMI_MASK_HW` writer - This bit is used to disable all NMI interrupt signals to CPU."]
-pub struct PRO_NMI_MASK_HW_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PRO_NMI_MASK_HW_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type PRO_NMI_MASK_HW_W<'a> = crate::BitWriter<'a, u32, CLOCK_GATE_SPEC, bool, 1>;
 impl R {
     #[doc = "Bit 0 - This bit is used to enable or disable the clock of interrupt matrix. 1: enable the clock. 0: disable the clock."]
     #[inline(always)]
     pub fn clk_en(&self) -> CLK_EN_R {
-        CLK_EN_R::new((self.bits & 0x01) != 0)
+        CLK_EN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - This bit is used to disable all NMI interrupt signals to CPU."]
     #[inline(always)]
     pub fn pro_nmi_mask_hw(&self) -> PRO_NMI_MASK_HW_R {
-        PRO_NMI_MASK_HW_R::new(((self.bits >> 1) & 0x01) != 0)
+        PRO_NMI_MASK_HW_R::new(((self.bits >> 1) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - This bit is used to enable or disable the clock of interrupt matrix. 1: enable the clock. 0: disable the clock."]
     #[inline(always)]
     pub fn clk_en(&mut self) -> CLK_EN_W {
-        CLK_EN_W { w: self }
+        CLK_EN_W::new(self)
     }
     #[doc = "Bit 1 - This bit is used to disable all NMI interrupt signals to CPU."]
     #[inline(always)]
     pub fn pro_nmi_mask_hw(&mut self) -> PRO_NMI_MASK_HW_W {
-        PRO_NMI_MASK_HW_W { w: self }
+        PRO_NMI_MASK_HW_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -138,25 +72,16 @@ impl W {
         self
     }
 }
-#[doc = "NMI interrupt signals mask register\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clock_gate]
-(index.html) module"]
+#[doc = "NMI interrupt signals mask register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clock_gate](index.html) module"]
 pub struct CLOCK_GATE_SPEC;
 impl crate::RegisterSpec for CLOCK_GATE_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [clock_gate::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [clock_gate::R](R) reader structure"]
 impl crate::Readable for CLOCK_GATE_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [clock_gate::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [clock_gate::W](W) writer structure"]
 impl crate::Writable for CLOCK_GATE_SPEC {
     type Writer = W;
 }

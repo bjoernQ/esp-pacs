@@ -14,140 +14,23 @@ impl From<crate::R<RD_REPEAT_ERR2_SPEC>> for R {
     }
 }
 #[doc = "Field `KEY_PURPOSE_2_ERR` reader - If any bit in KEY_PURPOSE_2 is 1, then it indicates a programming error."]
-pub struct KEY_PURPOSE_2_ERR_R(crate::FieldReader<u8, u8>);
-impl KEY_PURPOSE_2_ERR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        KEY_PURPOSE_2_ERR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for KEY_PURPOSE_2_ERR_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type KEY_PURPOSE_2_ERR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `KEY_PURPOSE_3_ERR` reader - If any bit in KEY_PURPOSE_3 is 1, then it indicates a programming error."]
-pub struct KEY_PURPOSE_3_ERR_R(crate::FieldReader<u8, u8>);
-impl KEY_PURPOSE_3_ERR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        KEY_PURPOSE_3_ERR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for KEY_PURPOSE_3_ERR_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type KEY_PURPOSE_3_ERR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `KEY_PURPOSE_4_ERR` reader - If any bit in KEY_PURPOSE_4 is 1, then it indicates a programming error."]
-pub struct KEY_PURPOSE_4_ERR_R(crate::FieldReader<u8, u8>);
-impl KEY_PURPOSE_4_ERR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        KEY_PURPOSE_4_ERR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for KEY_PURPOSE_4_ERR_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type KEY_PURPOSE_4_ERR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `KEY_PURPOSE_5_ERR` reader - If any bit in KEY_PURPOSE_5 is 1, then it indicates a programming error."]
-pub struct KEY_PURPOSE_5_ERR_R(crate::FieldReader<u8, u8>);
-impl KEY_PURPOSE_5_ERR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        KEY_PURPOSE_5_ERR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for KEY_PURPOSE_5_ERR_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type KEY_PURPOSE_5_ERR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `RPT4_RESERVED3_ERR` reader - Reserved."]
-pub struct RPT4_RESERVED3_ERR_R(crate::FieldReader<u8, u8>);
-impl RPT4_RESERVED3_ERR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        RPT4_RESERVED3_ERR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RPT4_RESERVED3_ERR_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RPT4_RESERVED3_ERR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `SECURE_BOOT_EN_ERR` reader - If SECURE_BOOT_EN is 1, then it indicates a programming error."]
-pub struct SECURE_BOOT_EN_ERR_R(crate::FieldReader<bool, bool>);
-impl SECURE_BOOT_EN_ERR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        SECURE_BOOT_EN_ERR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SECURE_BOOT_EN_ERR_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SECURE_BOOT_EN_ERR_R = crate::BitReader<bool>;
 #[doc = "Field `SECURE_BOOT_AGGRESSIVE_REVOKE_ERR` reader - If SECURE_BOOT_AGGRESSIVE_REVOKE is 1, then it indicates a programming error."]
-pub struct SECURE_BOOT_AGGRESSIVE_REVOKE_ERR_R(crate::FieldReader<bool, bool>);
-impl SECURE_BOOT_AGGRESSIVE_REVOKE_ERR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        SECURE_BOOT_AGGRESSIVE_REVOKE_ERR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SECURE_BOOT_AGGRESSIVE_REVOKE_ERR_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SECURE_BOOT_AGGRESSIVE_REVOKE_ERR_R = crate::BitReader<bool>;
 #[doc = "Field `RPT4_RESERVED0_ERR` reader - Reserved."]
-pub struct RPT4_RESERVED0_ERR_R(crate::FieldReader<u8, u8>);
-impl RPT4_RESERVED0_ERR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        RPT4_RESERVED0_ERR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RPT4_RESERVED0_ERR_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RPT4_RESERVED0_ERR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `FLASH_TPUW_ERR` reader - If any bit in FLASH_TPUM is 1, then it indicates a programming error."]
-pub struct FLASH_TPUW_ERR_R(crate::FieldReader<u8, u8>);
-impl FLASH_TPUW_ERR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        FLASH_TPUW_ERR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FLASH_TPUW_ERR_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FLASH_TPUW_ERR_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:3 - If any bit in KEY_PURPOSE_2 is 1, then it indicates a programming error."]
     #[inline(always)]
@@ -177,12 +60,12 @@ impl R {
     #[doc = "Bit 20 - If SECURE_BOOT_EN is 1, then it indicates a programming error."]
     #[inline(always)]
     pub fn secure_boot_en_err(&self) -> SECURE_BOOT_EN_ERR_R {
-        SECURE_BOOT_EN_ERR_R::new(((self.bits >> 20) & 0x01) != 0)
+        SECURE_BOOT_EN_ERR_R::new(((self.bits >> 20) & 1) != 0)
     }
     #[doc = "Bit 21 - If SECURE_BOOT_AGGRESSIVE_REVOKE is 1, then it indicates a programming error."]
     #[inline(always)]
     pub fn secure_boot_aggressive_revoke_err(&self) -> SECURE_BOOT_AGGRESSIVE_REVOKE_ERR_R {
-        SECURE_BOOT_AGGRESSIVE_REVOKE_ERR_R::new(((self.bits >> 21) & 0x01) != 0)
+        SECURE_BOOT_AGGRESSIVE_REVOKE_ERR_R::new(((self.bits >> 21) & 1) != 0)
     }
     #[doc = "Bits 22:27 - Reserved."]
     #[inline(always)]
@@ -195,16 +78,12 @@ impl R {
         FLASH_TPUW_ERR_R::new(((self.bits >> 28) & 0x0f) as u8)
     }
 }
-#[doc = "Programming error record register 2 of BLOCK0.\n\nThis register you can [`read`]
-(crate::generic::Reg::read). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rd_repeat_err2]
-(index.html) module"]
+#[doc = "Programming error record register 2 of BLOCK0.\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rd_repeat_err2](index.html) module"]
 pub struct RD_REPEAT_ERR2_SPEC;
 impl crate::RegisterSpec for RD_REPEAT_ERR2_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [rd_repeat_err2::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [rd_repeat_err2::R](R) reader structure"]
 impl crate::Readable for RD_REPEAT_ERR2_SPEC {
     type Reader = R;
 }

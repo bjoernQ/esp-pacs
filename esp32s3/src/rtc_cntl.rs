@@ -68,7 +68,7 @@ pub struct RegisterBlock {
     #[doc = "0x80 - No public"]
     pub bias_conf: crate::Reg<bias_conf::BIAS_CONF_SPEC>,
     #[doc = "0x84 - configure rtc regulator"]
-    pub rtc: crate::Reg<rtc::RTC_SPEC>,
+    pub reg: crate::Reg<reg::REG_SPEC>,
     #[doc = "0x88 - configure rtc power"]
     pub pwc: crate::Reg<pwc::PWC_SPEC>,
     #[doc = "0x8c - No public"]
@@ -309,10 +309,10 @@ pub mod sdio_conf;
 pub type BIAS_CONF = crate::Reg<bias_conf::BIAS_CONF_SPEC>;
 #[doc = "No public"]
 pub mod bias_conf;
-#[doc = "RTC register accessor: an alias for `Reg<RTC_SPEC>`"]
-pub type RTC = crate::Reg<rtc::RTC_SPEC>;
+#[doc = "REG register accessor: an alias for `Reg<REG_SPEC>`"]
+pub type REG = crate::Reg<reg::REG_SPEC>;
 #[doc = "configure rtc regulator"]
-pub mod rtc;
+pub mod reg;
 #[doc = "PWC register accessor: an alias for `Reg<PWC_SPEC>`"]
 pub type PWC = crate::Reg<pwc::PWC_SPEC>;
 #[doc = "configure rtc power"]

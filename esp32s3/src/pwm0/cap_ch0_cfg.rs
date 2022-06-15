@@ -35,165 +35,33 @@ impl From<crate::W<CAP_CH0_CFG_SPEC>> for W {
     }
 }
 #[doc = "Field `CAP0_EN` reader - When set, capture on channel 0 is enabled"]
-pub struct CAP0_EN_R(crate::FieldReader<bool, bool>);
-impl CAP0_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CAP0_EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CAP0_EN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CAP0_EN_R = crate::BitReader<bool>;
 #[doc = "Field `CAP0_EN` writer - When set, capture on channel 0 is enabled"]
-pub struct CAP0_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CAP0_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type CAP0_EN_W<'a> = crate::BitWriter<'a, u32, CAP_CH0_CFG_SPEC, bool, 0>;
 #[doc = "Field `CAP0_MODE` reader - Edge of capture on channel 0 after prescaling. When bit0 is set to 1: enable capture on the negative edge, When bit1 is set to 1: enable capture on the positive edge."]
-pub struct CAP0_MODE_R(crate::FieldReader<u8, u8>);
-impl CAP0_MODE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CAP0_MODE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CAP0_MODE_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CAP0_MODE_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CAP0_MODE` writer - Edge of capture on channel 0 after prescaling. When bit0 is set to 1: enable capture on the negative edge, When bit1 is set to 1: enable capture on the positive edge."]
-pub struct CAP0_MODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CAP0_MODE_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 1)) | ((value as u32 & 0x03) << 1);
-        self.w
-    }
-}
+pub type CAP0_MODE_W<'a> = crate::FieldWriter<'a, u32, CAP_CH0_CFG_SPEC, u8, u8, 2, 1>;
 #[doc = "Field `CAP0_PRESCALE` reader - Value of prescaling on possitive edge of CAP0. Prescale value = PWM_CAP0_PRESCALE + 1"]
-pub struct CAP0_PRESCALE_R(crate::FieldReader<u8, u8>);
-impl CAP0_PRESCALE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CAP0_PRESCALE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CAP0_PRESCALE_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CAP0_PRESCALE_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CAP0_PRESCALE` writer - Value of prescaling on possitive edge of CAP0. Prescale value = PWM_CAP0_PRESCALE + 1"]
-pub struct CAP0_PRESCALE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CAP0_PRESCALE_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 3)) | ((value as u32 & 0xff) << 3);
-        self.w
-    }
-}
+pub type CAP0_PRESCALE_W<'a> = crate::FieldWriter<'a, u32, CAP_CH0_CFG_SPEC, u8, u8, 8, 3>;
 #[doc = "Field `CAP0_IN_INVERT` reader - when set, CAP0 form GPIO matrix is inverted before prescale"]
-pub struct CAP0_IN_INVERT_R(crate::FieldReader<bool, bool>);
-impl CAP0_IN_INVERT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CAP0_IN_INVERT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CAP0_IN_INVERT_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CAP0_IN_INVERT_R = crate::BitReader<bool>;
 #[doc = "Field `CAP0_IN_INVERT` writer - when set, CAP0 form GPIO matrix is inverted before prescale"]
-pub struct CAP0_IN_INVERT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CAP0_IN_INVERT_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
-        self.w
-    }
-}
+pub type CAP0_IN_INVERT_W<'a> = crate::BitWriter<'a, u32, CAP_CH0_CFG_SPEC, bool, 11>;
 #[doc = "Field `CAP0_SW` writer - Write 1 will trigger a software forced capture on channel 0"]
-pub struct CAP0_SW_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CAP0_SW_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
-        self.w
-    }
-}
+pub type CAP0_SW_W<'a> = crate::BitWriter<'a, u32, CAP_CH0_CFG_SPEC, bool, 12>;
 impl R {
     #[doc = "Bit 0 - When set, capture on channel 0 is enabled"]
     #[inline(always)]
     pub fn cap0_en(&self) -> CAP0_EN_R {
-        CAP0_EN_R::new((self.bits & 0x01) != 0)
+        CAP0_EN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bits 1:2 - Edge of capture on channel 0 after prescaling. When bit0 is set to 1: enable capture on the negative edge, When bit1 is set to 1: enable capture on the positive edge."]
     #[inline(always)]
     pub fn cap0_mode(&self) -> CAP0_MODE_R {
-        CAP0_MODE_R::new(((self.bits >> 1) & 0x03) as u8)
+        CAP0_MODE_R::new(((self.bits >> 1) & 3) as u8)
     }
     #[doc = "Bits 3:10 - Value of prescaling on possitive edge of CAP0. Prescale value = PWM_CAP0_PRESCALE + 1"]
     #[inline(always)]
@@ -203,34 +71,34 @@ impl R {
     #[doc = "Bit 11 - when set, CAP0 form GPIO matrix is inverted before prescale"]
     #[inline(always)]
     pub fn cap0_in_invert(&self) -> CAP0_IN_INVERT_R {
-        CAP0_IN_INVERT_R::new(((self.bits >> 11) & 0x01) != 0)
+        CAP0_IN_INVERT_R::new(((self.bits >> 11) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - When set, capture on channel 0 is enabled"]
     #[inline(always)]
     pub fn cap0_en(&mut self) -> CAP0_EN_W {
-        CAP0_EN_W { w: self }
+        CAP0_EN_W::new(self)
     }
     #[doc = "Bits 1:2 - Edge of capture on channel 0 after prescaling. When bit0 is set to 1: enable capture on the negative edge, When bit1 is set to 1: enable capture on the positive edge."]
     #[inline(always)]
     pub fn cap0_mode(&mut self) -> CAP0_MODE_W {
-        CAP0_MODE_W { w: self }
+        CAP0_MODE_W::new(self)
     }
     #[doc = "Bits 3:10 - Value of prescaling on possitive edge of CAP0. Prescale value = PWM_CAP0_PRESCALE + 1"]
     #[inline(always)]
     pub fn cap0_prescale(&mut self) -> CAP0_PRESCALE_W {
-        CAP0_PRESCALE_W { w: self }
+        CAP0_PRESCALE_W::new(self)
     }
     #[doc = "Bit 11 - when set, CAP0 form GPIO matrix is inverted before prescale"]
     #[inline(always)]
     pub fn cap0_in_invert(&mut self) -> CAP0_IN_INVERT_W {
-        CAP0_IN_INVERT_W { w: self }
+        CAP0_IN_INVERT_W::new(self)
     }
     #[doc = "Bit 12 - Write 1 will trigger a software forced capture on channel 0"]
     #[inline(always)]
     pub fn cap0_sw(&mut self) -> CAP0_SW_W {
-        CAP0_SW_W { w: self }
+        CAP0_SW_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -239,25 +107,16 @@ impl W {
         self
     }
 }
-#[doc = "Capture channel 0 configuration and enable\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cap_ch0_cfg]
-(index.html) module"]
+#[doc = "Capture channel 0 configuration and enable\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cap_ch0_cfg](index.html) module"]
 pub struct CAP_CH0_CFG_SPEC;
 impl crate::RegisterSpec for CAP_CH0_CFG_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [cap_ch0_cfg::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [cap_ch0_cfg::R](R) reader structure"]
 impl crate::Readable for CAP_CH0_CFG_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [cap_ch0_cfg::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [cap_ch0_cfg::W](W) writer structure"]
 impl crate::Writable for CAP_CH0_CFG_SPEC {
     type Writer = W;
 }

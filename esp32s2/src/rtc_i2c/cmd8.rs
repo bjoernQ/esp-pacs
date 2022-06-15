@@ -35,47 +35,11 @@ impl From<crate::W<CMD8_SPEC>> for W {
     }
 }
 #[doc = "Field `COMMAND8` reader - Content of command 8. For more information, please refer to the register I2C_COMD8_REG in Chapter I²C Controller."]
-pub struct COMMAND8_R(crate::FieldReader<u16, u16>);
-impl COMMAND8_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        COMMAND8_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for COMMAND8_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type COMMAND8_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `COMMAND8` writer - Content of command 8. For more information, please refer to the register I2C_COMD8_REG in Chapter I²C Controller."]
-pub struct COMMAND8_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> COMMAND8_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x3fff) | (value as u32 & 0x3fff);
-        self.w
-    }
-}
+pub type COMMAND8_W<'a> = crate::FieldWriter<'a, u32, CMD8_SPEC, u16, u16, 14, 0>;
 #[doc = "Field `COMMAND8_DONE` reader - When command 8 is done, this bit changes to 1."]
-pub struct COMMAND8_DONE_R(crate::FieldReader<bool, bool>);
-impl COMMAND8_DONE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        COMMAND8_DONE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for COMMAND8_DONE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type COMMAND8_DONE_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bits 0:13 - Content of command 8. For more information, please refer to the register I2C_COMD8_REG in Chapter I²C Controller."]
     #[inline(always)]
@@ -85,14 +49,14 @@ impl R {
     #[doc = "Bit 31 - When command 8 is done, this bit changes to 1."]
     #[inline(always)]
     pub fn command8_done(&self) -> COMMAND8_DONE_R {
-        COMMAND8_DONE_R::new(((self.bits >> 31) & 0x01) != 0)
+        COMMAND8_DONE_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:13 - Content of command 8. For more information, please refer to the register I2C_COMD8_REG in Chapter I²C Controller."]
     #[inline(always)]
     pub fn command8(&mut self) -> COMMAND8_W {
-        COMMAND8_W { w: self }
+        COMMAND8_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -101,25 +65,16 @@ impl W {
         self
     }
 }
-#[doc = "RTC I2C Command 8\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cmd8]
-(index.html) module"]
+#[doc = "RTC I2C Command 8\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cmd8](index.html) module"]
 pub struct CMD8_SPEC;
 impl crate::RegisterSpec for CMD8_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [cmd8::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [cmd8::R](R) reader structure"]
 impl crate::Readable for CMD8_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [cmd8::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [cmd8::W](W) writer structure"]
 impl crate::Writable for CMD8_SPEC {
     type Writer = W;
 }

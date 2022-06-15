@@ -35,86 +35,17 @@ impl From<crate::W<TIMER5_SPEC>> for W {
     }
 }
 #[doc = "Field `MIN_SLP_VAL` reader - Sets the minimal sleep cycles (using the RTC slow clock)."]
-pub struct MIN_SLP_VAL_R(crate::FieldReader<u8, u8>);
-impl MIN_SLP_VAL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        MIN_SLP_VAL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MIN_SLP_VAL_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MIN_SLP_VAL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `MIN_SLP_VAL` writer - Sets the minimal sleep cycles (using the RTC slow clock)."]
-pub struct MIN_SLP_VAL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MIN_SLP_VAL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 8)) | ((value as u32 & 0xff) << 8);
-        self.w
-    }
-}
+pub type MIN_SLP_VAL_W<'a> = crate::FieldWriter<'a, u32, TIMER5_SPEC, u8, u8, 8, 8>;
 #[doc = "Field `RTCMEM_WAIT_TIMER` reader - "]
-pub struct RTCMEM_WAIT_TIMER_R(crate::FieldReader<u16, u16>);
-impl RTCMEM_WAIT_TIMER_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        RTCMEM_WAIT_TIMER_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RTCMEM_WAIT_TIMER_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RTCMEM_WAIT_TIMER_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `RTCMEM_WAIT_TIMER` writer - "]
-pub struct RTCMEM_WAIT_TIMER_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RTCMEM_WAIT_TIMER_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01ff << 16)) | ((value as u32 & 0x01ff) << 16);
-        self.w
-    }
-}
+pub type RTCMEM_WAIT_TIMER_W<'a> = crate::FieldWriter<'a, u32, TIMER5_SPEC, u16, u16, 9, 16>;
 #[doc = "Field `RTCMEM_POWERUP_TIMER` reader - "]
-pub struct RTCMEM_POWERUP_TIMER_R(crate::FieldReader<u8, u8>);
-impl RTCMEM_POWERUP_TIMER_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        RTCMEM_POWERUP_TIMER_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RTCMEM_POWERUP_TIMER_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RTCMEM_POWERUP_TIMER_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `RTCMEM_POWERUP_TIMER` writer - "]
-pub struct RTCMEM_POWERUP_TIMER_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RTCMEM_POWERUP_TIMER_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x7f << 25)) | ((value as u32 & 0x7f) << 25);
-        self.w
-    }
-}
+pub type RTCMEM_POWERUP_TIMER_W<'a> = crate::FieldWriter<'a, u32, TIMER5_SPEC, u8, u8, 7, 25>;
 impl R {
     #[doc = "Bits 8:15 - Sets the minimal sleep cycles (using the RTC slow clock)."]
     #[inline(always)]
@@ -136,17 +67,17 @@ impl W {
     #[doc = "Bits 8:15 - Sets the minimal sleep cycles (using the RTC slow clock)."]
     #[inline(always)]
     pub fn min_slp_val(&mut self) -> MIN_SLP_VAL_W {
-        MIN_SLP_VAL_W { w: self }
+        MIN_SLP_VAL_W::new(self)
     }
     #[doc = "Bits 16:24"]
     #[inline(always)]
     pub fn rtcmem_wait_timer(&mut self) -> RTCMEM_WAIT_TIMER_W {
-        RTCMEM_WAIT_TIMER_W { w: self }
+        RTCMEM_WAIT_TIMER_W::new(self)
     }
     #[doc = "Bits 25:31"]
     #[inline(always)]
     pub fn rtcmem_powerup_timer(&mut self) -> RTCMEM_POWERUP_TIMER_W {
-        RTCMEM_POWERUP_TIMER_W { w: self }
+        RTCMEM_POWERUP_TIMER_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -155,25 +86,16 @@ impl W {
         self
     }
 }
-#[doc = "Configures the minimal sleep cycles\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [timer5]
-(index.html) module"]
+#[doc = "Configures the minimal sleep cycles\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [timer5](index.html) module"]
 pub struct TIMER5_SPEC;
 impl crate::RegisterSpec for TIMER5_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [timer5::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [timer5::R](R) reader structure"]
 impl crate::Readable for TIMER5_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [timer5::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [timer5::W](W) writer structure"]
 impl crate::Writable for TIMER5_SPEC {
     type Writer = W;
 }

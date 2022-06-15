@@ -14,20 +14,7 @@ impl From<crate::R<STATE0_SPEC>> for R {
     }
 }
 #[doc = "Field `STATE0` reader - "]
-pub struct STATE0_R(crate::FieldReader<u32, u32>);
-impl STATE0_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        STATE0_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for STATE0_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type STATE0_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31"]
     #[inline(always)]
@@ -35,16 +22,12 @@ impl R {
         STATE0_R::new(self.bits)
     }
 }
-#[doc = "\n\nThis register you can [`read`]
-(crate::generic::Reg::read). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [state0]
-(index.html) module"]
+#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [state0](index.html) module"]
 pub struct STATE0_SPEC;
 impl crate::RegisterSpec for STATE0_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [state0::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [state0::R](R) reader structure"]
 impl crate::Readable for STATE0_SPEC {
     type Reader = R;
 }

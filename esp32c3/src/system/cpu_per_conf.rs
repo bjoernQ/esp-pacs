@@ -35,148 +35,36 @@ impl From<crate::W<CPU_PER_CONF_SPEC>> for W {
     }
 }
 #[doc = "Field `CPUPERIOD_SEL` reader - reg_cpuperiod_sel"]
-pub struct CPUPERIOD_SEL_R(crate::FieldReader<u8, u8>);
-impl CPUPERIOD_SEL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CPUPERIOD_SEL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CPUPERIOD_SEL_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CPUPERIOD_SEL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CPUPERIOD_SEL` writer - reg_cpuperiod_sel"]
-pub struct CPUPERIOD_SEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CPUPERIOD_SEL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
-        self.w
-    }
-}
+pub type CPUPERIOD_SEL_W<'a> = crate::FieldWriter<'a, u32, CPU_PER_CONF_SPEC, u8, u8, 2, 0>;
 #[doc = "Field `PLL_FREQ_SEL` reader - reg_pll_freq_sel"]
-pub struct PLL_FREQ_SEL_R(crate::FieldReader<bool, bool>);
-impl PLL_FREQ_SEL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        PLL_FREQ_SEL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PLL_FREQ_SEL_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PLL_FREQ_SEL_R = crate::BitReader<bool>;
 #[doc = "Field `PLL_FREQ_SEL` writer - reg_pll_freq_sel"]
-pub struct PLL_FREQ_SEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PLL_FREQ_SEL_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type PLL_FREQ_SEL_W<'a> = crate::BitWriter<'a, u32, CPU_PER_CONF_SPEC, bool, 2>;
 #[doc = "Field `CPU_WAIT_MODE_FORCE_ON` reader - reg_cpu_wait_mode_force_on"]
-pub struct CPU_WAIT_MODE_FORCE_ON_R(crate::FieldReader<bool, bool>);
-impl CPU_WAIT_MODE_FORCE_ON_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CPU_WAIT_MODE_FORCE_ON_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CPU_WAIT_MODE_FORCE_ON_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CPU_WAIT_MODE_FORCE_ON_R = crate::BitReader<bool>;
 #[doc = "Field `CPU_WAIT_MODE_FORCE_ON` writer - reg_cpu_wait_mode_force_on"]
-pub struct CPU_WAIT_MODE_FORCE_ON_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CPU_WAIT_MODE_FORCE_ON_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type CPU_WAIT_MODE_FORCE_ON_W<'a> = crate::BitWriter<'a, u32, CPU_PER_CONF_SPEC, bool, 3>;
 #[doc = "Field `CPU_WAITI_DELAY_NUM` reader - reg_cpu_waiti_delay_num"]
-pub struct CPU_WAITI_DELAY_NUM_R(crate::FieldReader<u8, u8>);
-impl CPU_WAITI_DELAY_NUM_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CPU_WAITI_DELAY_NUM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CPU_WAITI_DELAY_NUM_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CPU_WAITI_DELAY_NUM_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CPU_WAITI_DELAY_NUM` writer - reg_cpu_waiti_delay_num"]
-pub struct CPU_WAITI_DELAY_NUM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CPU_WAITI_DELAY_NUM_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 4)) | ((value as u32 & 0x0f) << 4);
-        self.w
-    }
-}
+pub type CPU_WAITI_DELAY_NUM_W<'a> = crate::FieldWriter<'a, u32, CPU_PER_CONF_SPEC, u8, u8, 4, 4>;
 impl R {
     #[doc = "Bits 0:1 - reg_cpuperiod_sel"]
     #[inline(always)]
     pub fn cpuperiod_sel(&self) -> CPUPERIOD_SEL_R {
-        CPUPERIOD_SEL_R::new((self.bits & 0x03) as u8)
+        CPUPERIOD_SEL_R::new((self.bits & 3) as u8)
     }
     #[doc = "Bit 2 - reg_pll_freq_sel"]
     #[inline(always)]
     pub fn pll_freq_sel(&self) -> PLL_FREQ_SEL_R {
-        PLL_FREQ_SEL_R::new(((self.bits >> 2) & 0x01) != 0)
+        PLL_FREQ_SEL_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - reg_cpu_wait_mode_force_on"]
     #[inline(always)]
     pub fn cpu_wait_mode_force_on(&self) -> CPU_WAIT_MODE_FORCE_ON_R {
-        CPU_WAIT_MODE_FORCE_ON_R::new(((self.bits >> 3) & 0x01) != 0)
+        CPU_WAIT_MODE_FORCE_ON_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bits 4:7 - reg_cpu_waiti_delay_num"]
     #[inline(always)]
@@ -188,22 +76,22 @@ impl W {
     #[doc = "Bits 0:1 - reg_cpuperiod_sel"]
     #[inline(always)]
     pub fn cpuperiod_sel(&mut self) -> CPUPERIOD_SEL_W {
-        CPUPERIOD_SEL_W { w: self }
+        CPUPERIOD_SEL_W::new(self)
     }
     #[doc = "Bit 2 - reg_pll_freq_sel"]
     #[inline(always)]
     pub fn pll_freq_sel(&mut self) -> PLL_FREQ_SEL_W {
-        PLL_FREQ_SEL_W { w: self }
+        PLL_FREQ_SEL_W::new(self)
     }
     #[doc = "Bit 3 - reg_cpu_wait_mode_force_on"]
     #[inline(always)]
     pub fn cpu_wait_mode_force_on(&mut self) -> CPU_WAIT_MODE_FORCE_ON_W {
-        CPU_WAIT_MODE_FORCE_ON_W { w: self }
+        CPU_WAIT_MODE_FORCE_ON_W::new(self)
     }
     #[doc = "Bits 4:7 - reg_cpu_waiti_delay_num"]
     #[inline(always)]
     pub fn cpu_waiti_delay_num(&mut self) -> CPU_WAITI_DELAY_NUM_W {
-        CPU_WAITI_DELAY_NUM_W { w: self }
+        CPU_WAITI_DELAY_NUM_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -212,25 +100,16 @@ impl W {
         self
     }
 }
-#[doc = "cpu clock config register\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cpu_per_conf]
-(index.html) module"]
+#[doc = "cpu clock config register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cpu_per_conf](index.html) module"]
 pub struct CPU_PER_CONF_SPEC;
 impl crate::RegisterSpec for CPU_PER_CONF_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [cpu_per_conf::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [cpu_per_conf::R](R) reader structure"]
 impl crate::Readable for CPU_PER_CONF_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [cpu_per_conf::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [cpu_per_conf::W](W) writer structure"]
 impl crate::Writable for CPU_PER_CONF_SPEC {
     type Writer = W;
 }

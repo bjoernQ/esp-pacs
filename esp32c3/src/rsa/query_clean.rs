@@ -14,37 +14,20 @@ impl From<crate::R<QUERY_CLEAN_SPEC>> for R {
     }
 }
 #[doc = "Field `QUERY_CLEAN` reader - query clean"]
-pub struct QUERY_CLEAN_R(crate::FieldReader<bool, bool>);
-impl QUERY_CLEAN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        QUERY_CLEAN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for QUERY_CLEAN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type QUERY_CLEAN_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 0 - query clean"]
     #[inline(always)]
     pub fn query_clean(&self) -> QUERY_CLEAN_R {
-        QUERY_CLEAN_R::new((self.bits & 0x01) != 0)
+        QUERY_CLEAN_R::new((self.bits & 1) != 0)
     }
 }
-#[doc = "RSA query clean register\n\nThis register you can [`read`]
-(crate::generic::Reg::read). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [query_clean]
-(index.html) module"]
+#[doc = "RSA query clean register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [query_clean](index.html) module"]
 pub struct QUERY_CLEAN_SPEC;
 impl crate::RegisterSpec for QUERY_CLEAN_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [query_clean::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [query_clean::R](R) reader structure"]
 impl crate::Readable for QUERY_CLEAN_SPEC {
     type Reader = R;
 }

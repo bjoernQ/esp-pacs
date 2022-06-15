@@ -35,32 +35,10 @@ impl From<crate::W<XTAL32K_CLK_FACTOR_SPEC>> for W {
     }
 }
 #[doc = "Field `XTAL32K_CLK_FACTOR` reader - Configures the divider factor for the 32 kHz crystal oscillator."]
-pub struct XTAL32K_CLK_FACTOR_R(crate::FieldReader<u32, u32>);
-impl XTAL32K_CLK_FACTOR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        XTAL32K_CLK_FACTOR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for XTAL32K_CLK_FACTOR_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type XTAL32K_CLK_FACTOR_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `XTAL32K_CLK_FACTOR` writer - Configures the divider factor for the 32 kHz crystal oscillator."]
-pub struct XTAL32K_CLK_FACTOR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> XTAL32K_CLK_FACTOR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
-    }
-}
+pub type XTAL32K_CLK_FACTOR_W<'a> =
+    crate::FieldWriter<'a, u32, XTAL32K_CLK_FACTOR_SPEC, u32, u32, 32, 0>;
 impl R {
     #[doc = "Bits 0:31 - Configures the divider factor for the 32 kHz crystal oscillator."]
     #[inline(always)]
@@ -72,7 +50,7 @@ impl W {
     #[doc = "Bits 0:31 - Configures the divider factor for the 32 kHz crystal oscillator."]
     #[inline(always)]
     pub fn xtal32k_clk_factor(&mut self) -> XTAL32K_CLK_FACTOR_W {
-        XTAL32K_CLK_FACTOR_W { w: self }
+        XTAL32K_CLK_FACTOR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -81,25 +59,16 @@ impl W {
         self
     }
 }
-#[doc = "Configures the divider factor for the backup clock of 32 kHz crystal oscillator\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [xtal32k_clk_factor]
-(index.html) module"]
+#[doc = "Configures the divider factor for the backup clock of 32 kHz crystal oscillator\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [xtal32k_clk_factor](index.html) module"]
 pub struct XTAL32K_CLK_FACTOR_SPEC;
 impl crate::RegisterSpec for XTAL32K_CLK_FACTOR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [xtal32k_clk_factor::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [xtal32k_clk_factor::R](R) reader structure"]
 impl crate::Readable for XTAL32K_CLK_FACTOR_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [xtal32k_clk_factor::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [xtal32k_clk_factor::W](W) writer structure"]
 impl crate::Writable for XTAL32K_CLK_FACTOR_SPEC {
     type Writer = W;
 }

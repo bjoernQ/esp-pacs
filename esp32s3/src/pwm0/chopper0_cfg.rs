@@ -35,202 +35,34 @@ impl From<crate::W<CHOPPER0_CFG_SPEC>> for W {
     }
 }
 #[doc = "Field `CHOPPER0_EN` reader - When set, carrier0 function is enabled. When cleared, carrier0 is bypassed"]
-pub struct CHOPPER0_EN_R(crate::FieldReader<bool, bool>);
-impl CHOPPER0_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CHOPPER0_EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CHOPPER0_EN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CHOPPER0_EN_R = crate::BitReader<bool>;
 #[doc = "Field `CHOPPER0_EN` writer - When set, carrier0 function is enabled. When cleared, carrier0 is bypassed"]
-pub struct CHOPPER0_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CHOPPER0_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type CHOPPER0_EN_W<'a> = crate::BitWriter<'a, u32, CHOPPER0_CFG_SPEC, bool, 0>;
 #[doc = "Field `CHOPPER0_PRESCALE` reader - PWM carrier0 clock (PC_clk) prescale value. Period of PC_clk = period of PWM_clk * (PWM_CARRIER0_PRESCALE + 1)"]
-pub struct CHOPPER0_PRESCALE_R(crate::FieldReader<u8, u8>);
-impl CHOPPER0_PRESCALE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CHOPPER0_PRESCALE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CHOPPER0_PRESCALE_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CHOPPER0_PRESCALE_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CHOPPER0_PRESCALE` writer - PWM carrier0 clock (PC_clk) prescale value. Period of PC_clk = period of PWM_clk * (PWM_CARRIER0_PRESCALE + 1)"]
-pub struct CHOPPER0_PRESCALE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CHOPPER0_PRESCALE_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 1)) | ((value as u32 & 0x0f) << 1);
-        self.w
-    }
-}
+pub type CHOPPER0_PRESCALE_W<'a> = crate::FieldWriter<'a, u32, CHOPPER0_CFG_SPEC, u8, u8, 4, 1>;
 #[doc = "Field `CHOPPER0_DUTY` reader - carrier duty selection. Duty = PWM_CARRIER0_DUTY / 8"]
-pub struct CHOPPER0_DUTY_R(crate::FieldReader<u8, u8>);
-impl CHOPPER0_DUTY_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CHOPPER0_DUTY_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CHOPPER0_DUTY_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CHOPPER0_DUTY_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CHOPPER0_DUTY` writer - carrier duty selection. Duty = PWM_CARRIER0_DUTY / 8"]
-pub struct CHOPPER0_DUTY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CHOPPER0_DUTY_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 5)) | ((value as u32 & 0x07) << 5);
-        self.w
-    }
-}
+pub type CHOPPER0_DUTY_W<'a> = crate::FieldWriter<'a, u32, CHOPPER0_CFG_SPEC, u8, u8, 3, 5>;
 #[doc = "Field `CHOPPER0_OSHTWTH` reader - width of the fist pulse in number of periods of the carrier"]
-pub struct CHOPPER0_OSHTWTH_R(crate::FieldReader<u8, u8>);
-impl CHOPPER0_OSHTWTH_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CHOPPER0_OSHTWTH_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CHOPPER0_OSHTWTH_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CHOPPER0_OSHTWTH_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CHOPPER0_OSHTWTH` writer - width of the fist pulse in number of periods of the carrier"]
-pub struct CHOPPER0_OSHTWTH_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CHOPPER0_OSHTWTH_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 8)) | ((value as u32 & 0x0f) << 8);
-        self.w
-    }
-}
+pub type CHOPPER0_OSHTWTH_W<'a> = crate::FieldWriter<'a, u32, CHOPPER0_CFG_SPEC, u8, u8, 4, 8>;
 #[doc = "Field `CHOPPER0_OUT_INVERT` reader - when set, invert the output of PWM0A and PWM0B for this submodule"]
-pub struct CHOPPER0_OUT_INVERT_R(crate::FieldReader<bool, bool>);
-impl CHOPPER0_OUT_INVERT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CHOPPER0_OUT_INVERT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CHOPPER0_OUT_INVERT_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CHOPPER0_OUT_INVERT_R = crate::BitReader<bool>;
 #[doc = "Field `CHOPPER0_OUT_INVERT` writer - when set, invert the output of PWM0A and PWM0B for this submodule"]
-pub struct CHOPPER0_OUT_INVERT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CHOPPER0_OUT_INVERT_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
-        self.w
-    }
-}
+pub type CHOPPER0_OUT_INVERT_W<'a> = crate::BitWriter<'a, u32, CHOPPER0_CFG_SPEC, bool, 12>;
 #[doc = "Field `CHOPPER0_IN_INVERT` reader - when set, invert the input of PWM0A and PWM0B for this submodule"]
-pub struct CHOPPER0_IN_INVERT_R(crate::FieldReader<bool, bool>);
-impl CHOPPER0_IN_INVERT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CHOPPER0_IN_INVERT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CHOPPER0_IN_INVERT_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CHOPPER0_IN_INVERT_R = crate::BitReader<bool>;
 #[doc = "Field `CHOPPER0_IN_INVERT` writer - when set, invert the input of PWM0A and PWM0B for this submodule"]
-pub struct CHOPPER0_IN_INVERT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CHOPPER0_IN_INVERT_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
-        self.w
-    }
-}
+pub type CHOPPER0_IN_INVERT_W<'a> = crate::BitWriter<'a, u32, CHOPPER0_CFG_SPEC, bool, 13>;
 impl R {
     #[doc = "Bit 0 - When set, carrier0 function is enabled. When cleared, carrier0 is bypassed"]
     #[inline(always)]
     pub fn chopper0_en(&self) -> CHOPPER0_EN_R {
-        CHOPPER0_EN_R::new((self.bits & 0x01) != 0)
+        CHOPPER0_EN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bits 1:4 - PWM carrier0 clock (PC_clk) prescale value. Period of PC_clk = period of PWM_clk * (PWM_CARRIER0_PRESCALE + 1)"]
     #[inline(always)]
@@ -240,7 +72,7 @@ impl R {
     #[doc = "Bits 5:7 - carrier duty selection. Duty = PWM_CARRIER0_DUTY / 8"]
     #[inline(always)]
     pub fn chopper0_duty(&self) -> CHOPPER0_DUTY_R {
-        CHOPPER0_DUTY_R::new(((self.bits >> 5) & 0x07) as u8)
+        CHOPPER0_DUTY_R::new(((self.bits >> 5) & 7) as u8)
     }
     #[doc = "Bits 8:11 - width of the fist pulse in number of periods of the carrier"]
     #[inline(always)]
@@ -250,44 +82,44 @@ impl R {
     #[doc = "Bit 12 - when set, invert the output of PWM0A and PWM0B for this submodule"]
     #[inline(always)]
     pub fn chopper0_out_invert(&self) -> CHOPPER0_OUT_INVERT_R {
-        CHOPPER0_OUT_INVERT_R::new(((self.bits >> 12) & 0x01) != 0)
+        CHOPPER0_OUT_INVERT_R::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bit 13 - when set, invert the input of PWM0A and PWM0B for this submodule"]
     #[inline(always)]
     pub fn chopper0_in_invert(&self) -> CHOPPER0_IN_INVERT_R {
-        CHOPPER0_IN_INVERT_R::new(((self.bits >> 13) & 0x01) != 0)
+        CHOPPER0_IN_INVERT_R::new(((self.bits >> 13) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - When set, carrier0 function is enabled. When cleared, carrier0 is bypassed"]
     #[inline(always)]
     pub fn chopper0_en(&mut self) -> CHOPPER0_EN_W {
-        CHOPPER0_EN_W { w: self }
+        CHOPPER0_EN_W::new(self)
     }
     #[doc = "Bits 1:4 - PWM carrier0 clock (PC_clk) prescale value. Period of PC_clk = period of PWM_clk * (PWM_CARRIER0_PRESCALE + 1)"]
     #[inline(always)]
     pub fn chopper0_prescale(&mut self) -> CHOPPER0_PRESCALE_W {
-        CHOPPER0_PRESCALE_W { w: self }
+        CHOPPER0_PRESCALE_W::new(self)
     }
     #[doc = "Bits 5:7 - carrier duty selection. Duty = PWM_CARRIER0_DUTY / 8"]
     #[inline(always)]
     pub fn chopper0_duty(&mut self) -> CHOPPER0_DUTY_W {
-        CHOPPER0_DUTY_W { w: self }
+        CHOPPER0_DUTY_W::new(self)
     }
     #[doc = "Bits 8:11 - width of the fist pulse in number of periods of the carrier"]
     #[inline(always)]
     pub fn chopper0_oshtwth(&mut self) -> CHOPPER0_OSHTWTH_W {
-        CHOPPER0_OSHTWTH_W { w: self }
+        CHOPPER0_OSHTWTH_W::new(self)
     }
     #[doc = "Bit 12 - when set, invert the output of PWM0A and PWM0B for this submodule"]
     #[inline(always)]
     pub fn chopper0_out_invert(&mut self) -> CHOPPER0_OUT_INVERT_W {
-        CHOPPER0_OUT_INVERT_W { w: self }
+        CHOPPER0_OUT_INVERT_W::new(self)
     }
     #[doc = "Bit 13 - when set, invert the input of PWM0A and PWM0B for this submodule"]
     #[inline(always)]
     pub fn chopper0_in_invert(&mut self) -> CHOPPER0_IN_INVERT_W {
-        CHOPPER0_IN_INVERT_W { w: self }
+        CHOPPER0_IN_INVERT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -296,25 +128,16 @@ impl W {
         self
     }
 }
-#[doc = "Carrier enable and configuratoin\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [chopper0_cfg]
-(index.html) module"]
+#[doc = "Carrier enable and configuratoin\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [chopper0_cfg](index.html) module"]
 pub struct CHOPPER0_CFG_SPEC;
 impl crate::RegisterSpec for CHOPPER0_CFG_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [chopper0_cfg::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [chopper0_cfg::R](R) reader structure"]
 impl crate::Readable for CHOPPER0_CFG_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [chopper0_cfg::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [chopper0_cfg::W](W) writer structure"]
 impl crate::Writable for CHOPPER0_CFG_SPEC {
     type Writer = W;
 }

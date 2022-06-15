@@ -35,69 +35,14 @@ impl From<crate::W<RETENTION_CTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `RETENTION_LINK_ADDR` reader - reg_retention_link_addr"]
-pub struct RETENTION_LINK_ADDR_R(crate::FieldReader<u32, u32>);
-impl RETENTION_LINK_ADDR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        RETENTION_LINK_ADDR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RETENTION_LINK_ADDR_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RETENTION_LINK_ADDR_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `RETENTION_LINK_ADDR` writer - reg_retention_link_addr"]
-pub struct RETENTION_LINK_ADDR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RETENTION_LINK_ADDR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07ff_ffff) | (value as u32 & 0x07ff_ffff);
-        self.w
-    }
-}
+pub type RETENTION_LINK_ADDR_W<'a> =
+    crate::FieldWriter<'a, u32, RETENTION_CTRL_SPEC, u32, u32, 27, 0>;
 #[doc = "Field `NOBYPASS_CPU_ISO_RST` reader - reg_nobypass_cpu_iso_rst"]
-pub struct NOBYPASS_CPU_ISO_RST_R(crate::FieldReader<bool, bool>);
-impl NOBYPASS_CPU_ISO_RST_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        NOBYPASS_CPU_ISO_RST_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for NOBYPASS_CPU_ISO_RST_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type NOBYPASS_CPU_ISO_RST_R = crate::BitReader<bool>;
 #[doc = "Field `NOBYPASS_CPU_ISO_RST` writer - reg_nobypass_cpu_iso_rst"]
-pub struct NOBYPASS_CPU_ISO_RST_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NOBYPASS_CPU_ISO_RST_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 27)) | ((value as u32 & 0x01) << 27);
-        self.w
-    }
-}
+pub type NOBYPASS_CPU_ISO_RST_W<'a> = crate::BitWriter<'a, u32, RETENTION_CTRL_SPEC, bool, 27>;
 impl R {
     #[doc = "Bits 0:26 - reg_retention_link_addr"]
     #[inline(always)]
@@ -107,19 +52,19 @@ impl R {
     #[doc = "Bit 27 - reg_nobypass_cpu_iso_rst"]
     #[inline(always)]
     pub fn nobypass_cpu_iso_rst(&self) -> NOBYPASS_CPU_ISO_RST_R {
-        NOBYPASS_CPU_ISO_RST_R::new(((self.bits >> 27) & 0x01) != 0)
+        NOBYPASS_CPU_ISO_RST_R::new(((self.bits >> 27) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:26 - reg_retention_link_addr"]
     #[inline(always)]
     pub fn retention_link_addr(&mut self) -> RETENTION_LINK_ADDR_W {
-        RETENTION_LINK_ADDR_W { w: self }
+        RETENTION_LINK_ADDR_W::new(self)
     }
     #[doc = "Bit 27 - reg_nobypass_cpu_iso_rst"]
     #[inline(always)]
     pub fn nobypass_cpu_iso_rst(&mut self) -> NOBYPASS_CPU_ISO_RST_W {
-        NOBYPASS_CPU_ISO_RST_W { w: self }
+        NOBYPASS_CPU_ISO_RST_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -128,25 +73,16 @@ impl W {
         self
     }
 }
-#[doc = "APB_CTRL_RETENTION_CTRL_REG\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [retention_ctrl]
-(index.html) module"]
+#[doc = "APB_CTRL_RETENTION_CTRL_REG\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [retention_ctrl](index.html) module"]
 pub struct RETENTION_CTRL_SPEC;
 impl crate::RegisterSpec for RETENTION_CTRL_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [retention_ctrl::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [retention_ctrl::R](R) reader structure"]
 impl crate::Readable for RETENTION_CTRL_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [retention_ctrl::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [retention_ctrl::W](W) writer structure"]
 impl crate::Writable for RETENTION_CTRL_SPEC {
     type Writer = W;
 }

@@ -14,20 +14,7 @@ impl From<crate::R<BLK3_RDATA1_SPEC>> for R {
     }
 }
 #[doc = "Field `BLK3_DOUT1` reader - read for BLOCK3"]
-pub struct BLK3_DOUT1_R(crate::FieldReader<u32, u32>);
-impl BLK3_DOUT1_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        BLK3_DOUT1_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for BLK3_DOUT1_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type BLK3_DOUT1_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31 - read for BLOCK3"]
     #[inline(always)]
@@ -35,16 +22,12 @@ impl R {
         BLK3_DOUT1_R::new(self.bits)
     }
 }
-#[doc = "\n\nThis register you can [`read`]
-(crate::generic::Reg::read). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [blk3_rdata1]
-(index.html) module"]
+#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [blk3_rdata1](index.html) module"]
 pub struct BLK3_RDATA1_SPEC;
 impl crate::RegisterSpec for BLK3_RDATA1_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [blk3_rdata1::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [blk3_rdata1::R](R) reader structure"]
 impl crate::Readable for BLK3_RDATA1_SPEC {
     type Reader = R;
 }

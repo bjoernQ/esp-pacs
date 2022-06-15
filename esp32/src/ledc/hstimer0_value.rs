@@ -14,20 +14,7 @@ impl From<crate::R<HSTIMER0_VALUE_SPEC>> for R {
     }
 }
 #[doc = "Field `HSTIMER0_CNT` reader - software can read this register to get the current counter value in high speed timer0"]
-pub struct HSTIMER0_CNT_R(crate::FieldReader<u32, u32>);
-impl HSTIMER0_CNT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        HSTIMER0_CNT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for HSTIMER0_CNT_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type HSTIMER0_CNT_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:19 - software can read this register to get the current counter value in high speed timer0"]
     #[inline(always)]
@@ -35,16 +22,12 @@ impl R {
         HSTIMER0_CNT_R::new((self.bits & 0x000f_ffff) as u32)
     }
 }
-#[doc = "\n\nThis register you can [`read`]
-(crate::generic::Reg::read). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hstimer0_value]
-(index.html) module"]
+#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hstimer0_value](index.html) module"]
 pub struct HSTIMER0_VALUE_SPEC;
 impl crate::RegisterSpec for HSTIMER0_VALUE_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [hstimer0_value::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [hstimer0_value::R](R) reader structure"]
 impl crate::Readable for HSTIMER0_VALUE_SPEC {
     type Reader = R;
 }

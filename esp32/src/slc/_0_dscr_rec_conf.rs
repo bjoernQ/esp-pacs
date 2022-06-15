@@ -35,32 +35,10 @@ impl From<crate::W<_0_DSCR_REC_CONF_SPEC>> for W {
     }
 }
 #[doc = "Field `SLC0_RX_DSCR_REC_LIM` reader - "]
-pub struct SLC0_RX_DSCR_REC_LIM_R(crate::FieldReader<u16, u16>);
-impl SLC0_RX_DSCR_REC_LIM_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        SLC0_RX_DSCR_REC_LIM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SLC0_RX_DSCR_REC_LIM_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SLC0_RX_DSCR_REC_LIM_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `SLC0_RX_DSCR_REC_LIM` writer - "]
-pub struct SLC0_RX_DSCR_REC_LIM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SLC0_RX_DSCR_REC_LIM_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03ff) | (value as u32 & 0x03ff);
-        self.w
-    }
-}
+pub type SLC0_RX_DSCR_REC_LIM_W<'a> =
+    crate::FieldWriter<'a, u32, _0_DSCR_REC_CONF_SPEC, u16, u16, 10, 0>;
 impl R {
     #[doc = "Bits 0:9"]
     #[inline(always)]
@@ -72,7 +50,7 @@ impl W {
     #[doc = "Bits 0:9"]
     #[inline(always)]
     pub fn slc0_rx_dscr_rec_lim(&mut self) -> SLC0_RX_DSCR_REC_LIM_W {
-        SLC0_RX_DSCR_REC_LIM_W { w: self }
+        SLC0_RX_DSCR_REC_LIM_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -81,25 +59,16 @@ impl W {
         self
     }
 }
-#[doc = "\n\nThis register you can [`read`]
-(crate::generic::Reg::read), [`write_with_zero`]
-(crate::generic::Reg::write_with_zero), [`reset`]
-(crate::generic::Reg::reset), [`write`]
-(crate::generic::Reg::write), [`modify`]
-(crate::generic::Reg::modify). See [API]
-(https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [_0_dscr_rec_conf]
-(index.html) module"]
+#[doc = "\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [_0_dscr_rec_conf](index.html) module"]
 pub struct _0_DSCR_REC_CONF_SPEC;
 impl crate::RegisterSpec for _0_DSCR_REC_CONF_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [_0_dscr_rec_conf::R]
-(R) reader structure"]
+#[doc = "`read()` method returns [_0_dscr_rec_conf::R](R) reader structure"]
 impl crate::Readable for _0_DSCR_REC_CONF_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [_0_dscr_rec_conf::W]
-(W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [_0_dscr_rec_conf::W](W) writer structure"]
 impl crate::Writable for _0_DSCR_REC_CONF_SPEC {
     type Writer = W;
 }
