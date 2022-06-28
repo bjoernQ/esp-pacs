@@ -27,6 +27,17 @@ use generic::*;
 pub mod generic;
 #[cfg(feature = "rt")]
 extern "C" {
+    fn WIFI_MAC();
+    fn WIFI_MAC_NMI();
+    fn WIFI_PWR();
+    fn WIFI_BB();
+    fn BT_MAC();
+    fn BT_BB();
+    fn BT_BB_NMI();
+    fn RWBT();
+    fn RWBLE();
+    fn RWBT_NMI();
+    fn RWBLE_NMI();
     fn UHCI0();
     fn TG0_T0_LEVEL();
     fn TG0_T1_LEVEL();
@@ -80,17 +91,23 @@ pub union Vector {
 #[cfg(feature = "rt")]
 #[doc(hidden)]
 pub static __INTERRUPTS: [Vector; 90] = [
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
+    Vector { _handler: WIFI_MAC },
+    Vector {
+        _handler: WIFI_MAC_NMI,
+    },
+    Vector { _handler: WIFI_PWR },
+    Vector { _handler: WIFI_BB },
+    Vector { _handler: BT_MAC },
+    Vector { _handler: BT_BB },
+    Vector {
+        _handler: BT_BB_NMI,
+    },
+    Vector { _handler: RWBT },
+    Vector { _handler: RWBLE },
+    Vector { _handler: RWBT_NMI },
+    Vector {
+        _handler: RWBLE_NMI,
+    },
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
     Vector { _handler: UHCI0 },
@@ -215,6 +232,28 @@ pub static __INTERRUPTS: [Vector; 90] = [
 #[derive(Copy, Clone, Debug, PartialEq, Eq)]
 #[repr(u16)]
 pub enum Interrupt {
+    #[doc = "0 - WIFI_MAC"]
+    WIFI_MAC = 0,
+    #[doc = "1 - WIFI_MAC_NMI"]
+    WIFI_MAC_NMI = 1,
+    #[doc = "2 - WIFI_PWR"]
+    WIFI_PWR = 2,
+    #[doc = "3 - WIFI_BB"]
+    WIFI_BB = 3,
+    #[doc = "4 - BT_MAC"]
+    BT_MAC = 4,
+    #[doc = "5 - BT_BB"]
+    BT_BB = 5,
+    #[doc = "6 - BT_BB_NMI"]
+    BT_BB_NMI = 6,
+    #[doc = "7 - RWBT"]
+    RWBT = 7,
+    #[doc = "8 - RWBLE"]
+    RWBLE = 8,
+    #[doc = "9 - RWBT_NMI"]
+    RWBT_NMI = 9,
+    #[doc = "10 - RWBLE_NMI"]
+    RWBLE_NMI = 10,
     #[doc = "13 - UHCI0"]
     UHCI0 = 13,
     #[doc = "15 - TG0_T0_LEVEL"]
@@ -318,6 +357,17 @@ impl Interrupt {
     #[inline]
     pub fn try_from(value: u16) -> Result<Self, TryFromInterruptError> {
         match value {
+            0 => Ok(Interrupt::WIFI_MAC),
+            1 => Ok(Interrupt::WIFI_MAC_NMI),
+            2 => Ok(Interrupt::WIFI_PWR),
+            3 => Ok(Interrupt::WIFI_BB),
+            4 => Ok(Interrupt::BT_MAC),
+            5 => Ok(Interrupt::BT_BB),
+            6 => Ok(Interrupt::BT_BB_NMI),
+            7 => Ok(Interrupt::RWBT),
+            8 => Ok(Interrupt::RWBLE),
+            9 => Ok(Interrupt::RWBT_NMI),
+            10 => Ok(Interrupt::RWBLE_NMI),
             13 => Ok(Interrupt::UHCI0),
             15 => Ok(Interrupt::TG0_T0_LEVEL),
             16 => Ok(Interrupt::TG0_T1_LEVEL),

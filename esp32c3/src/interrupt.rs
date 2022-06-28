@@ -2,6 +2,28 @@
 #[derive(Copy, Clone, Debug, PartialEq, Eq)]
 #[repr(u16)]
 pub enum Interrupt {
+    #[doc = "0 - WIFI_MAC"]
+    WIFI_MAC = 0,
+    #[doc = "1 - WIFI_MAC_NMI"]
+    WIFI_MAC_NMI = 1,
+    #[doc = "2 - WIFI_PWR"]
+    WIFI_PWR = 2,
+    #[doc = "3 - WIFI_BB"]
+    WIFI_BB = 3,
+    #[doc = "4 - BT_MAC"]
+    BT_MAC = 4,
+    #[doc = "5 - BT_BB"]
+    BT_BB = 5,
+    #[doc = "6 - BT_BB_NMI"]
+    BT_BB_NMI = 6,
+    #[doc = "7 - RWBT"]
+    RWBT = 7,
+    #[doc = "8 - RWBLE"]
+    RWBLE = 8,
+    #[doc = "9 - RWBT_NMI"]
+    RWBT_NMI = 9,
+    #[doc = "10 - RWBLE_NMI"]
+    RWBLE_NMI = 10,
     #[doc = "15 - UHCI0"]
     UHCI0 = 15,
     #[doc = "16 - GPIO"]
@@ -56,6 +78,14 @@ pub enum Interrupt {
     AES = 48,
     #[doc = "49 - SHA"]
     SHA = 49,
+    #[doc = "50 - SW_INTR_0"]
+    SW_INTR_0 = 50,
+    #[doc = "51 - SW_INTR_1"]
+    SW_INTR_1 = 51,
+    #[doc = "52 - SW_INTR_2"]
+    SW_INTR_2 = 52,
+    #[doc = "53 - SW_INTR_3"]
+    SW_INTR_3 = 53,
     #[doc = "54 - ASSIST_DEBUG"]
     ASSIST_DEBUG = 54,
 }
@@ -67,6 +97,17 @@ impl Interrupt {
     #[inline]
     pub fn try_from(value: u8) -> Result<Self, TryFromInterruptError> {
         match value {
+            0 => Ok(Interrupt::WIFI_MAC),
+            1 => Ok(Interrupt::WIFI_MAC_NMI),
+            2 => Ok(Interrupt::WIFI_PWR),
+            3 => Ok(Interrupt::WIFI_BB),
+            4 => Ok(Interrupt::BT_MAC),
+            5 => Ok(Interrupt::BT_BB),
+            6 => Ok(Interrupt::BT_BB_NMI),
+            7 => Ok(Interrupt::RWBT),
+            8 => Ok(Interrupt::RWBLE),
+            9 => Ok(Interrupt::RWBT_NMI),
+            10 => Ok(Interrupt::RWBLE_NMI),
             15 => Ok(Interrupt::UHCI0),
             16 => Ok(Interrupt::GPIO),
             17 => Ok(Interrupt::GPIO_NMI),
@@ -94,6 +135,10 @@ impl Interrupt {
             47 => Ok(Interrupt::RSA),
             48 => Ok(Interrupt::AES),
             49 => Ok(Interrupt::SHA),
+            50 => Ok(Interrupt::SW_INTR_0),
+            51 => Ok(Interrupt::SW_INTR_1),
+            52 => Ok(Interrupt::SW_INTR_2),
+            53 => Ok(Interrupt::SW_INTR_3),
             54 => Ok(Interrupt::ASSIST_DEBUG),
             _ => Err(TryFromInterruptError(())),
         }

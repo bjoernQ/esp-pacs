@@ -27,6 +27,16 @@ use generic::*;
 pub mod generic;
 #[cfg(feature = "rt")]
 extern "C" {
+    fn WIFI_MAC();
+    fn WIFI_NMI();
+    fn WIFI_BB();
+    fn BT_MAC();
+    fn BT_BB();
+    fn BT_BB_NMI();
+    fn RWBT();
+    fn RWBLE();
+    fn RWBT_NMI();
+    fn RWBLE_NMI();
     fn UHCI0();
     fn UHCI1();
     fn TG0_T0_LEVEL();
@@ -80,16 +90,20 @@ pub union Vector {
 #[cfg(feature = "rt")]
 #[doc(hidden)]
 pub static __INTERRUPTS: [Vector; 66] = [
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
+    Vector { _handler: WIFI_MAC },
+    Vector { _handler: WIFI_NMI },
+    Vector { _handler: WIFI_BB },
+    Vector { _handler: BT_MAC },
+    Vector { _handler: BT_BB },
+    Vector {
+        _handler: BT_BB_NMI,
+    },
+    Vector { _handler: RWBT },
+    Vector { _handler: RWBLE },
+    Vector { _handler: RWBT_NMI },
+    Vector {
+        _handler: RWBLE_NMI,
+    },
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
     Vector { _handler: UHCI0 },
@@ -183,6 +197,26 @@ pub static __INTERRUPTS: [Vector; 66] = [
 #[derive(Copy, Clone, Debug, PartialEq, Eq)]
 #[repr(u16)]
 pub enum Interrupt {
+    #[doc = "0 - WIFI_MAC"]
+    WIFI_MAC = 0,
+    #[doc = "1 - WIFI_NMI"]
+    WIFI_NMI = 1,
+    #[doc = "2 - WIFI_BB"]
+    WIFI_BB = 2,
+    #[doc = "3 - BT_MAC"]
+    BT_MAC = 3,
+    #[doc = "4 - BT_BB"]
+    BT_BB = 4,
+    #[doc = "5 - BT_BB_NMI"]
+    BT_BB_NMI = 5,
+    #[doc = "6 - RWBT"]
+    RWBT = 6,
+    #[doc = "7 - RWBLE"]
+    RWBLE = 7,
+    #[doc = "8 - RWBT_NMI"]
+    RWBT_NMI = 8,
+    #[doc = "9 - RWBLE_NMI"]
+    RWBLE_NMI = 9,
     #[doc = "12 - UHCI0"]
     UHCI0 = 12,
     #[doc = "13 - UHCI1"]
@@ -286,6 +320,16 @@ impl Interrupt {
     #[inline]
     pub fn try_from(value: u16) -> Result<Self, TryFromInterruptError> {
         match value {
+            0 => Ok(Interrupt::WIFI_MAC),
+            1 => Ok(Interrupt::WIFI_NMI),
+            2 => Ok(Interrupt::WIFI_BB),
+            3 => Ok(Interrupt::BT_MAC),
+            4 => Ok(Interrupt::BT_BB),
+            5 => Ok(Interrupt::BT_BB_NMI),
+            6 => Ok(Interrupt::RWBT),
+            7 => Ok(Interrupt::RWBLE),
+            8 => Ok(Interrupt::RWBT_NMI),
+            9 => Ok(Interrupt::RWBLE_NMI),
             12 => Ok(Interrupt::UHCI0),
             13 => Ok(Interrupt::UHCI1),
             14 => Ok(Interrupt::TG0_T0_LEVEL),
