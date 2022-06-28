@@ -1,3 +1,14 @@
+PROVIDE(WIFI_MAC = DefaultHandler);
+PROVIDE(WIFI_MAC_NMI = DefaultHandler);
+PROVIDE(WIFI_PWR = DefaultHandler);
+PROVIDE(WIFI_BB = DefaultHandler);
+PROVIDE(BT_MAC = DefaultHandler);
+PROVIDE(BT_BB = DefaultHandler);
+PROVIDE(BT_BB_NMI = DefaultHandler);
+PROVIDE(RWBT = DefaultHandler);
+PROVIDE(RWBLE = DefaultHandler);
+PROVIDE(RWBT_NMI = DefaultHandler);
+PROVIDE(RWBLE_NMI = DefaultHandler);
 PROVIDE(UHCI0 = DefaultHandler);
 PROVIDE(GPIO = DefaultHandler);
 PROVIDE(GPIO_NMI = DefaultHandler);
@@ -25,5 +36,9 @@ PROVIDE(DMA_CH2 = DefaultHandler);
 PROVIDE(RSA = DefaultHandler);
 PROVIDE(AES = DefaultHandler);
 PROVIDE(SHA = DefaultHandler);
+PROVIDE(SW_INTR_0 = DefaultHandler);
+PROVIDE(SW_INTR_1 = DefaultHandler);
+PROVIDE(SW_INTR_2 = DefaultHandler);
+PROVIDE(SW_INTR_3 = DefaultHandler);
 PROVIDE(ASSIST_DEBUG = DefaultHandler);
 
